@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="website icon" href="https://cdn-icons-png.flaticon.com/128/2838/2838590.png" type="image/png">
+
+</head>
+
+<body>
+
+    <div class="MainBox">
+
+        <div class="HeadBox">
+            <img src="https://cdn-icons-png.flaticon.com/128/2838/2838590.png" alt="Clock" draggable="false">
+            <h2>DIGITAL CLOCK</h2>
+        </div>
+
+        <div class="ClockBox">
+            <div class="ClockTime">
+                <h1 id="Hour">10</h1>
+            </div>
+            <div class="Gap ClockTime">
+                <h1>:</h1>
+            </div>
+            <div class="ClockTime">
+                <h1 id="Minutes">45</h1>
+            </div>
+            <div class="Gap ClockTime">
+                <h1>:</h1>
+            </div>
+            <div class="ClockTime">
+                <h1 id="Seconds">30</h1>
+            </div>
+            <div class="AM_PM">
+                <h2 id="AM_Pm">AM</h2>
+            </div>
+        </div>
+
+        <div class="CalenderBox">
+            <img src="https://cdn-icons-png.flaticon.com/128/2693/2693710.png" alt="Calender Image" draggable="false">
+            <p id="Date">June 07, 2026</p>
+            <p id="WeekDay">Sunday</p>
+        </div>
+
+        <div class="FormatBox">
+            <div class="Format">
+                <p>Format</p>
+            </div>
+            <div class="FormatOptions">
+                <div class="Format_12 FormatOption" tabindex="0">
+                    <img src="https://cdn-icons-png.flaticon.com/128/15917/15917725.png" alt="Clock Image"
+                        draggable="false" class="FormatClock">
+                    <p>12-Hour</p>
+                </div>
+                <div class="FormatOption" id="Format_24" tabindex="0">
+                    <img src="https://cdn-icons-png.flaticon.com/128/15917/15917725.png" alt="Clock Image"
+                        draggable="false" class="FormatClock">
+                    <p>24-Hour</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
