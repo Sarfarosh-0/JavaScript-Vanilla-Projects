@@ -9,7 +9,6 @@ body {
     justify-content: center;
     text-align: center;
     user-select: none;
-    /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
     color: white;
     background: linear-gradient(0deg,
             #07153F,
@@ -22,10 +21,12 @@ body {
     display: flex;
     flex-direction: column;
     padding: 20px;
-    background-color: #00051e;
+    background: radial-gradient(#07153F,
+            #020B2D,
+            #000814);
     width: 70vw;
     border: 2px solid rgba(255, 255, 255, 0.12);
-    border-radius: 22px;
+    border-radius: 25px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
@@ -40,7 +41,7 @@ body {
         padding: 5px;
         font-size: 15px;
         font-weight: 2;
-        color: rgb(76, 0, 255);
+        color: rgba(255, 255, 255, 0.5);
         letter-spacing: 3px;
     }
 }
@@ -50,29 +51,22 @@ body {
     justify-content: center;
     align-items: center;
     gap: 20px;
-    /* line-height: 1; */
 
     .Gap {
+        color: white;
         transform: translateY(-12px);
     }
-
 
     h1 {
         font-size: 120px;
         margin: 0;
+        color: dodgerblue;
     }
 
-    #Hour {
-        color: rgba(30, 145, 255, 1.0);
-    }
-
-    #Minutes {
-        color: rgba(30, 145, 255, 0.5);
-
-    }
-
-    #Seconds {
-        color: rgba(30, 145, 255, 0.6);
+    h2 {
+        padding: 10px;
+        background-color: #07153F;
+        border-radius: 5px;
     }
 }
 
@@ -99,21 +93,8 @@ body {
     content: "";
     width: 150px;
     height: 1px;
-    /* background: linear-gradient(90deg,
-            transparent,
-            rgba(255, 255, 255, 0.5),
-            transparent); */
     background: rgba(255, 255, 255, 0.3);
 }
-
-
-/* .Divider {
-    width: 50%;
-    height: 1px;
-    margin: 10px auto;
-    background: rgba(255, 255, 255, 0.3);
-
-} */
 
 .FormatBox {
     p {
@@ -155,15 +136,9 @@ body {
 
 .FormatOption:focus {
     background: dodgerblue;
-    border: 2px solid white;
+    border: 3px solid white;
 
     P {
         color: white;
-    }
-}
-
-@keyframes blink {
-    50% {
-        opacity: 0;
     }
 }
