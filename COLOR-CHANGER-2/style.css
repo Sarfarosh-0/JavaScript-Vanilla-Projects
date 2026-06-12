@@ -1,0 +1,158 @@
+Body {
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+
+    background: linear-gradient(135deg,
+            #F4ECFF,
+            #EAF7FF);
+
+    user-select: none;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    padding: 10px;
+
+    .TitleBody {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        img {
+            width: 60px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #071330;
+        }
+    }
+
+    p {
+        font-size: 1.25rem;
+        color: #64748B;
+    }
+}
+
+.MainBody {
+    padding: 10px;
+
+    background: white;
+    border-radius: 30px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, .12);
+
+    display: flex;
+    flex-direction: column;
+
+    .PreviewBody {
+        width: 50vw;
+        height: 40vh;
+
+        border-radius: 20px;
+        background: #7B61FF;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, .12);
+    }
+}
+
+.HexCode {
+    margin: 10px;
+    padding: 10px;
+
+    h4 {
+        font-size: .95rem;
+        font-weight: 500;
+        color: #64748B;
+    }
+
+    h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #071330;
+        letter-spacing: 1px;
+        user-select: all;
+    }
+
+}
+
+.Options {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    img {
+        width: 30px;
+    }
+
+    button {
+        padding: 10px 20px;
+
+        border: none;
+        border-radius: 16px;
+        cursor: pointer;
+
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: white;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        transition: all 0.3s ease;
+    }
+
+    button:first-child {
+        background: linear-gradient(135deg,
+                #6D5DFE,
+                #B13BFF);
+    }
+
+    button:last-child {
+        background: linear-gradient(135deg,
+                #4D96FF,
+                #B13BFF);
+    }
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(109, 93, 254, .35);
+}
+
+button:active{
+    transform: scale(0.90);
+}
+
+Footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    padding: 10px;
+    font-size: 1rem;
+    color: #64748B;
+
+    h4{
+        color : indigo;
+    }
+
+    img {
+        width: 20px;
+    }
+}
