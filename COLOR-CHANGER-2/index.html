@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COLOR CHANGER</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="" website icon" href="https://cdn-icons-png.flaticon.com/128/1042/1042422.png" type="image/png">
+    <link rel="website icon"" href=" https://cdn-icons-png.flaticon.com/128/5304/5304763.png" type="image/png">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
     </style>
@@ -15,37 +15,38 @@
 <body>
     <Header>
         <div class="TitleBody">
-            <img src="https://cdn-icons-png.flaticon.com/128/5304/5304763.png" alt="Logo">
+            <img src="https://cdn-icons-png.flaticon.com/128/5304/5304763.png" alt="Logo" draggable="false">
             <h1>Random Color Generator</h1>
         </div>
         <p>Generate a random color and copy the HEX code in one click</p>
     </Header>
     <Main>
         <div class="MainBody">
-            <div class="PreviewBody">
+            <div class="PreviewBody" id="PreviewBody">
             </div>
             <div class=" HexCode">
                 <h4>HEX Code</h4>
-                <h2 id="HEXCode">#fffff</h2>
+                <h2 id="HEXCode">#FFFFFF</h2>
             </div>
             <div class="Options">
                 <button id="GenerateBtn">
-                    <img src="https://cdn-icons-png.flaticon.com/128/8944/8944340.png" alt="Random">
+                    <img src="https://img.icons8.com/glyph-neue/64/FFFFFF/shuffle.png" alt="Random" draggable="false">
                     Generate Color
                 </button>
                 <button id="CopyCode">
-                    <img src="https://cdn-icons-png.flaticon.com/128/7073/7073707.png" alt="Copy">
+                    <img src="https://img.icons8.com/deco-glyph/48/FFFFFF/copy.png" alt="Copy" draggable="false">
                     Copy Code
                 </button>
             </div>
         </div>
     </Main>
     <Footer>
-        <img src="https://cdn-icons-png.flaticon.com/128/702/702814.png" alt="Tip">
+        <img src="https://cdn-icons-png.flaticon.com/128/702/702814.png" alt="Tip" draggable="false">
         <h4>Tip:</h4>
         <p>You can use this color in your Projects!</p>
     </Footer>
 
+    <script src="script.js"></script>
 </body>
 
 </html>

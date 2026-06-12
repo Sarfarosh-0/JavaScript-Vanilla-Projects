@@ -57,6 +57,8 @@ header {
     box-shadow: 0 20px 50px rgba(0, 0, 0, .12);
 
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
 
     .PreviewBody {
@@ -91,9 +93,12 @@ header {
 
 .Options {
     display: flex;
-    justify-content: space-evenly;
     align-items: center;
+    justify-content: space-evenly;
 
+    width: 100%;
+
+    
     img {
         width: 30px;
     }
@@ -119,14 +124,14 @@ header {
 
     button:first-child {
         background: linear-gradient(135deg,
-                #6D5DFE,
-                #B13BFF);
+                #A855F7,
+                #6366F1);
     }
 
     button:last-child {
         background: linear-gradient(135deg,
-                #4D96FF,
-                #B13BFF);
+                #A855F7,
+                #6366F1);
     }
 }
 
@@ -135,7 +140,7 @@ button:hover {
     box-shadow: 0 12px 25px rgba(109, 93, 254, .35);
 }
 
-button:active{
+button:active {
     transform: scale(0.90);
 }
 
@@ -148,11 +153,18 @@ Footer {
     font-size: 1rem;
     color: #64748B;
 
-    h4{
-        color : indigo;
+    h4 {
+        color: #8338EC;
     }
 
     img {
         width: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .MainBody .PreviewBody {
+        width: 80vw;
+        height: 30vh;
     }
 }
