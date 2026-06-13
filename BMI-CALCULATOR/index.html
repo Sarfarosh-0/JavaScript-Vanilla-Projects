@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI CALCULATOR</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="website icon" href="https://cdn-icons-png.flaticon.com/128/2770/2770966.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <main>
+        <div class="mainBody">
+            <div class="headBody">
+                <img src="https://cdn-icons-png.flaticon.com/128/2770/2770966.png" alt="Logo" draggable="false">
+                <div class="titleBody">
+                    <h1>BMI CALCULATOR</h1>
+                    <h3>Calculate your Body Mass Index and find out your health category.</h3>
+                </div>
+                <img src="Logo.png" alt="Weight Image">
+            </div>
+            <div class="mainContainer">
+                <div class="inputCard card">
+                    <div class="cardHeading">
+                        <img src="https://img.icons8.com/ios-filled/50/user-male-circle.png" alt="Profile"
+                            draggable="false">
+                        <p>Your Details</p>
+                    </div>
+                    <div class="dvider"></div>
+                    <div class="BMIinput">
+                        <label for="userHeight">Height</label>
+                        <div class="inputContainer heightBox">
+                            <img src="https://img.icons8.com/?size=100&id=11677&format=png" alt="Height">
+                            <input type="text" placeholder="Enter your Height " id="userHeight">
+                            <select name="Options" id="cm_feet" class="dropDownMenu">
+                                <option value="cm" class="option">Cm</option>
+                                <option value="feet" class="option">Feet</option>
+                            </select>
+                        </div>
+                        <p id="heightExample">Examples : 165, 170, 180</p>
+                        <label for="userWeight">Weight</label>
+                        <div class="inputContainer weightBox">
+                            <img src="https://img.icons8.com/ios-glyphs/30/weight.png" alt="Weight">
+                            <input type="text" placeholder="Enter your Weight " id="userWeight">
+                            <select name="Options" id="kg-pounds" class="dropDownMenu">
+                                <option value="kg" class="option">Kg</option>
+                                <option value="pound" class="option">Pounds</option>
+                            </select>
+                        </div>
+                        <p id="weightExample">Examples : 60, 70, 80</p>
+                    </div>
+                    <button id="calculateBMI">
+                        <img src="https://img.icons8.com/ios/50/calculator--v1.png" alt="Calculate">
+                        Calculate BMI
+                    </button>
+                    <div class="information">
+                        <img src="https://img.icons8.com/ios-filled/50/info.png" alt="Info" draggable="false">
+                        <p>Make sure to enter vaild numbers for accurate results</p>
+                    </div>
+                </div>
+
+                <div class="resultCard card">
+
+                    <div class="cardHeading">
+                        <img src="https://img.icons8.com/ios-filled/50/futures.png" alt="Profile" draggable="false">
+                        <p>Your Result</p>
+                    </div>
+
+                    <div class="dvider"></div>
+
+                    <div class="BMIRing">
+                        <div class="innerCircle">
+                            <h1 id="BMI">--</h1>
+                            <p>BMI</p>
+                        </div>
+                    </div>
+
+                    <div class="dvider"></div>
+
+                    <div class="result">
+                        <h2>Category</h2>
+                        <h3 id="BMIStatus">21.3</h3>
+                    </div>
+
+                    <div class="rangeGuide">
+                        <p>BMI Range Guide</p>
+                        <div class="categories">
+                            <div class="range">
+                                <div class="underweight"></div>
+                                <p>Under 18.5</p>
+                                <p>Underweight</p>
+                            </div>
+                            <div class="range">
+                                <div class="normal"></div>
+                                <p>18.5 - 24.9 </p>
+                                <p>Normal Weight</p>
+                            </div>
+                            <div class="range">
+                                <div class=" overweight"></div>
+                                <p>25.0 - 29.9</p>
+                                <p>Overweight</p>
+                            </div>
+                            <div class="range">
+                                <div class=" obese"></div>
+                                <p>30 and above</p>
+                                <p>Obese</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="suggestion">
+                <img src="https://img.icons8.com/bubbles/100/shield.png" alt="Sugesstion">
+                <p>BMI is a general guide and not a substitute for professional medical advice</p>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>

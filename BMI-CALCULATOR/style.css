@@ -1,0 +1,462 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(135deg,
+            #eef8f6,
+            #dff5ef);
+
+    padding: 30px;
+    min-height: 100vh;
+
+    user-select: none;
+}
+
+.mainBody {
+    background: white;
+    border: 2px solid black;
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.headBody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    width: 100%;
+
+    padding: 20px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+
+    background: linear-gradient(90deg,
+            #dff5ef,
+            #5aa193,
+            #4bc3aa);
+
+    img:first-child {
+        width: 50px;
+    }
+
+    img:last-child {
+        width: 200px;
+    }
+
+    h1 {
+        font-size: 4rem;
+        font-weight: 700;
+
+        color: #152238;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+        color: #4a4c4f;
+    }
+}
+
+.mainContainer {
+    width: 100%;
+    background: white;
+    border-radius: 20px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    width: 40%;
+
+    border: 1px solid rgba(61, 61, 60, 0.8);
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    padding: 20px;
+    margin: 20px;
+}
+
+.cardHeading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    align-self: flex-start;
+
+
+    img {
+        width: 35px;
+    }
+
+    p {
+        font-size: 1.8rem;
+        font-weight: 600;
+
+        color: #2b7b69;
+    }
+}
+
+.dvider {
+    border-top: 2px solid rgba(39, 37, 37, 0.5);
+    width: 100%;
+    margin: 10px 0px;
+}
+
+.BMIinput {
+    margin: 10px;
+
+    p {
+        color: #7a8794;
+        font-size: 0.95rem;
+        padding: 5px 0px;
+        margin: 5px 0;
+    }
+}
+
+label {
+    font-size: 1.4rem;
+    font-weight: 600;
+
+    color: #1c2534;
+
+    margin: 10px 0;
+}
+
+.inputContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+    transition: all 0.3s ease;
+
+    background: white;
+
+    margin: 15px 0 5px 0;
+    padding: 5px;
+
+    border-radius: 10px;
+    border: 2px solid #dde7e4;
+
+    img {
+        width: 20px;
+    }
+
+    input {
+        width: 200px;
+        border: none;
+        outline: none;
+
+        font-size: 1rem;
+
+        background: transparent;
+    }
+
+    .dropDownMenu {
+        border: none;
+        background: #e7f7f1;
+
+        color: #2b7b69;
+
+        width: 70px;
+        padding: 5px;
+
+        font-size: small;
+        font-weight: 700;
+
+        outline: none;
+
+        cursor: pointer;
+        border-radius: 10px;
+    }
+
+    .option {
+        background: #e7f7f1;
+    }
+
+}
+
+.inputContainer:focus-within {
+    border-color: #0ddf18;
+    box-shadow: 0 0 0 4px rgba(13, 223, 24, 0.2);
+}
+
+#calculateBMI {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    width: 100%;
+
+    border: none;
+    border-radius: 15px;
+
+    background: linear-gradient(135deg,
+            #0ddf18,
+            #2eee67);
+
+    color: white;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    padding: 10px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    img {
+        width: 25px;
+    }
+}
+
+#calculateBMI:hover {
+
+    box-shadow: 0 10px 20px rgba(30, 167, 140, 0.25);
+}
+
+#calculateBMI:active {
+    transform: scale(0.90);
+}
+
+.information {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    margin-top: 25px;
+    padding: 20px;
+
+    border-radius: 15px;
+
+    background: #f2faf7;
+
+    img {
+        width: 20px;
+    }
+
+    p {
+        font-size: 1rem;
+        font-weight: 500;
+
+        color: #2b7b69;
+    }
+}
+
+
+.resultCard {
+    border-radius: 30px;
+
+    background: #f8fffc;
+
+    border: 2px solid #e3f2ee;
+
+    .dvider {
+        border-top: 2px solid #2b7b69;
+        ;
+    }
+}
+
+.BMIRing {
+    width: 130px;
+    height: 130px;
+
+    border-radius: 50%;
+
+    margin: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: conic-gradient(#f4b400 0deg 15deg,
+            transparent 15deg 20deg,
+
+            #f4b400 20deg 35deg,
+            transparent 35deg 40deg,
+
+            #f4b400 40deg 55deg,
+            transparent 55deg 60deg,
+
+            #f4b400 60deg 75deg,
+            transparent 75deg 80deg,
+
+            #ff5722 80deg 95deg,
+            transparent 95deg 100deg,
+
+            #ff5722 100deg 115deg,
+            transparent 115deg 120deg,
+
+            #ff5722 120deg 135deg,
+            transparent 135deg 140deg,
+
+            #ff5722 140deg 155deg,
+            transparent 155deg 160deg,
+
+            transparent 160deg 200deg,
+
+            #4285f4 200deg 215deg,
+            transparent 215deg 220deg,
+
+            #4285f4 220deg 235deg,
+            transparent 235deg 240deg,
+
+            #4285f4 240deg 255deg,
+            transparent 255deg 260deg,
+
+            #4285f4 260deg 275deg,
+            transparent 275deg 280deg,
+
+            #2ecc71 280deg 295deg,
+            transparent 295deg 300deg,
+
+            #2ecc71 300deg 315deg,
+            transparent 315deg 320deg,
+
+            #2ecc71 320deg 335deg,
+            transparent 335deg 340deg,
+
+            #2ecc71 340deg 355deg,
+            transparent 355deg 360deg);
+}
+
+.innerCircle {
+    width: 120px;
+    height: 120px;
+
+    border-radius: 50%;
+    background: #f8fffc;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    h1 {
+        font-size: 2rem;
+        font-weight: 600;
+        color: #2b7b69;
+    }
+
+    p {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #232528;
+    }
+}
+
+.result {
+
+    h2 {
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: #0ddf18;
+    }
+
+    h3 {
+        padding: 5px;
+        text-align: center;
+        font-size: xx-large;
+        color: #2eee67;
+    }
+}
+
+.rangeGuide {
+
+    border: 2px solid #e3f2ee;
+    border-radius: 20px;
+
+    padding: 10px;
+    text-align: center;
+
+    p:first-child {
+        font-size: large;
+        font-weight: 600;
+        color: #084817;
+    }
+}
+
+.categories {
+    margin-top: 10px;
+}
+
+.range {
+    display: grid;
+    text-align: left;
+
+    grid-template-columns: 20px 1fr 1fr;
+    gap: 12px;
+
+    align-items: center;
+    padding: 0 10px;
+    margin-top: 8px;
+}
+
+.range div {
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+}
+
+.underweight {
+    background: #4285f4;
+}
+
+.normal {
+    background: #2ecc71;
+}
+
+.overweight {
+    background: #f4b400;
+}
+
+.obese {
+    background: #ff5722;
+}
+
+.suggestion {
+
+    margin: 10px;
+    padding: 10px;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    color: #65748b;
+    border: 2px solid #dce7ff;
+    border-radius: 20px;
+
+    img {
+        width: 30px;
+    }
+}
