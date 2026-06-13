@@ -1,0 +1,157 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: gainsboro;
+    display: flex;
+    justify-content: center;
+}
+
+.mainBody {
+    background-color: #F3F4F6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 390px;
+    border-radius: 20px;
+}
+
+.head {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.head img {
+    padding-top: 5px;
+}
+
+.head h1 {
+    margin: 10px 0px 5px 0px;
+    color: #220256;
+}
+
+.head p {
+    margin: 5px 0px 10px 0px;
+    color: gray
+}
+
+.guessBox {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    background-color: rgb(227, 211, 242);
+    width: 364px;
+    border-radius: 10px;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+}
+
+.guessBox label {
+    padding-top: 15px;
+    font-weight: 700;
+}
+
+.guessBox input {
+    width: 310px;
+    height: 30px;
+    padding: 5px;
+    border: 2px solid blueviolet;
+    border-radius: 5px;
+    font-size: large;
+    color: blueviolet;
+}
+
+/* to hide the spinners in the input tag */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.guessBox input:focus {
+    box-shadow: 0 0 10px blueviolet;
+}
+
+.guessBox button {
+    background-color: blueviolet;
+    text-align: center;
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    color: white;
+    font-size: medium;
+    font-weight: 700;
+}
+
+.guessBox button:hover {
+    background-color: rgb(129, 16, 235);
+    cursor: pointer;
+}
+
+.hintBox {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background-color: #FEF3C7;
+    width: 364px;
+    border: 2px solid rgb(250, 250, 89);
+    border-radius: 10px;
+}
+
+.hintBox img {
+    padding-left: 10px;
+    border-radius: 50%;
+}
+
+.hintBox h3 {
+    margin: 5px 0 0 0;
+    color: maroon;
+}
+
+.hintBox p {
+    margin: 0;
+    padding-bottom: 10px;
+    color: #92400E;
+}
+
+.attemptBox {
+    margin: 20px 0 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background-color: #DBEAFE;
+    width: 364px;
+    border: 1px solid blue;
+    border-radius: 10px;
+}
+
+.attemptBox img {
+    padding-left: 10px;
+    border-radius: 50%;
+}
+
+.attemptHeading {
+    margin: 5px 0 0 0;
+    color: #1D4ED8;
+}
+
+.attemptNumber {
+    margin: 0;
+    padding-bottom: 10px;
+    font-weight: 700;
+    font-size: x-large;
+    color: blue;
+}
+
+.lastMessage {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}

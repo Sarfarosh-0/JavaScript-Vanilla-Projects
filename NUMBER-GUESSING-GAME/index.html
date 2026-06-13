@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="website icon" href="https://cdn-icons-png.flaticon.com/128/5726/5726558.png" type="image/png">
+    <title>Number Guessing Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <div class="mainBody">
+            <div class="head">
+                <img src="https://cdn-icons-png.flaticon.com/128/5726/5726558.png" alt="Game Logo" width="60px"
+                    height="60px">
+                <h1 class="gameName">Number Guessing Game</h1>
+                <p class="gameDetails">
+                    Guess the random number between 1 to 100
+                </p>
+            </div>
+            <div class="guessBox">
+                <label for="guessNum">Enter your guess:</label>
+                <input type="number" placeholder="Enter a number (1-100)" id="guessNum">
+                <button onclick="checkAnswer()">Submit Guess</button>
+            </div>
+            <div class="hintBox">
+                <img src="https://cdn-icons-gif.flaticon.com/19032/19032720.gif" alt="Hint Image" width="50px"
+                    height="40px">
+                <div class="hintText">
+                    <h3 class="hintheading">Hint :</h3>
+                    <p class="hintMessage" id="hintMessage">
+                        Start the game to get hints !
+                    </p>
+                </div>
+            </div>
+            <div class="attemptBox">
+                <img src="https://cdn-icons-gif.flaticon.com/19011/19011035.gif" alt="Attempt Image" width="45px"
+                    height="40px">
+                <div class="attemptText">
+                    <h3 class="attemptHeading">Attempt Left:</h3>
+                    <p class="attemptNumber" id="attemptLeft">
+                        5
+                    </p>
+                </div>
+            </div>
+            <div class="lastMessage">
+                <img src="https://img.icons8.com/?size=96&id=hFgSvrOBPpEc&format=gif&color=f7f7f7" alt="smile"
+                    width="30px">
+                <p class="lastText">Thankyou for playing the game!</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
