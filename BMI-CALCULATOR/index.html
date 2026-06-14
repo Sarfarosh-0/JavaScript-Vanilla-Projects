@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMI CALCULATOR</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="website icon" href="https://cdn-icons-png.flaticon.com/128/2770/2770966.png" type="image/png">
+    <link rel="website icon" href="https://cdn-icons-png.flaticon.com/128/4349/4349071.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap"
         rel="stylesheet">
 </head>
 
@@ -19,12 +19,12 @@
     <main>
         <div class="mainBody">
             <div class="headBody">
-                <img src="https://cdn-icons-png.flaticon.com/128/2770/2770966.png" alt="Logo" draggable="false">
+                <img src="https://cdn-icons-png.flaticon.com/128/4349/4349071.png" alt="Logo" draggable="false">
                 <div class="titleBody">
                     <h1>BMI CALCULATOR</h1>
                     <h3>Calculate your Body Mass Index and find out your health category.</h3>
                 </div>
-                <img src="Logo.png" alt="Weight Image">
+                <!-- <img src="Logo.png" alt="Weight Image"> -->
             </div>
             <div class="mainContainer">
                 <div class="inputCard card">
@@ -38,17 +38,17 @@
                         <label for="userHeight">Height</label>
                         <div class="inputContainer heightBox">
                             <img src="https://img.icons8.com/?size=100&id=11677&format=png" alt="Height">
-                            <input type="text" placeholder="Enter your Height " id="userHeight">
-                            <select name="Options" id="cm_feet" class="dropDownMenu">
-                                <option value="cm" class="option">Cm</option>
-                                <option value="feet" class="option">Feet</option>
+                            <input type="text" placeholder="Enter your Height " id="userHeight" pattern="[0-9]+"">
+                            <select name=" Options" id="cm_feet" class="dropDownMenu">
+                            <option value="cm" class="option">Cm</option>
+                            <option value="feet" class="option">Feet</option>
                             </select>
                         </div>
                         <p id="heightExample">Examples : 165, 170, 180</p>
                         <label for="userWeight">Weight</label>
                         <div class="inputContainer weightBox">
                             <img src="https://img.icons8.com/ios-glyphs/30/weight.png" alt="Weight">
-                            <input type="text" placeholder="Enter your Weight " id="userWeight">
+                            <input type="text" placeholder="Enter your Weight " id="userWeight" pattern="[0-9]+">
                             <select name="Options" id="kg-pounds" class="dropDownMenu">
                                 <option value="kg" class="option">Kg</option>
                                 <option value="pound" class="option">Pounds</option>
@@ -116,10 +116,14 @@
                     </div>
 
                 </div>
+                <div class="suggestion">
+                    <img src="https://img.icons8.com/bubbles/100/shield.png" alt="Sugesstion">
+                    <p>BMI is a general guide and not a substitute for professional medical advice</p>
+                </div>
             </div>
-            <div class="suggestion">
-                <img src="https://img.icons8.com/bubbles/100/shield.png" alt="Sugesstion">
-                <p>BMI is a general guide and not a substitute for professional medical advice</p>
+            <div class="ThemeBox">
+                <button class="ThemeButton light">🌞 Light</button>
+                <button class="ThemeButton dark">🌙 Dark</button>
             </div>
         </div>
     </main>

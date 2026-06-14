@@ -10,13 +10,16 @@ body {
     align-items: center;
 
     background: linear-gradient(135deg,
-            #eef8f6,
-            #dff5ef);
-
+            #f0fdf4,
+            #dcfce7);
     padding: 30px;
     min-height: 100vh;
 
     user-select: none;
+
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 .mainBody {
@@ -28,6 +31,8 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    width: 75vw;
 }
 
 .headBody {
@@ -42,29 +47,32 @@ body {
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
 
-    background: linear-gradient(90deg,
-            #dff5ef,
-            #5aa193,
-            #4bc3aa);
+    /* background: linear-gradient(135deg,
+            #86efac,
+            #4ade80,
+            #22c55e); */
 
-    img:first-child {
-        width: 50px;
+    background: linear-gradient(135deg,
+            #86efac,
+            #2eee67,
+            #0ddf18);
+
+    img {
+        width: 60px;
     }
 
-    img:last-child {
-        width: 200px;
-    }
 
     h1 {
-        font-size: 4rem;
+        font-size: 3rem;
         font-weight: 700;
 
-        color: #152238;
+        text-align: center;
+        color: #1a1a1a;
     }
 
     h3 {
-        font-size: 1.2rem;
-        color: #4a4c4f;
+        font-size: 1rem;
+        color: #64748b;
     }
 }
 
@@ -82,7 +90,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 5px;
     flex-wrap: wrap;
 }
 
@@ -93,6 +101,7 @@ body {
     flex-direction: column;
 
     width: 40%;
+    height: 500px;
 
     border: 1px solid rgba(61, 61, 60, 0.8);
     border-radius: 20px;
@@ -118,7 +127,7 @@ body {
         font-size: 1.8rem;
         font-weight: 600;
 
-        color: #2b7b69;
+        color: #0ddf18;
     }
 }
 
@@ -182,7 +191,7 @@ label {
         border: none;
         background: #e7f7f1;
 
-        color: #2b7b69;
+        color: #0ddf18;
 
         width: 70px;
         padding: 5px;
@@ -267,7 +276,7 @@ label {
         font-size: 1rem;
         font-weight: 500;
 
-        color: #2b7b69;
+        color: #2eee67;
     }
 }
 
@@ -280,7 +289,7 @@ label {
     border: 2px solid #e3f2ee;
 
     .dvider {
-        border-top: 2px solid #2b7b69;
+        border-top: 2px solid #2ecc71;
         ;
     }
 }
@@ -363,7 +372,7 @@ label {
     h1 {
         font-size: 2rem;
         font-weight: 600;
-        color: #2b7b69;
+        color: #2eee67;
     }
 
     p {
@@ -400,7 +409,7 @@ label {
     p:first-child {
         font-size: large;
         font-weight: 600;
-        color: #084817;
+        color: #0ddf18;
     }
 }
 
@@ -444,15 +453,14 @@ label {
 }
 
 .suggestion {
-
-    margin: 10px;
     padding: 10px;
+    margin: 5px 0 20px 0;
 
     display: flex;
     align-items: center;
     gap: 15px;
 
-    color: #65748b;
+    color: #64748b;
     border: 2px solid #dce7ff;
     border-radius: 20px;
 
