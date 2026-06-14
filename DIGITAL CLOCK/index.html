@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
@@ -7,6 +7,9 @@
     <title>Digital Clock</title>
     <link rel="stylesheet" href="style.css">
     <link rel="website icon" href="https://cdn-icons-png.flaticon.com/128/2838/2838590.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;800&display=swap" rel="stylesheet">
 
 </head>
 
@@ -33,7 +36,7 @@
                 <h1>:</h1>
             </div>
             <div class="ClockTime">
-                <h1 id="Seconds">00</h1>
+                <h1 id="Seconds" class="Seconds">00</h1>
             </div>
             <div id="AM_PM">
                 <h2 id="Am_Pm">AM</h2>
@@ -65,8 +68,14 @@
                 </div>
             </div>
         </div>
-
     </div>
+    <footer>
+        <div class="ThemeBox">
+            <button class="ThemeButton light">🌞 Light</button>
+            <button class="ThemeButton dark">🌙 Dark</button>
+        </div>
+    </footer>
+
 
     <script src="script.js"></script>
 </body>

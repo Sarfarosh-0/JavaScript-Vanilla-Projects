@@ -62,8 +62,20 @@ document.getElementById("Format_12").addEventListener("click", () => {
   Hour12 = setInterval(UpdateClock12, 1000);
 });
 
-// Calling the 14 Hour Clock on Click
+// Calling the 24 Hour Clock on Click
 document.getElementById("Format_24").addEventListener("click", () => {
   UpdateClock24();
   Hour24 = setInterval(UpdateClock24, 1000);
+});
+
+// Changing the Theme
+const lightBtn = document.querySelector(".light");
+const darkBtn = document.querySelector(".dark");
+
+lightBtn.addEventListener("click", () => {
+  document.documentElement.setAttribute("data-theme", "light");
+});
+
+darkBtn.addEventListener("click", () => {
+  document.documentElement.setAttribute("data-theme", "dark");
 });
