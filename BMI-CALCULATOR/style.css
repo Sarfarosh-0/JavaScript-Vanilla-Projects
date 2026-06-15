@@ -11,7 +11,7 @@
     --border-main: transparent;
     --border-card: #334155;
     --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
+    --text-secondary: #7f8ea4;
     --text-accent: #38bdf8;
     --header-gradient: linear-gradient(135deg, #06b6d4, #4f46e5);
     --btn-gradient: linear-gradient(135deg, #06b6d4, #4f46e5);
@@ -21,7 +21,7 @@
 }
 
 body[data-theme="light"] {
-    ---bg-body: #f4f7fc;
+    --bg-body: #f4f7fc;
     --bg-main: #ffffff;
     --bg-card: #f8fafc;
     --border-main: transparent;
@@ -40,11 +40,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 
     background: var(--bg-color);
     transition: all 0.3s ease;
 
-    padding: 30px;
+    padding: 15px;
     min-height: 100vh;
 
     user-select: none;
@@ -66,25 +67,27 @@ body {
     align-items: center;
     flex-direction: column;
 
-    width: 75vw;
+    width: 95%;
+    max-width: 950px;
+    margin-bottom: 20px;
 }
 
 .headBody {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
 
     width: 100%;
 
-    padding: 20px;
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
+    padding: 25px 20px;
+    border-top-right-radius: 19px;
+    border-top-left-radius: 19px;
 
     background: var(--header-gradient);
 
     img {
-        width: 60px;
+        width: clamp(40px, 8vw, 60px);
     }
 
 
@@ -92,6 +95,7 @@ body {
         font-family: "Bebas Neue", sans-serif;
         color: white;
 
+        font-size: clamp(1.8rem, 5vw, 2.8rem);
         letter-spacing: 2px;
         text-align: center;
     }
@@ -105,27 +109,24 @@ body {
 .mainContainer {
     width: 100%;
     background: transparent;
-    border-radius: 20px;
-    border-top-right-radius: 0px;
-    border-top-left-radius: 0px;
 
-    padding-top: 10px;
+    padding-top: 15px;
 
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 5px;
+    align-items: stretch;
+    gap: 20px;
     flex-wrap: wrap;
 }
 
 .card {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
 
-    width: 40%;
-    height: 500px;
+    width: 80%;
+    min-height: 480px;
 
     box-shadow: var(--shadow);
     background: var(--bg-card);
@@ -133,10 +134,9 @@ body {
     border: 1px solid var(--border-card);
     border-radius: 20px;
 
-    transition: all .3s ease;
+    transition: transform .3s ease, box-shadow .3s ease;
 
-    padding: 20px;
-    margin: 20px;
+    padding: 25px 20px;
 }
 
 .cardHeading {
@@ -145,30 +145,27 @@ body {
     gap: 10px;
     align-self: flex-start;
 
+    margin-bottom: 10px;
 
     img {
-        width: 35px;
+        width: 32px;
     }
 
     p {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         font-weight: 600;
-
         color: var(--text-accent);
     }
-}
-
-.card:hover {
-    transform: scale(1.02);
 }
 
 .dvider {
     border-top: 1px solid var(--border-card);
     width: 100%;
-    margin: 10px 0px;
+    margin: 10px 0px 20px 0px;
 }
 
 .BMIinput {
+    width: 100%;
     margin: 10px;
 
     p {
@@ -180,12 +177,12 @@ body {
 }
 
 label {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 600;
-
     color: var(--text-primary);
 
-    margin: 10px 0;
+    display: inline-block;
+    margin-bottom: 5px;
 }
 
 .inputContainer {
@@ -196,27 +193,26 @@ label {
 
     transition: all 0.3s ease;
 
-    margin: 15px 0 5px 0;
-    padding: 8px;
+    margin: 10px 0 10px 0;
+    padding: 10px 14px;
 
     border-radius: 12px;
     border: 1px solid var(--border-card);
-
     background: var(--bg-main);
+    width: 100%;
 
     img {
         width: 20px;
     }
 
     input {
-        width: 200px;
+        flex: 1;
+        width: 100%;
         border: none;
         outline: none;
 
         font-size: 1rem;
-
         background: transparent;
-
         color: var(--text-primary);
     }
 
@@ -235,16 +231,17 @@ label {
         border: none;
         background: rgba(98, 143, 240, 0.224);
         color: var(--text-accent);
-        width: 80px;
-        padding: 8px;
+        width: auto;
+        min-width: 75px;
+        padding: 6px 10px;
 
-        font-size: small;
+        font-size: 0.85rem;
         font-weight: 700;
 
         outline: none;
 
         cursor: pointer;
-        border-radius: 10px;
+        border-radius: 8px;
     }
 
     .options {
@@ -264,26 +261,25 @@ label {
     justify-content: center;
     gap: 10px;
 
-    width: 80%;
+    width: 100%;
+    margin-top: 10%;
 
     background: var(--btn-gradient);
-
     border: none;
     border-radius: 14px;
 
     color: white;
 
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 600;
-
-    padding: 10px;
+    padding: 14px;
 
     cursor: pointer;
 
     transition: all 0.3s ease;
 
     img {
-        width: 25px;
+        width: 24px;
     }
 }
 
@@ -301,20 +297,21 @@ label {
     align-items: center;
     gap: 15px;
 
-    margin: 25px 0 10px 0;
-    padding: 10px;
+    margin: 15px 0;
+    padding: 12px;
 
     border-radius: 15px;
-
     border: 1px solid var(--border-card);
     background: var(--bg-card);
+    width: 100%;
 
     img {
         width: 20px;
+        flex-shrink: 0;
     }
 
     p {
-        font-size: 1rem;
+        font-size: 0.95rem;
         font-weight: 500;
         color: var(--text-secondary);
     }
@@ -326,66 +323,19 @@ label {
 
     border-radius: 50%;
 
-    margin: 5px;
+    margin: 15px auto;
 
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-shrink: 0;
 
-    background: conic-gradient(#f4b400 0deg 15deg,
-            transparent 15deg 20deg,
-
-            #f4b400 20deg 35deg,
-            transparent 35deg 40deg,
-
-            #f4b400 40deg 55deg,
-            transparent 55deg 60deg,
-
-            #f4b400 60deg 75deg,
-            transparent 75deg 80deg,
-
-            #ff5722 80deg 95deg,
-            transparent 95deg 100deg,
-
-            #ff5722 100deg 115deg,
-            transparent 115deg 120deg,
-
-            #ff5722 120deg 135deg,
-            transparent 135deg 140deg,
-
-            #ff5722 140deg 155deg,
-            transparent 155deg 160deg,
-
-            transparent 160deg 200deg,
-
-            #4285f4 200deg 215deg,
-            transparent 215deg 220deg,
-
-            #4285f4 220deg 235deg,
-            transparent 235deg 240deg,
-
-            #4285f4 240deg 255deg,
-            transparent 255deg 260deg,
-
-            #4285f4 260deg 275deg,
-            transparent 275deg 280deg,
-
-            #2ecc71 280deg 295deg,
-            transparent 295deg 300deg,
-
-            #2ecc71 300deg 315deg,
-            transparent 315deg 320deg,
-
-            #2ecc71 320deg 335deg,
-            transparent 335deg 340deg,
-
-            #2ecc71 340deg 355deg,
-            transparent 355deg 360deg);
+    background: conic-gradient(#f4b400 0deg 15deg, transparent 15deg 20deg, #f4b400 20deg 35deg, transparent 35deg 40deg, #f4b400 40deg 55deg, transparent 55deg 60deg, #f4b400 60deg 75deg, transparent 75deg 80deg, #ff5722 80deg 95deg, transparent 95deg 100deg, #ff5722 100deg 115deg, transparent 115deg 120deg, #ff5722 120deg 135deg, transparent 135deg 140deg, #ff5722 140deg 155deg, transparent 155deg 160deg, transparent 160deg 200deg, #4285f4 200deg 215deg, transparent 215deg 220deg, #4285f4 220deg 235deg, transparent 235deg 240deg, #4285f4 240deg 255deg, transparent 255deg 260deg, #4285f4 260deg 275deg, transparent 275deg 280deg, #2ecc71 280deg 295deg, transparent 295deg 300deg, #2ecc71 300deg 315deg, transparent 315deg 320deg, #2ecc71 320deg 335deg, transparent 335deg 340deg, #2ecc71 340deg 355deg, transparent 355deg 360deg);
 }
 
 .innerCircle {
-    width: 120px;
-    height: 120px;
+    width: 115px;
+    height: 115px;
 
     border-radius: 50%;
     background: var(--ring-bg);
@@ -396,13 +346,13 @@ label {
     flex-direction: column;
 
     h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
         font-weight: 600;
         color: var(--text-primary);
     }
 
     p {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         font-weight: 600;
         color: var(--text-secondary);
     }
@@ -410,9 +360,12 @@ label {
 
 .result {
 
+    width: 100%;
+    margin-bottom: 15px;
+
     h2 {
         text-align: center;
-        font-size: 1.8rem;
+        font-size: 1.5rem;
         font-weight: 600;
         color: var(--text-secondary);
     }
@@ -420,7 +373,7 @@ label {
     h3 {
         padding: 5px;
         text-align: center;
-        font-size: xx-large;
+        font-size: 2rem;
         color: var(--text-accent);
     }
 }
@@ -430,13 +383,13 @@ label {
     border: 1px solid var(--border-card);
     border-radius: 20px;
 
-    padding: 10px;
+    padding: 15px;
     text-align: center;
 
     background: var(--bg-main);
 
     p:first-child {
-        font-size: large;
+        font-size: 1.1rem;
         font-weight: 600;
         color: var(--text-accent);
     }
@@ -450,20 +403,20 @@ label {
     display: grid;
     text-align: left;
 
-    grid-template-columns: 20px 1fr 1fr;
+    grid-template-columns: 15px 1fr auto;
     gap: 12px;
 
     align-items: center;
-    padding: 0 10px;
-    margin-top: 8px;
+    padding: 4px 5px;
+    margin-top: 6px;
 
+    font-size: 0.95rem;
     color: var(--text-primary);
 }
 
 .range div {
     width: 10px;
     height: 10px;
-
     border-radius: 50%;
 }
 
@@ -489,15 +442,18 @@ label {
     align-items: center;
     flex-direction: column;
     gap: 10px;
+
+    width: 100%;
 }
 
 .suggestion {
     padding: 15px;
-    margin: 5px 0 10px 0;
 
     display: flex;
     align-items: center;
     gap: 15px;
+
+    width: 80%;
 
     background: var(--bg-card);
     color: var(--text-secondary);
@@ -507,13 +463,14 @@ label {
 
     img {
         width: 20px;
+        flex-shrink: 0;
     }
 }
 
 .ThemeBox {
     display: flex;
     gap: 12px;
-    margin-bottom: 20px;
+    margin: 10px 0 0 0;
 }
 
 .ThemeButton {
@@ -523,13 +480,14 @@ label {
     cursor: pointer;
 
     background: var(--bg-card);
+    color: var(--text-primary);
 
     font-weight: 600;
     transition: 0.3s;
 
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 8px;
 
     img {
         width: 20px;
@@ -538,4 +496,27 @@ label {
 
 .ThemeButton:hover {
     transform: scale(1.05);
+}
+
+
+@media screen and (min-width: 650px) {
+    .card {
+        width: calc(50% - 20px);
+    }
+
+    body {
+        padding: 30px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .mainContainer {
+        gap: 25px;
+        padding: 25px;
+    }
+
+    .card {
+        width: calc(50% - 50px);
+        padding: 30px;
+    }
 }
