@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+
+    <link rel="website icon" href="https://cdn-icons-png.flaticon.com/128/6729/6729732.png" type="image/png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Sekuya&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <button id="themeToggle" class="theme-btn" aria-label="Toggle Theme">🌓 Theme</button>
+
+        <div class="MainBody">
+            <div class="Head">
+                <div class="gameName">
+                    <h1 id="Heading1">ROCK</h1>
+                    <h1 id="Heading2">PAPER</h1>
+                    <h1 id="Heading3">SCISSORS</h1>
+                </div>
+                <p id="WinRule">Choose your move and beat the computer!</p>
+            </div>
+
+            <div class="ScoreBoard">
+                <div class="Score">
+                    <h3 id="blue">YOUR SCORE</h3>
+                    <p id="PlayerScore">0</p>
+                </div>
+                <h2>VS</h2>
+                <div class="Score">
+                    <h3 id="red">COMPUTER SCORE</h3>
+                    <p id="CompScore">0</p>
+                </div>
+            </div>
+
+            <div class="ResultBody">
+                <div class="playerOption">
+                    <h2 class="Name">YOU</h2>
+                    <img src="photo1.png" alt="playerChoice" id="PlayerChoice" draggable="false">
+                    <p id="PlayerChoiceName" class="ChoiceName">ROCK</p>
+                </div>
+                <div class="VS">
+                    <h1>VS</h1>
+                </div>
+                <div class="compOption">
+                    <h2 class="Name">COMPUTER</h2>
+                    <img src="photo3.png" alt="compChoice" id="CompChoice" draggable="false">
+                    <p id="CompChoiceName" class="ChoiceName">SCISSORS</p>
+                </div>
+            </div>
+
+            <div class="ResultMessage">
+                <div class="TrophyImage">
+                    <img src="https://cdn-icons-png.flaticon.com/128/11173/11173528.png" alt="Trophy" draggable="false">
+                </div>
+                <div class="Message">
+                    <h3 id="WhoWins">PLAYER WINS!</h3>
+                    <p id="Beats">ROCK Beats SCISSORS</p>
+                </div>
+            </div>
+
+            <div class="ForPlayer">
+                <div class="ChoiceMessage">
+                    <h3>CHOOSE YOUR MOVE</h3>
+                </div>
+                <div class="Choices">
+                    <div class="Choice" id="Rock">
+                        <img src="photo1.png" alt="Rock" draggable="false">
+                        <p>Rock</p>
+                    </div>
+                    <div class="Choice" id="Paper">
+                        <img src="photo2.png" alt="Paper" draggable="false">
+                        <p>Paper</p>
+                    </div>
+                    <div class="Choice" id="Scissors">
+                        <img src="photo3.png" alt="Scissors" draggable="false">
+                        <p>Scissors</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script1.js"></script>
+</body>
+
+</html>
