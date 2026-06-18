@@ -54,8 +54,9 @@ CalculateBMI.addEventListener("click", () => {
 });
 inputCard.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
-    console.log("Enter pressed");
-    Validate();
+    if (Validate()) {
+      Calculate();
+    }
   }
 });
 
@@ -117,19 +118,19 @@ function Categories(bmi) {
     BMICategory.style.color = "#F97316";
     BMICategory.textContent = "Obese";
   }
-
-  let resetTimer;
-
-  clearTimeout(resetTimer);
-
-  resetTimer = setTimeout(() => {
-    let BMI = document.getElementById("BMI");
-    let BMICategory = document.getElementById("BMICategory");
-
-    BMI.style.color = "#64748b";
-    BMI.textContent = "--";
-
-    BMICategory.style.color = "#2563eb";
-    BMICategory.textContent = "--";
-  }, 60000);
 }
+
+let resetTimer;
+
+clearTimeout(resetTimer);
+
+resetTimer = setTimeout(() => {
+  let BMI = document.getElementById("BMI");
+  let BMICategory = document.getElementById("BMICategory");
+
+  BMI.style.color = "#64748b";
+  BMI.textContent = "--";
+
+  BMICategory.style.color = "#2563eb";
+  BMICategory.textContent = "--";
+}, 60000);
