@@ -1,17 +1,6 @@
 const lightBtn = document.querySelector(".light");
 const darkBtn = document.querySelector(".dark");
 
-// const links = {
-//   profile: "img.icons8.com/ios-filled/50/FFFFFF/user-male-circle.png",
-//   result: "https://img.icons8.com/ios-filled/50/FFFFFF/bar-chart.png",
-//   ruler: "https://img.icons8.com/ios-filled/50/FFFFFF/length.png",
-//   weight: "https://img.icons8.com/ios-filled/50/FFFFFF/weight.png",
-//   info: "https://img.icons8.com/ios-filled/50/FFFFFF/info.png",
-//   shiled: "https://img.icons8.com/ios-filled/50/FFFFFF/shield.png",
-//   sun: "https://img.icons8.com/ios-filled/50/FFFFFF/sun--v1.png",
-//   moon: "httpts://img.icons8.com/ios-filled/50/FFFFFF/do-not-disturb-2.png",
-// };
-
 lightBtn.addEventListener("click", () => {
   document.body.setAttribute("data-theme", "light");
 });
@@ -29,16 +18,14 @@ weightUnit.addEventListener("change", syncUnits);
 function syncUnits() {
   if (heightUnit.value === "Cm") {
     weightUnit.value = "Kg";
-
     document.getElementById("heightExample").textContent =
       "Examples : 165, 170, 180";
     document.getElementById("weightExample").textContent =
       "Examples : 60, 70, 80";
   } else {
     weightUnit.value = "Pounds";
-
     document.getElementById("heightExample").textContent =
-      "Examples : 5.6, 6.0 , 5.8";
+      "Examples : 5.6, 6.0 , 5.11";
     document.getElementById("weightExample").textContent =
       "Examples : 132, 160, 180";
   }
@@ -52,6 +39,7 @@ CalculateBMI.addEventListener("click", () => {
     Calculate();
   }
 });
+
 inputCard.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     if (Validate()) {
@@ -60,7 +48,6 @@ inputCard.addEventListener("keydown", (e) => {
   }
 });
 
-// Function to Validate the Inputs
 function Validate() {
   const height = parseFloat(document.getElementById("userHeight").value);
   const weight = parseFloat(document.getElementById("userWeight").value);
@@ -77,30 +64,48 @@ function Validate() {
   return true;
 }
 
-// Function to Calculate the BMI
+let resetTimer;
+
 function Calculate() {
-  const height = document.getElementById("userHeight").value;
-  const weight = document.getElementById("userWeight").value;
+  const heightVal = document.getElementById("userHeight").value;
+  const weight = parseFloat(document.getElementById("userWeight").value);
+  let bmi = 0;
 
   if (heightUnit.value === "Cm") {
-    const bmi = Number((weight / (height / 100) ** 2).toFixed(1));
-    Categories(bmi);
-    document.getElementById("BMI").textContent = bmi;
+    const heightCm = parseFloat(heightVal);
+    bmi = Number((weight / (heightCm / 100) ** 2).toFixed(1));
   } else if (heightUnit.value === "Feet") {
-    const heightInches = height * 12;
-    const bmi = Number(((weight * 703) / heightInches ** 2).toFixed(1));
-    Categories(bmi);
-    document.getElementById("BMI").textContent = bmi;
+    const parts = heightVal.toString().split(".");
+    const feet = parseInt(parts[0], 10) || 0;
+    const inches = parseInt(parts[1], 10) || 0;
+    const totalInches = feet * 12 + inches;
+
+    bmi = Number(((weight * 703) / totalInches ** 2).toFixed(1));
   }
+
+  Categories(bmi);
+  document.getElementById("BMI").textContent = bmi;
 
   document.getElementById("userHeight").value = "";
   document.getElementById("userWeight").value = "";
+
+  clearTimeout(resetTimer);
+  resetTimer = setTimeout(() => {
+    let BMI = document.getElementById("BMI");
+    let BMICategory = document.getElementById("BMICategory");
+
+    BMI.style.color = "#64748b";
+    BMI.textContent = "--";
+
+    BMICategory.style.color = "#2563eb";
+    BMICategory.textContent = "--";
+  }, 30000);
 }
 
-// Function to Categories the BMI
 function Categories(bmi) {
   let BMI = document.getElementById("BMI");
   let BMICategory = document.getElementById("BMICategory");
+
   if (bmi < 18.5) {
     BMI.style.color = "#3B82F6";
     BMICategory.style.color = "#3B82F6";
@@ -119,18 +124,3 @@ function Categories(bmi) {
     BMICategory.textContent = "Obese";
   }
 }
-
-let resetTimer;
-
-clearTimeout(resetTimer);
-
-resetTimer = setTimeout(() => {
-  let BMI = document.getElementById("BMI");
-  let BMICategory = document.getElementById("BMICategory");
-
-  BMI.style.color = "#64748b";
-  BMI.textContent = "--";
-
-  BMICategory.style.color = "#2563eb";
-  BMICategory.textContent = "--";
-}, 60000);
