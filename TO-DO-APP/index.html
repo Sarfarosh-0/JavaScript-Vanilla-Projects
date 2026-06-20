@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
@@ -31,29 +31,26 @@
 
         <Main>
             <div class="inputBtn">
-                <input type="text" placeholder="What needs to be done?" id="task">
+                <input type="text" placeholder="Add your task here..." id="task">
                 <button id="addBtn">Add Task</button>
             </div>
 
             <div class="Options">
                 <div class="list">
-                    <span id="allTask">All</span>
-                    <span id="activeTask">Active</span>
-                    <span id="completedTask">Completed</span>
+                    <span id="allTask" tabindex="0">All</span>
+                    <span id="activeTask" tabindex="0">Active</span>
+                    <span id="completedTask" tabindex="0">Completed</span>
                 </div>
                 <span id="totalTask">0 Tasks</span>
             </div>
 
-            <div class="Tasks">
-                <div class="task">
-                    <input type="checkbox" name="task1">
-                    <p>Learn JavaScript Basic</p>
-                    <img src="https://cdn-icons-png.flaticon.com/128/9790/9790368.png">
-                </div>
-            </div>
+            <div class="Tasks" id="Tasks">
 
+            </div>
         </Main>
     </div>
+
+    <script src="script.js"></script>
 
 </body>
 
