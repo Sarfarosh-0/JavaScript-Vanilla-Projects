@@ -1,58 +1,83 @@
 const themeToggle = document.getElementById("themeBtn");
+const themeImage = document.getElementById("themeImage");
 const htmlElement = document.documentElement;
 themeToggle.addEventListener("click", () => {
   const currentTheme = htmlElement.getAttribute("data-theme");
-  const newTheme = currentTheme === "dark" ? "light" : "dark";
-
-  htmlElement.setAttribute("data-theme", newTheme);
+  if (currentTheme === "light") {
+    themeImage.src =
+      "https://cdn-icons-png.flaticon.com/128/10480/10480655.png";
+    htmlElement.setAttribute("data-theme", "dark");
+  } else {
+    htmlElement.setAttribute("data-theme", "light");
+    themeImage.src = "https://cdn-icons-png.flaticon.com/128/7549/7549325.png";
+  }
 });
 
-const btn = document.getElementById("addBtn");
+let toDoList = JSON.parse(localStorage.getItem("myTasks")) || [];
 
-btn.addEventListener("click", function addTask() {
-  const userTask = document.getElementById("task").value;
+function renderTasks() {
+  const tasksContainer = document.getElementById("Tasks");
+  tasksContainer.innerHTML = "";
 
-  if (userTask.trim() === "") {
-    alert("First enter a task");
-  } else {
-    const task = document.createElement("div");
+  toDoList.forEach((taskItem, index) => {
+    const taskDiv = document.createElement("div");
+    taskDiv.className = "task";
 
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
+    checkbox.checked = taskItem.completed;
 
-    const taskText = document.createElement("p");
-    taskText.textContent = userTask;
-
-    const deleteTask = document.createElement("img");
-    deleteTask.src = "https://cdn-icons-png.flaticon.com/128/9790/9790368.png";
-
-    // adding all the 3 elemenst into a div
-    task.append(checkbox, taskText, deleteTask);
-
-    // this  creates a class so thet you can target it and style it
-    task.setAttribute("class", "task");
-
-    // adding the list into the list of the html
-    const Tasks = document.getElementById("Tasks");
-    Tasks.appendChild(task);
-
-    countTask();
-
-    document.getElementById("task").value = "";
-
-    deleteTask.addEventListener("click", function () {
-      this.closest("div").remove();
-
+    checkbox.addEventListener("change", () => {
+      toDoList[index].completed = checkbox.checked;
+      saveData();
       countTask();
     });
+
+    const p = document.createElement("p");
+    p.textContent = taskItem.text;
+
+    const delImg = document.createElement("img");
+    delImg.src = "https://cdn-icons-png.flaticon.com/128/9790/9790368.png";
+
+    delImg.addEventListener("click", () => {
+      toDoList.splice(index, 1);
+      saveData();
+      renderTasks();
+    });
+
+    taskDiv.append(checkbox, p, delImg);
+    tasksContainer.appendChild(taskDiv);
+  });
+  countTask();
+}
+
+document.getElementById("addBtn").addEventListener("click", addTask);
+function addTask() {
+  const input = document.getElementById("task");
+  if (input.value.trim() === "") return;
+
+  toDoList.push({ text: input.value, completed: false });
+  saveData();
+  renderTasks();
+  input.value = "";
+}
+
+document.getElementById("handelEnter").addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    addTask();
   }
 });
+
+function saveData() {
+  localStorage.setItem("myTasks", JSON.stringify(toDoList));
+}
+
+renderTasks();
 
 const completedTask = document.getElementById("completedTask");
 completedTask.addEventListener("click", selectCompletedTask);
 function selectCompletedTask() {
   const tasksList = document.querySelectorAll(".task");
-
   tasksList.forEach((element) => {
     const checkbox = element.querySelector("input");
     if (checkbox.checked) {
@@ -68,7 +93,6 @@ const activeTask = document.getElementById("activeTask");
 activeTask.addEventListener("click", selectActiveTask);
 function selectActiveTask() {
   const tasksList = document.querySelectorAll(".task");
-
   tasksList.forEach((element) => {
     const checkbox = element.querySelector("input");
     if (checkbox.checked) {
@@ -99,3 +123,12 @@ function countTask() {
 
   document.getElementById("totalTask").textContent = totalTasks + " Tasks";
 }
+
+const filterButtons = document.querySelectorAll(".list span");
+
+filterButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    filterButtons.forEach((btn) => btn.classList.remove("selected"));
+    button.classList.add("selected");
+  });
+});

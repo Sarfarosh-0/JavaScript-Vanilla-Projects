@@ -195,7 +195,6 @@ main {
 
         span {
             border: 1px solid var(--border-color);
-            background: var(--input-bg);
             border-radius: 6px;
             padding: 4px 8px;
             font-weight: 500;
@@ -294,22 +293,10 @@ main {
     }
 }
 
-#allTask:focus {
-    background: var(--accent-color);
-    color: var(--text-primary);
-    border: 1px solid white;
-}
-
-#activeTask:focus {
-    background: var(--accent-color);
-    color: var(--text-primary);
-    border: 1px solid white;
-}
-
-#completedTask:focus {
-    background: var(--accent-color);
-    color: var(--text-primary);
-    border: 1px solid white;
+.selected {
+    background-color: var(--accent-color);
+    color: white;
+    border: 1px solid var(--border-color);
 }
 
 input:checked+p {
