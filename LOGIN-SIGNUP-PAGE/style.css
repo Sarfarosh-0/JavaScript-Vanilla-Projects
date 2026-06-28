@@ -1,0 +1,110 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(224, 224, 226);
+    display: flex;
+    justify-content: center;
+}
+
+.Body {
+    background-color: white;
+    width: 400px;
+    height: 550px;
+    margin-top: 20px;
+    border: 1px solid black;
+    border-radius: 20px;
+    box-shadow: 0 0 10px;
+}
+
+.mainBody {
+    padding: 0 30px 30px 30px;
+}
+
+.headpart {
+    text-align: center;
+}
+
+.headpart h1 {
+    margin: 20px 0 0 0;
+}
+
+.icons {
+    width: 25px;
+}
+
+.userData {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+}
+
+.email {
+    padding: 20px 0 10px 0;
+}
+
+.password {
+    padding: 30px 0 10px 0;
+}
+
+input {
+    width: 310px;
+    height: 30px;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: medium;
+    font-weight: 400;
+    color: black;
+}
+
+#userPassword {
+    width: 250px;
+}
+
+.pass {
+    display: flex;
+    gap: 10px;
+
+}
+
+#showPassword {
+    width: 50px;
+    border: none;
+    border-radius: 10px;
+    background-color: dodgerblue;
+    text-align: center;
+    font-weight: 700;
+    color: white;
+}
+
+.hint {
+    color: red;
+    margin: 5px 0 0 0;
+}
+
+.submitButton {
+    background-color: dodgerblue;
+    text-align: center;
+    width: 340px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-size: medium;
+    font-weight: 700;
+    margin: 40px 0 0 0;
+}
+
+.Option {
+    text-align: center;
+    padding: 20px;
+    font-weight: 400;
+}
+
+.Option a {
+    text-decoration: none;
+    color: dodgerblue;
+    font-weight: 700;
+}

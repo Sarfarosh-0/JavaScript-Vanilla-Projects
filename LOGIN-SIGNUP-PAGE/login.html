@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="website icon" href="https://cdn-icons-png.flaticon.com/128/2250/2250207.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <main>
+        <div class="Body">
+            <div class="mainBody">
+
+                <div class="headpart">
+                    <h1>Login</h1>
+                    <p>Welcome back! Please Login to your Account</p>
+                </div>
+
+                <div class="Details">
+                    <form>
+                        <label for="userEmail" class="userData email">
+                            <img src="https://cdn-icons-png.flaticon.com/128/646/646094.png" alt="email logo"
+                                class="icons" id="loginLogo">
+                            <span class="inputName">Email</span>
+                        </label>
+                        <input type="text" placeholder="Enter your Email" id="userEmail">
+                        <p class="hint" id="emailHint"></p>
+
+                        <label for="userPassword" class="userData password">
+                            <img src="https://cdn-icons-png.flaticon.com/128/9512/9512572.png" alt="email logo"
+                                class="icons" id="loginLogo">
+                            <span class="inputName">Password</span>
+                        </label>
+                        <div class="pass">
+                            <input type="password" placeholder="Enter your Password" id="userPassword">
+                            <button id="showPassword" type="button">Show</button>
+                        </div>
+                        <p class="hint" id="passwordHint"></p>
+
+                        <button id="submitButton" class="submitButton" type="button">Login</button>
+                    </form>
+                </div>
+
+                <div class="Option">
+                    <span>Don't have a Account ? </span> <a href="signup.html">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
