@@ -1,110 +1,158 @@
-body {
+:root {
+    --primary-color: #4f46e5;
+    --primary-hover: #4338ca;
+    --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    --card-bg: #ffffff;
+    --text-main: #1f2937;
+    --text-muted: #6b7280;
+    --border-color: #d1d5db;
+    --success-color: #10b981;
+    --error-color: #ef4444;
+}
+
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: rgb(224, 224, 226);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background: var(--bg-gradient);
+    min-height: 100vh;
     display: flex;
     justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
-.Body {
-    background-color: white;
-    width: 400px;
-    height: 550px;
-    margin-top: 20px;
-    border: 1px solid black;
-    border-radius: 20px;
-    box-shadow: 0 0 10px;
+.auth-container {
+    width: 100%;
+    max-width: 420px;
 }
 
-.mainBody {
-    padding: 0 30px 30px 30px;
+.auth-card {
+    background-color: var(--card-bg);
+    padding: 40px 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
 }
 
-.headpart {
+.auth-header {
     text-align: center;
+    margin-bottom: 30px;
 }
 
-.headpart h1 {
-    margin: 20px 0 0 0;
+.auth-header h1 {
+    color: var(--text-main);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
 }
 
-.icons {
-    width: 25px;
+.auth-header p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
 }
 
-.userData {
+.input-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 6px;
+}
+
+.input-wrapper {
+    position: relative;
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-weight: bold;
-}
-
-.email {
-    padding: 20px 0 10px 0;
-}
-
-.password {
-    padding: 30px 0 10px 0;
 }
 
 input {
-    width: 310px;
-    height: 30px;
-    padding: 5px;
-    border: 1px solid black;
-    border-radius: 10px;
-    font-size: medium;
-    font-weight: 400;
-    color: black;
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-#userPassword {
-    width: 250px;
+input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
 }
 
-.pass {
-    display: flex;
-    gap: 10px;
-
+.password-wrapper input {
+    padding-right: 60px;
 }
 
 #showPassword {
-    width: 50px;
+    position: absolute;
+    right: 12px;
+    background: none;
     border: none;
-    border-radius: 10px;
-    background-color: dodgerblue;
-    text-align: center;
-    font-weight: 700;
-    color: white;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    padding: 4px 8px;
+}
+
+#showPassword:hover {
+    color: var(--primary-hover);
 }
 
 .hint {
-    color: red;
-    margin: 5px 0 0 0;
+    font-size: 0.8rem;
+    margin-top: 5px;
+    font-weight: 500;
+    min-height: 18px;
 }
 
-.submitButton {
-    background-color: dodgerblue;
-    text-align: center;
-    width: 340px;
-    height: 50px;
-    border-radius: 10px;
-    border: none;
+.submit-btn {
+    background-color: var(--primary-color);
     color: white;
-    font-size: medium;
-    font-weight: 700;
-    margin: 40px 0 0 0;
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-.Option {
+.submit-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+.auth-footer {
     text-align: center;
-    padding: 20px;
-    font-weight: 400;
+    margin-top: 25px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
 }
 
-.Option a {
+.auth-footer a {
     text-decoration: none;
-    color: dodgerblue;
-    font-weight: 700;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-left: 4px;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
 }

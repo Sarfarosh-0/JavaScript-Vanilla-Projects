@@ -1,60 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="website icon" href="https://cdn-icons-png.flaticon.com/128/2250/2250207.png" type="image/png">
     <link rel="stylesheet" href="style.css">
-    <title>Sign Up</title>
+    <title>Login</title>
 </head>
-
 <body>
-    <main>
-        <div class="Body">
-            <div class="mainBody">
+    <main class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h1>SignUp</h1>
+                <p>Enter your details for signup</p>
+            </div>
 
-                <div class="headpart">
-                    <h1>Sign Up</h1>
-                    <p>Welcome! Enter your details for Sign Up</p>
+            <form id="authForm" novalidate>
+                <div class="input-group">
+                    <label for="userEmail">Email</label>
+                    <div class="input-wrapper">
+                        <input type="email" placeholder="Enter your email" id="userEmail" required>
+                    </div>
+                    <p class="hint" id="emailHint"></p>
                 </div>
 
-                <div class="Details">
-                    <form>
-                        <label for="userEmail" class="userData email">
-                            <img src="https://cdn-icons-png.flaticon.com/128/646/646094.png" alt="email_logo"
-                                class="icons">
-                            <span class="inputName">Email</span>
-                        </label>
-                        <input type="text" placeholder="Enter your Email" id="userEmail">
-                        <p class="hint" id="emailHint"></p>
-
-                        <label for="userPassword" class="userData password">
-                            <img src="https://cdn-icons-png.flaticon.com/128/9512/9512572.png" alt="password_logo"
-                                class="icons">
-                            <span class="inputName">Password</span>
-                        </label>
-
-                        <div class="pass">
-                            <input type="password" placeholder="Enter your Password" id="userPassword">
-                            <button id="showPassword" type="button">Show</button>
-                        </div>
-
-                        <p class="hint" id="passwordHint"></p>
-
-                        <button id="submitButton" class="submitButton" type="button">Sign up</button>
-                    </form>
+                <div class="input-group">
+                    <label for="userPassword">Password</label>
+                    <div class="input-wrapper password-wrapper">
+                        <input type="password" placeholder="Enter your password" id="userPassword" required>
+                        <button id="showPassword" type="button" aria-label="Toggle password visibility">Show</button>
+                    </div>
+                    <p class="hint" id="passwordHint"></p>
                 </div>
 
-                <div class="Option">
-                    <span>Have a Account ? </span><a href="login.html">Login</a>
-                </div>
+                <button id="submitButton" class="submit-btn" type="submit">Login</button>
+            </form>
+
+            <div class="auth-footer">
+                <span>Alreday have an account?</span> <a href="login.html">Login</a>
             </div>
         </div>
     </main>
 
     <script src="script.js"></script>
-
 </body>
-
 </html>
