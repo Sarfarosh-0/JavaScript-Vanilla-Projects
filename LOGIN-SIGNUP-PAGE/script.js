@@ -49,7 +49,6 @@ function validateForm() {
   }
 }
 
-// UI Helper Functions for Consistency
 function showError(inputElement, hintElement, message) {
   hintElement.textContent = message;
   hintElement.style.color = "var(--error-color)";
@@ -62,7 +61,6 @@ function showSuccess(inputElement, hintElement, message) {
   inputElement.style.borderColor = "var(--success-color)";
 }
 
-// Clear errors instantly when the user corrects inputs
 document.getElementById("userEmail").addEventListener("input", function() {
     this.style.borderColor = "var(--border-color)";
     document.getElementById("emailHint").textContent = "";
