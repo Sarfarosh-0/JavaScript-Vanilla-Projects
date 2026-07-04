@@ -1,47 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="website icon" href="https://cdn-icons-png.flaticon.com/128/2250/2250207.png" type="image/png">
     <link rel="stylesheet" href="style.css">
-    <title>Login</title>
+    <title>Sign Up</title>
 </head>
+
 <body>
     <main class="auth-container">
         <div class="auth-card">
             <div class="auth-header">
-                <h1>SignUp</h1>
+                <h1>Sign Up</h1>
                 <p>Enter your details for signup</p>
             </div>
 
             <form id="authForm" novalidate>
+                <!-- Email Group -->
                 <div class="input-group">
-                    <label for="userEmail">Email</label>
                     <div class="input-wrapper">
-                        <input type="email" placeholder="Enter your email" id="userEmail" required>
+                        <input type="email" id="userEmail" required placeholder=" ">
+                        <label for="userEmail">Email</label>
                     </div>
                     <p class="hint" id="emailHint"></p>
                 </div>
 
+                <!-- Password Group -->
                 <div class="input-group">
-                    <label for="userPassword">Password</label>
                     <div class="input-wrapper password-wrapper">
-                        <input type="password" placeholder="Enter your password" id="userPassword" required>
+                        <input type="password" id="userPassword" required placeholder=" ">
                         <button id="showPassword" type="button" aria-label="Toggle password visibility">Show</button>
+                        <label for="userPassword">Password</label>
                     </div>
                     <p class="hint" id="passwordHint"></p>
                 </div>
 
-                <button id="submitButton" class="submit-btn" type="submit">Login</button>
+                <button id="submitButton" class="submit-btn" type="submit">Sign Up</button>
             </form>
 
             <div class="auth-footer">
-                <span>Alreday have an account?</span> <a href="login.html">Login</a>
+                <span>Already have an account?</span> <a href="login.html">Login</a>
             </div>
         </div>
     </main>
 
     <script src="script.js"></script>
 </body>
+
 </html>

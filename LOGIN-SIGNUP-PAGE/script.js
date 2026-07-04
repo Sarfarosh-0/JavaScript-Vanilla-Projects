@@ -31,7 +31,7 @@ function validateForm() {
     isEmailValid = true;
   }
 
-  // --- Password Validation ---
+
   if (passwordValue === "") {
     showError(passwordInput, passwordHint, "Password cannot be empty.");
   } else if (passwordValue.length <= 6) {
@@ -46,7 +46,6 @@ function validateForm() {
   // Final confirmation action
   if (isEmailValid && isPasswordValid) {
      console.log("Form submitted successfully!");
-     // Proceed with backend API or landing redirect here
   }
 }
 
