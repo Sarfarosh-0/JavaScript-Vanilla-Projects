@@ -13,12 +13,10 @@ function validateForm() {
   const passwordHint = document.getElementById("passwordHint");
 
   const cnfPasswordInput = document.getElementById("cnfUserPassword");
-  const cnfPasswordVaule = cnfPasswordInput.value;
   const cnfPasswordHint = document.getElementById("cnfPasswordHint");
+  const cnfPasswordValue = cnfPasswordInput ? cnfPasswordInput.value : null;
 
-  // Regex pattern for realistic standard email checking
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  // Lookahead checking for at least 1 special character
   const specialCharRegex = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
 
   let isEmailValid = false;
@@ -35,6 +33,7 @@ function validateForm() {
     isEmailValid = true;
   }
 
+  // --- Password Validation ---
   if (passwordValue === "") {
     showError(passwordInput, passwordHint, "Password cannot be empty.");
   } else if (passwordValue.length <= 6) {
@@ -54,15 +53,21 @@ function validateForm() {
     isPasswordValid = true;
   }
 
-  if (isPasswordValid === false) {
-    showError(cnfPasswordInput, cnfPasswordHint, "Invaild Password");
-  } else {
-    if (cnfPasswordVaule != passwordValue) {
-      showError(cnfPasswordInput, cnfPasswordHint, "Password Does not Match");
-    } else if (cnfPasswordVaule === passwordValue) {
-      showSuccess(cnfPasswordInput, cnfPasswordHint, "Password Match");
-      isCnfPasswordValid = true;
+  // --- Confirm Password Validation (Only runs if element exists) ---
+  if (cnfPasswordInput && cnfPasswordHint) {
+    if (isPasswordValid === false) {
+      showError(cnfPasswordInput, cnfPasswordHint, "Invalid Password");
+    } else {
+      if (cnfPasswordValue !== passwordValue) {
+        showError(cnfPasswordInput, cnfPasswordHint, "Password Does not Match");
+      } else {
+        showSuccess(cnfPasswordInput, cnfPasswordHint, "Password Match");
+        isCnfPasswordValid = true;
+      }
     }
+  } else {
+    // If we are on login.html, confirm password is automatically "valid"
+    isCnfPasswordValid = true;
   }
 
   if (isEmailValid && isPasswordValid && isCnfPasswordValid) {
@@ -82,6 +87,7 @@ function showSuccess(inputElement, hintElement, message) {
   inputElement.style.borderColor = "var(--success-color)";
 }
 
+// Input listeners
 document.getElementById("userEmail").addEventListener("input", function () {
   this.style.borderColor = "var(--border-color)";
   document.getElementById("emailHint").textContent = "";
@@ -92,19 +98,17 @@ document.getElementById("userPassword").addEventListener("input", function () {
   document.getElementById("passwordHint").textContent = "";
 });
 
-// Toggle Password Visibility
 const showButton = document.getElementById("showPassword");
 const passwordIn = document.getElementById("userPassword");
 const cnfPassword = document.getElementById("cnfUserPassword");
 
-showButton.addEventListener("click", function () {
-  if (passwordIn.type === "password") {
-    passwordIn.type = "text";
-    cnfPassword.type = "text";
-    showButton.textContent = "Hide";
-  } else {
-    passwordIn.type = "password";
-    cnfPassword.type = "password";
-    showButton.textContent = "Show";
-  }
-});
+if (showButton && passwordIn) {
+  showButton.addEventListener("click", function () {
+    const isPassword = passwordIn.type === "password";
+
+    passwordIn.type = isPassword ? "text" : "password";
+    if (cnfPassword) cnfPassword.type = isPassword ? "text" : "password";
+
+    showButton.textContent = isPassword ? "Hide" : "Show";
+  });
+}
