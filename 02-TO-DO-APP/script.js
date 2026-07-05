@@ -14,12 +14,16 @@ themeToggle.addEventListener("click", () => {
 });
 
 let toDoList = JSON.parse(localStorage.getItem("myTasks")) || [];
+let currentFilter = "all";
 
 function renderTasks() {
   const tasksContainer = document.getElementById("Tasks");
   tasksContainer.innerHTML = "";
 
   toDoList.forEach((taskItem, index) => {
+    if (currentFilter === "active" && taskItem.completed) return;
+    if (currentFilter === "completed" && !taskItem.completed) return;
+
     const taskDiv = document.createElement("div");
     taskDiv.className = "task";
 
@@ -30,14 +34,18 @@ function renderTasks() {
     checkbox.addEventListener("change", () => {
       toDoList[index].completed = checkbox.checked;
       saveData();
-      countTask();
+      renderTasks();
     });
 
     const p = document.createElement("p");
     p.textContent = taskItem.text;
+    if (taskItem.completed) {
+      p.style.textDecoration = "line-through";
+    }
 
     const delImg = document.createElement("img");
     delImg.src = "https://cdn-icons-png.flaticon.com/128/9790/9790368.png";
+    delImg.style.cursor = "pointer";
 
     delImg.addEventListener("click", () => {
       toDoList.splice(index, 1);
@@ -48,10 +56,12 @@ function renderTasks() {
     taskDiv.append(checkbox, p, delImg);
     tasksContainer.appendChild(taskDiv);
   });
+
   countTask();
 }
 
 document.getElementById("addBtn").addEventListener("click", addTask);
+
 function addTask() {
   const input = document.getElementById("task");
   if (input.value.trim() === "") return;
@@ -62,7 +72,7 @@ function addTask() {
   input.value = "";
 }
 
-document.getElementById("handelEnter").addEventListener("keypress", (e) => {
+document.getElementById("task").addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
     addTask();
   }
@@ -72,63 +82,36 @@ function saveData() {
   localStorage.setItem("myTasks", JSON.stringify(toDoList));
 }
 
-renderTasks();
-
 const completedTask = document.getElementById("completedTask");
-completedTask.addEventListener("click", selectCompletedTask);
-function selectCompletedTask() {
-  const tasksList = document.querySelectorAll(".task");
-  tasksList.forEach((element) => {
-    const checkbox = element.querySelector("input");
-    if (checkbox.checked) {
-      element.classList.remove("hidden");
-    } else {
-      element.classList.add("hidden");
-    }
-  });
-  countTask();
-}
+completedTask.addEventListener("click", () => {
+  currentFilter = "completed";
+  updateFilterUI(completedTask);
+});
 
 const activeTask = document.getElementById("activeTask");
-activeTask.addEventListener("click", selectActiveTask);
-function selectActiveTask() {
-  const tasksList = document.querySelectorAll(".task");
-  tasksList.forEach((element) => {
-    const checkbox = element.querySelector("input");
-    if (checkbox.checked) {
-      element.classList.add("hidden");
-      countTask();
-    } else {
-      element.classList.remove("hidden");
-    }
-  });
-  countTask();
-}
+activeTask.addEventListener("click", () => {
+  currentFilter = "active";
+  updateFilterUI(activeTask);
+});
 
 const allTask = document.getElementById("allTask");
-allTask.addEventListener("click", selectAllTask);
-function selectAllTask() {
-  const tasksList = document.querySelectorAll(".task");
+allTask.addEventListener("click", () => {
+  currentFilter = "all";
+  updateFilterUI(allTask);
+});
 
-  tasksList.forEach((element) => {
-    const checkbox = element.querySelector("input");
-    element.classList.remove("hidden");
-  });
-  countTask();
+function updateFilterUI(selectedButton) {
+  const filterButtons = document.querySelectorAll(".list span");
+  filterButtons.forEach((btn) => btn.classList.remove("selected"));
+  selectedButton.classList.add("selected");
+  renderTasks();
 }
 
 function countTask() {
-  const Tasks = document.getElementById("Tasks");
-  const totalTasks = Tasks.querySelectorAll(".task:not(.hidden)").length;
-
-  document.getElementById("totalTask").textContent = totalTasks + " Tasks";
+  const activeCount = toDoList.filter((task) => !task.completed).length;
+  document.getElementById("totalTask").textContent =
+    activeCount + " Items Left";
 }
 
-const filterButtons = document.querySelectorAll(".list span");
-
-filterButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    filterButtons.forEach((btn) => btn.classList.remove("selected"));
-    button.classList.add("selected");
-  });
-});
+// Initial Run
+renderTasks();
