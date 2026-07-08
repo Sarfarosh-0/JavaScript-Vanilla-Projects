@@ -12,7 +12,7 @@
         rel="stylesheet">
 </head>
 
-<body style="font-family: 'Roboto Condensed', sans-serif;">
+<body style="font-family: 'Roboto Condensed', sans-serif;" class="">
     <aside id="sidebar" class="fixed top-0 left-0 h-full w-[clamp(240px,18vw,320px)] bg-white border-r border-gray-200 z-50 p-[clamp(1rem,2vw,2rem)] flex flex-col gap-[clamp(1rem,1.5vw,2rem)] 
                transition-transform duration-300 ease-in-out -translate-x-full md:translate-x-0">
 
@@ -37,6 +37,11 @@
                 class="flex items-center gap-[clamp(0.5rem,1vw,1rem)] px-[clamp(0.75rem,1vw,1.25rem)] py-[clamp(0.5rem,0.8vw,1rem)] text-gray-600 hover:bg-gray-100 rounded-xl transition text-[clamp(0.9rem,1.1vw,1.1rem)]">📈
                 Analytics</a>
         </nav>
+        <div
+            class="flex justify-center items-center gap-2 bg-red-500 rounded-2xl text-white font-semibold px-2 py-2 hover:bg-red-700 transition-colors ease-in-out active:scale-95">
+            <img src="https://img.icons8.com/parakeet-line/48/ffffff/filled-trash.png" alt="Clear Data" class="w-6">
+            <span>Clear Data</span>
+        </div>
     </aside>
 
     <div id="mainContent" class="md:ml-[clamp(240px,18vw,320px)] transition-all duration-300">
