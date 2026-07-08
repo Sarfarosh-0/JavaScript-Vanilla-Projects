@@ -13,8 +13,8 @@
 </head>
 
 <body style="font-family: 'Roboto Condensed', sans-serif;" class="">
-    <aside id="sidebar" class="fixed top-0 left-0 h-full w-[clamp(240px,18vw,320px)] bg-white border-r border-gray-200 z-50 p-[clamp(1rem,2vw,2rem)] flex flex-col gap-[clamp(1rem,1.5vw,2rem)] 
-               transition-transform duration-300 ease-in-out -translate-x-full md:translate-x-0">
+    <aside id="sidebar"
+        class="fixed top-0 left-0 h-full w-[clamp(240px,18vw,320px)] bg-white border-r border-gray-200 z-50 p-[clamp(1rem,2vw,2rem)] flex flex-col gap-[clamp(1rem,1.5vw,2rem)] transition-transform duration-300 ease-in-out -translate-x-full md:translate-x-0">
 
         <div class="flex justify-between items-center pb-[clamp(0.5rem,1vw,1rem)] border-b">
             <div class="flex items-center gap-[clamp(0.5rem,1vw,1rem)]">
@@ -52,6 +52,30 @@
                     ☰
                 </button>
 
+                <ul id="mobileMenu"
+                    class="absolute top-full left-0 w-full rounded-b-2xl  flex flex-col bg-white items-center  text-black text-lg border-t border-gray-800 md:hidden shadow-xl origin-top transform opacity-0 scale-95 pointer-events-none transition-all duration-300 ease-in-out">
+                    <li
+                        class="shadow-sm w-full text-center py-1 hover:bg-black hover:text-white rounded-2xl transition-colors">
+                        <a href="index.html" class="transition-colors">Home</a>
+                    </li>
+                    <li
+                        class="shadow-sm w-full text-center py-1 hover:bg-black hover:text-white rounded-2xl transition-colors">
+                        <a href="#overview">Overview</a>
+                    </li>
+                    <li
+                        class="shadow-sm w-full text-center py-1 hover:bg-black hover:text-white rounded-2xl transition-colors">
+                        <a href="#addIncomeMobile">Add Income</a>
+                    </li>
+                    <li
+                        class="shadow-sm w-full text-center py-1 hover:bg-black hover:text-white rounded-2xl transition-colors">
+                        <a href="#addExpenseMobile">Add Expense</a>
+                    </li>
+                    <li
+                        class="shadow-sm w-full text-center py-1 hover:bg-black hover:text-white rounded-2xl transition-colors">
+                        <a href="#transctions">Transctions</a>
+                    </li>
+                </ul>
+
                 <h1 class="flex-1 text-center text-[clamp(1.25rem,2.5vw,2.25rem)] font-semibold">
                     Expense Tracker
                 </h1>
@@ -59,12 +83,12 @@
                 <div class="w-[clamp(1.5rem,2vw,2.5rem)]"></div>
 
                 <div class="hidden md:flex justify-center items-center gap-[clamp(0.75rem,1.2vw,1.5rem)]">
-                    <button id="addIncome"
+                    <button id="addIncomeDesktop"
                         class="bg-green-500 text-white py-[clamp(0.5rem,1vw,0.85rem)] px-[clamp(1.25rem,2vw,2.5rem)] rounded-2xl text-[clamp(1rem,1.2vw,1.35rem)] font-bold hover:bg-green-700 active:scale-90 transition-all duration-300 shadow-sm">
                         + Add Income
                     </button>
 
-                    <button id="addExpense"
+                    <button id="addExpenseDesktop"
                         class="bg-red-500 text-white py-[clamp(0.5rem,1vw,0.85rem)] px-[clamp(1.25rem,2vw,2.5rem)] rounded-2xl text-[clamp(1rem,1.2vw,1.35rem)] font-bold hover:bg-red-700 active:scale-90 transition-all duration-300 shadow-sm">
                         + Add Expense
                     </button>
@@ -115,18 +139,41 @@
 
             <section id="manager"
                 class="flex flex-col sm:flex-row justify-center items-center gap-[clamp(0.75rem,1.2vw,1.5rem)] w-full px-[clamp(0.75rem,1.5vw,1.5rem)] my-[clamp(1rem,2vw,2.5rem)] md:hidden">
-                <button id="addIncome"
+                <button id="addIncomeMobile"
                     class="w-full sm:w-auto sm:px-[clamp(2rem,4vw,4rem)] bg-green-500 text-white py-[clamp(0.65rem,1.2vw,1rem)] rounded-2xl text-[clamp(1.1rem,1.3vw,1.4rem)] font-bold hover:scale-105 active:scale-95 transition-all duration-300 shadow-sm">
                     + Add Income
                 </button>
 
-                <button id="addExpense"
+                <button id="addExpenseMobile"
                     class="w-full sm:w-auto sm:px-[clamp(2rem,4vw,4rem)] bg-red-500 text-white py-[clamp(0.65rem,1.2vw,1rem)] rounded-2xl text-[clamp(1.1rem,1.3vw,1.4rem)] font-bold hover:scale-105 active:scale-95 transition-all duration-300 shadow-sm">
                     + Add Expense
                 </button>
             </section>
         </main>
     </div>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('opacity-0');
+            mobileMenu.classList.toggle('opacity-100');
+
+            mobileMenu.classList.toggle('scale-95');
+            mobileMenu.classList.toggle('scale-100');
+
+            mobileMenu.classList.toggle('pointer-events-none');
+        });
+
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+                mobileMenu.classList.remove('opacity-100', 'scale-100');
+            });
+        });
+    </script>
 
 </body>
 
