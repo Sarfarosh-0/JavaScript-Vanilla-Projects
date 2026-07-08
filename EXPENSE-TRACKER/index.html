@@ -13,54 +13,54 @@
 </head>
 
 <body style="font-family: 'Roboto Condensed', sans-serif;">
-    <aside id="sidebar" class="fixed top-0 left-0 h-full w-[clamp(240px,_18vw,_320px)] bg-white border-r border-gray-200 z-50 p-[clamp(1rem,_2vw,_2rem)] flex flex-col gap-[clamp(1rem,_1.5vw,_2rem)] 
+    <aside id="sidebar" class="fixed top-0 left-0 h-full w-[clamp(240px,18vw,320px)] bg-white border-r border-gray-200 z-50 p-[clamp(1rem,2vw,2rem)] flex flex-col gap-[clamp(1rem,1.5vw,2rem)] 
                transition-transform duration-300 ease-in-out -translate-x-full md:translate-x-0">
 
-        <div class="flex justify-between items-center pb-[clamp(0.5rem,_1vw,_1rem)] border-b">
-            <div class="flex items-center gap-[clamp(0.5rem,_1vw,_1rem)]">
+        <div class="flex justify-between items-center pb-[clamp(0.5rem,1vw,1rem)] border-b">
+            <div class="flex items-center gap-[clamp(0.5rem,1vw,1rem)]">
                 <img src="https://cdn-icons-png.flaticon.com/128/10758/10758868.png" alt="Logo" draggable="false"
-                    class="w-[clamp(2rem,_3vw,_3rem)] aspect-square object-cover">
-                <h1 class="text-[clamp(1.25rem,_2vw,_1.75rem)] font-bold text-gray-800">Tracker</h1>
+                    class="w-[clamp(2rem,3vw,3rem)] aspect-square object-cover">
+                <h1 class="text-[clamp(1.25rem,2vw,1.75rem)] font-bold text-gray-800">Tracker</h1>
             </div>
             <button id="closeSidebarBtn"
-                class="text-[clamp(1rem,_1.5vw,_1.5rem)] md:hidden text-gray-400 hover:text-gray-700">✕</button>
+                class="text-[clamp(1rem,1.5vw,1.5rem)] md:hidden text-gray-400 hover:text-gray-700">✕</button>
         </div>
 
-        <nav class="flex flex-col gap-[clamp(0.25rem,_0.5vw,_0.75rem)]">
+        <nav class="flex flex-col gap-[clamp(0.25rem,0.5vw,0.75rem)]">
             <a href="#"
-                class="flex items-center gap-[clamp(0.5rem,_1vw,_1rem)] px-[clamp(0.75rem,_1vw,_1.25rem)] py-[clamp(0.5rem,_0.8vw,_1rem)] bg-blue-50 text-blue-600 rounded-xl font-bold text-[clamp(0.9rem,_1.1vw,_1.1rem)]">📊
+                class="flex items-center gap-[clamp(0.5rem,1vw,1rem)] px-[clamp(0.75rem,1vw,1.25rem)] py-[clamp(0.5rem,0.8vw,1rem)] bg-blue-50 text-blue-600 rounded-xl font-bold text-[clamp(0.9rem,1.1vw,1.1rem)]">📊
                 Dashboard</a>
             <a href="#"
-                class="flex items-center gap-[clamp(0.5rem,_1vw,_1rem)] px-[clamp(0.75rem,_1vw,_1.25rem)] py-[clamp(0.5rem,_0.8vw,_1rem)] text-gray-600 hover:bg-gray-100 rounded-xl transition text-[clamp(0.9rem,_1.1vw,_1.1rem)]">💸
+                class="flex items-center gap-[clamp(0.5rem,1vw,1rem)] px-[clamp(0.75rem,1vw,1.25rem)] py-[clamp(0.5rem,0.8vw,1rem)] text-gray-600 hover:bg-gray-100 rounded-xl transition text-[clamp(0.9rem,1.1vw,1.1rem)]">💸
                 Expenses</a>
             <a href="#"
-                class="flex items-center gap-[clamp(0.5rem,_1vw,_1rem)] px-[clamp(0.75rem,_1vw,_1.25rem)] py-[clamp(0.5rem,_0.8vw,_1rem)] text-gray-600 hover:bg-gray-100 rounded-xl transition text-[clamp(0.9rem,_1.1vw,_1.1rem)]">📈
+                class="flex items-center gap-[clamp(0.5rem,1vw,1rem)] px-[clamp(0.75rem,1vw,1.25rem)] py-[clamp(0.5rem,0.8vw,1rem)] text-gray-600 hover:bg-gray-100 rounded-xl transition text-[clamp(0.9rem,1.1vw,1.1rem)]">📈
                 Analytics</a>
         </nav>
     </aside>
 
-    <div id="mainContent" class="md:ml-[clamp(240px,_18vw,_320px)] transition-all duration-300">
+    <div id="mainContent" class="md:ml-[clamp(240px,18vw,320px)] transition-all duration-300">
         <header class="sticky top-0 z-50 bg-white shadow-sm">
             <nav
-                class="h-[clamp(3.5rem,_8vh,_5rem)] px-[clamp(1rem,_3vw,_2.5rem)] md:py-[clamp(1.5rem,_3vw,_2.5rem)] flex items-center justify-between">
-                <button id="menuBtn" class="text-[clamp(1.5rem,_2.5vw,_2.25rem)] hover:scale-110 transition md:hidden">
+                class="h-[clamp(3.5rem,8vh,5rem)] px-[clamp(1rem,3vw,2.5rem)] md:py-[clamp(1.5rem,3vw,2.5rem)] flex items-center justify-between">
+                <button id="menuBtn" class="text-[clamp(1.5rem,2.5vw,2.25rem)] hover:scale-110 transition md:hidden">
                     ☰
                 </button>
 
-                <h1 class="flex-1 text-center text-[clamp(1.25rem,_2.5vw,_2.25rem)] font-semibold">
+                <h1 class="flex-1 text-center text-[clamp(1.25rem,2.5vw,2.25rem)] font-semibold">
                     Expense Tracker
                 </h1>
 
-                <div class="w-[clamp(1.5rem,_2vw,_2.5rem)]"></div>
+                <div class="w-[clamp(1.5rem,2vw,2.5rem)]"></div>
 
-                <div class="hidden md:flex justify-center items-center gap-[clamp(0.75rem,_1.2vw,_1.5rem)]">
+                <div class="hidden md:flex justify-center items-center gap-[clamp(0.75rem,1.2vw,1.5rem)]">
                     <button id="addIncome"
-                        class="bg-green-500 text-white py-[clamp(0.5rem,_1vw,_0.85rem)] px-[clamp(1.25rem,_2vw,_2.5rem)] rounded-2xl text-[clamp(1rem,_1.2vw,_1.35rem)] font-bold hover:bg-green-700 active:scale-90 transition-all duration-300 shadow-sm">
+                        class="bg-green-500 text-white py-[clamp(0.5rem,1vw,0.85rem)] px-[clamp(1.25rem,2vw,2.5rem)] rounded-2xl text-[clamp(1rem,1.2vw,1.35rem)] font-bold hover:bg-green-700 active:scale-90 transition-all duration-300 shadow-sm">
                         + Add Income
                     </button>
 
                     <button id="addExpense"
-                        class="bg-red-500 text-white py-[clamp(0.5rem,_1vw,_0.85rem)] px-[clamp(1.25rem,_2vw,_2.5rem)] rounded-2xl text-[clamp(1rem,_1.2vw,_1.35rem)] font-bold hover:bg-red-700 active:scale-90 transition-all duration-300 shadow-sm">
+                        class="bg-red-500 text-white py-[clamp(0.5rem,1vw,0.85rem)] px-[clamp(1.25rem,2vw,2.5rem)] rounded-2xl text-[clamp(1rem,1.2vw,1.35rem)] font-bold hover:bg-red-700 active:scale-90 transition-all duration-300 shadow-sm">
                         + Add Expense
                     </button>
                 </div>
@@ -68,55 +68,55 @@
         </header>
 
         <main
-            class="flex flex-col justify-center items-center px-[clamp(0.5rem,_1.5vw,_1.5rem)] py-[clamp(0.5rem,_1.5vw,_1.5rem)]">
+            class="flex flex-col justify-center items-center px-[clamp(0.5rem,1.5vw,1.5rem)] py-[clamp(0.5rem,1.5vw,1.5rem)]">
             <section id="overview"
-                class="flex w-full flex-col gap-[clamp(1rem,_1.5vw,_2rem)] p-[clamp(0.75rem,_1.5vw,_2rem)] items-center justify-center md:flex-row">
+                class="flex w-full flex-col gap-[clamp(1rem,1.5vw,2rem)] p-[clamp(0.75rem,1.5vw,2rem)] items-center justify-center md:flex-row">
                 <div
-                    class="w-full flex items-center gap-[clamp(1rem,_1.8vw,_2rem)] px-[clamp(1rem,_2vw,_2rem)] py-[clamp(1rem,_1.5vw,_1.75rem)] bg-green-100 border border-green-300 rounded-2xl shadow-sm">
+                    class="w-full flex items-center gap-[clamp(1rem,1.8vw,2rem)] px-[clamp(1rem,2vw,2rem)] py-[clamp(1rem,1.5vw,1.75rem)] bg-green-100 border border-green-300 rounded-2xl shadow-sm">
                     <img src="https://cdn-icons-png.flaticon.com/128/3135/3135706.png" draggable="false"
-                        alt="Income Icon" class="w-[clamp(2.5rem,_4vw,_3.5rem)] aspect-square object-contain">
+                        alt="Income Icon" class="w-[clamp(2.5rem,4vw,3.5rem)] aspect-square object-contain">
                     <div class="flex flex-col">
                         <span
-                            class="text-[clamp(0.75rem,_0.9vw,_0.95rem)] font-medium text-gray-600 uppercase tracking-wider">Total
+                            class="text-[clamp(0.75rem,0.9vw,0.95rem)] font-medium text-gray-600 uppercase tracking-wider">Total
                             Income</span>
-                        <h2 class="text-[clamp(1.35rem,_2.2vw,_2.25rem)] text-green-700 font-bold">$ 0,000</h2>
+                        <h2 class="text-[clamp(1.35rem,2.2vw,2.25rem)] text-green-700 font-bold">$ 0,000</h2>
                     </div>
                 </div>
 
                 <div
-                    class="w-full flex items-center gap-[clamp(1rem,_1.8vw,_2rem)] px-[clamp(1rem,_2vw,_2rem)] py-[clamp(1rem,_1.5vw,_1.75rem)] bg-red-100 border border-red-300 rounded-2xl shadow-sm">
+                    class="w-full flex items-center gap-[clamp(1rem,1.8vw,2rem)] px-[clamp(1rem,2vw,2rem)] py-[clamp(1rem,1.5vw,1.75rem)] bg-red-100 border border-red-300 rounded-2xl shadow-sm">
                     <img src="https://cdn-icons-png.flaticon.com/128/10758/10758868.png" draggable="false"
-                        alt="Expenses Icon" class="w-[clamp(2.5rem,_4vw,_3.5rem)] aspect-square object-contain">
+                        alt="Expenses Icon" class="w-[clamp(2.5rem,4vw,3.5rem)] aspect-square object-contain">
                     <div class="flex flex-col">
                         <span
-                            class="text-[clamp(0.75rem,_0.9vw,_0.95rem)] font-medium text-gray-600 uppercase tracking-wider">Total
+                            class="text-[clamp(0.75rem,0.9vw,0.95rem)] font-medium text-gray-600 uppercase tracking-wider">Total
                             Expenses</span>
-                        <h2 class="text-[clamp(1.35rem,_2.2vw,_2.25rem)] text-red-700 font-bold">$ 0,000</h2>
+                        <h2 class="text-[clamp(1.35rem,2.2vw,2.25rem)] text-red-700 font-bold">$ 0,000</h2>
                     </div>
                 </div>
 
                 <div
-                    class="w-full flex items-center gap-[clamp(1rem,_1.8vw,_2rem)] px-[clamp(1rem,_2vw,_2rem)] py-[clamp(1rem,_1.5vw,_1.75rem)] bg-blue-100 border border-blue-300 rounded-2xl shadow-sm">
+                    class="w-full flex items-center gap-[clamp(1rem,1.8vw,2rem)] px-[clamp(1rem,2vw,2rem)] py-[clamp(1rem,1.5vw,1.75rem)] bg-blue-100 border border-blue-300 rounded-2xl shadow-sm">
                     <img src="https://cdn-icons-png.flaticon.com/128/8049/8049428.png" draggable="false"
-                        alt="Balance Icon" class="w-[clamp(2.5rem,_4vw,_3.5rem)] aspect-square object-contain">
+                        alt="Balance Icon" class="w-[clamp(2.5rem,4vw,3.5rem)] aspect-square object-contain">
                     <div class="flex flex-col">
                         <span
-                            class="text-[clamp(0.75rem,_0.9vw,_0.95rem)] font-medium text-gray-600 uppercase tracking-wider">Total
+                            class="text-[clamp(0.75rem,0.9vw,0.95rem)] font-medium text-gray-600 uppercase tracking-wider">Total
                             Balance</span>
-                        <h2 class="text-[clamp(1.35rem,_2.2vw,_2.25rem)] text-blue-700 font-bold">$ 0,000</h2>
+                        <h2 class="text-[clamp(1.35rem,2.2vw,2.25rem)] text-blue-700 font-bold">$ 0,000</h2>
                     </div>
                 </div>
             </section>
 
             <section id="manager"
-                class="flex flex-col sm:flex-row justify-center items-center gap-[clamp(0.75rem,_1.2vw,_1.5rem)] w-full px-[clamp(0.75rem,_1.5vw,_1.5rem)] my-[clamp(1rem,_2vw,_2.5rem)] md:hidden">
+                class="flex flex-col sm:flex-row justify-center items-center gap-[clamp(0.75rem,1.2vw,1.5rem)] w-full px-[clamp(0.75rem,1.5vw,1.5rem)] my-[clamp(1rem,2vw,2.5rem)] md:hidden">
                 <button id="addIncome"
-                    class="w-full sm:w-auto sm:px-[clamp(2rem,_4vw,_4rem)] bg-green-500 text-white py-[clamp(0.65rem,_1.2vw,_1rem)] rounded-2xl text-[clamp(1.1rem,_1.3vw,_1.4rem)] font-bold hover:scale-105 active:scale-95 transition-all duration-300 shadow-sm">
+                    class="w-full sm:w-auto sm:px-[clamp(2rem,4vw,4rem)] bg-green-500 text-white py-[clamp(0.65rem,1.2vw,1rem)] rounded-2xl text-[clamp(1.1rem,1.3vw,1.4rem)] font-bold hover:scale-105 active:scale-95 transition-all duration-300 shadow-sm">
                     + Add Income
                 </button>
 
                 <button id="addExpense"
-                    class="w-full sm:w-auto sm:px-[clamp(2rem,_4vw,_4rem)] bg-red-500 text-white py-[clamp(0.65rem,_1.2vw,_1rem)] rounded-2xl text-[clamp(1.1rem,_1.3vw,_1.4rem)] font-bold hover:scale-105 active:scale-95 transition-all duration-300 shadow-sm">
+                    class="w-full sm:w-auto sm:px-[clamp(2rem,4vw,4rem)] bg-red-500 text-white py-[clamp(0.65rem,1.2vw,1rem)] rounded-2xl text-[clamp(1.1rem,1.3vw,1.4rem)] font-bold hover:scale-105 active:scale-95 transition-all duration-300 shadow-sm">
                     + Add Expense
                 </button>
             </section>
