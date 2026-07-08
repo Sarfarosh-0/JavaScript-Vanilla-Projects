@@ -251,6 +251,9 @@
   .my-6 {
     margin-block: calc(var(--spacing) * 6);
   }
+  .my-\[clamp\(1rem\,_2vw\,_2\.5rem\)\] {
+    margin-block: clamp(1rem, 2vw, 2.5rem);
+  }
   .flex {
     display: flex;
   }
@@ -260,11 +263,17 @@
   .table {
     display: table;
   }
+  .aspect-square {
+    aspect-ratio: 1 / 1;
+  }
   .h-12 {
     height: calc(var(--spacing) * 12);
   }
   .h-16 {
     height: calc(var(--spacing) * 16);
+  }
+  .h-\[clamp\(3\.5rem\,_8vh\,_5rem\)\] {
+    height: clamp(3.5rem, 8vh, 5rem);
   }
   .h-full {
     height: 100%;
@@ -289,6 +298,51 @@
   }
   .w-64 {
     width: calc(var(--spacing) * 64);
+  }
+  .w-\[clamp\(0px\,30\%\,500px\)\] {
+    width: clamp(0px, 30%, 500px);
+  }
+  .w-\[clamp\(1\.5rem\,_2vw\,_2\.5rem\)\] {
+    width: clamp(1.5rem, 2vw, 2.5rem);
+  }
+  .w-\[clamp\(2\.5rem\,_4vw\,_3\.5rem\)\] {
+    width: clamp(2.5rem, 4vw, 3.5rem);
+  }
+  .w-\[clamp\(2rem\,_3vw\,_3rem\)\] {
+    width: clamp(2rem, 3vw, 3rem);
+  }
+  .w-\[clamp\(10px\,30\%\,500px\)\] {
+    width: clamp(10px, 30%, 500px);
+  }
+  .w-\[clamp\(150px\,0\%\,500px\)\] {
+    width: clamp(150px, 0%, 500px);
+  }
+  .w-\[clamp\(150px\,25\%\,500px\)\] {
+    width: clamp(150px, 25%, 500px);
+  }
+  .w-\[clamp\(150px\,30\%\,500px\)\] {
+    width: clamp(150px, 30%, 500px);
+  }
+  .w-\[clamp\(240px\,_18vw\,_320px\)\] {
+    width: clamp(240px, 18vw, 320px);
+  }
+  .w-\[clamp\(300px\,\%\,800px\)\] {
+    width: clamp(300px, %, 800px);
+  }
+  .w-\[clamp\(300px\,30\%\,0px\)\] {
+    width: clamp(300px, 30%, 0px);
+  }
+  .w-\[clamp\(300px\,30\%\,500px\)\] {
+    width: clamp(300px, 30%, 500px);
+  }
+  .w-\[clamp\(300px\,30\%\,800px\)\] {
+    width: clamp(300px, 30%, 800px);
+  }
+  .w-\[clamp\(300px\,50\%\,800px\)\] {
+    width: clamp(300px, 50%, 800px);
+  }
+  .w-\[clamp\(1500px\,30\%\,500px\)\] {
+    width: clamp(1500px, 30%, 500px);
   }
   .w-full {
     width: 100%;
@@ -335,6 +389,21 @@
   }
   .gap-6 {
     gap: calc(var(--spacing) * 6);
+  }
+  .gap-\[clamp\(0\.5rem\,_1vw\,_1rem\)\] {
+    gap: clamp(0.5rem, 1vw, 1rem);
+  }
+  .gap-\[clamp\(0\.25rem\,_0\.5vw\,_0\.75rem\)\] {
+    gap: clamp(0.25rem, 0.5vw, 0.75rem);
+  }
+  .gap-\[clamp\(0\.75rem\,_1\.2vw\,_1\.5rem\)\] {
+    gap: clamp(0.75rem, 1.2vw, 1.5rem);
+  }
+  .gap-\[clamp\(1rem\,_1\.5vw\,_2rem\)\] {
+    gap: clamp(1rem, 1.5vw, 2rem);
+  }
+  .gap-\[clamp\(1rem\,_1\.8vw\,_2rem\)\] {
+    gap: clamp(1rem, 1.8vw, 2rem);
   }
   .rounded-2xl {
     border-radius: var(--radius-2xl);
@@ -426,11 +495,20 @@
   .object-contain {
     object-fit: contain;
   }
+  .object-cover {
+    object-fit: cover;
+  }
   .p-4 {
     padding: calc(var(--spacing) * 4);
   }
   .p-6 {
     padding: calc(var(--spacing) * 6);
+  }
+  .p-\[clamp\(0\.75rem\,_1\.5vw\,_2rem\)\] {
+    padding: clamp(0.75rem, 1.5vw, 2rem);
+  }
+  .p-\[clamp\(1rem\,_2vw\,_2rem\)\] {
+    padding: clamp(1rem, 2vw, 2rem);
   }
   .px-2 {
     padding-inline: calc(var(--spacing) * 2);
@@ -444,6 +522,24 @@
   .px-8 {
     padding-inline: calc(var(--spacing) * 8);
   }
+  .px-\[clamp\(0\.5rem\,_1\.5vw\,_1\.5rem\)\] {
+    padding-inline: clamp(0.5rem, 1.5vw, 1.5rem);
+  }
+  .px-\[clamp\(0\.75rem\,_1\.5vw\,_1\.5rem\)\] {
+    padding-inline: clamp(0.75rem, 1.5vw, 1.5rem);
+  }
+  .px-\[clamp\(0\.75rem\,_1vw\,_1\.25rem\)\] {
+    padding-inline: clamp(0.75rem, 1vw, 1.25rem);
+  }
+  .px-\[clamp\(1\.25rem\,_2vw\,_2\.5rem\)\] {
+    padding-inline: clamp(1.25rem, 2vw, 2.5rem);
+  }
+  .px-\[clamp\(1rem\,_2vw\,_2rem\)\] {
+    padding-inline: clamp(1rem, 2vw, 2rem);
+  }
+  .px-\[clamp\(1rem\,_3vw\,_2\.5rem\)\] {
+    padding-inline: clamp(1rem, 3vw, 2.5rem);
+  }
   .py-2 {
     padding-block: calc(var(--spacing) * 2);
   }
@@ -456,8 +552,26 @@
   .py-5 {
     padding-block: calc(var(--spacing) * 5);
   }
+  .py-\[clamp\(0\.5rem\,_0\.8vw\,_1rem\)\] {
+    padding-block: clamp(0.5rem, 0.8vw, 1rem);
+  }
+  .py-\[clamp\(0\.5rem\,_1\.5vw\,_1\.5rem\)\] {
+    padding-block: clamp(0.5rem, 1.5vw, 1.5rem);
+  }
+  .py-\[clamp\(0\.5rem\,_1vw\,_0\.85rem\)\] {
+    padding-block: clamp(0.5rem, 1vw, 0.85rem);
+  }
+  .py-\[clamp\(0\.65rem\,_1\.2vw\,_1rem\)\] {
+    padding-block: clamp(0.65rem, 1.2vw, 1rem);
+  }
+  .py-\[clamp\(1rem\,_1\.5vw\,_1\.75rem\)\] {
+    padding-block: clamp(1rem, 1.5vw, 1.75rem);
+  }
   .pb-4 {
     padding-bottom: calc(var(--spacing) * 4);
+  }
+  .pb-\[clamp\(0\.5rem\,_1vw\,_1rem\)\] {
+    padding-bottom: clamp(0.5rem, 1vw, 1rem);
   }
   .text-center {
     text-align: center;
@@ -484,6 +598,33 @@
   .text-xl {
     font-size: var(--text-xl);
     line-height: var(--tw-leading, var(--text-xl--line-height));
+  }
+  .text-\[clamp\(0\.9rem\,_1\.1vw\,_1\.1rem\)\] {
+    font-size: clamp(0.9rem, 1.1vw, 1.1rem);
+  }
+  .text-\[clamp\(0\.75rem\,_0\.9vw\,_0\.95rem\)\] {
+    font-size: clamp(0.75rem, 0.9vw, 0.95rem);
+  }
+  .text-\[clamp\(1\.1rem\,_1\.3vw\,_1\.4rem\)\] {
+    font-size: clamp(1.1rem, 1.3vw, 1.4rem);
+  }
+  .text-\[clamp\(1\.5rem\,_2\.5vw\,_2\.25rem\)\] {
+    font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  }
+  .text-\[clamp\(1\.25rem\,_2\.5vw\,_2\.25rem\)\] {
+    font-size: clamp(1.25rem, 2.5vw, 2.25rem);
+  }
+  .text-\[clamp\(1\.25rem\,_2vw\,_1\.75rem\)\] {
+    font-size: clamp(1.25rem, 2vw, 1.75rem);
+  }
+  .text-\[clamp\(1\.35rem\,_2\.2vw\,_2\.25rem\)\] {
+    font-size: clamp(1.35rem, 2.2vw, 2.25rem);
+  }
+  .text-\[clamp\(1rem\,_1\.2vw\,_1\.35rem\)\] {
+    font-size: clamp(1rem, 1.2vw, 1.35rem);
+  }
+  .text-\[clamp\(1rem\,_1\.5vw\,_1\.5rem\)\] {
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
   }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
@@ -687,9 +828,19 @@
       padding-inline: calc(var(--spacing) * 12);
     }
   }
+  .sm\:px-\[clamp\(2rem\,_4vw\,_4rem\)\] {
+    @media (width >= 40rem) {
+      padding-inline: clamp(2rem, 4vw, 4rem);
+    }
+  }
   .md\:ml-64 {
     @media (width >= 48rem) {
       margin-left: calc(var(--spacing) * 64);
+    }
+  }
+  .md\:ml-\[clamp\(240px\,_18vw\,_320px\)\] {
+    @media (width >= 48rem) {
+      margin-left: clamp(240px, 18vw, 320px);
     }
   }
   .md\:block {
@@ -732,6 +883,11 @@
   .md\:py-10 {
     @media (width >= 48rem) {
       padding-block: calc(var(--spacing) * 10);
+    }
+  }
+  .md\:py-\[clamp\(1\.5rem\,_3vw\,_2\.5rem\)\] {
+    @media (width >= 48rem) {
+      padding-block: clamp(1.5rem, 3vw, 2.5rem);
     }
   }
   .md\:pl-64 {
