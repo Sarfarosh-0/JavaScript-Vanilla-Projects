@@ -13,14 +13,16 @@
 </head>
 
 <body style="font-family: 'Roboto Condensed', sans-serif;">
-    <div id="sidebar" class="-translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out bg-red-400">
-            <aside class="fixed top-0 left-0 h-full w-64 border-r border-gray-200 z-100 p-6 flex flex-col gap-6">
+    <aside id="sidebar" class="fixed top-0 left-0 h-full w-64 bg-white border-r border-gray-200 z-50 p-6 flex flex-col gap-6 
+               transition-transform duration-300 ease-in-out -translate-x-full md:translate-x-0">
 
         <div class="flex justify-between items-center pb-4 border-b">
             <div class="flex items-center gap-3">
-                <img src="https://cdn-icons-png.flaticon.com/128/10758/10758868.png" alt="Logo" draggable="false" class="w-10">
+                <img src="https://cdn-icons-png.flaticon.com/128/10758/10758868.png" alt="Logo" draggable="false"
+                    class="w-10">
                 <h1 class="text-2xl font-bold text-gray-800">Tracker</h1>
             </div>
+            <button id="closeSidebarBtn" class="text-xl md:hidden text-gray-400 hover:text-gray-700">✕</button>
         </div>
 
         <nav class="flex flex-col gap-2">
@@ -34,8 +36,8 @@
                 Analytics</a>
         </nav>
     </aside>
-    </div>
-    <div id="mainContent" class="md:ml-64">
+
+    <div id="mainContent" class="md:ml-64 transition-all duration-300">
         <header class="sticky top-0 z-50 bg-white shadow-sm">
             <nav class="h-16 px-4 md:py-10 flex items-center justify-between">
                 <button id="menuBtn" class="text-3xl hover:scale-110 transition md:hidden">
@@ -66,8 +68,8 @@
             <section id="overview" class="flex w-full flex-col gap-4 p-4 items-center justify-center md:flex-row">
                 <div
                     class="w-full flex items-center gap-6 px-6 py-5 bg-green-100 border border-green-300 rounded-2xl shadow-sm">
-                    <img src="https://cdn-icons-png.flaticon.com/128/3135/3135706.png" draggable="false" alt="Income Icon"
-                        class="w-12 h-12 object-contain">
+                    <img src="https://cdn-icons-png.flaticon.com/128/3135/3135706.png" draggable="false"
+                        alt="Income Icon" class="w-12 h-12 object-contain">
                     <div class="flex flex-col">
                         <span class="text-sm font-medium text-gray-600 uppercase tracking-wider">Total Income</span>
                         <h2 class="text-2xl md:text-3xl text-green-700 font-bold">$ 0,000</h2>
@@ -76,8 +78,8 @@
 
                 <div
                     class="w-full flex items-center gap-6 px-6 py-5 bg-red-100 border border-red-300 rounded-2xl shadow-sm">
-                    <img src="https://cdn-icons-png.flaticon.com/128/10758/10758868.png" draggable="false" alt="Expenses Icon"
-                        class="w-12 h-12 object-contain">
+                    <img src="https://cdn-icons-png.flaticon.com/128/10758/10758868.png" draggable="false"
+                        alt="Expenses Icon" class="w-12 h-12 object-contain">
                     <div class="flex flex-col">
                         <span class="text-sm font-medium text-gray-600 uppercase tracking-wider">Total Expenses</span>
                         <h2 class="text-2xl md:text-3xl text-red-700 font-bold">$ 0,000</h2>
@@ -86,8 +88,8 @@
 
                 <div
                     class="w-full flex items-center gap-6 px-6 py-5 bg-blue-100 border border-blue-300 rounded-2xl shadow-sm">
-                    <img src="https://cdn-icons-png.flaticon.com/128/8049/8049428.png" draggable="false" alt="Balance Icon"
-                        class="w-12 h-12 object-contain">
+                    <img src="https://cdn-icons-png.flaticon.com/128/8049/8049428.png" draggable="false"
+                        alt="Balance Icon" class="w-12 h-12 object-contain">
                     <div class="flex flex-col">
                         <span class="text-sm font-medium text-gray-600 uppercase tracking-wider">Total Balance</span>
                         <h2 class="text-2xl md:text-3xl text-blue-700 font-bold">$ 0,000</h2>
