@@ -14,80 +14,67 @@
     <style>
         body {
             font-family: 'Roboto Condensed', sans-serif;
+            background: url(https://i.pinimg.com/736x/12/86/e4/1286e4cf09d92e1375360db43c2a89e0.jpg);
+            background-size: cover;
         }
     </style>
 </head>
 
-<body class="bg-gray-50 text-gray-900 overflow-x-hidden">
-    <div id="sidebarOverlay"
-        class="fixed inset-0 bg-black/40 z-40 hidden transition-opacity duration-300 opacity-0 md:hidden"></div>
+<body class="bg-gray-50 text-black overflow-x-hidden">
 
     <aside id="sidebar"
-        class="fixed top-0 left-0 h-full w-[clamp(240px,18vw,320px)] bg-white border-r border-gray-200 z-50 p-[clamp(1rem,2vw,2rem)] flex flex-col gap-[clamp(1rem,1.5vw,2rem)] transition-transform duration-300 ease-in-out -translate-x-full">
+        class="fixed top-0 left-0 h-full w-[clamp(240px,18vw,320px)] bg-white border-r border-gray-200 z-50 p-[clamp(1rem,2vw,2rem)] flex flex-col gap-[clamp(1rem,1.5vw,2rem)] transition-transform duration-500 ease-in-out -translate-x-full">
 
         <div class="flex justify-between items-center pb-[clamp(0.5rem,1vw,1rem)] border-b">
             <div class="flex items-center gap-[clamp(0.5rem,1vw,1rem)]">
                 <img src="https://cdn-icons-png.flaticon.com/128/9730/9730488.png" alt="Logo" draggable="false"
-                    class="w-[clamp(1.75rem,2.5vw,2.5rem)] aspect-square object-contain flex-shrink-0">
+                    class="w-[clamp(1.75rem,2.5vw,2.5rem)] aspect-square object-contain shrink-0">
                 <h1 class="text-[clamp(1.25rem,2vw,1.75rem)] font-bold text-gray-800">Tracker</h1>
             </div>
-            <button id="closeSidebarBtnMobile"
-                class="text-[clamp(1rem,1.5vw,1.5rem)] text-gray-400 hover:text-gray-700 transition-colors cursor-pointer select-none">✕</button>
+            <button id="closeSidebarBtn"
+                class="text-[clamp(1rem,2.5vw,1.5rem)] font-bold text-gray-400 hover:text-gray-700 transition-colors cursor-pointer select-none">✕</button>
         </div>
 
         <nav class="flex flex-col gap-[clamp(0.25rem,0.5vw,0.75rem)]">
-            <a href="#"
-                class="flex items-center gap-[clamp(0.5rem,1vw,1rem)] px-[clamp(0.75rem,1vw,1.25rem)] py-[clamp(0.5rem,0.8vw,1rem)] bg-blue-50 text-blue-600 rounded-xl font-bold text-[clamp(0.9rem,1.1vw,1.1rem)]">
-                <img src="https://cdn-icons-png.flaticon.com/128/3408/3408591.png" alt="DashBoard" class="w-4 md:w-3.5 lg:w-4 max-w-[16px] md:max-w-[14px] lg:max-w-[16px] aspect-square object-contain flex-shrink-0" />
+            <a href="#overview"
+                class="flex items-center gap-[clamp(0.5rem,1vw,1rem)] px-[clamp(0.75rem,1vw,1.25rem)] py-[clamp(0.5rem,0.8vw,1rem)]  text-gray-600 hover:bg-gray-100 rounded-xl hover:font-bold text-[clamp(0.9rem,1.1vw,1.1rem)] transition-all duration-100 ease-in-out">
+                <img src="https://cdn-icons-png.flaticon.com/128/3408/3408591.png" alt="DashBoard" draggable="false"
+                    class="w-6 aspect-square object-contain " />
                 <span>DashBoard</span>
             </a>
-            <a href="#"
-                class="flex items-center gap-[clamp(0.5rem,1vw,1rem)] px-[clamp(0.75rem,1vw,1.25rem)] py-[clamp(0.5rem,0.8vw,1rem)] text-gray-600 hover:bg-gray-100 rounded-xl transition text-[clamp(0.9rem,1.1vw,1.1rem)]">
-                <img src="https://cdn-icons-png.flaticon.com/128/3408/3408591.png" alt="Add Expenses" class="w-4 md:w-3.5 lg:w-4 max-w-[16px] md:max-w-[14px] lg:max-w-[16px] aspect-square object-contain flex-shrink-0" />
+            <a href="#overview"
+                class="flex items-center gap-[clamp(0.5rem,1vw,1rem)] px-[clamp(0.75rem,1vw,1.25rem)] py-[clamp(0.5rem,0.8vw,1rem)]  text-gray-600 hover:bg-gray-100 rounded-xl hover:font-bold text-[clamp(0.9rem,1.1vw,1.1rem)] transition-all duration-100 ease-in-out">
+                <img src="https://cdn-icons-png.flaticon.com/128/781/781831.png" alt="Add Expenses" draggable="false"
+                    class="w-6 aspect-square object-contain " />
                 <span>Add Expenses</span>
             </a>
-            <a href="#"
-                class="flex items-center gap-[clamp(0.5rem,1vw,1rem)] px-[clamp(0.75rem,1vw,1.25rem)] py-[clamp(0.5rem,0.8vw,1rem)] text-gray-600 hover:bg-gray-100 rounded-xl transition text-[clamp(0.9rem,1.1vw,1.1rem)]">
-                <img src="https://cdn-icons-png.flaticon.com/128/3408/3408591.png" alt="All Expense" class="w-4 md:w-3.5 lg:w-4 max-w-[16px] md:max-w-[14px] lg:max-w-[16px] aspect-square object-contain flex-shrink-0" />
-                <span>All Expense</span>
+            <a href="#transactions"
+                class="flex items-center gap-[clamp(0.5rem,1vw,1rem)] px-[clamp(0.75rem,1vw,1.25rem)] py-[clamp(0.5rem,0.8vw,1rem)]  text-gray-600 hover:bg-gray-100 rounded-xl hover:font-bold text-[clamp(0.9rem,1.1vw,1.1rem)] transition-all duration-100 ease-in-out">
+                <img src="https://cdn-icons-png.flaticon.com/128/3186/3186949.png" alt="All Transactions"
+                    draggable="false" class="w-6 aspect-square object-contain " />
+                <span>All Transctions</span>
             </a>
         </nav>
         <div
             class="flex justify-center items-center gap-2 bg-red-500 rounded-2xl text-white font-semibold px-2 py-2 hover:bg-red-700 transition-colors ease-in-out active:scale-95 cursor-pointer mt-auto">
-            <img src="https://img.icons8.com/parakeet-line/48/ffffff/filled-trash.png" alt="Clear Data" class="w-4 md:w-4 aspect-square object-contain flex-shrink-0">
+            <img src="https://img.icons8.com/parakeet-line/48/ffffff/filled-trash.png" alt="Clear Data"
+                class="w-4 md:w-4 aspect-square object-contain shrink-0">
             <span>Clear Data</span>
         </div>
     </aside>
 
-    <div id="mainContent" class="transition-all duration-300 ease-in-out">
+    <div id="mainContent" class="transition-all duration-500 ease-in-out">
         <header class="sticky top-0 z-30 bg-white py-2 shadow-sm">
             <nav
-                class="h-[clamp(3.5rem,8vh,5rem)]  px-[clamp(1rem,3vw,2.5rem)] flex items-center justify-between relative">
+                class="h-[clamp(3.5rem,8vh,5rem)] px-[clamp(1rem,3vw,2.5rem)] flex items-center justify-between relative">
 
                 <div class="flex items-center justify-center">
                     <button id="sidebarToggleBtn"
-                        class="text-[clamp(1.5rem,2.5vw,2.25rem)] hover:scale-110 transition text-gray-700 select-none">
+                        class="text-[clamp(1.5rem,2.2vw,2.25rem)] hover:scale-110 transition text-black select-none">
                         ☰
                     </button>
                 </div>
-
-                <ul id="mobileMenu"
-                    class="absolute top-full left-0 w-full rounded-b-2xl flex flex-col bg-white items-center text-black text-lg border-t border-gray-100 md:hidden shadow-xl origin-top transform opacity-0 scale-95 pointer-events-none transition-all duration-300 ease-in-out z-50">
-                    <li class="w-full text-center py-2 hover:bg-gray-200 transition-colors">
-                        <a href="#" class="block w-full py-1">Home</a>
-                    </li>
-                    <li class="w-full text-center py-2 hover:bg-gray-200 transition-colors">
-                        <a href="#overview" class="block w-full py-1">Overview</a>
-                    </li>
-                    <li class="w-full text-center py-2 hover:bg-gray-200 transition-colors">
-                        <a href="#manager" class="block w-full py-1">Add Transaction</a>
-                    </li>
-                    <li class="w-full text-center py-2 hover:bg-gray-200 transition-colors">
-                        <a href="#transactions" class="block w-full py-1">Transactions</a>
-                    </li>
-                </ul>
-
-                <h1 class="flex-1 text-center text-[clamp(1.25rem,2.5vw,2.25rem)] font-semibold text-gray-800">
+                <h1 class="flex-1 text-center text-[clamp(1.25rem,2.5vw,2.25rem)] font-semibold text-black">
                     Expense Tracker
                 </h1>
 
@@ -165,10 +152,8 @@
 
     <script>
         const sidebarToggleBtn = document.getElementById('sidebarToggleBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
         const sidebar = document.getElementById('sidebar');
-        const closeSidebarBtnMobile = document.getElementById('closeSidebarBtnMobile');
-        const overlay = document.getElementById('sidebarOverlay');
+        const closeSidebarBtn = document.getElementById('closeSidebarBtn');
         const mainContent = document.getElementById('mainContent');
 
         if (window.innerWidth >= 768) {
@@ -183,51 +168,23 @@
 
         function openSidebar() {
             sidebar.classList.remove('-translate-x-full');
-            sidebarToggleBtn.classList.add('hidden'); // Fully hides the header hamburger when open
+            sidebarToggleBtn.classList.add('hidden');
 
             if (window.innerWidth >= 768) {
                 mainContent.classList.add('md:ml-[clamp(240px,18vw,320px)]');
-            } else {
-                overlay.classList.remove('hidden');
-                setTimeout(() => overlay.classList.add('opacity-100'), 10);
             }
         }
 
         function closeSidebar() {
             sidebar.classList.add('-translate-x-full');
-            sidebarToggleBtn.classList.remove('hidden'); // Brings back header hamburger when closed
+            sidebarToggleBtn.classList.remove('hidden');
 
             if (window.innerWidth >= 768) {
                 mainContent.classList.remove('md:ml-[clamp(240px,18vw,320px)]');
-            } else {
-                overlay.classList.remove('opacity-100');
-                setTimeout(() => overlay.classList.add('hidden'), 300);
             }
         }
 
-        closeSidebarBtnMobile.addEventListener('click', closeSidebar);
-        overlay.addEventListener('click', closeSidebar);
-
-        // Responsive tracking normalization loop
-        window.addEventListener('resize', () => {
-            if (window.innerWidth >= 768) {
-                overlay.classList.add('hidden');
-                overlay.classList.remove('opacity-100');
-                if (!sidebar.classList.contains('-translate-x-full')) {
-                    mainContent.classList.add('md:ml-[clamp(240px,18vw,320px)]');
-                    sidebarToggleBtn.classList.add('hidden');
-                } else {
-                    sidebarToggleBtn.classList.remove('hidden');
-                }
-            } else {
-                mainContent.classList.remove('md:ml-[clamp(240px,18vw,320px)]');
-                if (sidebar.classList.contains('-translate-x-full')) {
-                    sidebarToggleBtn.classList.remove('hidden');
-                } else {
-                    sidebarToggleBtn.classList.add('hidden');
-                }
-            }
-        });
+        closeSidebarBtn.addEventListener('click', closeSidebar);
     </script>
 </body>
 
