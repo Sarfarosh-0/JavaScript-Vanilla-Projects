@@ -147,6 +147,38 @@
                     class="w-full bg-red-500 text-white py-2.5 px-4 rounded-lg text-lg font-bold hover:scale-105 active:scale-95 transition-all duration-300 shadow-sm cursor-pointer">+
                     Add Expense</button>
             </section>
+
+            <section id="transactions"
+                class="flex items-center flex-col p-4 m-4 rounded-2xl border-2 shadow-lg w-full min-h-96 bg-white">
+                <div class="flex justify-between w-full px-2 py-4">
+                    <h1 class="text-2xl font-semibold">Recent Transactions</h1>
+                    <a href="#" class="text-blue-500 hover:underline hover:font-bold transition-all">View All</a>
+                </div>
+
+                <div id="transactionsHistory" class="w-full grid grid-cols-4 gap-y-4 px-2 items-center text-sm md:text-base">
+                    <div class="contents text-gray-600 font-bold">
+                        <span>Date</span>
+                        <span>Description</span>
+                        <span>Type</span>
+                        <span class="text-right">Amount</span>
+                    </div>
+
+                    <div class="contents border-b border-gray-100">
+                        <span>20 May 2024</span>
+                        <span>Movie</span>
+                        <span class="text-red-500 font-medium">Expense</span>
+                        <span class="text-right text-red-600 font-semibold">- $1,000</span>
+                    </div>
+
+                    <div class="contents border-b border-gray-100">
+                        <span>20 May 2025</span>
+                        <span>Salary</span>
+                        <span class="text-green-500 font-medium">Income</span>
+                        <span class="text-right font-semibold text-green-600">+ $45,000</span>
+                    </div>
+                </div>
+            </section>
+
         </main>
     </div>
 
