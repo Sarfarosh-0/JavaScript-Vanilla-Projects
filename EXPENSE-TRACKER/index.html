@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense Tracker</title>
     <link href="src/output.css" rel="stylesheet">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/9730/9730488.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
@@ -18,45 +19,54 @@
 </head>
 
 <body class="bg-gray-50 text-gray-900 overflow-x-hidden">
-    <div id="sidebarOverlay" class="fixed inset-0 bg-black/40 z-40 hidden transition-opacity duration-300 opacity-0 md:hidden"></div>
+    <div id="sidebarOverlay"
+        class="fixed inset-0 bg-black/40 z-40 hidden transition-opacity duration-300 opacity-0 md:hidden"></div>
 
     <aside id="sidebar"
         class="fixed top-0 left-0 h-full w-[clamp(240px,18vw,320px)] bg-white border-r border-gray-200 z-50 p-[clamp(1rem,2vw,2rem)] flex flex-col gap-[clamp(1rem,1.5vw,2rem)] transition-transform duration-300 ease-in-out -translate-x-full">
 
         <div class="flex justify-between items-center pb-[clamp(0.5rem,1vw,1rem)] border-b">
             <div class="flex items-center gap-[clamp(0.5rem,1vw,1rem)]">
-                <img src="https://cdn-icons-png.flaticon.com/128/10758/10758868.png" alt="Logo" draggable="false"
-                    class="w-[clamp(2rem,3vw,3rem)] aspect-square object-cover">
+                <img src="https://cdn-icons-png.flaticon.com/128/9730/9730488.png" alt="Logo" draggable="false"
+                    class="w-[clamp(1.75rem,2.5vw,2.5rem)] aspect-square object-contain flex-shrink-0">
                 <h1 class="text-[clamp(1.25rem,2vw,1.75rem)] font-bold text-gray-800">Tracker</h1>
             </div>
             <button id="closeSidebarBtnMobile"
-                class="text-[clamp(1rem,1.5vw,1.5rem)] md:hidden text-gray-400 hover:text-gray-700">✕</button>
+                class="text-[clamp(1rem,1.5vw,1.5rem)] text-gray-400 hover:text-gray-700 transition-colors cursor-pointer select-none">✕</button>
         </div>
 
         <nav class="flex flex-col gap-[clamp(0.25rem,0.5vw,0.75rem)]">
             <a href="#"
-                class="flex items-center gap-[clamp(0.5rem,1vw,1rem)] px-[clamp(0.75rem,1vw,1.25rem)] py-[clamp(0.5rem,0.8vw,1rem)] bg-blue-50 text-blue-600 rounded-xl font-bold text-[clamp(0.9rem,1.1vw,1.1rem)]">📊
-                Dashboard</a>
+                class="flex items-center gap-[clamp(0.5rem,1vw,1rem)] px-[clamp(0.75rem,1vw,1.25rem)] py-[clamp(0.5rem,0.8vw,1rem)] bg-blue-50 text-blue-600 rounded-xl font-bold text-[clamp(0.9rem,1.1vw,1.1rem)]">
+                <img src="https://cdn-icons-png.flaticon.com/128/3408/3408591.png" alt="DashBoard" class="w-4 md:w-3.5 lg:w-4 max-w-[16px] md:max-w-[14px] lg:max-w-[16px] aspect-square object-contain flex-shrink-0" />
+                <span>DashBoard</span>
+            </a>
             <a href="#"
-                class="flex items-center gap-[clamp(0.5rem,1vw,1rem)] px-[clamp(0.75rem,1vw,1.25rem)] py-[clamp(0.5rem,0.8vw,1rem)] text-gray-600 hover:bg-gray-100 rounded-xl transition text-[clamp(0.9rem,1.1vw,1.1rem)]">💸
-                Add Expenses</a>
+                class="flex items-center gap-[clamp(0.5rem,1vw,1rem)] px-[clamp(0.75rem,1vw,1.25rem)] py-[clamp(0.5rem,0.8vw,1rem)] text-gray-600 hover:bg-gray-100 rounded-xl transition text-[clamp(0.9rem,1.1vw,1.1rem)]">
+                <img src="https://cdn-icons-png.flaticon.com/128/3408/3408591.png" alt="Add Expenses" class="w-4 md:w-3.5 lg:w-4 max-w-[16px] md:max-w-[14px] lg:max-w-[16px] aspect-square object-contain flex-shrink-0" />
+                <span>Add Expenses</span>
+            </a>
             <a href="#"
-                class="flex items-center gap-[clamp(0.5rem,1vw,1rem)] px-[clamp(0.75rem,1vw,1.25rem)] py-[clamp(0.5rem,0.8vw,1rem)] text-gray-600 hover:bg-gray-100 rounded-xl transition text-[clamp(0.9rem,1.1vw,1.1rem)]">📈
-                All Expense</a>
+                class="flex items-center gap-[clamp(0.5rem,1vw,1rem)] px-[clamp(0.75rem,1vw,1.25rem)] py-[clamp(0.5rem,0.8vw,1rem)] text-gray-600 hover:bg-gray-100 rounded-xl transition text-[clamp(0.9rem,1.1vw,1.1rem)]">
+                <img src="https://cdn-icons-png.flaticon.com/128/3408/3408591.png" alt="All Expense" class="w-4 md:w-3.5 lg:w-4 max-w-[16px] md:max-w-[14px] lg:max-w-[16px] aspect-square object-contain flex-shrink-0" />
+                <span>All Expense</span>
+            </a>
         </nav>
         <div
             class="flex justify-center items-center gap-2 bg-red-500 rounded-2xl text-white font-semibold px-2 py-2 hover:bg-red-700 transition-colors ease-in-out active:scale-95 cursor-pointer mt-auto">
-            <img src="https://img.icons8.com/parakeet-line/48/ffffff/filled-trash.png" alt="Clear Data" class="w-6">
+            <img src="https://img.icons8.com/parakeet-line/48/ffffff/filled-trash.png" alt="Clear Data" class="w-4 md:w-4 aspect-square object-contain flex-shrink-0">
             <span>Clear Data</span>
         </div>
     </aside>
 
     <div id="mainContent" class="transition-all duration-300 ease-in-out">
         <header class="sticky top-0 z-30 bg-white py-2 shadow-sm">
-            <nav class="h-[clamp(3.5rem,8vh,5rem)]  px-[clamp(1rem,3vw,2.5rem)] flex items-center justify-between relative">
+            <nav
+                class="h-[clamp(3.5rem,8vh,5rem)]  px-[clamp(1rem,3vw,2.5rem)] flex items-center justify-between relative">
 
                 <div class="flex items-center justify-center">
-                    <button id="sidebarToggleBtn" class="text-[clamp(1.5rem,2.5vw,2.25rem)] hover:scale-110 transition text-gray-700 select-none">
+                    <button id="sidebarToggleBtn"
+                        class="text-[clamp(1.5rem,2.5vw,2.25rem)] hover:scale-110 transition text-gray-700 select-none">
                         ☰
                     </button>
                 </div>
@@ -97,32 +107,42 @@
             </nav>
         </header>
 
-        <main class="flex flex-col justify-center items-center px-[clamp(0.5rem,1.5vw,1.5rem)] py-[clamp(0.5rem,1.5vw,1.5rem)]">
+        <main
+            class="flex flex-col justify-center items-center px-[clamp(0.5rem,1.5vw,1.5rem)] py-[clamp(0.5rem,1.5vw,1.5rem)]">
             <section id="overview"
                 class="flex w-full flex-col gap-[clamp(1rem,1.5vw,2rem)] p-[clamp(0.75rem,1.5vw,2rem)] items-center justify-center md:flex-row">
-                <div class="w-full flex items-center gap-[clamp(1rem,1.8vw,2rem)] px-[clamp(1rem,2vw,2rem)] py-[clamp(1rem,1.5vw,1.75rem)] bg-green-100 border border-green-300 rounded-2xl shadow-sm">
+                <div
+                    class="w-full flex items-center gap-[clamp(1rem,1.8vw,2rem)] px-[clamp(1rem,2vw,2rem)] py-[clamp(1rem,1.5vw,1.75rem)] bg-green-100 border border-green-300 rounded-2xl shadow-sm">
                     <img src="https://cdn-icons-png.flaticon.com/128/3135/3135706.png" draggable="false"
                         alt="Income Icon" class="w-[clamp(2.5rem,4vw,3.5rem)] aspect-square object-contain">
                     <div class="flex flex-col">
-                        <span class="text-[clamp(0.75rem,0.9vw,0.95rem)] font-medium text-gray-600 uppercase tracking-wider">Total Income</span>
+                        <span
+                            class="text-[clamp(0.75rem,0.9vw,0.95rem)] font-medium text-gray-600 uppercase tracking-wider">Total
+                            Income</span>
                         <h2 class="text-[clamp(1.35rem,2.2vw,2.25rem)] text-green-700 font-bold">$ 0,000</h2>
                     </div>
                 </div>
 
-                <div class="w-full flex items-center gap-[clamp(1rem,1.8vw,2rem)] px-[clamp(1rem,2vw,2rem)] py-[clamp(1rem,1.5vw,1.75rem)] bg-red-100 border border-red-300 rounded-2xl shadow-sm">
+                <div
+                    class="w-full flex items-center gap-[clamp(1rem,1.8vw,2rem)] px-[clamp(1rem,2vw,2rem)] py-[clamp(1rem,1.5vw,1.75rem)] bg-red-100 border border-red-300 rounded-2xl shadow-sm">
                     <img src="https://cdn-icons-png.flaticon.com/128/10758/10758868.png" draggable="false"
                         alt="Expenses Icon" class="w-[clamp(2.5rem,4vw,3.5rem)] aspect-square object-contain">
                     <div class="flex flex-col">
-                        <span class="text-[clamp(0.75rem,0.9vw,0.95rem)] font-medium text-gray-600 uppercase tracking-wider">Total Expenses</span>
+                        <span
+                            class="text-[clamp(0.75rem,0.9vw,0.95rem)] font-medium text-gray-600 uppercase tracking-wider">Total
+                            Expenses</span>
                         <h2 class="text-[clamp(1.35rem,2.2vw,2.25rem)] text-red-700 font-bold">$ 0,000</h2>
                     </div>
                 </div>
 
-                <div class="w-full flex items-center gap-[clamp(1rem,1.8vw,2rem)] px-[clamp(1rem,2vw,2rem)] py-[clamp(1rem,1.5vw,1.75rem)] bg-blue-100 border border-blue-300 rounded-2xl shadow-sm">
+                <div
+                    class="w-full flex items-center gap-[clamp(1rem,1.8vw,2rem)] px-[clamp(1rem,2vw,2rem)] py-[clamp(1rem,1.5vw,1.75rem)] bg-blue-100 border border-blue-300 rounded-2xl shadow-sm">
                     <img src="https://cdn-icons-png.flaticon.com/128/8049/8049428.png" draggable="false"
                         alt="Balance Icon" class="w-[clamp(2.5rem,4vw,3.5rem)] aspect-square object-contain">
                     <div class="flex flex-col">
-                        <span class="text-[clamp(0.75rem,0.9vw,0.95rem)] font-medium text-gray-600 uppercase tracking-wider">Total Balance</span>
+                        <span
+                            class="text-[clamp(0.75rem,0.9vw,0.95rem)] font-medium text-gray-600 uppercase tracking-wider">Total
+                            Balance</span>
                         <h2 class="text-[clamp(1.35rem,2.2vw,2.25rem)] text-blue-700 font-bold">$ 0,000</h2>
                     </div>
                 </div>
@@ -163,7 +183,7 @@
 
         function openSidebar() {
             sidebar.classList.remove('-translate-x-full');
-            sidebarToggleBtn.innerText = '✕';
+            sidebarToggleBtn.classList.add('hidden'); // Fully hides the header hamburger when open
 
             if (window.innerWidth >= 768) {
                 mainContent.classList.add('md:ml-[clamp(240px,18vw,320px)]');
@@ -175,7 +195,7 @@
 
         function closeSidebar() {
             sidebar.classList.add('-translate-x-full');
-            sidebarToggleBtn.innerText = '☰'; 
+            sidebarToggleBtn.classList.remove('hidden'); // Brings back header hamburger when closed
 
             if (window.innerWidth >= 768) {
                 mainContent.classList.remove('md:ml-[clamp(240px,18vw,320px)]');
@@ -195,12 +215,16 @@
                 overlay.classList.remove('opacity-100');
                 if (!sidebar.classList.contains('-translate-x-full')) {
                     mainContent.classList.add('md:ml-[clamp(240px,18vw,320px)]');
-                    sidebarToggleBtn.innerText = '✕';
+                    sidebarToggleBtn.classList.add('hidden');
+                } else {
+                    sidebarToggleBtn.classList.remove('hidden');
                 }
             } else {
                 mainContent.classList.remove('md:ml-[clamp(240px,18vw,320px)]');
                 if (sidebar.classList.contains('-translate-x-full')) {
-                    sidebarToggleBtn.innerText = '☰';
+                    sidebarToggleBtn.classList.remove('hidden');
+                } else {
+                    sidebarToggleBtn.classList.add('hidden');
                 }
             }
         });
