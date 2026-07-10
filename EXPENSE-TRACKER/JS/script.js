@@ -26,15 +26,21 @@ function renderTransactions() {
 
     const type = document.createElement("li");
     type.textContent = transaction.type;
-    // Optional style boost: color income green and expenses red
     type.className =
       transaction.type === "Income" ? "text-green-600" : "text-red-600";
+    type.classList.add("font-semibold");
 
     const category = document.createElement("li");
     category.textContent = transaction.category;
 
     const amount = document.createElement("li");
-    amount.textContent = transaction.amount;
+    amount.textContent = `₹${Number(transaction.amount).toLocaleString("en-IN")}`;
+    amount.classList.add("text-right", "font-semibold");
+    if (type.textContent === "Income") {
+      amount.classList.add("text-green-600");
+    } else {
+      amount.classList.add("text-red-600");
+    }
 
     transactionUl.append(date, description, type, category, amount);
     transactionsContainer.appendChild(transactionUl);
@@ -43,30 +49,37 @@ function renderTransactions() {
   });
 }
 
-function addTransaction() {
-  const date =
-    document.getElementById("IncDate").value ||
-    document.getElementById("ExpDate").value;
-  const description =
-    document.getElementById("IncDesc").value ||
-    document.getElementById("ExpDesc").value;
-  const category =
-    document.getElementById("IncCat").value ||
-    document.getElementById("ExpCat").value;
-  const amount =
-    document.getElementById("IncAmt").value ||
-    document.getElementById("ExpAmt").value;
+function addTransaction(e) {
+  const isExpense =
+    e && e.currentTarget && e.currentTarget.id === "JSaddExpense";
+  const prefix = isExpense ? "Exp" : "Inc";
+
+  const date = document.getElementById(`${prefix}Date`).value;
+  const description = document.getElementById(`${prefix}Desc`).value;
+  const category = document.getElementById(`${prefix}Cat`).value;
+  const amount = document.getElementById(`${prefix}Amt`).value;
+
+  if (!date || !amount) {
+    alert("Please fill in at least the Date and Amount fields!");
+    return;
+  }
 
   transactions.push({
     date: date,
-    description: description,
-    type: "Income",
+    description: description || "No description",
+    type: isExpense ? "Expense" : "Income",
     category: category,
     amount: amount,
   });
+
   saveTransactions();
   renderTransactions();
   closeModal();
+
+  // Clear inputs after adding so it's clean for next time
+  document.getElementById(`${prefix}Date`).value = "";
+  document.getElementById(`${prefix}Desc`).value = "";
+  document.getElementById(`${prefix}Amt`).value = "";
 
   console.log("Transaction Added Sucessfully");
 }
@@ -78,11 +91,10 @@ document.getElementById("modalOverlay").addEventListener("keypress", (e) => {
   }
 });
 
-function saveTranscations() {
+function saveTransactions() {
   localStorage.setItem("transactions", JSON.stringify(transactions));
   console.log("Data Saved");
 }
 
 console.log("All Done");
-
 renderTransactions();
