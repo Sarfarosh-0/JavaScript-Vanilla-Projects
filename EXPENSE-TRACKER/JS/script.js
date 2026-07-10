@@ -16,7 +16,7 @@ function renderTransactions() {
 
   transactions.forEach((transaction, index) => {
     const transactionUl = document.createElement("ul");
-    transactionUl.className = "contents";
+    transactionUl.classList.add("contents");
 
     const date = document.createElement("li");
     date.textContent = transaction.date;
@@ -35,7 +35,7 @@ function renderTransactions() {
 
     const amount = document.createElement("li");
     amount.textContent = `₹${Number(transaction.amount).toLocaleString("en-IN")}`;
-    amount.classList.add("text-right", "font-semibold");
+    amount.classList.add("text-right", "font-semibold", "py-1");
     if (type.textContent === "Income") {
       amount.classList.add("text-green-600");
     } else {
@@ -44,14 +44,13 @@ function renderTransactions() {
 
     transactionUl.append(date, description, type, category, amount);
     transactionsContainer.appendChild(transactionUl);
-
-    console.log("Transaction Rended Sucessfully");
   });
 }
 
-function addTransaction(e) {
+function addTransaction(e, forcedType) {
   const isExpense =
-    e && e.currentTarget && e.currentTarget.id === "JSaddExpense";
+    forcedType === "Expense" ||
+    (e && e.currentTarget && e.currentTarget.id === "JSaddExpense");
   const prefix = isExpense ? "Exp" : "Inc";
 
   const date = document.getElementById(`${prefix}Date`).value;
@@ -76,25 +75,26 @@ function addTransaction(e) {
   renderTransactions();
   closeModal();
 
-  // Clear inputs after adding so it's clean for next time
   document.getElementById(`${prefix}Date`).value = "";
   document.getElementById(`${prefix}Desc`).value = "";
   document.getElementById(`${prefix}Amt`).value = "";
 
-  console.log("Transaction Added Sucessfully");
 }
 
-document.getElementById("modalOverlay").addEventListener("keypress", (e) => {
+document.getElementById("incomeModal").addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
-    addTransaction();
-    console.log("Enter Btn Works");
+    addTransaction(null, "Income");
+  }
+});
+
+document.getElementById("expenseModal").addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    addTransaction(null, "Expense");
   }
 });
 
 function saveTransactions() {
   localStorage.setItem("transactions", JSON.stringify(transactions));
-  console.log("Data Saved");
 }
 
-console.log("All Done");
 renderTransactions();
