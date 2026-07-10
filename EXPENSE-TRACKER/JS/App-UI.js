@@ -32,6 +32,7 @@ closeSidebarBtn.addEventListener("click", closeSidebar);
 const overlay = document.getElementById("modalOverlay");
 const incomeModal = document.getElementById("incomeModal");
 const expenseModal = document.getElementById("expenseModal");
+const clearDataModal = document.getElementById("clearDataModal");
 
 const openIncomeDesktopBtn = document.getElementById("addIncomeDesktop");
 const openExpenseDesktopBtn = document.getElementById("addExpenseDesktop");
@@ -39,14 +40,22 @@ const openExpenseDesktopBtn = document.getElementById("addExpenseDesktop");
 const openIncomeMobileBtn = document.getElementById("addIncomeMobile");
 const openExpenseMobileBtn = document.getElementById("addExpenseMobile");
 
+const clearAllData = document.getElementById("clearAllData");
+
 function openModal(modalType) {
   overlay.classList.remove("hidden");
 
   if (modalType === "income") {
     incomeModal.classList.remove("hidden");
     expenseModal.classList.add("hidden");
+    clearDataModal.classList.add("hidden");
   } else if (modalType === "expense") {
     expenseModal.classList.remove("hidden");
+    incomeModal.classList.add("hidden");
+    clearDataModal.classList.add("hidden");
+  } else if (modalType === "clearData") {
+    clearDataModal.classList.remove("hidden");
+    expenseModal.classList.add("hidden");
     incomeModal.classList.add("hidden");
   }
 }
@@ -55,12 +64,14 @@ function closeModal() {
   overlay.classList.add("hidden");
   incomeModal.classList.add("hidden");
   expenseModal.classList.add("hidden");
+  clearDataModal.classList.add("hidden");
 }
 
 openIncomeDesktopBtn.addEventListener("click", () => openModal("income"));
 openExpenseDesktopBtn.addEventListener("click", () => openModal("expense"));
 openIncomeMobileBtn.addEventListener("click", () => openModal("income"));
 openExpenseMobileBtn.addEventListener("click", () => openModal("expense"));
+clearAllData.addEventListener("click", () => openModal("clearData"));
 
 document.querySelectorAll(".close-modal-btn").forEach((button) => {
   button.addEventListener("click", closeModal);

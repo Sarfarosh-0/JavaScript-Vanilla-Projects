@@ -98,10 +98,13 @@ function saveTransactions() {
 
 renderTransactions();
 
-document.getElementById("clearAllData").addEventListener("click", clearAllData);
+document
+  .getElementById("JSclearAllData")
+  .addEventListener("click", deleteAllData);
 
-function clearAllData() {
+function deleteAllData() {
   localStorage.clear();
   transactions = [];
   renderTransactions();
+  closeModal();
 }
