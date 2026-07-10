@@ -148,7 +148,7 @@
                     Add Expense</button>
             </section>
 
-            <div id="modalOverlay"
+            <section id="modalOverlay"
                 class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex justify-center items-center p-6 hidden">
                 <div id="incomeModal"
                     class="w-full max-w-96 bg-white rounded-2xl shadow-2xl border border-gray-100/80 p-6 flex flex-col justify-between hidden">
@@ -181,7 +181,7 @@
                                             d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
                                     </svg>
                                 </span>
-                                <input type="date" id="IncDate"
+                                <input type="date" id="IncDate" required
                                     class="w-full text-sm text-black border border-gray-400 rounded-xl pl-10 pr-4 py-2.5 focus:outline-none focus:border-green-600 transition-colors">
                             </div>
                         </div>
@@ -196,7 +196,7 @@
                                             d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
                                     </svg>
                                 </span>
-                                <input type="text" id="IncDesc" placeholder="Enter description"
+                                <input type="text" id="IncDesc" placeholder="Enter description" required
                                     class="w-full text-sm text-black border border-gray-400 rounded-xl pl-10 pr-4 py-2.5 focus:outline-none focus:border-green-600 transition-colors">
                             </div>
                         </div>
@@ -234,7 +234,7 @@
                             <div class="relative flex items-center">
                                 <span
                                     class="absolute left-4 text-xl font-medium text-gray-400 pointer-events-none">₹</span>
-                                <input type="number" step="500" id="IncAmt" placeholder="Enter amount"
+                                <input type="number" step="500" id="IncAmt" placeholder="Enter amount" required
                                     class="w-full text-sm text-black border border-gray-400 rounded-xl pl-10 pr-4 py-2.5 focus:outline-none focus:border-green-600 transition-colors cursor-pointer">
                             </div>
                         </div>
@@ -282,7 +282,7 @@
                                             d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
                                     </svg>
                                 </span>
-                                <input type="date" id="ExpDate"
+                                <input type="date" id="ExpDate" required
                                     class="w-full text-sm text-black border border-gray-400 rounded-xl pl-10 pr-4 py-2.5 focus:outline-none focus:border-red-500 transition-colors">
                             </div>
                         </div>
@@ -297,7 +297,7 @@
                                             d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
                                     </svg>
                                 </span>
-                                <input type="text" id="ExpDesc" placeholder="Enter description"
+                                <input type="text" id="ExpDesc" placeholder="Enter description" required
                                     class="w-full text-sm text-black border border-gray-400 rounded-xl pl-10 pr-4 py-2.5 focus:outline-none focus:border-red-500 transition-colors">
                             </div>
                         </div>
@@ -338,7 +338,7 @@
                             <div class="relative flex items-center">
                                 <span
                                     class="absolute left-4 text-xl font-medium text-gray-400 pointer-events-none">₹</span>
-                                <input type="number" step="500" id="ExpAmt" placeholder="Enter amount"
+                                <input type="number" step="500" id="ExpAmt" placeholder="Enter amount" required
                                     class="w-full text-sm text-black border border-gray-400 rounded-xl pl-10 pr-4 py-2.5 focus:outline-none focus:border-red-500 transition-colors cursor-pointer">
                             </div>
                         </div>
@@ -354,7 +354,7 @@
                         </button>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <section id="transactions"
                 class="flex items-center flex-col p-4 m-4 rounded-2xl border shadow-lg w-full min-h-96 bg-white select-none">
