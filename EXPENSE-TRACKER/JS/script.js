@@ -78,7 +78,6 @@ function addTransaction(e, forcedType) {
   document.getElementById(`${prefix}Date`).value = "";
   document.getElementById(`${prefix}Desc`).value = "";
   document.getElementById(`${prefix}Amt`).value = "";
-
 }
 
 document.getElementById("incomeModal").addEventListener("keypress", (e) => {
@@ -98,3 +97,11 @@ function saveTransactions() {
 }
 
 renderTransactions();
+
+document.getElementById("clearAllData").addEventListener("click", clearAllData);
+
+function clearAllData() {
+  localStorage.clear();
+  transactions = [];
+  renderTransactions();
+}
