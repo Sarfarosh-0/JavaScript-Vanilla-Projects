@@ -70,6 +70,9 @@ function deleteAllData() {
   localStorage.clear();
   transactions = [];
   renderAllTransactions();
+  calculateIncome();
+  calculateExpense();
+  calculateBalance();
   closeModal();
 }
 
