@@ -36,6 +36,8 @@ function addTransaction(e, forcedType) {
 
   saveTransactions();
   calculateIncome();
+  calculateExpense();
+  calculateBalance();
   renderAllTransactions();
   closeModal();
 
@@ -148,23 +150,8 @@ function renderTransaction(transaction) {
   transactionsContainer.appendChild(transactionUl);
 }
 
-const totalIncome = document.getElementById("totalIncome");
-const totalExpense = document.getElementById("totalExpense");
-const totalBalance = document.getElementById("totalBalance");
-
-let calTotalIncome = parseInt(0);
-
-function calculateIncome() {
-  transactions.forEach((transaction) => {
-    if (transaction.type === "Income") {
-      calTotalIncome = calTotalIncome + parseInt(transaction.amount);
-      totalIncome.textContent = calTotalIncome;
-    }
-  });
-}
-
 // Intital Run
 renderAllTransactions();
 calculateIncome();
-// calculateExpense();
-// calculateBalance();
+calculateExpense();
+calculateBalance();
