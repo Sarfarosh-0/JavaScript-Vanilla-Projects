@@ -35,6 +35,7 @@ function addTransaction(e, forcedType) {
   });
 
   saveTransactions();
+  calculateIncome();
   renderAllTransactions();
   closeModal();
 
@@ -58,8 +59,6 @@ document.getElementById("expenseModal").addEventListener("keypress", (e) => {
 function saveTransactions() {
   localStorage.setItem("transactions", JSON.stringify(transactions));
 }
-
-renderAllTransactions();
 
 document
   .getElementById("JSclearAllData")
@@ -148,3 +147,24 @@ function renderTransaction(transaction) {
   transactionUl.append(date, description, type, category, amount);
   transactionsContainer.appendChild(transactionUl);
 }
+
+const totalIncome = document.getElementById("totalIncome");
+const totalExpense = document.getElementById("totalExpense");
+const totalBalance = document.getElementById("totalBalance");
+
+let calTotalIncome = parseInt(0);
+
+function calculateIncome() {
+  transactions.forEach((transaction) => {
+    if (transaction.type === "Income") {
+      calTotalIncome = calTotalIncome + parseInt(transaction.amount);
+      totalIncome.textContent = calTotalIncome;
+    }
+  });
+}
+
+// Intital Run
+renderAllTransactions();
+calculateIncome();
+// calculateExpense();
+// calculateBalance();
