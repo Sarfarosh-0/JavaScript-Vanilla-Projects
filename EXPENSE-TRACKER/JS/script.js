@@ -10,43 +10,6 @@ document
   .getElementById("JSaddExpense")
   .addEventListener("click", addTransaction);
 
-function renderTransactions() {
-  const transactionsContainer = document.getElementById("transactionsHistory");
-  transactionsContainer.innerHTML = "";
-
-  transactions.forEach((transaction, index) => {
-    const transactionUl = document.createElement("ul");
-    transactionUl.classList.add("contents");
-
-    const date = document.createElement("li");
-    date.textContent = transaction.date;
-
-    const description = document.createElement("li");
-    description.textContent = transaction.description;
-
-    const type = document.createElement("li");
-    type.textContent = transaction.type;
-    type.className =
-      transaction.type === "Income" ? "text-green-600" : "text-red-600";
-    type.classList.add("font-semibold");
-
-    const category = document.createElement("li");
-    category.textContent = transaction.category;
-
-    const amount = document.createElement("li");
-    amount.textContent = `₹${Number(transaction.amount).toLocaleString("en-IN")}`;
-    amount.classList.add("text-right", "font-semibold", "py-1");
-    if (type.textContent === "Income") {
-      amount.classList.add("text-green-600");
-    } else {
-      amount.classList.add("text-red-600");
-    }
-
-    transactionUl.append(date, description, type, category, amount);
-    transactionsContainer.appendChild(transactionUl);
-  });
-}
-
 function addTransaction(e, forcedType) {
   const isExpense =
     forcedType === "Expense" ||
@@ -72,7 +35,7 @@ function addTransaction(e, forcedType) {
   });
 
   saveTransactions();
-  renderTransactions();
+  renderAllTransactions();
   closeModal();
 
   document.getElementById(`${prefix}Date`).value = "";
@@ -96,7 +59,7 @@ function saveTransactions() {
   localStorage.setItem("transactions", JSON.stringify(transactions));
 }
 
-renderTransactions();
+renderAllTransactions();
 
 document
   .getElementById("JSclearAllData")
@@ -105,96 +68,83 @@ document
 function deleteAllData() {
   localStorage.clear();
   transactions = [];
-  renderTransactions();
+  renderAllTransactions();
   closeModal();
 }
 
 document
   .getElementById("selectAllTransactions")
-  .addEventListener("click", renderTransactions);
+  .addEventListener("click", renderAllTransactions);
 
 document
   .getElementById("selectAllIncome")
   .addEventListener("click", renderIncome);
 
+document
+  .getElementById("selectAllExpense")
+  .addEventListener("click", renderExpense);
+
+function renderAllTransactions() {
+  const transactionsContainer = document.getElementById("transactionsHistory");
+  transactionsContainer.innerHTML = "";
+
+  transactions.forEach((transaction) => {
+    renderTransaction(transaction);
+  });
+}
+
 function renderIncome() {
   const transactionsContainer = document.getElementById("transactionsHistory");
   transactionsContainer.innerHTML = "";
 
-  transactions.forEach((transaction, index) => {
+  transactions.forEach((transaction) => {
     if (transaction.type === "Income") {
-      const transactionUl = document.createElement("ul");
-      transactionUl.classList.add("contents");
-
-      const date = document.createElement("li");
-      date.textContent = transaction.date;
-
-      const description = document.createElement("li");
-      description.textContent = transaction.description;
-
-      const type = document.createElement("li");
-      type.textContent = transaction.type;
-      type.className =
-        transaction.type === "Income" ? "text-green-600" : "text-red-600";
-      type.classList.add("font-semibold");
-
-      const category = document.createElement("li");
-      category.textContent = transaction.category;
-
-      const amount = document.createElement("li");
-      amount.textContent = `₹${Number(transaction.amount).toLocaleString("en-IN")}`;
-      amount.classList.add("text-right", "font-semibold", "py-1");
-      if (type.textContent === "Income") {
-        amount.classList.add("text-green-600");
-      } else {
-        amount.classList.add("text-red-600");
-      }
-
-      transactionUl.append(date, description, type, category, amount);
-      transactionsContainer.appendChild(transactionUl);
+      renderTransaction(transaction);
     }
   });
 }
-
-document
-  .getElementById("selectAllExpense")
-  .addEventListener("click", renderExpense);
 
 function renderExpense() {
   const transactionsContainer = document.getElementById("transactionsHistory");
   transactionsContainer.innerHTML = "";
 
-  transactions.forEach((transaction, index) => {
+  transactions.forEach((transaction) => {
     if (transaction.type === "Expense") {
-      const transactionUl = document.createElement("ul");
-      transactionUl.classList.add("contents");
-
-      const date = document.createElement("li");
-      date.textContent = transaction.date;
-
-      const description = document.createElement("li");
-      description.textContent = transaction.description;
-
-      const type = document.createElement("li");
-      type.textContent = transaction.type;
-      type.className =
-        transaction.type === "Income" ? "text-green-600" : "text-red-600";
-      type.classList.add("font-semibold");
-
-      const category = document.createElement("li");
-      category.textContent = transaction.category;
-
-      const amount = document.createElement("li");
-      amount.textContent = `₹${Number(transaction.amount).toLocaleString("en-IN")}`;
-      amount.classList.add("text-right", "font-semibold", "py-1");
-      if (type.textContent === "Income") {
-        amount.classList.add("text-green-600");
-      } else {
-        amount.classList.add("text-red-600");
-      }
-
-      transactionUl.append(date, description, type, category, amount);
-      transactionsContainer.appendChild(transactionUl);
+      renderTransaction(transaction);
     }
   });
+}
+
+function renderTransaction(transaction) {
+  const transactionsContainer = document.getElementById("transactionsHistory");
+
+  const transactionUl = document.createElement("ul");
+  transactionUl.classList.add("contents");
+
+  const date = document.createElement("li");
+  date.textContent = transaction.date;
+
+  const description = document.createElement("li");
+  description.textContent = transaction.description;
+
+  const type = document.createElement("li");
+  type.textContent = transaction.type;
+  type.className =
+    transaction.type === "Income" ? "text-green-600" : "text-red-600";
+  type.classList.add("font-semibold");
+
+  const category = document.createElement("li");
+  category.textContent = transaction.category;
+
+  const amount = document.createElement("li");
+  amount.textContent = `₹${Number(transaction.amount).toLocaleString("en-IN")}`;
+  amount.classList.add("text-right", "font-semibold", "py-1");
+  if (type.textContent === "Income") {
+    amount.classList.add("text-green-600");
+  } else {
+    amount.classList.add("text-red-600");
+  }
+
+  transactionUl.append(date, description, type, category, amount);
+  transactionsContainer.appendChild(transactionUl);
 }
