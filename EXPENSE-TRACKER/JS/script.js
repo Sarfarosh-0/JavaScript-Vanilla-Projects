@@ -108,3 +108,93 @@ function deleteAllData() {
   renderTransactions();
   closeModal();
 }
+
+document
+  .getElementById("selectAllTransactions")
+  .addEventListener("click", renderTransactions);
+
+document
+  .getElementById("selectAllIncome")
+  .addEventListener("click", renderIncome);
+
+function renderIncome() {
+  const transactionsContainer = document.getElementById("transactionsHistory");
+  transactionsContainer.innerHTML = "";
+
+  transactions.forEach((transaction, index) => {
+    if (transaction.type === "Income") {
+      const transactionUl = document.createElement("ul");
+      transactionUl.classList.add("contents");
+
+      const date = document.createElement("li");
+      date.textContent = transaction.date;
+
+      const description = document.createElement("li");
+      description.textContent = transaction.description;
+
+      const type = document.createElement("li");
+      type.textContent = transaction.type;
+      type.className =
+        transaction.type === "Income" ? "text-green-600" : "text-red-600";
+      type.classList.add("font-semibold");
+
+      const category = document.createElement("li");
+      category.textContent = transaction.category;
+
+      const amount = document.createElement("li");
+      amount.textContent = `₹${Number(transaction.amount).toLocaleString("en-IN")}`;
+      amount.classList.add("text-right", "font-semibold", "py-1");
+      if (type.textContent === "Income") {
+        amount.classList.add("text-green-600");
+      } else {
+        amount.classList.add("text-red-600");
+      }
+
+      transactionUl.append(date, description, type, category, amount);
+      transactionsContainer.appendChild(transactionUl);
+    }
+  });
+}
+
+document
+  .getElementById("selectAllExpense")
+  .addEventListener("click", renderExpense);
+
+function renderExpense() {
+  const transactionsContainer = document.getElementById("transactionsHistory");
+  transactionsContainer.innerHTML = "";
+
+  transactions.forEach((transaction, index) => {
+    if (transaction.type === "Expense") {
+      const transactionUl = document.createElement("ul");
+      transactionUl.classList.add("contents");
+
+      const date = document.createElement("li");
+      date.textContent = transaction.date;
+
+      const description = document.createElement("li");
+      description.textContent = transaction.description;
+
+      const type = document.createElement("li");
+      type.textContent = transaction.type;
+      type.className =
+        transaction.type === "Income" ? "text-green-600" : "text-red-600";
+      type.classList.add("font-semibold");
+
+      const category = document.createElement("li");
+      category.textContent = transaction.category;
+
+      const amount = document.createElement("li");
+      amount.textContent = `₹${Number(transaction.amount).toLocaleString("en-IN")}`;
+      amount.classList.add("text-right", "font-semibold", "py-1");
+      if (type.textContent === "Income") {
+        amount.classList.add("text-green-600");
+      } else {
+        amount.classList.add("text-red-600");
+      }
+
+      transactionUl.append(date, description, type, category, amount);
+      transactionsContainer.appendChild(transactionUl);
+    }
+  });
+}
