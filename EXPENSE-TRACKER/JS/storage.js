@@ -124,23 +124,59 @@ function renderTransaction(transaction) {
   transactionUl.classList.add("contents");
 
   const date = document.createElement("li");
+  date.classList.add(
+    "py-3",
+    "border-b",
+    "border-gray-200",
+    "flex",
+    "items-center",
+  );
   date.textContent = transaction.date;
 
   const description = document.createElement("li");
+  description.classList.add(
+    "py-3",
+    "border-b",
+    "border-gray-200",
+    "flex",
+    "items-center",
+  );
   description.textContent = transaction.description;
 
   const type = document.createElement("li");
   type.textContent = transaction.type;
   type.className =
     transaction.type === "Income" ? "text-green-600" : "text-red-600";
-  type.classList.add("font-semibold");
+  type.classList.add(
+    "font-semibold",
+    "py-3",
+    "border-b",
+    "border-gray-200",
+    "flex",
+    "items-center",
+  );
 
   const category = document.createElement("li");
+  category.classList.add(
+    "py-3",
+    "border-b",
+    "border-gray-200",
+    "flex",
+    "items-center",
+  );
   category.textContent = transaction.category;
 
   const amount = document.createElement("li");
   amount.textContent = `₹${Number(transaction.amount).toLocaleString("en-IN")}`;
-  amount.classList.add("text-right", "font-semibold", "py-1");
+  amount.classList.add(
+    "text-right",
+    "font-semibold",
+    "py-3",
+    "border-b",
+    "border-gray-100",
+    "flex",
+    "items-center",
+  );
   if (type.textContent === "Income") {
     amount.classList.add("text-green-600");
   } else {
