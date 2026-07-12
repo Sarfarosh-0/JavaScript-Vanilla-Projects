@@ -121,69 +121,55 @@ function renderTransaction(transaction) {
   const transactionsContainer = document.getElementById("transactionsHistory");
 
   const transactionUl = document.createElement("ul");
-  transactionUl.classList.add("contents");
+  transactionUl.classList.add(
+    "grid",
+    "grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr]",
+    "items-center",
+    "w-full",
+    "py-1",
+    "hover:bg-gray-100",
+    "rounded-lg",
+    "border-b",
+    "border-gray-100",
+  );
 
   const date = document.createElement("li");
-  date.classList.add(
-    "py-3",
-    "border-b",
-    "border-gray-200",
-    "flex",
-    "items-center",
-  );
+  date.classList.add("py-3");
   date.textContent = transaction.date;
 
   const description = document.createElement("li");
-  description.classList.add(
-    "py-3",
-    "border-b",
-    "border-gray-200",
-    "flex",
-    "items-center",
-  );
+  description.classList.add("py-3");
   description.textContent = transaction.description;
 
   const type = document.createElement("li");
   type.textContent = transaction.type;
   type.className =
     transaction.type === "Income" ? "text-green-600" : "text-red-600";
-  type.classList.add(
-    "font-semibold",
-    "py-3",
-    "border-b",
-    "border-gray-200",
-    "flex",
-    "items-center",
-  );
+  type.classList.add("font-semibold");
 
   const category = document.createElement("li");
-  category.classList.add(
-    "py-3",
-    "border-b",
-    "border-gray-200",
-    "flex",
-    "items-center",
-  );
+  category.classList.add("py-3");
   category.textContent = transaction.category;
 
   const amount = document.createElement("li");
   amount.textContent = `₹${Number(transaction.amount).toLocaleString("en-IN")}`;
-  amount.classList.add(
-    "text-right",
-    "font-semibold",
-    "py-3",
-    "border-b",
-    "border-gray-100",
-    "flex",
-    "items-center",
-  );
+  amount.classList.add("text-right", "font-semibold");
   if (type.textContent === "Income") {
     amount.classList.add("text-green-600");
   } else {
     amount.classList.add("text-red-600");
   }
 
-  transactionUl.append(date, description, type, category, amount);
+  const deleteTransaction = document.createElement("li");
+
+  transactionUl.append(
+    date,
+    description,
+    type,
+    category,
+    amount,
+    deleteTransaction,
+  );
   transactionsContainer.appendChild(transactionUl);
 }
 
