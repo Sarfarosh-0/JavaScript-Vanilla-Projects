@@ -29,7 +29,11 @@ function calculateExpense() {
 function calculateBalance() {
   calTotalBalance = calTotalIncome - calTotalExpense;
   totalBalance.textContent = `₹ ${calTotalBalance.toLocaleString("en-IN")}`;
-  totalBalance.classList.remove("text-green-600", "text-blue-600", "text-red-600");
+  totalBalance.classList.remove(
+    "text-green-600",
+    "text-blue-600",
+    "text-red-600",
+  );
 
   if (calTotalBalance === 0) {
     totalBalance.classList.add("text-blue-600");
@@ -44,5 +48,15 @@ function clearAllTotals() {
   totalIncome.textContent = "₹ 0";
   totalExpense.textContent = "₹ 0";
   totalBalance.textContent = "₹ 0";
-  totalBalance.classList.remove("text-green-600", "text-blue-600", "text-red-600");
+  totalBalance.classList.remove(
+    "text-green-600",
+    "text-blue-600",
+    "text-red-600",
+  );
+}
+
+function runCalculations() {
+  calculateIncome();
+  calculateExpense();
+  calculateBalance();
 }

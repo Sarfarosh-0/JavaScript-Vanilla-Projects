@@ -27,6 +27,7 @@ function addTransaction(e, forcedType) {
   }
 
   transactions.push({
+    id: Date.now(),
     date: date,
     description: description || "No description",
     type: isExpense ? "Expense" : "Income",
@@ -35,9 +36,7 @@ function addTransaction(e, forcedType) {
   });
 
   saveTransactions();
-  calculateIncome();
-  calculateExpense();
-  calculateBalance();
+  runCalculations();
   renderAllTransactions();
   closeModal();
 
@@ -127,11 +126,14 @@ function renderTransaction(transaction) {
     "items-center",
     "w-full",
     "py-1",
+    "px-2",
     "hover:bg-gray-100",
     "rounded-lg",
     "border-b",
     "border-gray-100",
   );
+
+  console.log(transaction.id);
 
   const date = document.createElement("li");
   date.classList.add("py-3");
@@ -160,7 +162,23 @@ function renderTransaction(transaction) {
     amount.classList.add("text-red-600");
   }
 
-  const deleteTransaction = document.createElement("li");
+  const delImg = document.createElement("img");
+  delImg.src = "https://cdn-icons-png.flaticon.com/128/9790/9790368.png";
+  delImg.classList.add(
+    "w-6",
+    "h-6",
+    "cursor-pointer",
+    "opacity-40",
+    "transition-opacity",
+    "duration-200",
+    "hover:opacity-100",
+  );
+
+  const delTransaction = document.createElement("li");
+  delTransaction.classList.add("flex", "justify-end", "items-center", "w-full");
+  delTransaction.appendChild(delImg);
+
+  delImg.addEventListener("click", () => deleteTransaction(transaction.id));
 
   transactionUl.append(
     date,
@@ -168,13 +186,21 @@ function renderTransaction(transaction) {
     type,
     category,
     amount,
-    deleteTransaction,
+    delTransaction,
   );
+
   transactionsContainer.appendChild(transactionUl);
+}
+
+function deleteTransaction(id) {
+  transactions = transactions.filter((transaction) => transaction.id !== id);
+
+  saveTransactions();
+
+  renderAllTransactions();
+  runCalculations();
 }
 
 // Intital Run
 renderAllTransactions();
-calculateIncome();
-calculateExpense();
-calculateBalance();
+runCalculations();
