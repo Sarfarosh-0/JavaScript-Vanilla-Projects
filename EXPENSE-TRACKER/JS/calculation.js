@@ -10,30 +10,27 @@ function calculateIncome() {
   calTotalIncome = 0;
   transactions.forEach((transaction) => {
     if (transaction.type === "Income") {
-      calTotalIncome = calTotalIncome + parseInt(transaction.amount);
+      calTotalIncome += parseFloat(transaction.amount) || 0;
     }
   });
-  totalIncome.textContent = `₹ ${calTotalIncome.toLocaleString("en-IN")}`;
+  totalIncome.textContent = `₹ ${calTotalIncome.toLocaleString("en-IN", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 }
 
 function calculateExpense() {
   calTotalExpense = 0;
   transactions.forEach((transaction) => {
     if (transaction.type === "Expense") {
-      calTotalExpense = calTotalExpense + parseInt(transaction.amount);
+      calTotalExpense += parseFloat(transaction.amount) || 0;
     }
   });
-  totalExpense.textContent = `₹ ${calTotalExpense.toLocaleString("en-IN")}`;
+  totalExpense.textContent = `₹ ${calTotalExpense.toLocaleString("en-IN", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 }
 
 function calculateBalance() {
   calTotalBalance = calTotalIncome - calTotalExpense;
-  totalBalance.textContent = `₹ ${calTotalBalance.toLocaleString("en-IN")}`;
-  totalBalance.classList.remove(
-    "text-green-600",
-    "text-blue-600",
-    "text-red-600",
-  );
+  totalBalance.textContent = `₹ ${calTotalBalance.toLocaleString("en-IN", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  
+  totalBalance.classList.remove("text-green-600", "text-blue-600", "text-red-600");
 
   if (calTotalBalance === 0) {
     totalBalance.classList.add("text-blue-600");
@@ -45,14 +42,10 @@ function calculateBalance() {
 }
 
 function clearAllTotals() {
-  totalIncome.textContent = "₹ 0";
-  totalExpense.textContent = "₹ 0";
-  totalBalance.textContent = "₹ 0";
-  totalBalance.classList.remove(
-    "text-green-600",
-    "text-blue-600",
-    "text-red-600",
-  );
+  totalIncome.textContent = `₹ 0.00`;
+  totalExpense.textContent = `₹ 0.00`;
+  totalBalance.textContent = `₹ 0.00`;
+  totalBalance.classList.remove("text-green-600", "text-blue-600", "text-red-600");
 }
 
 function runCalculations() {
