@@ -74,8 +74,10 @@ function deleteAllData() {
 }
 
 document
-  .getElementById("selectAllTransactions")
-  .addEventListener("click", renderAllTransactions);
+  .querySelectorAll(".selectAllTransactions")
+  .forEach((button) => {
+    button.addEventListener("click", renderAllTransactions);
+  });
 
 document
   .getElementById("selectAllIncome")
@@ -120,12 +122,11 @@ function renderTransaction(transaction) {
   const transactionsContainer = document.getElementById("transactionsHistory");
 
   const transactionUl = document.createElement("ul");
-  
-  // Responsive Grid Settings matching header visibility rules
+
   transactionUl.classList.add(
     "grid",
-    "grid-cols-[1.2fr_1fr_1.2fr_30px]",       // Mobile default layout (4 columns)
-    "md:grid-cols-[1fr_1.5fr_1fr_1fr_1fr_30px]", // Desktop fallback (6 columns)
+    "grid-cols-[1.2fr_1fr_1.2fr_30px]",
+    "md:grid-cols-[1fr_1.5fr_1fr_1fr_1fr_30px]",
     "items-center",
     "w-full",
     "py-1",
