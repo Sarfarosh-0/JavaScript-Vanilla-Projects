@@ -126,7 +126,7 @@ function renderTransaction(transaction) {
     "items-center",
     "w-full",
     "py-1",
-    "px-2",
+    "px-3",
     "hover:bg-gray-100",
     "rounded-lg",
     "border-b",
