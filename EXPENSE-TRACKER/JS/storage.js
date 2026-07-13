@@ -120,43 +120,60 @@ function renderTransaction(transaction) {
   const transactionsContainer = document.getElementById("transactionsHistory");
 
   const transactionUl = document.createElement("ul");
+  // Fix: Switch from 4 evenly spaced columns on mobile to a 6-column layout on desktop
   transactionUl.classList.add(
     "grid",
-    "grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr]",
+    "grid-cols-4",
+    "md:grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr]",
     "items-center",
     "w-full",
     "py-1",
-    "px-3",
+    "px-2",
     "hover:bg-gray-100",
     "rounded-lg",
     "border-b",
     "border-gray-100",
   );
 
-  console.log(transaction.id);
+  const textResponsiveClasses = [
+    "text-xs",
+    "sm:text-sm",
+    "md:text-base",
+    "truncate",
+  ];
 
   const date = document.createElement("li");
-  date.classList.add("py-3");
+  date.classList.add("py-3", ...textResponsiveClasses);
   date.textContent = transaction.date;
 
   const description = document.createElement("li");
-  description.classList.add("py-3");
+  description.classList.add(
+    "py-3",
+    "hidden",
+    "md:block",
+    ...textResponsiveClasses,
+  );
   description.textContent = transaction.description;
 
   const type = document.createElement("li");
   type.textContent = transaction.type;
   type.className =
     transaction.type === "Income" ? "text-green-600" : "text-red-600";
-  type.classList.add("font-semibold");
+  type.classList.add("font-semibold", ...textResponsiveClasses);
 
   const category = document.createElement("li");
-  category.classList.add("py-3");
+  category.classList.add(
+    "py-3",
+    "hidden",
+    "md:block",
+    ...textResponsiveClasses,
+  );
   category.textContent = transaction.category;
 
   const amount = document.createElement("li");
   amount.textContent = `₹${Number(transaction.amount).toLocaleString("en-IN")}`;
-  amount.classList.add("text-right", "font-semibold");
-  if (type.textContent === "Income") {
+  amount.classList.add("md:text-right", "font-semibold", ...textResponsiveClasses);
+  if (transaction.type === "Income") {
     amount.classList.add("text-green-600");
   } else {
     amount.classList.add("text-red-600");
@@ -165,8 +182,10 @@ function renderTransaction(transaction) {
   const delImg = document.createElement("img");
   delImg.src = "https://cdn-icons-png.flaticon.com/128/9790/9790368.png";
   delImg.classList.add(
-    "w-6",
-    "h-6",
+    "w-5",
+    "h-5",
+    "md:w-6",
+    "md:h-6",
     "cursor-pointer",
     "opacity-40",
     "transition-opacity",
@@ -175,7 +194,7 @@ function renderTransaction(transaction) {
   );
 
   const delTransaction = document.createElement("li");
-  delTransaction.classList.add("flex", "justify-end", "items-center", "w-full");
+  delTransaction.classList.add("md:flex", "md:justify-end", "md:items-center", "w-full");
   delTransaction.appendChild(delImg);
 
   delImg.addEventListener("click", () => deleteTransaction(transaction.id));
