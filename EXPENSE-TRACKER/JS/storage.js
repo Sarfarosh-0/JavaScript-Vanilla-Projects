@@ -123,8 +123,7 @@ function renderTransaction(transaction) {
   // Fix: Switch from 4 evenly spaced columns on mobile to a 6-column layout on desktop
   transactionUl.classList.add(
     "grid",
-    "grid-cols-4",
-    "md:grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr]",
+    "grid-cols-[1fr_1fr_1fr_1fr_1fr_30px]",
     "items-center",
     "w-full",
     "py-1",
@@ -149,8 +148,6 @@ function renderTransaction(transaction) {
   const description = document.createElement("li");
   description.classList.add(
     "py-3",
-    "hidden",
-    "md:block",
     ...textResponsiveClasses,
   );
   description.textContent = transaction.description;
@@ -164,15 +161,13 @@ function renderTransaction(transaction) {
   const category = document.createElement("li");
   category.classList.add(
     "py-3",
-    "hidden",
-    "md:block",
     ...textResponsiveClasses,
   );
   category.textContent = transaction.category;
 
   const amount = document.createElement("li");
   amount.textContent = `₹${Number(transaction.amount).toLocaleString("en-IN")}`;
-  amount.classList.add("md:text-right", "font-semibold", ...textResponsiveClasses);
+  amount.classList.add("font-semibold", ...textResponsiveClasses);
   if (transaction.type === "Income") {
     amount.classList.add("text-green-600");
   } else {
@@ -194,7 +189,6 @@ function renderTransaction(transaction) {
   );
 
   const delTransaction = document.createElement("li");
-  delTransaction.classList.add("md:flex", "md:justify-end", "md:items-center", "w-full");
   delTransaction.appendChild(delImg);
 
   delImg.addEventListener("click", () => deleteTransaction(transaction.id));
