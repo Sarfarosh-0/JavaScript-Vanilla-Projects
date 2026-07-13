@@ -397,17 +397,17 @@
                     <a href="#" class="text-blue-500 hover:underline hover:font-bold transition-all">View All</a>
                 </div>
                 <div class="w-full px-2">
+                    <!-- Adjusted class settings here for dynamic mobile-to-desktop responsiveness -->
                     <ul
-                        class="text-black font-bold grid grid-cols-[1fr_1fr_1fr_1fr_1fr_30px] border-b py-2 px-2 items-center text-xs sm:text-sm md:text-base">
+                        class="text-black font-bold grid grid-cols-[1.2fr_1fr_1.2fr_30px] md:grid-cols-[1fr_1.5fr_1fr_1fr_1fr_30px] border-b py-2 px-2 items-center text-xs sm:text-sm md:text-base">
                         <li>Date</li>
-                        <li>Description</li>
+                        <li class="hidden md:block">Description</li>
                         <li>Type</li>
-                        <li>Category</li>
+                        <li class="hidden md:block">Category</li>
                         <li>Amount</li>
                         <li></li>
                     </ul>
                 </div>
-
 
                 <div id="transactionsHistory"
                     class="w-full flex flex-col px-2 py-2 items-center text-sm md:text-base max-h-96 overflow-y-auto scrollbar-thin scrollbar-track-slate-100 scrollbar-thumb-slate-300 hover:scrollbar-thumb-slate-400">

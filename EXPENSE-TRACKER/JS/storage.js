@@ -120,10 +120,12 @@ function renderTransaction(transaction) {
   const transactionsContainer = document.getElementById("transactionsHistory");
 
   const transactionUl = document.createElement("ul");
-  // Fix: Switch from 4 evenly spaced columns on mobile to a 6-column layout on desktop
+  
+  // Responsive Grid Settings matching header visibility rules
   transactionUl.classList.add(
     "grid",
-    "grid-cols-[1fr_1fr_1fr_1fr_1fr_30px]",
+    "grid-cols-[1.2fr_1fr_1.2fr_30px]",       // Mobile default layout (4 columns)
+    "md:grid-cols-[1fr_1.5fr_1fr_1fr_1fr_30px]", // Desktop fallback (6 columns)
     "items-center",
     "w-full",
     "py-1",
@@ -148,6 +150,8 @@ function renderTransaction(transaction) {
   const description = document.createElement("li");
   description.classList.add(
     "py-3",
+    "hidden",
+    "md:block",
     ...textResponsiveClasses,
   );
   description.textContent = transaction.description;
@@ -161,6 +165,8 @@ function renderTransaction(transaction) {
   const category = document.createElement("li");
   category.classList.add(
     "py-3",
+    "hidden",
+    "md:block",
     ...textResponsiveClasses,
   );
   category.textContent = transaction.category;
