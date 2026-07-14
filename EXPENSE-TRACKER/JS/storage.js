@@ -73,11 +73,9 @@ function deleteAllData() {
   closeModal();
 }
 
-document
-  .querySelectorAll(".selectAllTransactions")
-  .forEach((button) => {
-    button.addEventListener("click", renderAllTransactions);
-  });
+document.querySelectorAll(".selectAllTransactions").forEach((button) => {
+  button.addEventListener("click", renderAllTransactions);
+});
 
 document
   .getElementById("selectAllIncome")
@@ -130,10 +128,10 @@ function renderTransaction(transaction) {
     "items-center",
     "w-full",
     "px-2",
-    "hover:backdrop-blur-md",
+    "hover:bg-gray-200",
     "rounded-lg",
     "border-b",
-    "border-gray-100",
+    "border-gray-200",
   );
 
   const textResponsiveClasses = [
