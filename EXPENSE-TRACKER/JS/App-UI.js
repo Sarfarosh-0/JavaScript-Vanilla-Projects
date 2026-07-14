@@ -98,10 +98,10 @@ navItems.forEach((item) => {
         "font-semibold",
         "shadow-md",
       );
-      nav.classList.add("text-black", "hover:bg-gray-100");
+      nav.classList.add("text-black", "hover:bg-gray-200");
     });
 
-    this.classList.remove("text-black", "hover:bg-gray-100");
+    this.classList.remove("text-black", "hover:bg-gray-200");
     this.classList.add(
       "bg-blue-400",
       "border",
@@ -111,4 +111,79 @@ navItems.forEach((item) => {
       "shadow-md",
     );
   });
+});
+
+const modalWrapper = document.getElementById("modalWrapper");
+const transactionsSection = document.getElementById("transactions");
+const transactionsHistory = document.getElementById("transactionsHistory");
+const tableTitle = document.getElementById("tableTitle");
+const viewAllBtn = document.getElementById("viewAllBtn");
+const closeModalBtn = document.getElementById("closeModalBtn");
+
+viewAllBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  modalWrapper.classList.add(
+    "fixed",
+    "inset-0",
+    "z-50",
+    "flex",
+    "items-center",
+    "justify-center",
+    "bg-black/60",
+    "backdrop-blur-sm",
+    "p-4",
+    "opacity-100",
+  );
+  modalWrapper.classList.remove("w-full");
+
+  transactionsSection.classList.add(
+    "max-w-4xl",
+    "h-[85vh]",
+    "p-6",
+    "shadow-2xl",
+  );
+  transactionsSection.classList.remove("mt-3", "p-4", "shadow-lg", "min-h-96");
+
+
+  transactionsHistory.classList.add("flex-grow", "overflow-y-auto");
+  transactionsHistory.classList.remove("max-h-[320px]", "overflow-hidden");
+
+  tableTitle.textContent = "All Transactions";
+  viewAllBtn.classList.add("hidden");
+  closeModalBtn.classList.remove("hidden");
+  document.body.classList.add("overflow-hidden");
+});
+
+closeModalBtn.addEventListener("click", () => {
+  
+  modalWrapper.classList.remove(
+    "fixed",
+    "inset-0",
+    "z-50",
+    "flex",
+    "items-center",
+    "justify-center",
+    "bg-black/60",
+    "backdrop-blur-sm",
+    "p-4",
+    "opacity-100",
+  );
+
+  modalWrapper.classList.add("w-full");
+  transactionsSection.classList.remove(
+    "max-w-4xl",
+    "h-[85vh]",
+    "p-6",
+    "shadow-2xl",
+  );
+
+  transactionsSection.classList.add("mt-3", "p-4", "shadow-lg", "min-h-96");
+  transactionsHistory.classList.remove("flex-grow", "overflow-y-auto");
+  transactionsHistory.classList.add("max-h-[320px]", "overflow-hidden");
+
+  tableTitle.textContent = "Recent Transactions";
+  viewAllBtn.classList.remove("hidden");
+  closeModalBtn.classList.add("hidden");
+  document.body.classList.remove("overflow-hidden");
 });

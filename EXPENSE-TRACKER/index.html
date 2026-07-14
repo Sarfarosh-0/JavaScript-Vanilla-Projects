@@ -23,9 +23,9 @@
             scroll-padding-top: 30px;
         }
 
-        #transactions {
+        /* #transactions {
             background: linear-gradient(rgba(249, 250, 251, 0.4), rgba(249, 250, 251, 0.4))
-        }
+        } */
     </style>
 </head>
 
@@ -60,7 +60,7 @@
                 <span>Income</span>
             </a>
             <a href="#transactions" id="selectAllExpense"
-                class="nav-item selectAllTransactions flex items-center gap-3 px-4 py-2 text-black hover:bg-gray-300 rounded-lg text-base transition-all duration-300 ease-in-out">
+                class="nav-item selectAllTransactions flex items-center gap-3 px-4 py-2 text-black hover:bg-gray-200 rounded-lg text-base transition-all duration-300 ease-in-out">
                 <img src="https://img.icons8.com/color/48/bearish.png" alt="Expenses" draggable="false"
                     class="w-5 h-5 object-contain" />
                 <span>Expenses</span>
@@ -394,36 +394,46 @@
                 </div>
             </section>
 
-            <section id="transactions"
-                class="flex items-center  flex-col p-4 m-4 rounded-2xl border shadow-lg w-full min-h-96 select-none">
-                <div class="flex justify-between w-full px-2 py-4">
-                    <h1 class="text-2xl font-semibold">All Transactions</h1>
-                    <a href="#" class="text-blue-500 hover:underline hover:font-bold transition-all">View All</a>
-                </div>
-                <div class="w-full px-2">
-                    <ul
-                        class="text-black font-bold grid grid-cols-[1.2fr_1fr_1.2fr_30px] md:grid-cols-[1fr_1.5fr_1fr_1fr_1fr_30px] border-b py-2 px-2 items-center text-xs sm:text-sm md:text-base">
-                        <li>Date</li>
-                        <li class="hidden md:block">Description</li>
-                        <li>Type</li>
-                        <li class="hidden md:block">Category</li>
-                        <li>Amount</li>
-                        <li></li>
-                    </ul>
-                </div>
+            <div id="modalWrapper" class="w-full">
+                <section id="transactions"
+                    class="bg-white flex items-center flex-col p-4 mt-3 rounded-2xl border shadow-lg w-full min-h-96 select-none transition-all duration-300">
 
-                <div id="transactionsHistory"
-                    class="w-full flex flex-col px-2 py-2 items-center text-sm md:text-base max-h-96 overflow-y-auto scrollbar-thin scrollbar-track-slate-100 scrollbar-thumb-slate-300 hover:scrollbar-thumb-slate-400">
-                </div>
-            </section>
+                    <div class="flex justify-between w-full px-2 py-4 shrink-0">
+                        <h1 id="tableTitle" class="text-2xl font-semibold text-gray-800">Recent Transactions</h1>
+                        <div class="flex items-center">
+                            <a href="#" id="viewAllBtn"
+                                class="text-blue-500 hover:underline hover:font-bold transition-all text-sm sm:text-base">View
+                                All
+                            </a>
+                            <button id="closeModalBtn"
+                                class="hidden text-gray-500 hover:text-red-500 font-semibold transition-all text-sm sm:text-base">Close
+                            </button>
+                        </div>
+                    </div>
 
+                    <div class="w-full px-2 shrink-0">
+                        <ul
+                            class="text-gray-500 font-bold grid grid-cols-[1.2fr_1fr_1.2fr_30px] md:grid-cols-[1fr_1.5fr_1fr_1fr_1fr_30px] border-b py-2 px-2 items-center text-xs sm:text-sm md:text-base">
+                            <li>Date</li>
+                            <li class="hidden md:block">Description</li>
+                            <li>Type</li>
+                            <li class="hidden md:block">Category</li>
+                            <li>Amount</li>
+                            <li></li>
+                        </ul>
+                    </div>
+
+                    <div id="transactionsHistory"
+                        class="w-full flex flex-col px-2 py-2 items-center text-sm md:text-base max-h-96 overflow-hidden min-h-0">
+                    </div>
+                </section>
+            </div>
         </main>
     </div>
 
     <script src="JS/app-UI.js"></script>
     <script src="JS/calculation.js"></script>
     <script src="JS/storage.js"></script>
-    <!-- <script src="JS/app.js"></script> -->
 </body>
 
 </html>
