@@ -14,8 +14,7 @@
     <style>
         body {
             font-family: 'Roboto Condensed', sans-serif;
-            background: linear-gradient(rgba(249, 250, 251, 0.4), rgba(249, 250, 251, 0.4)),
-                url('https://i.pinimg.com/736x/12/86/e4/1286e4cf09d92e1375360db43c2a89e0.jpg');
+            background: url('https://i.pinimg.com/736x/12/86/e4/1286e4cf09d92e1375360db43c2a89e0.jpg');
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
@@ -23,6 +22,11 @@
             scroll-behavior: smooth;
             scroll-padding-top: 30px;
         }
+
+        #transactions {
+            background: linear-gradient(rgba(249, 250, 251, 0.4), rgba(249, 250, 251, 0.4))
+        }
+
     </style>
 </head>
 
@@ -31,41 +35,42 @@
     <aside id="sidebar" aria-label="Primary Navigation"
         class="fixed top-0 left-0 h-full w-52 bg-white border-r border-gray-200 z-50 p-4 flex flex-col gap-5 transition-transform duration-500 ease-in-out -translate-x-full">
 
-        <div class="flex justify-between items-center pb-3 h-16  border-b border-gray-100">
+        <div class="flex justify-between items-center pb-3 h-16 border-b ">
             <div class="flex items-center gap-2">
                 <img src="https://cdn-icons-png.flaticon.com/128/9730/9730488.png" alt="Logo" draggable="false"
                     class="w-8 h-8 object-contain shrink-0">
-                <h1 class="text-2xl font-bold text-gray-800">Tracker</h1>
+                <h1 class="text-2xl font-bold text-black">Tracker</h1>
             </div>
             <button id="closeSidebarBtn" aria-label="Close Sidebar"
-                class="text-xl text-gray-400 hover:text-gray-700 transition-colors cursor-pointer select-none">
+                class="text-xl hover:text-red-700 hover:font-bold transition-all duration-200 cursor-pointer select-none">
                 <span aria-hidden="true">✕</span>
             </button>
         </div>
 
         <nav class="flex flex-col gap-1.5">
             <a href="#overview"
-                class="selectAllTransactions flex items-center gap-3 px-3 py-2 text-gray-600 hover:bg-gray-100 rounded-xl hover:font-bold text-sm transition-all duration-100 ease-in-out">
+                class="nav-item selectAllTransactions flex items-center gap-3 px-4 py-2 text-black hover:bg-gray-200 rounded-lg text-base transition-all duration-300 ease-in-out">
                 <img src="https://cdn-icons-png.flaticon.com/128/3408/3408591.png" alt="Dashboard" draggable="false"
-                    class="w-5 h-5 object-contain" />
-                <span>DashBoard</span>
+                    class="w-5 h-5 object-contain transition-all duration-300" />
+                <span>Dashboard</span>
             </a>
             <a href="#transactions" id="selectAllIncome"
-                class="flex items-center gap-3 px-3 py-2 text-gray-600 hover:bg-gray-100 rounded-xl hover:font-bold text-sm transition-all duration-100 ease-in-out">
-                <img src="https://img.icons8.com/color/48/bullish.png" alt="Add Expenses" draggable="false"
+                class="nav-item selectAllTransactions flex items-center gap-3 px-4 py-2 text-black hover:bg-gray-200 rounded-lg text-base transition-all duration-300 ease-in-out">
+                <img src="https://img.icons8.com/color/48/bullish.png" alt="Income" draggable="false"
                     class="w-5 h-5 object-contain" />
                 <span>Income</span>
             </a>
             <a href="#transactions" id="selectAllExpense"
-                class="flex items-center gap-3 px-3 py-2 text-gray-600 hover:bg-gray-100 rounded-xl hover:font-bold text-sm transition-all duration-100 ease-in-out">
-                <img src="https://img.icons8.com/color/48/bearish.png" alt="Add Expenses" draggable="false"
+                class="nav-item selectAllTransactions flex items-center gap-3 px-4 py-2 text-black hover:bg-gray-300 rounded-lg text-base transition-all duration-300 ease-in-out">
+                <img src="https://img.icons8.com/color/48/bearish.png" alt="Expenses" draggable="false"
                     class="w-5 h-5 object-contain" />
                 <span>Expenses</span>
             </a>
+
             <a href="#transactions"
-                class="selectAllTransactions flex items-center gap-3 px-3 py-2 text-gray-600 hover:bg-gray-100 rounded-xl hover:font-bold text-sm transition-all duration-100 ease-in-out">
+                class="nav-item selectAllTransactions flex items-center gap-3 px-4 py-2 text-black hover:bg-gray-200 rounded-lg text-base transition-all duration-300 ease-in-out">
                 <img src="https://cdn-icons-png.flaticon.com/128/3186/3186949.png" alt="All Transactions"
-                    draggable="false" class="w-5 h-5 object-contain" />
+                    draggable="false" class="w-5 h-5 object-contain transition-all duration-300" />
                 <span>Transactions</span>
             </a>
         </nav>
@@ -79,7 +84,7 @@
     </aside>
 
     <div id="mainContent" class="transition-all duration-500 ease-in-out">
-        <header class="sticky top-0 z-30 bg-white py-3 shadow-sm">
+        <header class="sticky top-0 z-30 bg-white py-2 shadow-sm">
             <nav class="h-16 px-4 md:pl-6 md:pr-8 flex items-center justify-between relative">
                 <div class="flex items-center justify-center">
                     <button id="sidebarToggleBtn" aria-label="Open Sidebar"
@@ -391,7 +396,7 @@
             </section>
 
             <section id="transactions"
-                class="flex items-center flex-col p-4 m-4 rounded-2xl border shadow-lg w-full min-h-96 bg-white select-none">
+                class="flex items-center  flex-col p-4 m-4 rounded-2xl border shadow-lg w-full min-h-96 select-none">
                 <div class="flex justify-between w-full px-2 py-4">
                     <h1 class="text-2xl font-semibold">All Transactions</h1>
                     <a href="#" class="text-blue-500 hover:underline hover:font-bold transition-all">View All</a>
@@ -412,12 +417,14 @@
                     class="w-full flex flex-col px-2 py-2 items-center text-sm md:text-base max-h-96 overflow-y-auto scrollbar-thin scrollbar-track-slate-100 scrollbar-thumb-slate-300 hover:scrollbar-thumb-slate-400">
                 </div>
             </section>
+
         </main>
     </div>
 
     <script src="JS/app-UI.js"></script>
     <script src="JS/calculation.js"></script>
     <script src="JS/storage.js"></script>
+    <!-- <script src="JS/app.js"></script> -->
 </body>
 
 </html>

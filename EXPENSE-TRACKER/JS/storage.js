@@ -129,9 +129,8 @@ function renderTransaction(transaction) {
     "md:grid-cols-[1fr_1.5fr_1fr_1fr_1fr_30px]",
     "items-center",
     "w-full",
-    "py-1",
     "px-2",
-    "hover:bg-gray-100",
+    "hover:backdrop-blur-md",
     "rounded-lg",
     "border-b",
     "border-gray-100",
@@ -216,7 +215,6 @@ function deleteTransaction(id) {
   transactions = transactions.filter((transaction) => transaction.id !== id);
 
   saveTransactions();
-
   renderAllTransactions();
   runCalculations();
 }

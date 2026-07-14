@@ -42,6 +42,8 @@ const openExpenseMobileBtn = document.getElementById("addExpenseMobile");
 
 const clearAllData = document.getElementById("clearAllData");
 
+const viewAllTransactions = document.getElementById("viewAllTransactions");
+
 function openModal(modalType) {
   overlay.classList.remove("hidden");
 
@@ -81,4 +83,32 @@ overlay.addEventListener("click", (e) => {
   if (e.target === overlay) {
     closeModal();
   }
+});
+
+const navItems = document.querySelectorAll(".nav-item");
+
+navItems.forEach((item) => {
+  item.addEventListener("click", function () {
+    navItems.forEach((nav) => {
+      nav.classList.remove(
+        "bg-blue-400",
+        "border",
+        "border-white",
+        "text-white",
+        "font-semibold",
+        "shadow-md",
+      );
+      nav.classList.add("text-black", "hover:bg-gray-100");
+    });
+
+    this.classList.remove("text-black", "hover:bg-gray-100");
+    this.classList.add(
+      "bg-blue-400",
+      "border",
+      "border-white",
+      "text-white",
+      "font-semibold",
+      "shadow-md",
+    );
+  });
 });
