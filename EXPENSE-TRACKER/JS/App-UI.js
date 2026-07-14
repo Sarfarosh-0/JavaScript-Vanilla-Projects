@@ -27,6 +27,14 @@ function closeSidebar() {
   }
 }
 
+if (mainContent) {
+  mainContent.addEventListener("click", () => {
+    if (!sidebar.classList.contains("-translate-x-full")) {
+      closeSidebar();
+    }
+  });
+}
+
 closeSidebarBtn.addEventListener("click", closeSidebar);
 
 const overlay = document.getElementById("modalOverlay");
