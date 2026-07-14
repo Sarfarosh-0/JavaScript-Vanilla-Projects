@@ -217,6 +217,36 @@ function deleteTransaction(id) {
   runCalculations();
 }
 
+const sortBy = document.getElementById("sortBy");
+if (sortBy) {
+  sortBy.addEventListener("change", () => {
+    if (sortBy.value === "Descdate") {
+      sortByDateDesc();
+    } else if (sortBy.value === "Ascate") {
+      sortByDateAsc();
+    } else if (sortBy.value === "Descamount") {
+      sortByAmountDesc();
+    } else if (sortBy.value === "Ascamount") {
+      sortByAmountAsc();
+    }
+    renderAllTransactions();
+  });
+}
+
+function sortByDateAsc() {
+  transactions.sort((a, b) => new Date(a.date) - new Date(b.date));
+}
+function sortByDateDesc() {
+  transactions.sort((a, b) => new Date(b.date) - new Date(a.date));
+}
+function sortByAmountAsc() {
+  transactions.sort((a, b) => Number(a.amount) - Number(b.amount));
+}
+function sortByAmountDesc() {
+  transactions.sort((a, b) => Number(b.amount) - Number(a.amount));
+}
+
 // Intital Run
+sortByDateDesc();
 renderAllTransactions();
 runCalculations();
