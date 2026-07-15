@@ -134,30 +134,40 @@ viewAllBtn.addEventListener("click", (e) => {
   modalWrapper.classList.add(
     "fixed",
     "inset-0",
-    "z-50",
+    "z-[100]",
     "flex",
     "items-center",
     "justify-center",
     "bg-black/60",
     "backdrop-blur-sm",
     "p-4",
-    "opacity-100"
+    "opacity-100",
   );
   modalWrapper.classList.remove("w-full");
 
   transactionsSection.classList.add(
     "flex",
     "flex-col",
-    "w-full", 
+    "w-full",
     "max-w-4xl",
-    "max-h-[85vh]", 
+    "max-h-[85vh]",
     "p-6",
-    "shadow-2xl"
+    "shadow-2xl",
   );
-  transactionsSection.classList.remove("mt-3", "p-4", "shadow-lg", "min-h-96", "h-auto");
+  transactionsSection.classList.remove(
+    "mt-3",
+    "p-4",
+    "shadow-lg",
+    "min-h-96",
+    "h-auto",
+  );
 
   transactionsHistory.classList.add("flex-grow", "overflow-y-auto");
-  transactionsHistory.classList.remove("md:max-h-[320px]", "max-h-[250px]", "overflow-hidden");
+  transactionsHistory.classList.remove(
+    "md:max-h-[320px]",
+    "max-h-[250px]",
+    "overflow-hidden",
+  );
 
   tableTitle.textContent = "All Transactions";
   viewAllBtn.classList.add("hidden");
@@ -169,14 +179,14 @@ closeModalBtn.addEventListener("click", () => {
   modalWrapper.classList.remove(
     "fixed",
     "inset-0",
-    "z-50",
+    "z-[100]",
     "flex",
     "items-center",
     "justify-center",
     "bg-black/60",
     "backdrop-blur-sm",
     "p-4",
-    "opacity-100"
+    "opacity-100",
   );
   modalWrapper.classList.add("w-full");
 
@@ -187,15 +197,15 @@ closeModalBtn.addEventListener("click", () => {
     "max-w-4xl",
     "max-h-[85vh]",
     "p-6",
-    "shadow-2xl"
+    "shadow-2xl",
   );
   transactionsSection.classList.add("mt-3", "p-4", "shadow-lg", "min-h-96");
-  
+
   transactionsHistory.classList.remove("flex-grow", "overflow-y-auto");
   transactionsHistory.classList.add(
     "md:max-h-[320px]",
     "max-h-[250px]",
-    "overflow-hidden"
+    "overflow-hidden",
   );
 
   tableTitle.textContent = "Recent Transactions";

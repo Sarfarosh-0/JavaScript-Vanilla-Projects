@@ -29,23 +29,12 @@ function calculateExpense() {
 function calculateBalance() {
   calTotalBalance = calTotalIncome - calTotalExpense;
   totalBalance.textContent = `₹ ${calTotalBalance.toLocaleString("en-IN", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-  
-  totalBalance.classList.remove("text-green-600", "text-blue-600", "text-red-600");
-
-  if (calTotalBalance === 0) {
-    totalBalance.classList.add("text-blue-600");
-  } else if (calTotalBalance > 0) {
-    totalBalance.classList.add("text-green-600");
-  } else {
-    totalBalance.classList.add("text-red-600");
-  }
 }
 
 function clearAllTotals() {
   totalIncome.textContent = `₹ 0.00`;
   totalExpense.textContent = `₹ 0.00`;
   totalBalance.textContent = `₹ 0.00`;
-  totalBalance.classList.remove("text-green-600", "text-blue-600", "text-red-600");
 }
 
 function runCalculations() {

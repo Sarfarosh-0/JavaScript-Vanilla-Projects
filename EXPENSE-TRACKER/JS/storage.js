@@ -222,7 +222,7 @@ if (sortBy) {
   sortBy.addEventListener("change", () => {
     if (sortBy.value === "Descdate") {
       sortByDateDesc();
-    } else if (sortBy.value === "Ascate") {
+    } else if (sortBy.value === "Ascdate") {
       sortByDateAsc();
     } else if (sortBy.value === "Descamount") {
       sortByAmountDesc();
@@ -246,7 +246,7 @@ function sortByAmountDesc() {
   transactions.sort((a, b) => Number(b.amount) - Number(a.amount));
 }
 
-// Intital Run
+// Initial Run
 sortByDateDesc();
 renderAllTransactions();
 runCalculations();
