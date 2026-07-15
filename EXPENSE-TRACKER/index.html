@@ -280,31 +280,32 @@
                     </div>
                 </div>
 
+                <!-- Expense Modal -->
                 <div id="expenseModal"
-                    class="w-full max-w-96 bg-white rounded-2xl shadow-2xl border border-gray-100/80 p-6 flex flex-col justify-between hidden">
+                    class="w-full max-w-md bg-white rounded-2xl shadow-2xl border border-slate-100 p-6 flex flex-col justify-between hidden">
 
                     <div class="flex justify-between items-center mb-6">
-                        <div class="flex items-center gap-3">
-                            <div class="w-12 h-12 rounded-2xl flex items-center justify-center">
+                        <div class="flex items-center gap-3.5">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-rose-50 border border-rose-100/50 flex items-center justify-center shrink-0">
                                 <img src="https://img.icons8.com/color/48/bearish.png" alt="Add Expense"
-                                    draggable="false" class="w-10 aspect-square object-contain">
+                                    draggable="false" class="w-8 aspect-square object-contain">
                             </div>
                             <div>
-                                <h2 class="text-base font-semibold text-[#0F172A]">Add Expense</h2>
-                                <p class="text-sm text-[#64748B] mt-0.5">Add a new expense entry</p>
+                                <h2 class="text-lg font-bold text-slate-900">Add Expense</h2>
+                                <p class="text-xs text-slate-400 mt-0.5">Add a new expense entry</p>
                             </div>
                         </div>
-                        <button
-                            class="close-modal-btn text-gray-400 text-2xl hover:text-red-600 hover:font-bold transition-colors">
+                        <button class="close-modal-btn text-slate-400 text-2xl hover:text-slate-600 transition-colors">
                             ✕
                         </button>
                     </div>
 
                     <div class="space-y-4 mb-6">
                         <div class="flex flex-col gap-1.5">
-                            <label for="ExpDate" class="text-sm font-medium">Date</label>
+                            <label for="ExpDate" class="text-xs font-semibold text-slate-400 uppercase">Date</label>
                             <div class="relative flex items-center">
-                                <span class="absolute left-3.5 text-[#94A3B8]">
+                                <span class="absolute left-3.5 text-slate-400">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.8" stroke="currentColor" class="w-5 h-5">
                                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -312,14 +313,15 @@
                                     </svg>
                                 </span>
                                 <input type="date" id="ExpDate"
-                                    class="w-full text-sm text-black border border-gray-400 rounded-xl pl-10 pr-4 py-2.5 focus:outline-none focus:border-red-500 transition-colors">
+                                    class="w-full text-sm text-slate-900 bg-slate-50 border border-slate-200 rounded-xl pl-11 pr-4 py-3 focus:outline-none focus:border-rose-500 focus:ring-1 focus:ring-rose-500 transition-all">
                             </div>
                         </div>
 
                         <div class="flex flex-col gap-1.5">
-                            <label for="ExpDesc" class="text-sm font-medium">Description</label>
+                            <label for="ExpDesc"
+                                class="text-xs font-semibold text-slate-400 uppercase">Description</label>
                             <div class="relative flex items-center">
-                                <span class="absolute left-3.5 text-[#94A3B8]">
+                                <span class="absolute left-3.5 text-slate-400">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.8" stroke="currentColor" class="w-5 h-5">
                                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -327,14 +329,14 @@
                                     </svg>
                                 </span>
                                 <input type="text" id="ExpDesc" placeholder="Enter description"
-                                    class="w-full text-sm text-black border border-gray-400 rounded-xl pl-10 pr-4 py-2.5 focus:outline-none focus:border-red-500 transition-colors">
+                                    class="w-full text-sm text-slate-900 bg-slate-50 border border-slate-200 rounded-xl pl-11 pr-4 py-3 focus:outline-none focus:border-rose-500 focus:ring-1 focus:ring-rose-500 transition-all placeholder-slate-400">
                             </div>
                         </div>
 
                         <div class="flex flex-col gap-1.5">
-                            <label for="ExpCat" class="text-sm font-medium">Category</label>
+                            <label for="ExpCat" class="text-xs font-semibold text-slate-400 uppercase">Category</label>
                             <div class="relative flex items-center">
-                                <span class="absolute left-3.5 text-[#94A3B8]">
+                                <span class="absolute left-3.5 text-slate-400">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.8" stroke="currentColor" class="w-5 h-5">
                                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -343,17 +345,17 @@
                                     </svg>
                                 </span>
                                 <select id="ExpCat"
-                                    class="w-full appearance-none text-sm text-black border border-gray-400 rounded-xl pl-10 pr-4 py-2.5 focus:outline-none focus:border-red-500 transition-colors cursor-pointer">
-                                    <option>Food</option>
-                                    <option>Rent</option>
-                                    <option>Utilities</option>
-                                    <option>Entertainment</option>
-                                    <option>EMI Payment</option>
-                                    <option>Subscription</option>
-                                    <option>Recharge</option>
-                                    <option>Others</option>
+                                    class="w-full appearance-none text-sm text-slate-900 bg-slate-50 border border-slate-200 rounded-xl pl-11 pr-10 py-3 focus:outline-none focus:border-rose-500 focus:ring-1 focus:ring-rose-500 transition-all cursor-pointer">
+                                    <option class="bg-white text-slate-900">Food</option>
+                                    <option class="bg-white text-slate-900">Rent</option>
+                                    <option class="bg-white text-slate-900">Utilities</option>
+                                    <option class="bg-white text-slate-900">Entertainment</option>
+                                    <option class="bg-white text-slate-900">EMI Payment</option>
+                                    <option class="bg-white text-slate-900">Subscription</option>
+                                    <option class="bg-white text-slate-900">Recharge</option>
+                                    <option class="bg-white text-slate-900">Others</option>
                                 </select>
-                                <span class="absolute right-3.5 text-[#94A3B8] pointer-events-none">
+                                <span class="absolute right-3.5 text-slate-400 pointer-events-none">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="2" stroke="currentColor" class="w-4 h-4">
                                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -364,48 +366,52 @@
                         </div>
 
                         <div class="flex flex-col gap-1.5">
-                            <label for="ExpAmt" class="text-sm font-medium">Amount</label>
+                            <label for="ExpAmt" class="text-xs font-semibold text-slate-400 uppercase">Amount</label>
                             <div class="relative flex items-center">
                                 <span
-                                    class="absolute left-4 text-xl font-medium text-gray-400 pointer-events-none">₹</span>
+                                    class="absolute left-4 text-lg font-semibold text-slate-400 pointer-events-none">₹</span>
                                 <input type="number" step="500" id="ExpAmt" placeholder="Enter amount"
-                                    class="w-full text-sm text-black border border-gray-400 rounded-xl pl-10 pr-4 py-2.5 focus:outline-none focus:border-red-500 transition-colors cursor-pointer">
+                                    class="w-full text-sm text-slate-900 bg-slate-50 border border-slate-200 rounded-xl pl-11 pr-4 py-3 focus:outline-none focus:border-rose-500 focus:ring-1 focus:ring-rose-500 transition-all cursor-pointer placeholder-slate-400">
                             </div>
                         </div>
                     </div>
                     <div class="flex gap-3 pt-2">
                         <button
-                            class="close-modal-btn flex-1 py-2 border border-gray-300 hover:bg-gray-100 text-black text-sm font-medium rounded-xl transition-colors active:scale-95">
+                            class="close-modal-btn flex-1 py-3 border border-slate-200 hover:bg-slate-50 text-slate-500 text-sm font-semibold rounded-xl transition-all active:scale-95">
                             Cancel
                         </button>
                         <button id="JSaddExpense"
-                            class="flex-1 py-2 bg-red-500 hover:bg-red-600 text-white text-sm font-medium rounded-xl transition-colors shadow-sm active:scale-95">
+                            class="flex-1 py-3 bg-rose-600 hover:bg-rose-500 text-white text-sm font-semibold rounded-xl transition-all shadow-md shadow-rose-600/10 active:scale-95">
                             Add Expense
                         </button>
                     </div>
                 </div>
 
+                <!-- Delete Data Warning Modal -->
                 <div id="clearDataModal"
-                    class="w-full max-w-96 bg-white rounded-2xl shadow-2xl border border-gray-100/80 p-6 flex flex-col gap-5 justify-center items-center ">
-                    <img src="https://img.icons8.com/plasticine/100/filled-trash.png" alt="Delete All Data"
-                        draggable="false" class="w-20 aspect-square rounded-full p-2 bg-red-400">
-                    <h1 class="text-2xl font-bold">Delete All Data?</h1>
-                    <p class="text-gray-400 text-center"> This action will permanently delete all your income, expenses,
-                        and transaction history.
-                        Transaction
-                        History.</p>
-                    <div class="bg-red-100 rounded-xl px-4 py-2 gap-2 border-red-600 flex justify-evenly items-center">
-                        <img src="https://img.icons8.com/color/48/high-importance--v1.png" alt="Warning"
-                            draggable="false" class="w-5">
-                        <p class="text-red-600 font-bold">This action cannot be undone.</p>
+                    class="w-full max-w-md bg-white rounded-2xl shadow-2xl border border-slate-100 p-6 flex flex-col gap-5 justify-center items-center">
+                    <div class="p-3 bg-rose-50 rounded-full">
+                        <img src="https://img.icons8.com/plasticine/100/filled-trash.png" alt="Delete All Data"
+                            draggable="false" class="w-16 h-16 object-contain">
                     </div>
-                    <div class="flex justify-evenly gap-3 items-center">
+                    <h1 class="text-xl font-bold text-slate-900">Delete All Data?</h1>
+                    <p class="text-slate-500 text-center text-sm leading-relaxed">This action will permanently delete
+                        all your income, expenses, and transaction history. This cannot be undone.</p>
+
+                    <div
+                        class="bg-rose-50 border border-rose-100 rounded-xl px-4 py-2.5 flex justify-center items-center gap-2 w-full">
+                        <img src="https://img.icons8.com/color/48/high-importance--v1.png" alt="Warning"
+                            draggable="false" class="w-5 h-5">
+                        <p class="text-rose-600 font-semibold text-xs">This action cannot be undone.</p>
+                    </div>
+
+                    <div class="flex justify-center gap-3 w-full">
                         <button
-                            class="close-modal-btn px-6 py-2 w-fit rounded-xl font-bold bg-white border hover:bg-gray-100 active:scale-95 text-black">
+                            class="close-modal-btn px-5 py-3 flex-1 rounded-xl font-semibold bg-transparent border border-slate-200 hover:bg-slate-50 transition-all text-slate-500 text-sm active:scale-95">
                             Cancel
                         </button>
                         <button id="JSclearAllData"
-                            class="px-6 py-2 bg-red-400 font-bold rounded-xl border hover:bg-red-600 active:scale-95 text-white">
+                            class="px-5 py-3 flex-1 bg-rose-600 font-semibold rounded-xl hover:bg-rose-500 transition-all text-white text-sm active:scale-95">
                             Delete All Data
                         </button>
                     </div>
