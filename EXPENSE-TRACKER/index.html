@@ -122,10 +122,12 @@
         <main class="flex flex-col justify-center items-center p-6 max-w-7xl mx-auto w-full relative z-10">
             <section id="overview" class="flex w-full flex-col gap-5 items-center justify-center lg:flex-row">
 
+
+                <!-- Total Income Card -->
                 <div
-                    class="w-full flex items-center gap-4 p-5 bg-emerald-50 border border-slate-100 rounded-2xl shadow-sm shadow-slate-200/40 hover:-translate-y-1 hover:border-emerald-500/30 hover:shadow-lg hover:shadow-emerald-600/5 transition-all duration-300">
+                    class="w-full flex items-center gap-4 p-5 bg-emerald-100/40 border border-slate-100 rounded-lg shadow-sm shadow-slate-200/40 hover:-translate-y-1 hover:border-emerald-500/30 hover:shadow-lg hover:shadow-emerald-600/5 transition-all duration-300">
                     <img src="https://cdn-icons-png.flaticon.com/128/3135/3135706.png" draggable="false"
-                        alt="Income Icon" class="w-10 bg-green-200 p-1 rounded-lg h-10 object-contain">
+                        alt="Income Icon" class="w-12 bg-green-200 p-1 rounded-lg h-12 object-contain">
                     <div class="flex flex-col min-w-0">
                         <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider truncate">Total
                             Income</span>
@@ -134,10 +136,12 @@
                     </div>
                 </div>
 
+
+                <!-- Total Expenses Card -->
                 <div
-                    class="w-full flex items-center gap-4 p-5 bg-rose-50 border border-slate-100 rounded-2xl shadow-sm shadow-slate-200/40 hover:-translate-y-1 hover:border-rose-500/30 hover:shadow-lg hover:shadow-rose-600/5 transition-all duration-300">
+                    class="w-full flex items-center gap-4 p-5 bg-rose-100/40 border border-slate-100 rounded-lg shadow-sm shadow-slate-200/40 hover:-translate-y-1 hover:border-rose-500/30 hover:shadow-lg hover:shadow-rose-600/5 transition-all duration-300">
                     <img src="https://cdn-icons-png.flaticon.com/128/10758/10758868.png" draggable="false"
-                        alt="Expenses Icon" class="p-1 w-10 h-10 bg-red-200 rounded-lg object-contain">
+                        alt="Expenses Icon" class="p-1 w-12 h-12 bg-red-200 rounded-lg object-contain">
                     <div class="flex flex-col min-w-0">
                         <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider truncate">Total
                             Expenses</span>
@@ -146,10 +150,11 @@
                     </div>
                 </div>
 
+                <!-- Total Balance Card -->
                 <div
-                    class="w-full flex items-center gap-4 p-5 bg-indigo-50/40 border border-indigo-100 rounded-2xl shadow-sm shadow-slate-200/40 hover:-translate-y-1 hover:border-indigo-500/30 hover:shadow-lg hover:shadow-indigo-600/5 transition-all duration-300">
+                    class="w-full flex items-center gap-4 p-5 bg-indigo-100/40 border border-indigo-100 rounded-lg shadow-sm shadow-slate-200/40 hover:-translate-y-1 hover:border-indigo-500/30 hover:shadow-lg hover:shadow-indigo-600/5 transition-all duration-300">
                     <img src="https://cdn-icons-png.flaticon.com/128/8049/8049428.png" draggable="false"
-                        alt="Balance Icon" class="w-10 h-10 object-contain">
+                        alt="Balance Icon" class="w-12 h-12 object-contain p-1 bg-indigo-200 rounded-lg">
                     <div class="flex flex-col min-w-0">
                         <span class="text-xs font-semibold text-indigo-500 uppercase tracking-wider truncate">Total
                             Balance</span>
@@ -162,40 +167,42 @@
             <section id="manager"
                 class="flex flex-col sm:flex-row justify-center items-center gap-3 w-full mt-5 md:hidden">
                 <button id="addIncomeMobile"
-                    class="w-full bg-green-500 text-white py-2.5 px-4 rounded-lg text-lg font-bold hover:scale-105 active:scale-95 transition-all duration-300 shadow-sm cursor-pointer">+
+                    class="w-full bg-emerald-600 text-white py-3.5 px-4 rounded-xl text-base font-semibold hover:bg-emerald-500 active:scale-95 transition-all duration-300 shadow-md shadow-emerald-600/10 cursor-pointer">+
                     Add Income</button>
                 <button id="addExpenseMobile"
-                    class="w-full bg-red-500 text-white py-2.5 px-4 rounded-lg text-lg font-bold hover:scale-105 active:scale-95 transition-all duration-300 shadow-sm cursor-pointer">+
+                    class="w-full bg-rose-600 text-white py-3.5 px-4 rounded-xl text-base font-semibold hover:bg-rose-500 active:scale-95 transition-all duration-300 shadow-md shadow-rose-600/10 cursor-pointer">+
                     Add Expense</button>
             </section>
 
             <section id="modalOverlay"
-                class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex justify-center items-center p-6 hidden">
+                class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 flex justify-center items-center p-6 hidden">
+
+                <!-- Income Modal -->
                 <div id="incomeModal"
-                    class="w-full max-w-96 bg-white rounded-2xl shadow-2xl border border-gray-100/80 p-6 flex flex-col justify-between hidden">
+                    class="w-full max-w-96 bg-white rounded-2xl shadow-2xl border border-slate-100 p-6 flex flex-col justify-between hidden">
 
                     <div class="flex justify-between items-center mb-6">
                         <div class="flex items-center gap-3">
-                            <div class="w-12 h-12 rounded-2xl flex items-center justify-center">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-100/50 flex items-center justify-center shrink-0">
                                 <img src="https://img.icons8.com/color/48/bullish.png" alt="Add Income"
-                                    draggable="false" class="w-10 aspect-square object-contain">
+                                    draggable="false" class="w-8 aspect-square object-contain">
                             </div>
                             <div>
-                                <h2 class="text-base font-semibold text-[#0F172A]">Add Income</h2>
-                                <p class="text-sm text-[#64748B] mt-0.5">Add a new income entry</p>
+                                <h2 class="text-lg font-bold text-slate-900">Add Income</h2>
+                                <p class="text-xs mt-0.5text-slate-400">Add a new income entry</p>
                             </div>
                         </div>
-                        <button
-                            class="close-modal-btn text-gray-400 text-2xl hover:text-red-600 hover:font-bold transition-colors">
+                        <button class="close-modal-btn text-slate-400 text-2xl hover:text-slate-600 transition-colors">
                             ✕
                         </button>
                     </div>
 
                     <div class="space-y-4 mb-6">
                         <div class="flex flex-col gap-1.5">
-                            <label for="IncDate" class="text-sm font-medium">Date</label>
+                            <label for="IncDate" class="text-xs font-semibold text-slate-400 uppercase">Date</label>
                             <div class="relative flex items-center">
-                                <span class="absolute left-3.5 text-[#94A3B8]">
+                                <span class="absolute left-3.5 text-slate-400">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.8" stroke="currentColor" class="w-5 h-5">
                                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -203,14 +210,15 @@
                                     </svg>
                                 </span>
                                 <input type="date" id="IncDate"
-                                    class="w-full text-sm text-black border border-gray-400 rounded-xl pl-10 pr-4 py-2.5 focus:outline-none focus:border-green-600 transition-colors">
+                                    class="w-full text-sm text-slate-900 bg-slate-50 border border-slate-200 rounded-xl pl-11 pr-4 py-3 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all">
                             </div>
                         </div>
 
                         <div class="flex flex-col gap-1.5">
-                            <label for="IncDesc" class="text-sm font-medium">Description</label>
+                            <label for="IncDesc"
+                                class="text-xs font-semibold text-slate-400 uppercase">Description</label>
                             <div class="relative flex items-center">
-                                <span class="absolute left-3.5 text-[#94A3B8]">
+                                <span class="absolute left-3.5 text-slate-400">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.8" stroke="currentColor" class="w-5 h-5">
                                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -218,14 +226,14 @@
                                     </svg>
                                 </span>
                                 <input type="text" id="IncDesc" placeholder="Enter description"
-                                    class="w-full text-sm text-black border border-gray-400 rounded-xl pl-10 pr-4 py-2.5 focus:outline-none focus:border-green-600 transition-colors">
+                                    class="w-full text-sm text-slate-900 bg-slate-50 border border-slate-200 rounded-xl pl-11 pr-4 py-3 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all placeholder-slate-400">
                             </div>
                         </div>
 
                         <div class="flex flex-col gap-1.5">
-                            <label for="IncCat" class="text-sm font-medium">Category</label>
+                            <label for="IncCat" class="text-xs font-semibold text-slate-400 uppercase">Category</label>
                             <div class="relative flex items-center">
-                                <span class="absolute left-3.5 text-[#94A3B8]">
+                                <span class="absolute left-3.5 text-slate-400">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.8" stroke="currentColor" class="w-5 h-5">
                                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -233,14 +241,14 @@
                                     </svg>
                                 </span>
                                 <select id="IncCat"
-                                    class="w-full appearance-none text-sm text-black border border-gray-400 rounded-xl pl-10 pr-4 py-2.5 focus:outline-none focus:border-green-600 transition-colors cursor-pointer">
-                                    <option>Salary</option>
-                                    <option>Freelance</option>
-                                    <option>Investments</option>
-                                    <option>Bonus</option>
-                                    <option>Others</option>
+                                    class="w-full appearance-none text-sm text-slate-900 bg-slate-50 border border-slate-200 rounded-xl pl-11 pr-10 py-3 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all cursor-pointer">
+                                    <option class="bg-white text-slate-900">Salary</option>
+                                    <option class="bg-white text-slate-900">Freelance</option>
+                                    <option class="bg-white text-slate-900">Investments</option>
+                                    <option class="bg-white text-slate-900">Bonus</option>
+                                    <option class="bg-white text-slate-900">Others</option>
                                 </select>
-                                <span class="absolute right-3.5 text-[#94A3B8] pointer-events-none">
+                                <span class="absolute right-3.5 text-slate-400 pointer-events-none">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="2" stroke="currentColor" class="w-4 h-4">
                                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -251,22 +259,22 @@
                         </div>
 
                         <div class="flex flex-col gap-1.5">
-                            <label for="IncAmt" class="text-sm font-medium">Amount</label>
+                            <label for="IncAmt" class="text-xs font-semibold text-slate-400 uppercase">Amount</label>
                             <div class="relative flex items-center">
                                 <span
-                                    class="absolute left-4 text-xl font-medium text-gray-400 pointer-events-none">₹</span>
+                                    class="absolute left-4 text-lg font-semibold text-slate-400 pointer-events-none">₹</span>
                                 <input type="number" step="500" id="IncAmt" placeholder="Enter amount"
-                                    class="w-full text-sm text-black border border-gray-400 rounded-xl pl-10 pr-4 py-2.5 focus:outline-none focus:border-green-600 transition-colors cursor-pointer">
+                                    class="w-full text-sm text-slate-900 bg-slate-50 border border-slate-200 rounded-xl pl-11 pr-4 py-3 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all cursor-pointer placeholder-slate-400">
                             </div>
                         </div>
                     </div>
                     <div class="flex gap-3 pt-2">
                         <button
-                            class="close-modal-btn flex-1 py-2 border border-gray-300 hover:bg-gray-100 text-black text-sm font-medium rounded-xl transition-colors active:scale-95">
+                            class="close-modal-btn flex-1 py-3 border border-slate-200 hover:bg-slate-50 text-slate-500 text-sm font-semibold rounded-xl transition-all active:scale-95">
                             Cancel
                         </button>
                         <button id="JSaddIncome"
-                            class="flex-1 py-2 bg-green-500 hover:bg-green-700 text-white text-sm font-medium rounded-xl transition-colors shadow-sm active:scale-95">
+                            class="flex-1 py-3 bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-semibold rounded-xl transition-all shadow-md shadow-emerald-600/10 active:scale-95">
                             Add Income
                         </button>
                     </div>
