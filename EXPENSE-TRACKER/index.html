@@ -13,27 +13,43 @@
         rel="stylesheet">
     <style>
         body {
-            font-family: 'Roboto Condensed', sans-serif;
-
+            font-family: 'Plus Jakarta Sans', sans-serif;
             scroll-behavior: smooth;
-            scroll-padding-top: 30px;
+        }
+
+        #transactionsHistory::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        #transactionsHistory::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 8px;
+        }
+
+        #transactionsHistory::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 8px;
+        }
+
+        #transactionsHistory::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
         }
     </style>
 </head>
 
-<body class="text-black overflow-x-hidden select-none bg-gray-300 ">
+<body class="text-slate-700 overflow-x-hidden select-none bg-[#f8fafc] relative min-h-screen">
 
     <aside id="sidebar" aria-label="Primary Navigation"
-        class="fixed top-0 left-0 h-full w-52 bg-white border-r border-gray-200 z-50 p-4 flex flex-col gap-5 transition-transform duration-500 ease-in-out -translate-x-full">
+        class="fixed top-0 left-0 h-full w-52 bg-white/95 backdrop-blur-md border-r border-slate-200/80 z-50 p-6 flex flex-col gap-6 transition-transform duration-500 ease-in-out -translate-x-full shadow-2xl shadow-slate-300/30">
 
-        <div class="flex justify-between items-center pb-3 h-16 border-b ">
+        <div class="flex justify-between items-center pb-4 h-14 border-b border-black">
             <div class="flex items-center gap-2">
                 <img src="https://cdn-icons-png.flaticon.com/128/9730/9730488.png" alt="Logo" draggable="false"
                     class="w-8 h-8 object-contain shrink-0">
-                <h1 class="text-2xl font-bold text-black">Tracker</h1>
+                <h1 class="text-xl font-extrabold text-slate-900 tracking-tight">Tracker</h1>
             </div>
             <button id="closeSidebarBtn" aria-label="Close Sidebar"
-                class="text-xl hover:text-red-700 hover:font-bold transition-all duration-200 cursor-pointer select-none">
+                class="text-slate-400 hover:text-rose-500 transition-colors duration-200 cursor-pointer text-lg">
                 <span aria-hidden="true">✕</span>
             </button>
         </div>
@@ -49,13 +65,13 @@
                 class="nav-item selectAllTransactions flex items-center gap-3 px-4 py-2 text-black hover:bg-gray-200 rounded-lg text-base transition-all duration-300 ease-in-out">
                 <img src="https://img.icons8.com/color/48/bullish.png" alt="Income" draggable="false"
                     class="w-5 h-5 object-contain" />
-                <span>Income</span>
+                <span>All Income</span>
             </a>
             <a href="#transactions" id="selectAllExpense"
                 class="nav-item selectAllTransactions flex items-center gap-3 px-4 py-2 text-black hover:bg-gray-200 rounded-lg text-base transition-all duration-300 ease-in-out">
                 <img src="https://img.icons8.com/color/48/bearish.png" alt="Expenses" draggable="false"
                     class="w-5 h-5 object-contain" />
-                <span>Expenses</span>
+                <span>All Expenses</span>
             </a>
 
             <a href="#transactions"
@@ -67,7 +83,7 @@
         </nav>
 
         <button type="button" id="clearAllData"
-            class="flex justify-center items-center gap-2 bg-red-500 rounded-xl text-white font-semibold px-3 py-2 text-sm hover:bg-red-700 transition-colors ease-in-out active:scale-95 cursor-pointer mt-auto w-full">
+            class="flex justify-center items-center gap-2 bg-rose-600 rounded-xl text-white font-semibold px-3 py-2 text-sm hover:bg-rose-500 transition-colors ease-in-out active:scale-95 cursor-pointer mt-auto w-full">
             <img src="https://img.icons8.com/parakeet-line/48/ffffff/filled-trash.png" alt="Clear Data"
                 class="w-4 h-4 object-contain shrink-0">
             <span>Clear Data</span>
@@ -75,16 +91,16 @@
     </aside>
 
     <div id="mainContent" class="transition-all duration-500 ease-in-out">
-        <header class="sticky top-0 z-30 bg-white py-2 shadow-sm">
+        <header class="sticky top-0 z-30 bg-[#f8fafc]/80 backdrop-blur-md py-3 border-b border-slate-200/60">
             <nav class="h-16 px-4 md:pl-6 md:pr-8 flex items-center justify-between relative">
                 <div class="flex items-center justify-center">
                     <button id="sidebarToggleBtn" aria-label="Open Sidebar"
-                        class="text-2xl hover:scale-110 transition text-black select-none">
+                        class="text-2xl hover:text-indigo-600 transition text-slate-600 select-none p-2 rounded-lg hover:bg-slate-100">
                         ☰
                     </button>
                 </div>
 
-                <h1 class="flex-1 text-center text-lg md:text-4xl font-semibold text-black tracking-tight">
+                <h1 class="flex-1 text-center text-xl md:text-3xl font-bold text-slate-950 tracking-tight">
                     Expense Tracker
                 </h1>
 
@@ -92,50 +108,52 @@
 
                 <div class="hidden md:flex justify-center items-center gap-3">
                     <button id="addIncomeDesktop"
-                        class="bg-green-500 text-white py-2 px-4 rounded-lg text-lg font-bold hover:bg-green-700 active:scale-90 transition-all duration-300 shadow-sm cursor-pointer">
+                        class="bg-emerald-600 border border-emerald-500/10 text-white py-2.5 px-5 rounded-xl text-sm font-semibold hover:bg-emerald-500 active:scale-95 transition-all duration-300 shadow-md shadow-emerald-600/10 cursor-pointer">
                         + Add Income
                     </button>
                     <button id="addExpenseDesktop"
-                        class="bg-red-500 text-white py-2 px-4 rounded-lg text-lg font-bold hover:bg-red-700 active:scale-90 transition-all duration-300 shadow-sm cursor-pointer">
+                        class="bg-rose-600 border border-rose-500/10 text-white py-2.5 px-5 rounded-xl text-sm font-semibold hover:bg-rose-500 active:scale-95 transition-all duration-300 shadow-md shadow-rose-600/10 cursor-pointer">
                         + Add Expense
                     </button>
                 </div>
             </nav>
         </header>
 
-        <main class="flex flex-col justify-center items-center p-4 md:py-6 md:pr-6 md:pl-6">
-            <section id="overview" class="flex w-full flex-col gap-4 items-center justify-center lg:flex-row">
+        <main class="flex flex-col justify-center items-center p-6 max-w-7xl mx-auto w-full relative z-10">
+            <section id="overview" class="flex w-full flex-col gap-5 items-center justify-center lg:flex-row">
 
                 <div
-                    class="w-full flex items-center gap-3 p-4 bg-green-100 border border-green-300 rounded-xl shadow-sm">
+                    class="w-full flex items-center gap-4 p-5 bg-emerald-50 border border-slate-100 rounded-2xl shadow-sm shadow-slate-200/40 hover:-translate-y-1 hover:border-emerald-500/30 hover:shadow-lg hover:shadow-emerald-600/5 transition-all duration-300">
                     <img src="https://cdn-icons-png.flaticon.com/128/3135/3135706.png" draggable="false"
-                        alt="Income Icon" class="w-10 h-10 object-contain">
+                        alt="Income Icon" class="w-10 bg-green-200 p-1 rounded-lg h-10 object-contain">
                     <div class="flex flex-col min-w-0">
-                        <span class="text-xs font-medium text-gray-600 uppercase tracking-wider truncate">Total
+                        <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider truncate">Total
                             Income</span>
-                        <h2 id="totalIncome" class="text-xl md:text-2xl text-green-700 font-bold whitespace-nowrap">₹
+                        <h2 id="totalIncome" class="text-2xl text-emerald-600 font-extrabold whitespace-nowrap mt-0.5">₹
                             0</h2>
                     </div>
                 </div>
 
-                <div class="w-full flex items-center gap-3 p-4 bg-red-100 border border-red-300 rounded-xl shadow-sm">
+                <div
+                    class="w-full flex items-center gap-4 p-5 bg-rose-50 border border-slate-100 rounded-2xl shadow-sm shadow-slate-200/40 hover:-translate-y-1 hover:border-rose-500/30 hover:shadow-lg hover:shadow-rose-600/5 transition-all duration-300">
                     <img src="https://cdn-icons-png.flaticon.com/128/10758/10758868.png" draggable="false"
-                        alt="Expenses Icon" class="w-10 h-10 object-contain">
+                        alt="Expenses Icon" class="p-1 w-10 h-10 bg-red-200 rounded-lg object-contain">
                     <div class="flex flex-col min-w-0">
-                        <span class="text-xs font-medium text-gray-600 uppercase tracking-wider truncate">Total
+                        <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider truncate">Total
                             Expenses</span>
-                        <h2 id="totalExpense" class="text-xl md:text-2xl text-red-700 font-bold whitespace-nowrap">₹
+                        <h2 id="totalExpense" class="text-2xl text-rose-600 font-extrabold whitespace-nowrap mt-0.5">₹
                             0</h2>
                     </div>
                 </div>
 
-                <div class="w-full flex items-center gap-3 p-4 bg-blue-100 border border-blue-300 rounded-xl shadow-sm">
+                <div
+                    class="w-full flex items-center gap-4 p-5 bg-indigo-50/40 border border-indigo-100 rounded-2xl shadow-sm shadow-slate-200/40 hover:-translate-y-1 hover:border-indigo-500/30 hover:shadow-lg hover:shadow-indigo-600/5 transition-all duration-300">
                     <img src="https://cdn-icons-png.flaticon.com/128/8049/8049428.png" draggable="false"
                         alt="Balance Icon" class="w-10 h-10 object-contain">
                     <div class="flex flex-col min-w-0">
-                        <span class="text-xs font-medium text-gray-600 uppercase tracking-wider truncate">Total
+                        <span class="text-xs font-semibold text-indigo-500 uppercase tracking-wider truncate">Total
                             Balance</span>
-                        <h2 id="totalBalance" class="text-xl md:text-2xl text-blue-700 font-bold whitespace-nowrap">₹
+                        <h2 id="totalBalance" class="text-2xl text-indigo-600 font-extrabold whitespace-nowrap mt-0.5">₹
                             0</h2>
                     </div>
                 </div>
@@ -409,37 +427,37 @@
                                             d="M3 7.5L7.5 3m0 0L12 7.5M7.5 3v13.5m13.5 0L16.5 21m0 0L12 16.5m4.5 4.5V7.5" />
                                     </svg>
                                 </div>
-                        </div>
+                            </div>
 
-                        <div class="flex items-center">
-                            <a href="#" id="viewAllBtn"
-                                class="text-blue-500 hover:underline hover:font-bold transition-all text-sm sm:text-base">View
-                                All
-                            </a>
-                            <button id="closeModalBtn"
-                                class="hidden text-gray-500 hover:text-red-500 font-semibold transition-all text-sm sm:text-base">Close
-                            </button>
+                            <div class="flex items-center">
+                                <a href="#" id="viewAllBtn"
+                                    class="text-blue-500 hover:underline hover:font-bold transition-all text-sm sm:text-base">View
+                                    All
+                                </a>
+                                <button id="closeModalBtn"
+                                    class="hidden text-gray-500 hover:text-red-500 font-semibold transition-all text-sm sm:text-base">Close
+                                </button>
+                            </div>
                         </div>
                     </div>
-            </div>
 
-            <div class="w-full px-2 shrink-0">
-                <ul
-                    class="text-gray-500 font-bold grid grid-cols-[1.2fr_1fr_1.2fr_30px] md:grid-cols-[1fr_1.5fr_1fr_1fr_1fr_30px] border-b border-t py-2 px-2 items-center text-xs sm:text-sm md:text-base">
-                    <li>Date</li>
-                    <li class="hidden md:block">Description</li>
-                    <li>Type</li>
-                    <li class="hidden md:block">Category</li>
-                    <li>Amount</li>
-                    <li></li>
-                </ul>
+                    <div class="w-full px-2 shrink-0">
+                        <ul
+                            class="text-gray-500 font-bold grid grid-cols-[1.2fr_1fr_1.2fr_30px] md:grid-cols-[1fr_1.5fr_1fr_1fr_1fr_30px] border-b border-t py-2 px-2 items-center text-xs sm:text-sm md:text-base">
+                            <li>Date</li>
+                            <li class="hidden md:block">Description</li>
+                            <li>Type</li>
+                            <li class="hidden md:block">Category</li>
+                            <li>Amount</li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div id="transactionsHistory"
+                        class="w-full flex flex-col px-2 py-2 items-center text-sm md:text-base h-96 max-h-96 overflow-hidden">
+                    </div>
+                </section>
             </div>
-            <div id="transactionsHistory"
-                class="w-full flex flex-col px-2 py-2 items-center text-sm md:text-base h-96 max-h-96 overflow-hidden">
-            </div>
-            </section>
-    </div>
-    </main>
+        </main>
     </div>
 
     <script src="JS/app-UI.js"></script>
