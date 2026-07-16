@@ -3,9 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" greenButton content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <link href="src/output.css" rel="stylesheet">
+    <link rel="shortcut icon" href="https://img.icons8.com/doodle/48/apple-calculator.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
@@ -14,30 +15,58 @@
         body {
             font-family: "Orbitron", sans-serif;
         }
+
+        .greenButton {
+            --neon-green: #39ff14;
+            cursor: pointer;
+            outline: none;
+            transition: transform 0.1s ease, box-shadow 0.2s ease-in-out;
+
+            &:active {
+                transform: scale(0.98);
+                box-shadow:
+                    0 0 4px #fff,
+                    0 0 10px var(--neon-green);
+            }
+        }
+
+        .redButton {
+            --neon-red: #ff003c;
+            cursor: pointer;
+            outline: none;
+            transition: transform 0.1s ease, box-shadow 0.2s ease-in-out;
+
+            &:active {
+                transform: scale(0.98);
+                box-shadow:
+                    0 0 4px #fff,
+                    0 0 10px var(--neon-red);
+            }
+        }
     </style>
 </head>
 
-<body class="flex justify-center items-center bg-gray-100 min-h-screen">
+<body class="flex justify-center items-center bg-gray-700 min-h-screen">
     <main
-        class="flex flex-col gap-2 border border-slate-300 bg-white/50 backdrop-blur-md w-80 rounded-2xl h-full m-10 shadow-xl shadow-slate-900/5">
+        class="flex flex-col gap-2 border border-slate-300 bg-gray-100 w-80 rounded-2xl h-full m-10 shadow-xl shadow-slate-900/5">
 
         <!-- Display Unit -->
         <section id="resultBody"
-            class="w-full bg-white rounded-t-2xl h-32 p-3 overflow-auto flex flex-col justify-center items-end gap-2 shadow-inner">
+            class="w-full bg-white rounded-2xl h-32 p-3 overflow-auto flex flex-col justify-center items-end gap-2 shadow-inner">
             <h1 id="numbers" class="text-3xl text-slate-800">2+2</h1>
             <h1 id="result" class="text-2xl text-slate-500">4</h1>
         </section>
 
-        <!-- Keypad Interface -->
+        <!-- Keypad Interface (Shadows completely removed from all child buttons) -->
         <section id="inputBody" class="grid grid-cols-4 grid-rows-5 gap-2 p-6 w-full aspect-square">
 
             <!-- Row 1: Primary Controls & Division -->
             <button
-                class="content text-2xl uppercase rounded-full text-red-500 bg-white border border-slate-100 hover:bg-black hover:text-white shadow-red-500 active:shadow-lg active:scale-95 aspect-square transition-all duration-200 flex justify-center items-center">
+                class="redButton greenButton content text-2xl uppercase rounded-full text-red-500 bg-white border border-slate-100 active:scale-95 aspect-square transition-all duration-200 flex justify-center items-center">
                 C
             </button>
             <button
-                class="content text-2xl uppercase rounded-full text-red-500 bg-white border border-slate-100 hover:bg-black hover:text-white shadow-red-500 active:shadow-lg active:scale-95 aspect-square transition-all duration-200 flex justify-center items-center"
+                class="redButton greenButton content text-2xl uppercase rounded-full text-red-500 bg-white border border-slate-100 active:scale-95 aspect-square transition-all duration-200 flex justify-center items-center"
                 aria-label="Backspace">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
                     stroke="currentColor" class="w-6 h-6">
@@ -46,7 +75,7 @@
                 </svg>
             </button>
             <button
-                class="content text-2xl uppercase rounded-full  bg-white border border-slate-100 hover:bg-black hover:text-white shadow-green-300 active:shadow-lg active:scale-95 aspect-square transition-all duration-200 flex justify-center items-center"
+                class="greenButton content text-2xl uppercase rounded-full bg-white border border-slate-100  active:scale-95 aspect-square transition-all duration-200 flex justify-center items-center"
                 aria-label="Percentage">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
                     stroke="currentColor" class="w-5 h-5">
@@ -55,7 +84,7 @@
                 </svg>
             </button>
             <button
-                class="content text-2xl uppercase rounded-full  bg-white border border-slate-100 hover:bg-black hover:text-white shadow-green-300 active:shadow-lg active:scale-95 aspect-square transition-all duration-200 flex justify-center items-center"
+                class="greenButton content text-2xl uppercase rounded-full bg-white border border-slate-100  active:scale-95 aspect-square transition-all duration-200 flex justify-center items-center"
                 aria-label="Divide">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
                     stroke="currentColor" class="w-5 h-5">
@@ -67,19 +96,19 @@
 
             <!-- Row 2: Numerics (7-9) & Multiplication -->
             <button
-                class="content text-2xl uppercase rounded-full  bg-white border border-slate-100 hover:bg-black hover:text-white shadow-green-300 active:shadow-lg active:scale-95 aspect-square transition-all duration-200 flex justify-center items-center">
+                class="greenButton content text-2xl uppercase rounded-full bg-white border border-slate-100  active:scale-95 aspect-square transition-all duration-200 flex justify-center items-center">
                 7
             </button>
             <button
-                class="content text-2xl uppercase rounded-full  bg-white border border-slate-100 hover:bg-black hover:text-white shadow-green-300 active:shadow-lg active:scale-95 aspect-square transition-all duration-200 flex justify-center items-center">
+                class="greenButton content text-2xl uppercase rounded-full bg-white border border-slate-100  active:scale-95 aspect-square transition-all duration-200 flex justify-center items-center">
                 8
             </button>
             <button
-                class="content text-2xl uppercase rounded-full  bg-white border border-slate-100 hover:bg-black hover:text-white shadow-green-300 active:shadow-lg active:scale-95 aspect-square transition-all duration-200 flex justify-center items-center">
+                class="greenButton content text-2xl uppercase rounded-full bg-white border border-slate-100  active:scale-95 aspect-square transition-all duration-200 flex justify-center items-center">
                 9
             </button>
             <button
-                class="content text-2xl uppercase rounded-full  bg-white border border-slate-100 hover:bg-black hover:text-white shadow-green-300 active:shadow-lg active:scale-95 aspect-square transition-all duration-200 flex justify-center items-center"
+                class="greenButton content text-2xl uppercase rounded-full bg-white border border-slate-100  active:scale-95 aspect-square transition-all duration-200 flex justify-center items-center"
                 aria-label="Multiply">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
                     stroke="currentColor" class="w-5 h-5">
@@ -89,19 +118,19 @@
 
             <!-- Row 3: Numerics (4-6) & Subtraction -->
             <button
-                class="content text-2xl uppercase rounded-full  bg-white border border-slate-100 hover:bg-black hover:text-white shadow-green-300 active:shadow-lg active:scale-95 aspect-square transition-all duration-200 flex justify-center items-center">
+                class="greenButton content text-2xl uppercase rounded-full bg-white border border-slate-100  active:scale-95 aspect-square transition-all duration-200 flex justify-center items-center">
                 4
             </button>
             <button
-                class="content text-2xl uppercase rounded-full  bg-white border border-slate-100 hover:bg-black hover:text-white shadow-green-300 active:shadow-lg active:scale-95 aspect-square transition-all duration-200 flex justify-center items-center">
+                class="greenButton content text-2xl uppercase rounded-full bg-white border border-slate-100  active:scale-95 aspect-square transition-all duration-200 flex justify-center items-center">
                 5
             </button>
             <button
-                class="content text-2xl uppercase rounded-full  bg-white border border-slate-100 hover:bg-black hover:text-white shadow-green-300 active:shadow-lg active:scale-95 aspect-square transition-all duration-200 flex justify-center items-center">
+                class="greenButton content text-2xl uppercase rounded-full bg-white border border-slate-100  active:scale-95 aspect-square transition-all duration-200 flex justify-center items-center">
                 6
             </button>
             <button
-                class="content text-2xl uppercase rounded-full  bg-white border border-slate-100 hover:bg-black hover:text-white shadow-green-300 active:shadow-lg active:scale-95 aspect-square transition-all duration-200 flex justify-center items-center"
+                class="greenButton content text-2xl uppercase rounded-full bg-white border border-slate-100  active:scale-95 aspect-square transition-all duration-200 flex justify-center items-center"
                 aria-label="Subtract">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
                     stroke="currentColor" class="w-5 h-5">
@@ -111,19 +140,19 @@
 
             <!-- Row 4: Numerics (1-3) & Addition -->
             <button
-                class="content text-2xl uppercase rounded-full  bg-white border border-slate-100 hover:bg-black hover:text-white shadow-green-300 active:shadow-lg active:scale-95 aspect-square transition-all duration-200 flex justify-center items-center">
+                class="greenButton content text-2xl uppercase rounded-full bg-white border border-slate-100  active:scale-95 aspect-square transition-all duration-200 flex justify-center items-center">
                 1
             </button>
             <button
-                class="content text-2xl uppercase rounded-full  bg-white border border-slate-100 hover:bg-black hover:text-white shadow-green-300 active:shadow-lg active:scale-95 aspect-square transition-all duration-200 flex justify-center items-center">
+                class="greenButton content text-2xl uppercase rounded-full bg-white border border-slate-100  active:scale-95 aspect-square transition-all duration-200 flex justify-center items-center">
                 2
             </button>
             <button
-                class="content text-2xl uppercase rounded-full  bg-white border border-slate-100 hover:bg-black hover:text-white shadow-green-300 active:shadow-lg active:scale-95 aspect-square transition-all duration-200 flex justify-center items-center">
+                class="greenButton content text-2xl uppercase rounded-full bg-white border border-slate-100  active:scale-95 aspect-square transition-all duration-200 flex justify-center items-center">
                 3
             </button>
             <button
-                class="content text-2xl uppercase rounded-full  bg-white border border-slate-100 hover:bg-black hover:text-white shadow-green-300 active:shadow-lg active:scale-95 aspect-square transition-all duration-200 flex justify-center items-center"
+                class="greenButton content text-2xl uppercase rounded-full bg-white border border-slate-100  active:scale-95 aspect-square transition-all duration-200 flex justify-center items-center"
                 aria-label="Add">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
                     stroke="currentColor" class="w-5 h-5">
@@ -133,19 +162,19 @@
 
             <!-- Row 5: Structural Modifiers, Zero, Radix Point & Evaluation -->
             <button
-                class="content text-2xl uppercase rounded-full  bg-white border border-slate-100 hover:bg-black hover:text-white shadow-green-300 active:shadow-lg active:scale-95 aspect-square transition-all duration-200 flex justify-center items-center">
+                class="greenButton content text-2xl uppercase rounded-full bg-white border border-slate-100  active:scale-95 aspect-square transition-all duration-200 flex justify-center items-center">
                 ()
             </button>
             <button
-                class="content text-2xl uppercase rounded-full  bg-white border border-slate-100 hover:bg-black hover:text-white shadow-green-300 active:shadow-lg active:scale-95 aspect-square transition-all duration-200 flex justify-center items-center">
+                class="greenButton content text-2xl uppercase rounded-full bg-white border border-slate-100  active:scale-95 aspect-square transition-all duration-200 flex justify-center items-center">
                 0
             </button>
             <button
-                class="content text-4xl uppercase rounded-full  bg-white border border-slate-100 hover:bg-black hover:text-white shadow-green-300 active:shadow-lg active:scale-95 aspect-square transition-all duration-200 flex justify-center items-center">
+                class="greenButton content text-4xl uppercase rounded-full bg-white border border-slate-100  active:scale-95 aspect-square transition-all duration-200 flex justify-center items-center">
                 .
             </button>
             <button
-                class="content text-2xl uppercase rounded-full text-white bg-green-500 border border-green-600/20  hover:bg-green-600 active:scale-95  aspect-square transition-all duration-200 flex justify-center items-center"
+                class="greenButton content text-2xl uppercase rounded-full text-white bg-green-600 border border-slate-100 hover:bg-green-500 active:scale-95 aspect-square transition-all duration-200 flex justify-center items-center"
                 aria-label="Equal To">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3"
                     stroke="currentColor" class="w-5 h-5">
