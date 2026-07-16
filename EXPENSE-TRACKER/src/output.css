@@ -15,6 +15,7 @@
     --color-red-500: oklch(63.7% 0.237 25.331);
     --color-red-600: oklch(57.7% 0.245 27.325);
     --color-red-700: oklch(50.5% 0.213 27.518);
+    --color-amber-700: oklch(55.5% 0.163 48.998);
     --color-green-100: oklch(96.2% 0.044 156.743);
     --color-green-200: oklch(92.5% 0.084 155.995);
     --color-green-300: oklch(87.1% 0.15 154.449);
@@ -31,12 +32,14 @@
     --color-emerald-800: oklch(43.2% 0.095 166.913);
     --color-emerald-900: oklch(37.8% 0.077 168.94);
     --color-emerald-950: oklch(26.2% 0.051 172.552);
+    --color-blue-50: oklch(97% 0.014 254.604);
     --color-blue-100: oklch(93.2% 0.032 255.585);
     --color-blue-300: oklch(80.9% 0.105 251.813);
     --color-blue-400: oklch(70.7% 0.165 254.624);
     --color-blue-500: oklch(62.3% 0.214 259.815);
     --color-blue-600: oklch(54.6% 0.245 262.881);
     --color-blue-700: oklch(48.8% 0.243 264.376);
+    --color-blue-900: oklch(37.9% 0.146 265.522);
     --color-indigo-50: oklch(96.2% 0.018 272.314);
     --color-indigo-100: oklch(93% 0.034 272.788);
     --color-indigo-200: oklch(87% 0.065 274.039);
@@ -47,6 +50,7 @@
     --color-indigo-700: oklch(45.7% 0.24 277.023);
     --color-indigo-900: oklch(35.9% 0.144 278.697);
     --color-indigo-950: oklch(25.7% 0.09 281.288);
+    --color-violet-600: oklch(54.1% 0.281 293.009);
     --color-rose-50: oklch(96.9% 0.015 12.422);
     --color-rose-100: oklch(94.1% 0.03 12.58);
     --color-rose-200: oklch(89.2% 0.058 10.001);
@@ -75,6 +79,13 @@
     --color-gray-500: oklch(55.1% 0.027 264.364);
     --color-gray-600: oklch(44.6% 0.03 256.802);
     --color-gray-800: oklch(27.8% 0.033 256.848);
+    --color-zinc-50: oklch(98.5% 0 0);
+    --color-zinc-100: oklch(96.7% 0.001 286.375);
+    --color-zinc-600: oklch(44.2% 0.017 285.786);
+    --color-zinc-900: oklch(21% 0.006 285.885);
+    --color-stone-100: oklch(97% 0.001 106.424);
+    --color-stone-600: oklch(44.4% 0.011 73.639);
+    --color-stone-900: oklch(21.6% 0.006 56.043);
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
@@ -268,6 +279,9 @@
   .pointer-events-none {
     pointer-events: none;
   }
+  .visible {
+    visibility: visible;
+  }
   .absolute {
     position: absolute;
   }
@@ -318,6 +332,24 @@
   }
   .z-\[100\] {
     z-index: 100;
+  }
+  .container {
+    width: 100%;
+    @media (width >= 40rem) {
+      max-width: 40rem;
+    }
+    @media (width >= 48rem) {
+      max-width: 48rem;
+    }
+    @media (width >= 64rem) {
+      max-width: 64rem;
+    }
+    @media (width >= 80rem) {
+      max-width: 80rem;
+    }
+    @media (width >= 96rem) {
+      max-width: 96rem;
+    }
   }
   .mx-auto {
     margin-inline: auto;
@@ -552,6 +584,13 @@
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 1px;
   }
+  .border-l-4 {
+    border-left-style: var(--tw-border-style);
+    border-left-width: 4px;
+  }
+  .border-blue-700 {
+    border-color: var(--color-blue-700);
+  }
   .border-emerald-100 {
     border-color: var(--color-emerald-100);
   }
@@ -633,6 +672,9 @@
       border-color: color-mix(in oklab, var(--color-slate-200) 80%, transparent);
     }
   }
+  .border-transparent {
+    border-color: transparent;
+  }
   .border-white {
     border-color: var(--color-white);
   }
@@ -641,6 +683,9 @@
   }
   .bg-\[\#f8fafc\]\/80 {
     background-color: color-mix(in oklab, #f8fafc 80%, transparent);
+  }
+  .bg-amber-700 {
+    background-color: var(--color-amber-700);
   }
   .bg-black {
     background-color: var(--color-black);
@@ -651,8 +696,17 @@
       background-color: color-mix(in oklab, var(--color-black) 60%, transparent);
     }
   }
+  .bg-blue-50 {
+    background-color: var(--color-blue-50);
+  }
+  .bg-blue-100 {
+    background-color: var(--color-blue-100);
+  }
   .bg-blue-400 {
     background-color: var(--color-blue-400);
+  }
+  .bg-blue-900 {
+    background-color: var(--color-blue-900);
   }
   .bg-emerald-50 {
     background-color: var(--color-emerald-50);
@@ -684,6 +738,15 @@
   .bg-indigo-200 {
     background-color: var(--color-indigo-200);
   }
+  .bg-indigo-500 {
+    background-color: var(--color-indigo-500);
+  }
+  .bg-indigo-500\/10 {
+    background-color: color-mix(in srgb, oklch(58.5% 0.233 277.117) 10%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-indigo-500) 10%, transparent);
+    }
+  }
   .bg-red-200 {
     background-color: var(--color-red-200);
   }
@@ -710,6 +773,9 @@
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--color-slate-50) 80%, transparent);
     }
+  }
+  .bg-slate-100 {
+    background-color: var(--color-slate-100);
   }
   .bg-slate-200 {
     background-color: var(--color-slate-200);
@@ -749,6 +815,9 @@
   }
   .bg-transparent {
     background-color: transparent;
+  }
+  .bg-violet-600 {
+    background-color: var(--color-violet-600);
   }
   .bg-white {
     background-color: var(--color-white);
@@ -873,6 +942,10 @@
     --tw-font-weight: var(--font-weight-extrabold);
     font-weight: var(--font-weight-extrabold);
   }
+  .font-medium {
+    --tw-font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-medium);
+  }
   .font-semibold {
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
@@ -891,11 +964,20 @@
   .text-black {
     color: var(--color-black);
   }
+  .text-blue-600 {
+    color: var(--color-blue-600);
+  }
+  .text-blue-700 {
+    color: var(--color-blue-700);
+  }
   .text-emerald-600 {
     color: var(--color-emerald-600);
   }
   .text-green-600 {
     color: var(--color-green-600);
+  }
+  .text-indigo-400 {
+    color: var(--color-indigo-400);
   }
   .text-indigo-500 {
     color: var(--color-indigo-500);
@@ -911,6 +993,9 @@
   }
   .text-rose-600 {
     color: var(--color-rose-600);
+  }
+  .text-rose-700 {
+    color: var(--color-rose-700);
   }
   .text-slate-400 {
     color: var(--color-slate-400);
@@ -930,8 +1015,14 @@
   .text-slate-950 {
     color: var(--color-slate-950);
   }
+  .text-stone-600 {
+    color: var(--color-stone-600);
+  }
   .text-white {
     color: var(--color-white);
+  }
+  .text-zinc-600 {
+    color: var(--color-zinc-600);
   }
   .uppercase {
     text-transform: uppercase;
@@ -1121,6 +1212,16 @@
       }
     }
   }
+  .hover\:bg-blue-50\/50 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: color-mix(in srgb, oklch(97% 0.014 254.604) 50%, transparent);
+        @supports (color: color-mix(in lab, red, red)) {
+          background-color: color-mix(in oklab, var(--color-blue-50) 50%, transparent);
+        }
+      }
+    }
+  }
   .hover\:bg-emerald-500 {
     &:hover {
       @media (hover: hover) {
@@ -1153,6 +1254,48 @@
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-slate-100);
+      }
+    }
+  }
+  .hover\:bg-slate-200 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-slate-200);
+      }
+    }
+  }
+  .hover\:bg-slate-800 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-slate-800);
+      }
+    }
+  }
+  .hover\:bg-stone-100 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-stone-100);
+      }
+    }
+  }
+  .hover\:bg-zinc-50 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-zinc-50);
+      }
+    }
+  }
+  .hover\:bg-zinc-100 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-zinc-100);
+      }
+    }
+  }
+  .hover\:text-blue-600 {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-blue-600);
       }
     }
   }
@@ -1191,10 +1334,45 @@
       }
     }
   }
+  .hover\:text-slate-200 {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-slate-200);
+      }
+    }
+  }
   .hover\:text-slate-600 {
     &:hover {
       @media (hover: hover) {
         color: var(--color-slate-600);
+      }
+    }
+  }
+  .hover\:text-slate-800 {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-slate-800);
+      }
+    }
+  }
+  .hover\:text-slate-900 {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-slate-900);
+      }
+    }
+  }
+  .hover\:text-stone-900 {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-stone-900);
+      }
+    }
+  }
+  .hover\:text-zinc-900 {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-zinc-900);
       }
     }
   }

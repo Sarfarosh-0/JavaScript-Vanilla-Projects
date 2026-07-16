@@ -37,7 +37,7 @@ function addTransaction(e, forcedType) {
 
   saveTransactions();
   runCalculations();
-  renderAllTransactions();
+  applyActiveSorting();
   closeModal();
 
   document.getElementById(`${prefix}Date`).value = "";
@@ -213,24 +213,13 @@ function deleteTransaction(id) {
   transactions = transactions.filter((transaction) => transaction.id !== id);
 
   saveTransactions();
-  renderAllTransactions();
+  applyActiveSorting();
   runCalculations();
 }
 
 const sortBy = document.getElementById("sortBy");
 if (sortBy) {
-  sortBy.addEventListener("change", () => {
-    if (sortBy.value === "Descdate") {
-      sortByDateDesc();
-    } else if (sortBy.value === "Ascdate") {
-      sortByDateAsc();
-    } else if (sortBy.value === "Descamount") {
-      sortByAmountDesc();
-    } else if (sortBy.value === "Ascamount") {
-      sortByAmountAsc();
-    }
-    renderAllTransactions();
-  });
+  sortBy.addEventListener("change", applyActiveSorting);
 }
 
 function sortByDateAsc() {
@@ -246,7 +235,23 @@ function sortByAmountDesc() {
   transactions.sort((a, b) => Number(b.amount) - Number(a.amount));
 }
 
+
+function applyActiveSorting() {
+  const sortByElement = document.getElementById("sortBy");
+  const currentValue = sortByElement ? sortByElement.value : "Descdate";
+
+  if (currentValue === "Descdate") {
+    sortByDateDesc();
+  } else if (currentValue === "Ascdate") {
+    sortByDateAsc();
+  } else if (currentValue === "Descamount") {
+    sortByAmountDesc();
+  } else if (currentValue === "Ascamount") {
+    sortByAmountAsc();
+  }
+  renderAllTransactions();
+}
+
 // Initial Run
-sortByDateDesc();
-renderAllTransactions();
+applyActiveSorting();
 runCalculations();

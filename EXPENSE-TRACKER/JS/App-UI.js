@@ -95,29 +95,27 @@ overlay.addEventListener("click", (e) => {
 
 const navItems = document.querySelectorAll(".nav-item");
 
+const activeNavClasses = [
+  "bg-blue-100",      
+  "text-blue-600",    
+  "font-medium", 
+  "shadow-sm"
+];
+
+const inactiveNavClasses = [
+  "text-slate-600", 
+  "hover:bg-slate-200", 
+  "hover:text-slate-900"
+];
+
 navItems.forEach((item) => {
   item.addEventListener("click", function () {
     navItems.forEach((nav) => {
-      nav.classList.remove(
-        "bg-blue-400",
-        "border",
-        "border-white",
-        "text-white",
-        "font-semibold",
-        "shadow-md",
-      );
-      nav.classList.add("text-black", "hover:bg-gray-200");
+      nav.classList.remove(...activeNavClasses);
+      nav.classList.add(...inactiveNavClasses);
     });
-
-    this.classList.remove("text-black", "hover:bg-gray-200");
-    this.classList.add(
-      "bg-blue-400",
-      "border",
-      "border-white",
-      "text-white",
-      "font-semibold",
-      "shadow-md",
-    );
+    this.classList.remove(...inactiveNavClasses);
+    this.classList.add(...activeNavClasses);
   });
 });
 
