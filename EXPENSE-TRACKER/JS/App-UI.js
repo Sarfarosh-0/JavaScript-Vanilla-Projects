@@ -96,16 +96,16 @@ overlay.addEventListener("click", (e) => {
 const navItems = document.querySelectorAll(".nav-item");
 
 const activeNavClasses = [
-  "bg-blue-100",      
-  "text-blue-600",    
-  "font-medium", 
-  "shadow-sm"
+  "bg-blue-100",
+  "text-blue-600",
+  "font-medium",
+  "shadow-sm",
 ];
 
 const inactiveNavClasses = [
-  "text-slate-600", 
-  "hover:bg-slate-200", 
-  "hover:text-slate-900"
+  "text-slate-600",
+  "hover:bg-slate-200",
+  "hover:text-slate-900",
 ];
 
 navItems.forEach((item) => {
@@ -123,91 +123,52 @@ const modalWrapper = document.getElementById("modalWrapper");
 const transactionsSection = document.getElementById("transactions");
 const transactionsHistory = document.getElementById("transactionsHistory");
 const tableTitle = document.getElementById("tableTitle");
-const viewAllBtn = document.getElementById("viewAllBtn");
+const viewAllBtns = document.querySelectorAll(".viewAllBtn");
 const closeModalBtn = document.getElementById("closeModalBtn");
 
-viewAllBtn.addEventListener("click", (e) => {
-  e.preventDefault();
+const wrapperModalStyles = ["fixed", "inset-0", "z-[100]", "flex", "items-center", "justify-center", "bg-black/60", "backdrop-blur-sm", "p-4", "opacity-100"];
+const sectionInlineStyles = ["mt-3", "p-4", "shadow-lg", "min-h-96"];
+const sectionModalStyles = ["flex", "flex-col", "w-full", "max-w-4xl", "max-h-[85vh]", "p-6", "shadow-2xl"];
+const historyInlineStyles = ["md:max-h-[320px]", "max-h-[250px]", "overflow-hidden"];
+const historyModalStyles = ["flex-grow", "overflow-y-auto"];
 
-  modalWrapper.classList.add(
-    "fixed",
-    "inset-0",
-    "z-[100]",
-    "flex",
-    "items-center",
-    "justify-center",
-    "bg-black/60",
-    "backdrop-blur-sm",
-    "p-4",
-    "opacity-100",
-  );
-  modalWrapper.classList.remove("w-full");
 
-  transactionsSection.classList.add(
-    "flex",
-    "flex-col",
-    "w-full",
-    "max-w-4xl",
-    "max-h-[85vh]",
-    "p-6",
-    "shadow-2xl",
-  );
-  transactionsSection.classList.remove(
-    "mt-3",
-    "p-4",
-    "shadow-lg",
-    "min-h-96",
-    "h-auto",
-  );
-
-  transactionsHistory.classList.add("flex-grow", "overflow-y-auto");
-  transactionsHistory.classList.remove(
-    "md:max-h-[320px]",
-    "max-h-[250px]",
-    "overflow-hidden",
-  );
-
-  tableTitle.textContent = "All Transactions";
-  viewAllBtn.classList.add("hidden");
-  closeModalBtn.classList.remove("hidden");
-  document.body.classList.add("overflow-hidden");
+viewAllBtns.forEach((btn) => {
+  btn.addEventListener("click", openAllTransactions);
 });
 
+function openAllTransactions(e) {
+  if (e) e.preventDefault();
+
+  modalWrapper.classList.remove("w-full");
+  modalWrapper.classList.add(...wrapperModalStyles);
+
+  transactionsSection.classList.remove(...sectionInlineStyles, "h-auto");
+  transactionsSection.classList.add(...sectionModalStyles);
+
+  transactionsHistory.classList.remove(...historyInlineStyles);
+  transactionsHistory.classList.add(...historyModalStyles);
+
+  tableTitle.textContent = "All Transactions";
+  viewAllBtns.forEach(btn => btn.classList.add("hidden"));
+  
+  closeModalBtn.classList.remove("hidden");
+  document.body.classList.add("overflow-hidden");
+}
+
 closeModalBtn.addEventListener("click", () => {
-  modalWrapper.classList.remove(
-    "fixed",
-    "inset-0",
-    "z-[100]",
-    "flex",
-    "items-center",
-    "justify-center",
-    "bg-black/60",
-    "backdrop-blur-sm",
-    "p-4",
-    "opacity-100",
-  );
+  modalWrapper.classList.remove(...wrapperModalStyles);
   modalWrapper.classList.add("w-full");
 
-  transactionsSection.classList.remove(
-    "flex",
-    "flex-col",
-    "w-full",
-    "max-w-4xl",
-    "max-h-[85vh]",
-    "p-6",
-    "shadow-2xl",
-  );
-  transactionsSection.classList.add("mt-3", "p-4", "shadow-lg", "min-h-96");
+  transactionsSection.classList.remove(...sectionModalStyles);
+  transactionsSection.classList.add(...sectionInlineStyles);
 
-  transactionsHistory.classList.remove("flex-grow", "overflow-y-auto");
-  transactionsHistory.classList.add(
-    "md:max-h-[320px]",
-    "max-h-[250px]",
-    "overflow-hidden",
-  );
+  transactionsHistory.classList.remove(...historyModalStyles);
+  transactionsHistory.classList.add(...historyInlineStyles);
 
   tableTitle.textContent = "Recent Transactions";
-  viewAllBtn.classList.remove("hidden");
+  viewAllBtns.forEach(btn => btn.classList.remove("hidden"));
+  
   closeModalBtn.classList.add("hidden");
   document.body.classList.remove("overflow-hidden");
 });
