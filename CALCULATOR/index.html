@@ -6,11 +6,130 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <link href="src/output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: "Orbitron", sans-serif;
+        }
+    </style>
 
 </head>
 
-<body>
+<body class="flex justify-center items-center">
+    <main class="flex flex-col gap-2 border bg-gray-600/50 backdrop-blur-md w-80 rounded-lg h-full p-4 m-10">
+        <section id="resultBody"
+            class="w-full bg-white rounded-xl h-32 p-3 overflow-auto flex flex-col justify-center items-end gap-2">
+            <h1 id="numbers" class="text-3xl">2+2</h1>
+            <div class="w-full h-px bg-black"></div>
+            <h1 id="result" class="text-2xl text-slate-500">4</h1>
+        </section>
+        <section id="inputBody" class="grid grid-cols-4 grid-rows-5 gap-2 w-full aspect-square">
+
+            <!-- First Row -->
+            <button
+                class="content text-2xl uppercase rounded-full text-red-500 bg-white active:shadow-red-400 shadow-md active:scale-95 aspect-square transition-all duration-300 flex justify-center items-center">C
+            </button>
+            <button
+                class="content text-2xl uppercase rounded-full text-red-500 bg-white active:shadow-red-400 shadow-md active:scale-95 aspect-square transition-all duration-300 flex justify-center items-center">
+                <img src="https://img.icons8.com/parakeet-partial-filled/48/FA5252/clear-symbol.png" alt="Backspace"
+                    class="object-contain w-8">
+            </button>
+            <button
+                class="content text-2xl uppercase rounded-full text-black bg-white active:shadow-green-400 shadow-md active:scale-95 aspect-square transition-all duration-300 flex justify-center items-center">
+                <img src="https://img.icons8.com/sf-black-filled/64/percentage.png" alt="Percentage"
+                    class="object-contain w-8">
+            </button>
+            <button
+                class="content text-2xl uppercase rounded-full text-black bg-white active:shadow-green-400 shadow-md active:scale-95 aspect-square transition-all duration-300 flex justify-center items-center">
+                <img src="https://img.icons8.com/ios-filled/50/divide.png" alt="Divide" class="object-contain w-8">
+            </button>
+
+            <!-- Second Row -->
+            <button
+                class="content text-2xl uppercase rounded-full text-black bg-white active:shadow-green-400 shadow-md active:scale-95 aspect-square transition-all duration-300 flex justify-center items-center">
+                7
+            </button>
+            <button
+                class="content text-2xl uppercase rounded-full text-black bg-white active:shadow-green-400 shadow-md active:scale-95 aspect-square transition-all duration-300 flex justify-center items-center">
+                8
+            </button>
+            <button
+                class="content text-2xl uppercase rounded-full text-black bg-white active:shadow-green-400 shadow-md active:scale-95 aspect-square transition-all duration-300 flex justify-center items-center">
+                9
+            </button>
+            <button
+                class="content text-2xl uppercase rounded-full text-black bg-white active:shadow-green-400 shadow-md active:scale-95 aspect-square transition-all duration-300 flex justify-center items-center">
+                <img src="https://img.icons8.com/material-rounded/24/delete-sign.png" alt="Multiply"
+                    class="object-contain w-8">
+            </button>
+
+            <!-- Third Row -->
+            <button
+                class="content text-2xl uppercase rounded-full text-black bg-white active:shadow-green-400 shadow-md active:scale-95 aspect-square transition-all duration-300 flex justify-center items-center">
+                4
+            </button>
+            <button
+                class="content text-2xl uppercase rounded-full text-black bg-white active:shadow-green-400 shadow-md active:scale-95 aspect-square transition-all duration-300 flex justify-center items-center">
+                5
+            </button>
+            <button
+                class="content text-2xl uppercase rounded-full text-black bg-white active:shadow-green-400 shadow-md active:scale-95 aspect-square transition-all duration-300 flex justify-center items-center">
+                6
+            </button>
+            <button
+                class="content text-2xl uppercase rounded-full text-black bg-white active:shadow-green-400 shadow-md active:scale-95 aspect-square transition-all duration-300 flex justify-center items-center">
+                <img src="https://img.icons8.com/ios-glyphs/30/minus-math.png" alt="Subtract"
+                    class="object-contain w-8">
+            </button>
+
+            <!-- Fourth Row -->
+            <button
+                class="content text-2xl uppercase rounded-full text-black bg-white active:shadow-green-400 shadow-md active:scale-95 aspect-square transition-all duration-300 flex justify-center items-center">
+                1
+            </button>
+            <button
+                class="content text-2xl uppercase rounded-full text-black bg-white active:shadow-green-400 shadow-md active:scale-95 aspect-square transition-all duration-300 flex justify-center items-center">
+                2
+            </button>
+            <button
+                class="content text-2xl uppercase rounded-full text-black bg-white active:shadow-green-400 shadow-md active:scale-95 aspect-square transition-all duration-300 flex justify-center items-center">
+                3
+            </button>
+            <button
+                class="content text-2xl uppercase rounded-full text-black bg-white active:shadow-green-400 shadow-md active:scale-95 aspect-square transition-all duration-300 flex justify-center items-center">
+                <img src="https://img.icons8.com/ios-glyphs/30/plus-math.png" alt="Addition" class="object-contain w-8">
+            </button>
+            
+            <!-- Fifth Row -->
+            <button
+                class="content text-2xl uppercase rounded-full text-black bg-white active:shadow-green-400 shadow-md active:scale-95 aspect-square transition-all duration-300 flex justify-center items-center">
+                ()
+            </button>
+            <button
+                class="content text-2xl uppercase rounded-full text-black bg-white active:shadow-green-400 shadow-md active:scale-95 aspect-square transition-all duration-300 flex justify-center items-center">
+                0
+            </button>
+            <button
+                class="content text-4xl uppercase rounded-full text-black bg-white active:shadow-green-400 shadow-md active:scale-95 aspect-square transition-all duration-300 flex justify-center items-center">
+                <!-- <img src="https://img.icons8.com/material-rounded/24/full-stop.png" alt="point" class="object-contain w-8"> -->.
+            </button>
+            <button
+                class="content text-2xl uppercase rounded-full text-black bg-white active:shadow-green-400 shadow-md active:scale-95 aspect-square transition-all duration-300 flex justify-center items-center">
+                <img src="https://img.icons8.com/ios-glyphs/30/equal-sign.png" alt="equal to" class="object-contain w-8">
+            </button>
+
+
+        </section>
+
+
+        </header>
+    </main>
 
 </body>
+
+<script src="script.js"></script>
 
 </html>
