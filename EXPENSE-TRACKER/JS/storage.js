@@ -128,7 +128,7 @@ function renderTransaction(transaction) {
     "items-center",
     "w-full",
     "px-2",
-    "hover:bg-gray-200",
+    "hover:bg-slate-100",
     "rounded-lg",
     "border-b",
     "border-gray-200",
@@ -142,12 +142,12 @@ function renderTransaction(transaction) {
   ];
 
   const date = document.createElement("li");
-  date.classList.add("py-3", ...textResponsiveClasses);
+  date.classList.add("py-2", ...textResponsiveClasses);
   date.textContent = transaction.date;
 
   const description = document.createElement("li");
   description.classList.add(
-    "py-3",
+    "py-2",
     "hidden",
     "md:block",
     ...textResponsiveClasses,
@@ -162,7 +162,7 @@ function renderTransaction(transaction) {
 
   const category = document.createElement("li");
   category.classList.add(
-    "py-3",
+    "py-2",
     "hidden",
     "md:block",
     ...textResponsiveClasses,
