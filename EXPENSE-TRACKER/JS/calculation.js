@@ -1,10 +1,19 @@
+// --- DOM Elements ---
 const totalIncome = document.getElementById("totalIncome");
 const totalExpense = document.getElementById("totalExpense");
 const totalBalance = document.getElementById("totalBalance");
 
+// Global calculation trackers
 let calTotalIncome = 0;
 let calTotalExpense = 0;
 let calTotalBalance = 0;
+
+function formatIndianCurrency(amount) {
+  return `₹${amount.toLocaleString("en-IN", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  })}`;
+}
 
 function calculateIncome() {
   calTotalIncome = 0;
@@ -13,7 +22,7 @@ function calculateIncome() {
       calTotalIncome += parseFloat(transaction.amount) || 0;
     }
   });
-  totalIncome.textContent = `₹ ${calTotalIncome.toLocaleString("en-IN", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  totalIncome.textContent = formatIndianCurrency(calTotalIncome);
 }
 
 function calculateExpense() {
@@ -23,18 +32,19 @@ function calculateExpense() {
       calTotalExpense += parseFloat(transaction.amount) || 0;
     }
   });
-  totalExpense.textContent = `₹ ${calTotalExpense.toLocaleString("en-IN", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  totalExpense.textContent = formatIndianCurrency(calTotalExpense);
 }
 
 function calculateBalance() {
   calTotalBalance = calTotalIncome - calTotalExpense;
-  totalBalance.textContent = `₹ ${calTotalBalance.toLocaleString("en-IN", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  totalBalance.textContent = formatIndianCurrency(calTotalBalance);
 }
 
 function clearAllTotals() {
-  totalIncome.textContent = `₹ 0.00`;
-  totalExpense.textContent = `₹ 0.00`;
-  totalBalance.textContent = `₹ 0.00`;
+  const zeroString = formatIndianCurrency(0);
+  totalIncome.textContent = zeroString;
+  totalExpense.textContent = zeroString;
+  totalBalance.textContent = zeroString;
 }
 
 function runCalculations() {
