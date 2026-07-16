@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense Tracker</title>
     <link href="src/output.css" rel="stylesheet">
-    <link class="icon" href="https://cdn-icons-png.flaticon.com/128/9730/9730488.png" type="image/png">
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/128/781/781831.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
@@ -37,14 +37,14 @@
     </style>
 </head>
 
-<body class="text-slate-700 overflow-x-hidden select-none bg-slate-200/40 relative min-h-screen">
+<body class="text-slate-700 overflow-x-hidden select-none bg-slate-300/40 relative min-h-screen">
 
     <aside id="sidebar" aria-label="Primary Navigation"
-        class="fixed top-0 left-0 h-full w-52 bg-white/95 backdrop-blur-md border-r border-slate-200/80 z-50 p-6 flex flex-col gap-6 transition-transform duration-500 ease-in-out -translate-x-full shadow-2xl shadow-slate-300/30">
+        class="fixed top-0 left-0 h-full w-52 bg-[#f8fafc]/80 backdrop-blur-md border-r border-slate-200/80 z-50 p-6 flex flex-col gap-6 transition-transform duration-500 ease-in-out -translate-x-full shadow-2xl shadow-slate-300/30">
 
         <div class="flex justify-between items-center pb-4 h-16 border-b border-b-slate-900">
             <div class="flex items-center gap-2">
-                <img src="https://cdn-icons-png.flaticon.com/128/9730/9730488.png" alt="Logo" draggable="false"
+                <img src="https://cdn-icons-png.flaticon.com/128/781/781831.png" alt="Logo" draggable="false"
                     class="w-8 h-8 object-contain shrink-0">
                 <h1 class="text-xl font-extrabold text-slate-900 tracking-tight">Tracker</h1>
             </div>
@@ -57,26 +57,26 @@
         <nav class="flex flex-col gap-1.5">
             <a href="#overview"
                 class="nav-item selectAllTransactions flex items-center gap-3 px-4 py-2 rounded-lg text-sm transition-all duration-300 ease-in-out bg-blue-400 border border-white text-white font-semibold shadow-md">
-                <img src="https://cdn-icons-png.flaticon.com/128/3408/3408591.png" alt="Dashboard" draggable="false"
+                <img src="https://cdn-icons-png.flaticon.com/128/18096/18096353.png" alt="Dashboard" draggable="false"
                     class="w-5 h-5 object-contain transition-all duration-300" />
                 <span>Dashboard</span>
             </a>
             <a href="#transactions" id="selectAllIncome"
                 class="nav-item selectAllTransactions flex items-center gap-3 px-4 py-2 text-black hover:bg-gray-200 rounded-lg text-sm transition-all duration-300 ease-in-out">
-                <img src="https://img.icons8.com/color/48/bullish.png" alt="Income" draggable="false"
-                    class="w-5 h-5 object-contain" />
+                <img src="https://img.icons8.com/ios-filled/50/40C057/positive-dynamic.png" alt="Income"
+                    draggable="false" class="w-5 h-5 object-contain" />
                 <span>All Income</span>
             </a>
             <a href="#transactions" id="selectAllExpense"
                 class="nav-item selectAllTransactions flex items-center gap-3 px-4 py-2 text-black hover:bg-gray-200 rounded-lg text-sm transition-all duration-300 ease-in-out">
-                <img src="https://img.icons8.com/color/48/bearish.png" alt="Expenses" draggable="false"
-                    class="w-5 h-5 object-contain" />
+                <img src="https://img.icons8.com/ios-filled/50/FA5252/negative-dynamic.png" alt="Expenses"
+                    draggable="false" class="w-5 h-5 object-contain" />
                 <span>All Expenses</span>
             </a>
 
             <a href="#transactions"
                 class="nav-item selectAllTransactions flex items-center gap-3 px-4 py-2 text-black hover:bg-gray-200 rounded-lg text-sm transition-all duration-300 ease-in-out">
-                <img src="https://cdn-icons-png.flaticon.com/128/3186/3186949.png" alt="All Transactions"
+                <img src="https://cdn-icons-png.flaticon.com/128/1751/1751805.png" alt="All Transactions"
                     draggable="false" class="w-5 h-5 object-contain transition-all duration-300" />
                 <span>Transactions</span>
             </a>
@@ -124,8 +124,8 @@
 
                 <!-- Total Income Card -->
                 <div
-                    class="w-full flex items-center gap-4 p-5 bg-emerald-100/40 border border-slate-100 rounded-lg shadow-sm shadow-slate-200/40 hover:-translate-y-1 hover:border-emerald-500/30 hover:shadow-lg hover:shadow-emerald-600/5 transition-all duration-300">
-                    <img src="https://cdn-icons-png.flaticon.com/128/3135/3135706.png" draggable="false"
+                    class="w-full flex items-center gap-4 p-5 bg-emerald-100/40 border rounded-lg shadow-sm shadow-slate-200/40 hover:-translate-y-1 border-emerald-500/30 hover:shadow-lg hover:shadow-emerald-600/5 transition-all duration-300">
+                    <img src="https://cdn-icons-png.flaticon.com/128/2936/2936758.png" draggable="false"
                         alt="Income Icon" class="w-12 bg-green-200 p-1 rounded-lg h-12 object-contain">
                     <div class="flex flex-col min-w-0">
                         <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider truncate">Total
@@ -137,8 +137,8 @@
 
                 <!-- Total Expenses Card -->
                 <div
-                    class="w-full flex items-center gap-4 p-5 bg-rose-100/40 border border-slate-100 rounded-lg shadow-sm shadow-slate-200/40 hover:-translate-y-1 hover:border-rose-500/30 hover:shadow-lg hover:shadow-rose-600/5 transition-all duration-300">
-                    <img src="https://cdn-icons-png.flaticon.com/128/10758/10758868.png" draggable="false"
+                    class="w-full flex items-center gap-4 p-5 bg-rose-100/40 border rounded-lg shadow-sm shadow-slate-200/40 hover:-translate-y-1 border-rose-500/30 hover:shadow-lg hover:shadow-rose-600/5 transition-all duration-300">
+                    <img src="https://cdn-icons-png.flaticon.com/128/8733/8733406.png" draggable="false"
                         alt="Expenses Icon" class="p-1 w-12 h-12 bg-red-200 rounded-lg object-contain">
                     <div class="flex flex-col min-w-0">
                         <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider truncate">Total
@@ -150,8 +150,8 @@
 
                 <!-- Total Balance Card -->
                 <div
-                    class="w-full flex items-center gap-4 p-5 bg-indigo-100/40 border border-indigo-100 rounded-lg shadow-sm shadow-slate-200/40 hover:-translate-y-1 hover:border-indigo-500/30 hover:shadow-lg hover:shadow-indigo-600/5 transition-all duration-300">
-                    <img src="https://cdn-icons-png.flaticon.com/128/8049/8049428.png" draggable="false"
+                    class="w-full flex items-center gap-4 p-5 bg-indigo-100/40 border rounded-lg shadow-sm shadow-slate-200/40 hover:-translate-y-1 border-indigo-500/30 hover:shadow-lg hover:shadow-indigo-600/5 transition-all duration-300">
+                    <img src="https://cdn-icons-png.flaticon.com/128/6140/6140123.png" draggable="false"
                         alt="Balance Icon" class="w-12 h-12 object-contain p-1 bg-indigo-200 rounded-lg">
                     <div class="flex flex-col min-w-0">
                         <span class="text-xs font-semibold text-indigo-500 uppercase tracking-wider truncate">Total
@@ -180,7 +180,7 @@
                         <h1 id="tableTitle" class="text-xl font-bold text-slate-950 tracking-tight">Recent
                             Transactions
                         </h1>
-                        <div class="flex items-center gap-3 ">
+                        <div class="flex justify-between md:gap-3">
                             <div class="relative inline-block w-auto">
                                 <select id="sortBy"
                                     class="w-auto appearance-none text-sm border border-slate-200 rounded-lg pl-4 pr-9 py-2 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-slate-600 cursor-pointer bg-slate-50/80">
@@ -205,7 +205,7 @@
                                     All
                                 </a>
                                 <button id="closeModalBtn"
-                                    class="hidden text-slate-400 hover:text-slate-600 font-semibold transition-all text-sm">Close
+                                    class="hidden text-rose-600 hover:text-rose-800 font-semibold transition-all text-sm">Close
                                 </button>
                             </div>
                         </div>
@@ -242,8 +242,8 @@
                 <div class="flex items-center gap-3.5">
                     <div
                         class="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-100/50 flex items-center justify-center shrink-0">
-                        <img src="https://img.icons8.com/color/48/bullish.png" alt="Add Income" draggable="false"
-                            class="w-8 aspect-square object-contain">
+                        <img src="https://img.icons8.com/ios-filled/50/40C057/positive-dynamic.png" alt="Add Income"
+                            draggable="false" class="w-8 aspect-square object-contain">
                     </div>
                     <div>
                         <h2 class="text-lg font-bold text-slate-900">Add Income</h2>
@@ -342,8 +342,8 @@
                 <div class="flex items-center gap-3.5">
                     <div
                         class="w-12 h-12 rounded-xl bg-rose-50 border border-rose-100/50 flex items-center justify-center shrink-0">
-                        <img src="https://img.icons8.com/color/48/bearish.png" alt="Add Expense" draggable="false"
-                            class="w-8 aspect-square object-contain">
+                        <img src="https://img.icons8.com/ios-filled/50/FA5252/negative-dynamic.png" alt="Add Expense"
+                            draggable="false" class="w-8 aspect-square object-contain">
                     </div>
                     <div>
                         <h2 class="text-lg font-bold text-slate-900">Add Expense</h2>
