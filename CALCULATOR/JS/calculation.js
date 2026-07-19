@@ -1,22 +1,26 @@
 console.log("Welcome User Calculator Started");
 
-document.addEventListener("DOMContentLoaded", () => {
-  const display = document.getElementById("numbers");
-  const result = document.getElementById("result");
-  const buttons = document.querySelectorAll("#inputBody buttons");
+const display = document.getElementById("numbers");
+const result = document.getElementById("result");
+const buttons = document.querySelectorAll("#inputBody button");
 
-  // clearing all input of resultBody
-  display.textContent = 0;
-  result.textContent = "";
+// clearing all input of resultBody
+display.textContent = 0;
+result.textContent = "";
 
-  let currentNumbers = "";
+let currentNumbers = "";
+console.log(currentNumbers);
 
-  buttons.forEach((button) => {
-    const value = button.textContent.trim();
-    const ariaLabel = button.getAttribute("aria-label");
-    console.log(value);
-    console.log(ariaLabel);
+currentNumbers += 10;
+console.log(currentNumbers);
 
+buttons.forEach((button) => {
+  const value = button.textContent.trim();
+  const ariaLabel = button.getAttribute("aria-label");
+  console.log(value);
+  console.log(ariaLabel);
+
+  button.addEventListener("click", () => {
     if (value === "C") {
       // Clear Everything
       currentInput = "";
@@ -38,6 +42,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (ariaLabel === "Percentage") appendValue = "%";
 
     if ("1" === value) {
+      console.log("Enter 1");
+      currentNumbers += 1;
+      console.log(currentNumbers);
     }
   });
 });
