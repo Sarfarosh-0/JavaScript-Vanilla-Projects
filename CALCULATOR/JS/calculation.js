@@ -50,9 +50,7 @@ buttons.forEach((button) => {
     }
 
     // 5. NUMBER & DECIMAL INPUTS
-    // Instead of hardcoding "1", "2", etc., check if the value is a number or a decimal point
     else if (!isNaN(value) || value === ".") {
-      // Prevent leading multiple zeros if the display is empty
       if (currentNumbers === "" && value === "0") {
         numbersDisplay.textContent = "0";
       } else {
