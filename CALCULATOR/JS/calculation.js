@@ -1,12 +1,10 @@
-console.log("Welcome User Calculator Started");
-
-const display = document.getElementById("numbers");
-const result = document.getElementById("result");
+const numbersDisplay = document.getElementById("numbers");
+const resultDisplay = document.getElementById("result");
 const buttons = document.querySelectorAll("#inputBody button");
 
 // clearing all input of resultBody
-display.textContent = 0;
-result.textContent = "";
+numbersDisplay.textContent = 0;
+resultDisplay.textContent = "";
 
 let currentNumbers = "";
 console.log(currentNumbers);
@@ -17,34 +15,50 @@ console.log(currentNumbers);
 buttons.forEach((button) => {
   const value = button.textContent.trim();
   const ariaLabel = button.getAttribute("aria-label");
-  console.log(value);
-  console.log(ariaLabel);
 
   button.addEventListener("click", () => {
+    // 1. CLEAR ACTION
     if (value === "C") {
-      // Clear Everything
-      currentInput = "";
+      currentNumbers = "";
       numbersDisplay.textContent = "0";
       resultDisplay.textContent = "";
-    } else if (ariaLabel === "Backspace") {
-      // Remove last character
-      currentInput = currentInput.slice(0, -1);
-      numbersDisplay.textContent = currentInput || "0";
-      calculateResult();
-    } else if ("Equal To" === ariaLabel) {
+    }
+
+    // 2. BACKSPACE ACTION
+    else if (ariaLabel === "Backspace") {
+      currentNumbers = currentNumbers.slice(0, -1);
+      numbersDisplay.textContent = currentNumbers || "0";
       calculateResult();
     }
 
-    if (ariaLabel === "Divide") appendValue = "/";
-    if (ariaLabel === "Multiply") appendValue = "*";
-    if (ariaLabel === "Subtract") appendValue = "-";
-    if (ariaLabel === "Add") appendValue = "+";
-    if (ariaLabel === "Percentage") appendValue = "%";
+    // 3. EQUALS ACTION
+    else if (ariaLabel === "Equal To") {
+      calculateResult();
+    }
 
-    if ("1" === value) {
-      console.log("Enter 1");
-      currentNumbers += 1;
-      console.log(currentNumbers);
+    // 4. OPERATOR ACTIONS (Appends using += instead of overwriting with =)
+    else if (ariaLabel === "Divide") {
+      currentNumbers += "/";
+    } else if (ariaLabel === "Multiply") {
+      currentNumbers += "*";
+    } else if (ariaLabel === "Subtract") {
+      currentNumbers += "-";
+    } else if (ariaLabel === "Add") {
+      currentNumbers += "+";
+    } else if (ariaLabel === "Percentage") {
+      currentNumbers += "%";
+    }
+
+    // 5. NUMBER & DECIMAL INPUTS
+    // Instead of hardcoding "1", "2", etc., check if the value is a number or a decimal point
+    else if (!isNaN(value) || value === ".") {
+      // Prevent leading multiple zeros if the display is empty
+      if (currentNumbers === "" && value === "0") {
+        numbersDisplay.textContent = "0";
+      } else {
+        currentNumbers += value;
+        numbersDisplay.textContent = currentNumbers;
+      }
     }
   });
 });
