@@ -23,6 +23,6 @@ function calculateResult(isFinalCommit = false) {
       }
     }
   } catch (error) {
-    resultDisplay.textContent = "Erorr";
+    resultDisplay.textContent = "";
   }
 }

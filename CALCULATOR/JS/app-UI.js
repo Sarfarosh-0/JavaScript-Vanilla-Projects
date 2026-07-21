@@ -39,7 +39,7 @@ buttons.forEach((button) => {
     // 3. EQUALS ACTION
     else if (ariaLabel === "Equal To") {
       calculateResult(true);
-      return; // Skip standard live update loop since calculation.js handles equal state
+      return;
     }
 
     // 4. OPERATORS
@@ -56,22 +56,21 @@ buttons.forEach((button) => {
     } 
 
     // 5. PARENTHESES TOGGLE ()
-    else if (value === "()") {
-      const openCount = (currentNumbers.match(/\(/g) || []).length;
-      const closeCount = (currentNumbers.match(/\)/g) || []).length;
-      const lastChar = currentNumbers.slice(-1);
+    // else if (value === "()") {
+    //   const openCount = (currentNumbers.match(/\(/g) || []).length;
+    //   const closeCount = (currentNumbers.match(/\)/g) || []).length;
+    //   const lastChar = currentNumbers.slice(-1);
 
-      if (openCount > closeCount && (!isNaN(lastChar) || lastChar === ")")) {
-        currentNumbers += ")";
-      } else {
-        currentNumbers += "(";
-      }
-    }
+    //   if (openCount > closeCount && (!isNaN(lastChar) || lastChar === ")")) {
+    //     currentNumbers += ")";
+    //   } else {
+    //     currentNumbers += "(";
+    //   }
+    // }
 
     // 6. NUMBERS & DECIMAL INPUT
     else if (!isNaN(value) || value === ".") {
       if (currentNumbers === "" && value === "0") {
-        // Avoid stacking zero values at start
       } else {
         currentNumbers += value;
       }
@@ -79,6 +78,6 @@ buttons.forEach((button) => {
 
     // Synchronize UI Displays
     numbersDisplay.textContent = currentNumbers || "0";
-    calculateResult(false); // Update preview result live
+    calculateResult(false); 
   });
 });
