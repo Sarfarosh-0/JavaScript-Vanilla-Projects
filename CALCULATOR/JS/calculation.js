@@ -2,15 +2,11 @@ const numbersDisplay = document.getElementById("numbers");
 const resultDisplay = document.getElementById("result");
 const buttons = document.querySelectorAll("#inputBody button");
 
-// clearing all input of resultBody
-numbersDisplay.textContent = 0;
+// Initialize displays
+numbersDisplay.textContent = "0";
 resultDisplay.textContent = "";
 
 let currentNumbers = "";
-console.log(currentNumbers);
-
-currentNumbers += 10;
-console.log(currentNumbers);
 
 buttons.forEach((button) => {
   const value = button.textContent.trim();
@@ -20,15 +16,13 @@ buttons.forEach((button) => {
     // 1. CLEAR ACTION
     if (value === "C") {
       currentNumbers = "";
-      numbersDisplay.textContent = "0";
       resultDisplay.textContent = "";
     }
 
     // 2. BACKSPACE ACTION
     else if (ariaLabel === "Backspace") {
       currentNumbers = currentNumbers.slice(0, -1);
-      numbersDisplay.textContent = currentNumbers || "0";
-      calculateResult();
+      calculateResult(); // Updates calculation preview if needed
     }
 
     // 3. EQUALS ACTION
@@ -36,7 +30,7 @@ buttons.forEach((button) => {
       calculateResult();
     }
 
-    // 4. OPERATOR ACTIONS (Appends using += instead of overwriting with =)
+    // 4. OPERATOR ACTIONS
     else if (ariaLabel === "Divide") {
       currentNumbers += "/";
     } else if (ariaLabel === "Multiply") {
@@ -49,14 +43,28 @@ buttons.forEach((button) => {
       currentNumbers += "%";
     }
 
-    // 5. NUMBER & DECIMAL INPUTS
     else if (!isNaN(value) || value === ".") {
       if (currentNumbers === "" && value === "0") {
-        numbersDisplay.textContent = "0";
       } else {
         currentNumbers += value;
-        numbersDisplay.textContent = currentNumbers;
       }
     }
+
+    numbersDisplay.textContent = currentNumbers || "0";
   });
 });
+
+function calculateResult() {
+  if (!currentNumbers) {
+    resultDisplay.textContent = "";
+    return;
+  }
+
+  try {
+    const formattedExpr = currentNumbers.replace(/%/g, "/100");
+    const evaluated = eval(formattedExpr);
+    resultDisplay.textContent = evaluated;
+  } catch (error) {
+    resultDisplay.textContent = "";
+  }
+}
