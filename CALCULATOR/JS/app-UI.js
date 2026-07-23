@@ -1,83 +1,89 @@
-const numbersDisplay = document.getElementById("numbers");
-const resultDisplay = document.getElementById("result");
-const buttons = document.querySelectorAll("#inputBody button");
-const clickSound = document.getElementById("clickSound");
+document.addEventListener("DOMContentLoaded", () => {
+  const clickSound = document.getElementById("clickSound");
 
-// Initial state setups
-numbersDisplay.textContent = "0";
-resultDisplay.textContent = "";
-
-let currentNumbers = "";
-
-function playAudio() {
-  if (clickSound) {
-    clickSound.currentTime = 0; 
-    clickSound.play().catch(() => {
-      console.log('Audio Stoped');
-    });
+  // Helper function to play button click sound
+  function playSound() {
+    if (clickSound) {
+      clickSound.currentTime = 0;
+      clickSound.play().catch(() => {}); // Prevent errors if user hasn't interacted yet
+    }
   }
-}
 
-buttons.forEach((button) => {
-  const value = button.textContent.trim();
-  const ariaLabel = button.getAttribute("aria-label");
+  // --- Handlers for Input Actions ---
+  function handleInput(char) {
+    currentNumbers += char;
+    numbersDisplay.textContent = currentNumbers;
+    calculateResult(false);
+  }
 
-  button.addEventListener("click", () => {
-    playAudio();
+  function handleBackspace() {
+    currentNumbers = currentNumbers.slice(0, -1);
+    numbersDisplay.textContent = currentNumbers;
+    calculateResult(false);
+  }
 
-    // 1. CLEAR ACTION
-    if (value === "C") {
-      currentNumbers = "";
-      resultDisplay.textContent = "";
-    }
+  function handleClear() {
+    currentNumbers = "";
+    numbersDisplay.textContent = "";
+    resultDisplay.textContent = "";
+  }
 
-    // 2. BACKSPACE ACTION
-    else if (ariaLabel === "Backspace") {
-      currentNumbers = currentNumbers.slice(0, -1);
-    }
+  function handleCommit() {
+    calculateResult(true);
+  }
 
-    // 3. EQUALS ACTION
-    else if (ariaLabel === "Equal To") {
-      calculateResult(true);
-      return;
-    }
+  // --- Button Click Event Delegation ---
+  const inputBody = document.getElementById("inputBody");
 
-    // 4. OPERATORS
-    else if (ariaLabel === "Divide") {
-      currentNumbers += "/";
-    } else if (ariaLabel === "Multiply") {
-      currentNumbers += "*";
-    } else if (ariaLabel === "Subtract") {
-      currentNumbers += "-";
-    } else if (ariaLabel === "Add") {
-      currentNumbers += "+";
+  inputBody.addEventListener("click", (event) => {
+    const button = event.target.closest("button");
+    if (!button) return;
+
+    playSound();
+
+    const ariaLabel = button.getAttribute("aria-label");
+    const textContent = button.textContent.trim();
+
+    // Route actions based on aria-label or button text
+    if (textContent === "C") {
+      handleClear();
+    } else if (ariaLabel === "Backspace") {
+      handleBackspace();
+    } else if (ariaLabel === "Equal To") {
+      handleCommit();
     } else if (ariaLabel === "Percentage") {
-      currentNumbers += "%";
-    } 
-
-    // 5. PARENTHESES TOGGLE ()
-    // else if (value === "()") {
-    //   const openCount = (currentNumbers.match(/\(/g) || []).length;
-    //   const closeCount = (currentNumbers.match(/\)/g) || []).length;
-    //   const lastChar = currentNumbers.slice(-1);
-
-    //   if (openCount > closeCount && (!isNaN(lastChar) || lastChar === ")")) {
-    //     currentNumbers += ")";
-    //   } else {
-    //     currentNumbers += "(";
-    //   }
-    // }
-
-    // 6. NUMBERS & DECIMAL INPUT
-    else if (!isNaN(value) || value === ".") {
-      if (currentNumbers === "" && value === "0") {
-      } else {
-        currentNumbers += value;
-      }
+      handleInput("%");
+    } else if (ariaLabel === "Divide") {
+      handleInput("/");
+    } else if (ariaLabel === "Multiply") {
+      handleInput("*");
+    } else if (ariaLabel === "Subtract") {
+      handleInput("-");
+    } else if (ariaLabel === "Add") {
+      handleInput("+");
+    } else {
+      // Numbers (0-9, 00, .)
+      handleInput(textContent);
     }
+  });
 
-    // Synchronize UI Displays
-    numbersDisplay.textContent = currentNumbers || "0";
-    calculateResult(false); 
+  // --- Keyboard Event Listener ---
+  window.addEventListener("keydown", (event) => {
+    const key = event.key;
+
+    if (/^[0-9+\-*/%.]$/.test(key)) {
+      playSound();
+      handleInput(key);
+    } else if (key === "Enter" || key === "=") {
+      event.preventDefault();
+      playSound();
+      handleCommit();
+    } else if (key === "Backspace") {
+      playSound();
+      handleBackspace();
+    } else if (key === "Escape" || key.toLowerCase() === "c") {
+      playSound();
+      handleClear();
+    }
   });
 });
