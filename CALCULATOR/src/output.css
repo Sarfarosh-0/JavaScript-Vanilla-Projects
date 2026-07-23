@@ -321,6 +321,9 @@
   .overflow-x-auto {
     overflow-x: auto;
   }
+  .overflow-y-hidden {
+    overflow-y: hidden;
+  }
   .overflow-y-scroll {
     overflow-y: scroll;
   }
