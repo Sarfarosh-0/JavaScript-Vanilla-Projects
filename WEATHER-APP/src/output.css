@@ -244,6 +244,9 @@
   .flex {
     display: flex;
   }
+  .hidden {
+    display: none;
+  }
   .table {
     display: table;
   }
@@ -633,6 +636,14 @@
     --tw-duration: 300ms;
     transition-duration: 300ms;
   }
+  .duration-500 {
+    --tw-duration: 500ms;
+    transition-duration: 500ms;
+  }
+  .duration-1000 {
+    --tw-duration: 1000ms;
+    transition-duration: 1000ms;
+  }
   @media (hover: hover) {
     .hover\:bg-blue-500:hover {
       background-color: var(--color-blue-500);
@@ -653,6 +664,9 @@
     }
   }
   @media (width >= 48rem) {
+    .md\:ml-52 {
+      margin-left: calc(var(--spacing) * 52);
+    }
     .md\:h-full {
       height: 100%;
     }
