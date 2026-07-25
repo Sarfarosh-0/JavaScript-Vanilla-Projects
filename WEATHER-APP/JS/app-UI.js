@@ -11,12 +11,14 @@ openBarBtn.addEventListener("click", openSidebar);
 
 function openSidebar() {
   sidebar.classList.remove("-translate-x-full");
+  openBarBtn.classList.add('hidden')
   if (window.innerWidth >= 768) {
     mainContent.classList.add("ml-64");
   }
 }
 
 function closeSidebar() {
+  openBarBtn.classList.remove('hidden')
   sidebar.classList.add("-translate-x-full");
   mainContent.classList.remove("ml-64");
 }
