@@ -29,59 +29,61 @@
 
     <!-- Sidebar -->
     <aside id="sidebar" aria-label="Primary Navigation"
-        class="-translate-x-full fixed top-0 left-0 z-50 w-64 h-full bg-white/70 backdrop-blur-md transform-gpu border-r border-slate-300/60 flex flex-col justify-between transition-transform duration-500">
+        class="-translate-x-full fixed top-0 left-0 z-50 w-60 h-full bg-white/70 backdrop-blur-md transform-gpu border-r border-slate-300/60 flex flex-col justify-between transition-transform duration-500 ease-in-out shadow-xl">
 
         <!-- Header -->
-        <div class="flex items-center justify-between border-b border-slate-300/60 py-5 px-4 shrink-0">
+        <div class="flex items-center justify-between border-b border-slate-300 py-5 px-4 shrink-0">
             <div class="flex items-center gap-3 min-w-0">
-                <img src="https://cdn-icons-png.flaticon.com/128/1146/1146869.png" alt="App Logo"
-                    class="w-8 h-8 aspect-square object-contain shrink-0">
-                <h2 class="font-bold text-lg truncate text-slate-800">WeatherApp</h2>
+                <div class="p-2 rounded-xl bg-sky-500/10 border border-sky-500/20 shrink-0">
+                    <img src="https://cdn-icons-png.flaticon.com/128/1146/1146869.png" alt="App Logo"
+                        class="w-6 h-6 object-contain">
+                </div>
+                <h2 class="font-bold text-lg text-slate-800 tracking-wide truncate">WeatherApp</h2>
             </div>
 
             <button id="closeSidebarBtn" aria-label="Close Sidebar"
-                class="text-slate-400 text-xl hover:text-rose-500 transition-colors duration-200 cursor-pointer p-1 shrink-0">
+                class="text-slate-400 text-xl hover:text-rose-500 transition-all rounded-xl duration-200 p-2 cursor-pointer flex items-center justify-center ">
                 <span aria-hidden="true">✕</span>
             </button>
         </div>
 
         <!-- Navigation -->
-        <nav class="flex flex-col justify-start items-start gap-1 pt-4 px-3 mb-auto overflow-y-auto">
+        <nav class="flex flex-col gap-1.5 p-4 px-3 mb-auto overflow-y-auto">
             <button
-                class="w-full flex justify-start items-center gap-3 text-slate-700 font-bold rounded-2xl hover:bg-blue-500 hover:text-white transition-all duration-300 py-2.5 px-4">
+                class="w-full flex items-center gap-3.5 text-slate-600 hover:text-sky-600 font-semibold rounded-2xl hover:bg-slate-50 py-3 px-4 transition-all group">
                 <img src="https://img.icons8.com/material-outlined/24/home--v2.png" alt="Home"
-                    class="w-6 h-6 aspect-square shrink-0">
+                    class="w-5 h-5 shrink-0 transition-transform group-hover:scale-110 group-hover:text-sky-600">
                 <span class="truncate">Home</span>
             </button>
 
             <button
-                class="w-full flex justify-start items-center gap-3 text-slate-700 font-bold rounded-2xl hover:bg-blue-500 hover:text-white transition-all duration-300 py-2.5 px-4">
+                class="w-full flex items-center gap-3.5 text-slate-600 hover:text-sky-600 font-semibold rounded-2xl hover:bg-slate-50 py-3 px-4 transition-all group">
                 <img src="https://img.icons8.com/ios-glyphs/30/search--v1.png" alt="Search"
-                    class="w-6 h-6 aspect-square shrink-0">
+                    class="w-5 h-5 shrink-0 transition-transform group-hover:scale-110 group-hover:text-sky-600">
                 <span class="truncate">Search</span>
             </button>
 
             <button
-                class="w-full flex justify-start items-center gap-3 text-slate-700 font-bold rounded-2xl hover:bg-blue-500 hover:text-white transition-all duration-300 py-2.5 px-4">
+                class="w-full flex items-center gap-3.5 text-slate-600 hover:text-sky-600 font-semibold rounded-2xl hover:bg-slate-50 py-3 px-4 transition-all group">
                 <img src="https://img.icons8.com/ios/100/marker--v1.png" alt="Cities"
-                    class="w-6 h-6 aspect-square shrink-0">
+                    class="w-5 h-5 shrink-0 transition-transform group-hover:scale-110 group-hover:text-sky-600">
                 <span class="truncate">Cities</span>
             </button>
 
             <button
-                class="w-full flex justify-start items-center gap-3 text-slate-700 font-bold rounded-2xl hover:bg-blue-500 hover:text-white transition-all duration-300 py-2.5 px-4">
+                class="w-full flex items-center gap-3.5 text-slate-600 hover:text-sky-600 font-semibold rounded-2xl hover:bg-slate-50 py-3 px-4 transition-all group">
                 <img src="https://img.icons8.com/material-outlined/24/like--v1.png" alt="Favorites"
-                    class="w-6 h-6 aspect-square shrink-0">
+                    class="w-5 h-5 shrink-0 transition-transform group-hover:scale-110 group-hover:text-sky-600">
                 <span class="truncate">Favorites</span>
             </button>
         </nav>
 
         <!-- Bottom Promo Card -->
         <div
-            class="mx-3 mb-4 p-4 rounded-2xl flex flex-col justify-center gap-3 items-center bg-blue-600 shadow-md shrink-0">
+            class="m-4 p-4 rounded-2xl flex flex-col justify-center gap-3 items-center bg-linear-to-br from-sky-500 to-blue-600 shadow-md shadow-sky-500/20 shrink-0 text-center">
             <img src="https://cdn-icons-png.flaticon.com/128/1146/1146869.png" alt="App Logo"
-                class="w-10 h-10 aspect-square object-contain shrink-0">
-            <p class="font-bold text-white text-xs text-center leading-relaxed">
+                class="w-7 h-7 object-contain shrink-0">
+            <p class="font-bold text-white text-xs leading-relaxed">
                 Stay ahead of the weather, every day.
             </p>
         </div>
@@ -108,4 +110,4 @@
     <script src="JS/app-UI.js"></script>
 </body>
 
-</html>>
+</html>
