@@ -105,24 +105,39 @@
 
         <main class="flex flex-col gap-5 mt-3">
             <div id="currentLocation"
-                class="w-full h-56 rounded-2xl p-5 shadow-xl bg-white/80 backdrop-blur-md border border-slate-200/80 flex flex-col gap-10">
-                <div id="dateLocation" class="flex flex-col gap-3">
-                    <div class="flex gap-2 items-center font-bold text-slate-800">
+                class="w-full rounded-2xl p-5 shadow-xl bg-white/80 backdrop-blur-md border border-slate-200/80 flex flex-col justify-between gap-6">
+
+                <!-- Top Row: Location & Date -->
+                <div id="dateLocation" class="flex flex-col gap-1.5">
+                    <div class="flex gap-2 items-center font-bold text-slate-800 text-base">
                         <img src="https://img.icons8.com/ios/100/0284c7/marker--v1.png" alt="Cities"
-                            class="w-4 h-4 shrink-0 transition-transform">
+                            class="w-4 h-4 shrink-0">
                         <span id="currentCity" class="after:content-[',_']">New York</span>
                         <span id="currentCountry">USA</span>
                     </div>
-                    <div class="flex gap-1 items-center text-slate-600 text-sm font-medium">
+
+                    <div class="flex items-center gap-1 text-slate-500 text-xs sm:text-sm font-medium">
                         <p id="Month"></p>
                         <p id="Date"></p>
                         <p id="Year"></p>
                         <p id="WeekDay"></p>
-                        <p>•</p>
+                        <span class="px-0.5">•</span>
                         <p id="Hour">10</p>
-                        <p>:</p>
+                        <span>:</span>
                         <p id="Minutes">40</p>
                     </div>
+                </div>
+
+                <!-- Bottom Row: Weather Icon & Temperature -->
+                <div class="flex items-center justify-start px-2">
+                    <img src="Resources/Birght-Sunny.png" alt="Weather Type"
+                        class="w-36 h-36 object-contain shrink-0">
+                    <div class="weather-details flex flex-col gap-1">
+                        <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-800 tracking-tight">28°C</h1>
+                        <p>Sunny Day</p>
+                        <p>Feels like 30°C</p>
+                    </div>
+                    
                 </div>
             </div>
         </main>
