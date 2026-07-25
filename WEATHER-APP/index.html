@@ -15,21 +15,28 @@
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
+            width: 100%;
+            min-height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-image: url("https://i.pinimg.com/vwebp/1200x/7f/81/a1/7f81a1a261a5a34c54747cde07d415fb.webp");
             scroll-behavior: smooth;
         }
     </style>
 </head>
 
-<body class="bg-slate-100">
+<body class="bg-slate-100 flex overflow-x-hidden min-h-screen">
+
+    <!-- Sidebar -->
     <aside id="sidebar" aria-label="Primary Navigation"
-        class="-anslate-x-full fixed top-0 left-0 z-50 w-64 h-full  backdrop-blur-md bg-white border-r-2 border-slate-400/40 flex flex-col justify-between transition-transform duration-500">
+        class="-translate-x-full fixed top-0 left-0 z-50 w-64 h-full bg-white/70 backdrop-blur-md transform-gpu border-r border-slate-300/60 flex flex-col justify-between transition-transform duration-500">
 
         <!-- Header -->
-        <div class="flex items-center justify-between border-b border-slate-400/40 py-5 px-4 shrink-0">
+        <div class="flex items-center justify-between border-b border-slate-300/60 py-5 px-4 shrink-0">
             <div class="flex items-center gap-3 min-w-0">
                 <img src="https://cdn-icons-png.flaticon.com/128/1146/1146869.png" alt="App Logo"
                     class="w-8 h-8 aspect-square object-contain shrink-0">
-                <h2 class="font-bold text-lg truncate">WeatherApp</h2>
+                <h2 class="font-bold text-lg truncate text-slate-800">WeatherApp</h2>
             </div>
 
             <button id="closeSidebarBtn" aria-label="Close Sidebar"
@@ -80,6 +87,23 @@
         </div>
     </aside>
 
+    <main id="mainContent" class="flex-1 transition-all duration-500 ease-in-out p-6">
+        <header
+            class="flex justify-between items-center py-2 px-4 bg-white/70 backdrop-blur-md w-full h-16 shadow-sm rounded-xl border border-slate-200">
+            <button id="openSidebarBtn" aria-label="Open Sidebar"
+                class="text-2xl hover:text-indigo-600 transition text-slate-600 select-none p-2 rounded-lg hover:bg-slate-100 cursor-pointer">
+                ☰
+            </button>
+            <button
+                class="w-full flex justify-start items-center gap-3 text-slate-700 font-bold rounded-2xl  hover:text-white transition-all duration-300 py-2.5 px-4">
+                <img src="https://img.icons8.com/ios-glyphs/30/search--v1.png" alt="Search"
+                    class="w-6 h-6 aspect-square shrink-0">
+                <span class="truncate">Search</span>
+            </button>
+        </header>
+
+
+    </main>
 
     <script src="JS/app-UI.js"></script>
 </body>
