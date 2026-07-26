@@ -127,20 +127,22 @@
         <header
             class="flex items-center gap-3 py-2 px-4 bg-white/70 backdrop-blur-md w-full h-16 shadow-xs rounded-2xl border border-slate-200">
             <button id="openSidebarBtn" aria-label="Open Sidebar"
-                class="text-2xl hover:text-sky-600 transition text-slate-600 select-none px-3 py-1 rounded-xl hover:bg-slate-100 cursor-pointer">
+                class="text-2xl hover:text-sky-600 transition text-slate-600 select-none px-3 py-1 rounded-xl hover:bg-slate-100 cursor-pointer shrink-0">
                 <span class="truncate">☰</span>
             </button>
 
             <div id="search"
-                class="w-full flex items-center gap-3 bg-slate-50/50 hover:bg-slate-100 text-slate-700 font-bold rounded-2xl transition-all duration-300 py-2.5 px-4 border border-slate-200/60">
+                class="w-full flex items-center justify-between gap-3 bg-slate-50/50 hover:bg-slate-100 text-slate-700 font-bold rounded-2xl transition-all duration-300 py-1.5 px-4 border border-slate-200/60 overflow-hidden">
                 <input type="text"
-                    class="w-full bg-transparent focus:outline-none font-medium placeholder:text-slate-400"
+                    class="w-full bg-transparent focus:outline-none font-medium placeholder:text-slate-400 min-w-0"
                     placeholder="Enter another city..." />
-                <img src="https://img.icons8.com/ios-glyphs/30/64748b/search--v1.png" alt="Search" draggable="false"
-                    class="w-6 h-6 aspect-square shrink-0 active:scale-90">
+                <div
+                    class="bg-blue-500/40 rounded-full p-2.5 active:scale-90 shrink-0 flex items-center justify-center">
+                    <img src="https://img.icons8.com/ios-glyphs/30/64748b/search--v1.png" alt="Search" draggable="false"
+                        class="w-5 h-5 aspect-square shrink-0">
+                </div>
             </div>
         </header>
-
         <main class="flex flex-col gap-5 mt-3">
             <div id="currentLocation"
                 class="w-full rounded-2xl p-5 sm:p-6 shadow-xl bg-white/80 backdrop-blur-md border border-slate-200/80 flex flex-col gap-6">
