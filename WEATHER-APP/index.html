@@ -170,60 +170,98 @@
                 </div>
             </div>
 
-            <div class="Overview flex flex-col md:flex-row gap-5">
+            <div class="Overview flex flex-col md:flex-row gap-4 w-full">
 
+                <!-- Min/Max Temp Card: Medium Height -->
                 <div
-                    class="temp flex items-center justify-evenly gap-4 sm:gap-8 p-4 rounded-xl border border-slate-200/80 bg-white/80 backdrop-blur-sm">
+                    class="temp flex flex-col justify-evenly gap-3 p-3.5 rounded-xl border border-slate-200/80 bg-white/80 backdrop-blur-sm shadow-xs w-full md:w-fit shrink-0">
 
-                    <!-- Max Temperature (Warm Theme) -->
-                    <div class="Max flex items-center gap-3">
-                        <div class="p-2.5 rounded-lg bg-rose-500/10 border border-rose-500/20 shrink-0">
-                            <img src="https://img.icons8.com/stickers/100/temperature-high.png"
-                                alt="Maximum Temperature" class="w-8 h-8 object-contain">
-                        </div>
-                        <div class="flex flex-col gap-0.5">
-                            <span class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Max
-                                Temp</span>
-                            <span class="text-2xl font-extrabold text-slate-800 after:content-['°C']">30</span>
-                            <span class="text-xs font-medium text-slate-500">Today</span>
-                        </div>
+                    <div class="font-bold text-lg text-slate-800">
+                        Today's Overview
                     </div>
 
-                    <!-- Divider -->
-                    <div class="w-px h-10 bg-slate-400"></div>
-
-                    <!-- Min Temperature (Cool Theme) -->
-                    <div class="Min flex items-center gap-3">
-                        <div class="p-2.5 rounded-lg bg-sky-500/10 border border-sky-500/20 shrink-0">
-                            <img src="https://img.icons8.com/stickers/100/temperature-low.png" alt="Minimum Temperature"
-                                class="w-8 h-8 object-contain">
+                    <div class="flex items-center justify-around gap-4 sm:gap-6 py-1">
+                        <!-- Max Temperature -->
+                        <div class="Max flex items-center gap-5">
+                            <div class="p-2 rounded-lg bg-rose-500/10 border border-rose-500/20 shrink-0">
+                                <img src="https://img.icons8.com/stickers/100/temperature-high.png"
+                                    alt="Maximum Temperature" class="w-9 h-9 object-contain">
+                            </div>
+                            <div class="flex flex-col gap-0.5">
+                                <span class="text-base font-semibold text-slate-400 uppercase tracking-wider">Max
+                                    Temp</span>
+                                <span
+                                    class="text-xl font-extrabold text-slate-800 leading-tight after:content-['°C']">30</span>
+                            </div>
                         </div>
-                        <div class="flex flex-col gap-0.5">
-                            <span class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Min
-                                Temp</span>
-                            <span class="text-2xl font-extrabold text-slate-800 after:content-['°C']">18</span>
-                            <span class="text-xs font-medium text-slate-500">Tonight</span>
+
+                        <!-- Vertical Divider -->
+                        <div class="w-px h-8 bg-slate-200"></div>
+
+                        <!-- Min Temperature -->
+                        <div class="Min flex items-center gap-2.5">
+                            <div class="p-2 rounded-lg bg-sky-500/10 border border-sky-500/20 shrink-0">
+                                <img src="https://img.icons8.com/stickers/100/temperature-low.png"
+                                    alt="Minimum Temperature" class="w-9 h-9 object-contain">
+                            </div>
+                            <div class="flex flex-col gap-0.5">
+                                <span class="text-base font-semibold text-slate-400 uppercase tracking-wider">Min
+                                    Temp</span>
+                                <span
+                                    class="text-xl font-extrabold text-slate-800 leading-tight after:content-['°C']">18</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
+                <!-- Hourly Forecast Card: Medium Height -->
                 <div
-                    class="hourlyForcast temp flex flex-col gap-2 p-2 flex-1 rounded-xl border border-slate-200/80 bg-white/80 backdrop-blur-sm">
-                    <div class="header font-bold text-lg">
+                    class="hourlyForcast flex flex-col justify-between gap-3 p-3.5 rounded-xl border border-slate-200/80 bg-white/80 backdrop-blur-sm shadow-xs flex-1 min-w-0">
+                    <div class="header font-bold text-lg text-slate-800">
                         Hourly Forecast
                     </div>
 
-                    <!-- Added overflow-x-auto to make the container scrollable on smaller screens -->
-                    <div class="details flex gap-2 overflow-x-auto justify-between pb-2">
+                    <!-- Scrollable details wrapper -->
+                    <div class="details flex justify-evenly overflow-x-auto min-w-0 w-full items-center pb-1">
                         <!-- Hour 1 -->
                         <div
-                            class="flex flex-col gap-1 justify-center items-center bg-white p-2 rounded-lg shrink-0 ">
-                            <span class="text-sm text-slate-500">Now</span>
-                            <img src="Resources/Birght-Sunny.png" alt="Sunny" class="w-10 h-10 object-contain shrink-0">
-                            <span class="text-base font-bold after:content-['°C']">28</span>
+                            class="flex flex-col gap-1 justify-center items-center bg-white/90 p-2 rounded-lg border border-slate-100 shrink-0 min-w-16 shadow-2xs">
+                            <span class="text-xs font-medium text-slate-500">Now</span>
+                            <img src="Resources/Birght-Sunny.png" alt="Sunny" class="w-7 h-7 object-contain shrink-0">
+                            <span class="text-sm font-bold text-slate-800 after:content-['°C']">28</span>
                         </div>
 
+                        <!-- Hour 2 -->
+                        <div
+                            class="flex flex-col gap-1 justify-center items-center bg-white/90 p-2 rounded-lg border border-slate-100 shrink-0 min-w-16 shadow-2xs">
+                            <span class="text-xs font-medium text-slate-500">1 PM</span>
+                            <img src="Resources/Birght-Sunny.png" alt="Sunny" class="w-7 h-7 object-contain shrink-0">
+                            <span class="text-sm font-bold text-slate-800 after:content-['°C']">29</span>
+                        </div>
 
+                        <!-- Hour 3 -->
+                        <div
+                            class="flex flex-col gap-1 justify-center items-center bg-white/90 p-2 rounded-lg border border-slate-100 shrink-0 min-w-16 shadow-2xs">
+                            <span class="text-xs font-medium text-slate-500">2 PM</span>
+                            <img src="Resources/Birght-Sunny.png" alt="Sunny" class="w-7 h-7 object-contain shrink-0">
+                            <span class="text-sm font-bold text-slate-800 after:content-['°C']">30</span>
+                        </div>
+
+                        <!-- Hour 4 -->
+                        <div
+                            class="flex flex-col gap-1 justify-center items-center bg-white/90 p-2 rounded-lg border border-slate-100 shrink-0 min-w-16 shadow-2xs">
+                            <span class="text-xs font-medium text-slate-500">3 PM</span>
+                            <img src="Resources/Birght-Sunny.png" alt="Sunny" class="w-7 h-7 object-contain shrink-0">
+                            <span class="text-sm font-bold text-slate-800 after:content-['°C']">30</span>
+                        </div>
+
+                        <!-- Hour 5 -->
+                        <div
+                            class="flex flex-col gap-1 justify-center items-center bg-white/90 p-2 rounded-lg border border-slate-100 shrink-0 min-w-16 shadow-2xs">
+                            <span class="text-xs font-medium text-slate-500">4 PM</span>
+                            <img src="Resources/Birght-Sunny.png" alt="Sunny" class="w-7 h-7 object-contain shrink-0">
+                            <span class="text-sm font-bold text-slate-800 after:content-['°C']">29</span>
+                        </div>
                     </div>
                 </div>
             </div>
