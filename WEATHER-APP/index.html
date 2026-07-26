@@ -23,11 +23,43 @@
             scroll-behavior: smooth;
         }
 
-        .Delhi {
+        .delhi {
             background-image:
                 linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
                 url(https://i.pinimg.com/1200x/27/51/3e/27513ed720677d5d015a410f28dca803.jpg);
-            backface-visibility: 0.1;
+        }
+
+        .london {
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                url(https://i.pinimg.com/736x/d9/73/ae/d973aeb85c4573f72d1a14c1fd793321.jpg);
+        }
+
+        .tokyo {
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                url(https://i.pinimg.com/736x/fd/5f/2f/fd5f2fceff07c72a66d0f30838c5c5ab.jpg);
+        }
+
+        .dubai {
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                url(https://i.pinimg.com/1200x/19/fa/7e/19fa7e5e4c731cb8ba0ddfac2bbb9e2f.jpg);
+        }
+
+        .paris {
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                url(https://i.pinimg.com/vwebp/1200x/cc/94/27/cc9427434fb5eebca69a5bcc53b3eada.webp);
+        }
+
+        .lisbon {
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                url(https://i.pinimg.com/1200x/af/79/c8/af79c8bc031010ccc0be95b621b4920f.jpg);
+
+        }
+        .city-card {
             background-size: cover;
             background-position: center;
         }
@@ -291,25 +323,106 @@
 
             <!-- Popular Cities -->
             <div
-                class="citiesOuterBox flex flex-col gap-5 p-5 w-full rounded-2xl sm:p-6 shadow-xl bg-white/80 backdrop-blur-md border border-slate-200/80 ">
+                class="cities-outer-box flex flex-col gap-5 p-5 w-full rounded-2xl sm:p-6 shadow-xl bg-white/80 backdrop-blur-md border border-slate-200/80">
 
                 <div class="font-bold text-lg text-slate-800">
                     Popular Cities
                 </div>
 
-                <div class="Popular-Cites flex flex-wrap">
-                    <div class="Delhi w-fit border border-slate-400/30 rounded-2xl p-2 flex flex-col ">
-                        <div class="max flex items-center gap-5">
-                            <img src="Resources/Heavy-Rain.png" alt="Maximum Temperature" draggable="false"
-                                class="w-16 h-16 object-contain">
-                            <div class="flex flex-col">
-                                <span class="text-base font-bold uppercase tracking-wider">Delhi</span>
-                                <span class="text-sm font-semibold text-slate-800">India
-                                </span>
+                <div class="popular-cities flex flex-wrap justify-evenly gap-1">
+                    <!-- Delhi -->
+                    <div
+                        class="delhi city-card w-40 border border-slate-400/30 rounded-2xl p-3 flex flex-col justify-between">
+                        <div class="city-header flex items-center justify-between gap-2">
+                            <img src="Resources/Heavy-Rain.png" alt="Heavy Rain Weather" draggable="false"
+                                class="w-12 h-12 object-contain shrink-0">
+                            <div class="flex flex-col text-right">
+                                <span class="text-sm font-bold uppercase tracking-wider text-slate-800">Delhi</span>
+                                <span class="text-xs font-semibold text-slate-600">India</span>
                             </div>
                         </div>
-                        <div class="text-center">
-                            <span class="font-bold text-xl after:content-['°C'] ">30</span>
+                        <div class="text-center mt-2">
+                            <span class="font-bold text-xl text-slate-800 after:content-['°C']">30</span>
+                        </div>
+                    </div>
+
+                    <!--London -->
+                    <div
+                        class="london city-card w-40 border border-slate-400/30 rounded-2xl p-3 flex flex-col justify-between">
+                        <div class="city-header flex items-center justify-between gap-2">
+                            <img src="Resources/Heavy-Rain.png" alt="Rainy Weather" draggable="false"
+                                class="w-12 h-12 object-contain shrink-0">
+                            <div class="flex flex-col text-right">
+                                <span class="text-sm font-bold uppercase tracking-wider text-slate-800">London</span>
+                                <span class="text-xs font-semibold text-slate-600">UK</span>
+                            </div>
+                        </div>
+                        <div class="text-center mt-2">
+                            <span class="font-bold text-xl text-slate-800 after:content-['°C']">19</span>
+                        </div>
+                    </div>
+
+                    <!--Tokyo -->
+                    <div
+                        class="tokyo city-card w-40 border border-slate-400/30 rounded-2xl p-3 flex flex-col justify-between">
+                        <div class="city-header flex items-center justify-between gap-2">
+                            <img src="Resources/Bright-Sunny.png" alt="Sunny Weather" draggable="false"
+                                class="w-12 h-12 object-contain shrink-0">
+                            <div class="flex flex-col text-right">
+                                <span class="text-sm font-bold uppercase tracking-wider text-slate-800">Tokyo</span>
+                                <span class="text-xs font-semibold text-slate-600">Japan</span>
+                            </div>
+                        </div>
+                        <div class="text-center mt-2">
+                            <span class="font-bold text-xl text-slate-800 after:content-['°C']">26</span>
+                        </div>
+                    </div>
+
+                    <!--Dubai -->
+                    <div
+                        class="dubai city-card w-40 border border-slate-400/30 rounded-2xl p-3 flex flex-col justify-between">
+                        <div class="city-header flex items-center justify-between gap-2">
+                            <img src="Resources/Bright-Sunny.png" alt="Sunny Weather" draggable="false"
+                                class="w-12 h-12 object-contain shrink-0">
+                            <div class="flex flex-col text-right">
+                                <span class="text-sm font-bold uppercase tracking-wider text-slate-800">Dubai</span>
+                                <span class="text-xs font-semibold text-slate-600">UAE</span>
+                            </div>
+                        </div>
+                        <div class="text-center mt-2">
+                            <span class="font-bold text-xl text-slate-800 after:content-['°C']">38</span>
+                        </div>
+                    </div>
+
+                    <!--Paris -->
+                    <div
+                        class="paris city-card w-40 border border-slate-400/30 rounded-2xl p-3 flex flex-col justify-between">
+                        <div class="city-header flex items-center justify-between gap-2">
+                            <img src="Resources/Bright-Sunny.png" alt="Sunny Weather" draggable="false"
+                                class="w-12 h-12 object-contain shrink-0">
+                            <div class="flex flex-col text-right">
+                                <span class="text-sm font-bold uppercase tracking-wider text-slate-800">Paris</span>
+                                <span class="text-xs font-semibold text-slate-600">France</span>
+                            </div>
+                        </div>
+                        <div class="text-center mt-2">
+                            <span class="font-bold text-xl text-slate-800 after:content-['°C']">22</span>
+                        </div>
+                    </div>
+
+                    <!--Lisbon -->
+                    <div
+                        class="lisbon city-card w-40 border border-slate-400/30 rounded-2xl p-3 flex flex-col justify-between">
+                        <div class="city-header flex items-center justify-between gap-2">
+                            <img src="Resources/Bright-Sunny.png" alt="Sunny Weather" draggable="false"
+                                class="w-12 h-12 object-contain shrink-0">
+                            <div class="flex flex-col text-right">
+                                <span class="text-sm font-bold uppercase tracking-wider text-slate-800">Lisbon</span>
+                                <span class="text-xs font-semibold text-slate-600">Portugal</span>
+                            </div>
+                        </div>
+                        <div class="text-center mt-2">
+                            <span class="font-bold text-xl text-slate-800 after:content-['°C']">25</span>
                         </div>
                     </div>
                 </div>
