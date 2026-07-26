@@ -4,6 +4,7 @@ const sidebar = document.getElementById("sidebar");
 const closeBarBtn = document.getElementById("closeSidebarBtn");
 const openBarBtn = document.getElementById("openSidebarBtn");
 const mainContent = document.getElementById("mainContent");
+const searchBar = document.getElementById("search");
 
 closeBarBtn.addEventListener("click", closeSidebar);
 openBarBtn.addEventListener("click", openSidebar);
@@ -11,14 +12,16 @@ openBarBtn.addEventListener("click", openSidebar);
 
 function openSidebar() {
   sidebar.classList.remove("-translate-x-full");
-  openBarBtn.classList.add('hidden')
+  openBarBtn.classList.add("hidden");
+  searchBar.classList.remove("w-fit");
+  searchBar.classList.add("w-full");
   if (window.innerWidth >= 768) {
     mainContent.classList.add("ml-64");
   }
 }
 
 function closeSidebar() {
-  openBarBtn.classList.remove('hidden')
+  openBarBtn.classList.remove("hidden");
   sidebar.classList.add("-translate-x-full");
   mainContent.classList.remove("ml-64");
 }
@@ -54,4 +57,4 @@ function UpdateClock() {
 }
 
 UpdateClock();
-setInterval(UpdateClock,1000)
+setInterval(UpdateClock, 1000);
