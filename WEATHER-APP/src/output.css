@@ -923,6 +923,12 @@
     .md\:h-24 {
       height: calc(var(--spacing) * 24);
     }
+    .md\:h-96 {
+      height: calc(var(--spacing) * 96);
+    }
+    .md\:h-98 {
+      height: calc(var(--spacing) * 98);
+    }
     .md\:w-24 {
       width: calc(var(--spacing) * 24);
     }
