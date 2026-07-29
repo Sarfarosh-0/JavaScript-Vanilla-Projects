@@ -62,12 +62,51 @@
         .city-card {
             background-size: cover;
             background-position: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .city-card:hover {
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.2);
         }
 
         #currentLocation {
             background: url('Resources/weather backgrounds/Bright-sunny.png');
             background-size: cover;
             background-position: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
         }
     </style>
 </head>
@@ -81,7 +120,8 @@
         <!-- Header -->
         <div class="flex items-center justify-between border-b border-slate-200/80 py-5 px-4 shrink-0">
             <div class="flex items-center gap-3 min-w-0">
-                <div class="p-2 rounded-xl bg-sky-500/10 border border-sky-500/20 shrink-0">
+                <div
+                    class="p-2 rounded-xl bg-sky-500/10 border border-sky-500/20 shrink-0 transition-transform duration-300 hover:rotate-12">
                     <img src="https://cdn-icons-png.flaticon.com/128/1146/1146869.png" alt="App Logo" draggable="false"
                         class="w-6 h-6 object-contain">
                 </div>
@@ -89,7 +129,7 @@
             </div>
 
             <button id="closeSidebarBtn" aria-label="Close Sidebar"
-                class="text-slate-400 text-xl hover:text-rose-500 transition-all rounded-xl duration-200 p-2 cursor-pointer flex items-center justify-center">
+                class="text-slate-400 text-xl hover:text-rose-500 hover:bg-rose-50 active:scale-90 transition-all rounded-xl duration-200 p-2 cursor-pointer flex items-center justify-center">
                 <span aria-hidden="true">✕</span>
             </button>
         </div>
@@ -97,21 +137,21 @@
         <!-- Navigation -->
         <nav class="flex flex-col gap-1.5 p-4 px-3 mb-auto overflow-y-auto">
             <button
-                class="w-full flex items-center gap-3.5 text-slate-600 hover:text-sky-600 font-semibold rounded-2xl hover:bg-sky-50 py-3 px-4 transition-all group cursor-pointer">
+                class="w-full flex items-center gap-3.5 text-slate-600 hover:text-sky-600 font-semibold rounded-2xl hover:bg-sky-50 py-3 px-4 transition-all duration-200 active:scale-98 group cursor-pointer">
                 <img src="https://img.icons8.com/material-outlined/24/64748b/home--v2.png" alt="Home Icon"
                     draggable="false" class="w-5 h-5 shrink-0 transition-transform group-hover:scale-110">
                 <span class="truncate">Home</span>
             </button>
 
             <button
-                class="w-full flex items-center gap-3.5 text-slate-600 hover:text-sky-600 font-semibold rounded-2xl hover:bg-sky-50 py-3 px-4 transition-all group cursor-pointer">
+                class="w-full flex items-center gap-3.5 text-slate-600 hover:text-sky-600 font-semibold rounded-2xl hover:bg-sky-50 py-3 px-4 transition-all duration-200 active:scale-98 group cursor-pointer">
                 <img src="https://img.icons8.com/ios-glyphs/30/64748b/search--v1.png" alt="Search Icon"
                     draggable="false" class="w-5 h-5 shrink-0 transition-transform group-hover:scale-110">
                 <span class="truncate">Search</span>
             </button>
 
             <button
-                class="w-full flex items-center gap-3.5 text-slate-600 hover:text-sky-600 font-semibold rounded-2xl hover:bg-sky-50 py-3 px-4 transition-all group cursor-pointer">
+                class="w-full flex items-center gap-3.5 text-slate-600 hover:text-sky-600 font-semibold rounded-2xl hover:bg-sky-50 py-3 px-4 transition-all duration-200 active:scale-98 group cursor-pointer">
                 <img src="https://img.icons8.com/ios/100/64748b/marker--v1.png" alt="Cities Icon" draggable="false"
                     class="w-5 h-5 shrink-0 transition-transform group-hover:scale-110">
                 <span class="truncate">Cities</span>
@@ -120,30 +160,30 @@
 
         <!-- Bottom Promo Card -->
         <div
-            class="m-4 p-4 rounded-2xl flex flex-col justify-center gap-3 items-center bg-linear-to-br from-sky-500 to-blue-600 shadow-md shadow-sky-500/20 shrink-0 text-center">
+            class="m-4 p-4 rounded-2xl flex flex-col justify-center gap-3 items-center bg-linear-to-br from-sky-500 to-blue-600 shadow-md shadow-sky-500/20 shrink-0 text-center transition-transform hover:scale-102 duration-300 cursor-pointer">
             <img src="https://cdn-icons-png.flaticon.com/128/1146/1146869.png" alt="App Logo" draggable="false"
-                class="w-7 h-7 object-contain shrink-0">
+                class="w-7 h-7 object-contain shrink-0 animate-float">
             <p class="font-bold text-white text-xs leading-relaxed">
                 Stay ahead of the weather, every day.
             </p>
         </div>
     </aside>
 
-    <div id="mainContent" class="flex-1 transition-all duration-500 ease-in-out p-6">
+    <div id="mainContent" class="flex-1 transition-all duration-500 ease-in-out p-6 animate-fade-in">
         <header
-            class="flex items-center gap-3 py-2 px-4 bg-white/70 backdrop-blur-md w-full h-16 shadow-sm rounded-2xl border border-slate-200">
+            class="flex items-center gap-3 py-2 px-4 bg-white/70 backdrop-blur-md w-full h-16 shadow-sm hover:shadow-md transition-shadow duration-300 rounded-2xl border border-slate-200">
             <button id="openSidebarBtn" aria-label="Open Sidebar"
-                class="text-2xl hover:text-sky-600 transition text-slate-600 select-none px-3 py-1 rounded-xl hover:bg-slate-100 cursor-pointer shrink-0">
+                class="text-2xl hover:text-sky-600 transition text-slate-600 select-none px-3 py-1 rounded-xl hover:bg-slate-100/80 active:scale-90 cursor-pointer shrink-0">
                 <span>☰</span>
             </button>
 
             <form id="search" action="#" role="search"
-                class="w-full flex items-center justify-between gap-3 bg-slate-50/50 hover:bg-slate-100 text-slate-700 font-bold rounded-2xl transition-all duration-300 py-1.5 px-4 border border-slate-200/60 overflow-hidden">
+                class="w-full flex items-center justify-between gap-3 bg-slate-50/50 hover:bg-slate-100/80 focus-within:bg-white focus-within:ring-2 focus-within:ring-sky-400/40 text-slate-700 font-bold rounded-2xl transition-all duration-300 py-1.5 px-4 border border-slate-200/60 overflow-hidden">
                 <input type="text"
                     class="w-full bg-transparent focus:outline-none font-medium placeholder:text-slate-400 min-w-0"
                     placeholder="Enter another city..." aria-label="Search City" />
                 <button type="submit" aria-label="Submit Search"
-                    class="bg-blue-400/30 hover:bg-blue-400/50 rounded-full p-2.5 active:scale-90 shrink-0 flex items-center justify-center cursor-pointer transition-all">
+                    class="bg-blue-400/30 hover:bg-blue-500 hover:text-white rounded-full p-2.5 active:scale-90 hover:scale-105 shrink-0 flex items-center justify-center cursor-pointer transition-all duration-200">
                     <img src="https://img.icons8.com/ios-glyphs/30/64748b/search--v1.png" alt="Search" draggable="false"
                         class="w-5 h-5 aspect-square shrink-0">
                 </button>
@@ -152,13 +192,13 @@
 
         <main class="flex flex-col gap-5 mt-3">
             <div id="currentLocation"
-                class="w-full rounded-2xl p-5 sm:p-6 shadow-xl border border-slate-200/80 flex flex-col gap-6">
+                class="w-full rounded-2xl p-5 sm:p-6 shadow-xl hover:shadow-2xl border border-slate-200/80 flex flex-col gap-6">
 
                 <!-- Top Row: Location & Date -->
                 <div id="dateLocation" class="flex flex-col gap-1">
                     <div class="flex gap-2 items-center font-bold text-slate-800 text-base sm:text-lg">
                         <img src="https://img.icons8.com/ios/100/0284c7/marker--v1.png" alt="Location Icon"
-                            draggable="false" class="w-4 h-4 shrink-0">
+                            draggable="false" class="w-4 h-4 shrink-0 transition-transform duration-300 hover:bounce">
                         <span id="currentCity" class="after:content-[',_']">New York</span>
                         <span id="currentCountry">USA</span>
                     </div>
@@ -181,7 +221,7 @@
                     <!-- Primary Weather: Icon & Temperature -->
                     <div class="flex items-center gap-4 sm:gap-6 w-full md:w-auto justify-center md:justify-start">
                         <img src="Resources/weather symbols/Bright-Sunny.png" alt="Sunny Weather" draggable="false"
-                            class="w-24 h-24 sm:w-32 sm:h-32 object-contain shrink-0">
+                            class="w-24 h-24 sm:w-32 sm:h-32 object-contain shrink-0 animate-float">
                         <div class="weather-details flex flex-col gap-0.5">
                             <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-800 tracking-tight">28°C</h1>
                             <p class="text-slate-600 font-semibold text-sm sm:text-base">Sunny Day</p>
@@ -195,20 +235,20 @@
                     <!-- Secondary Metrics -->
                     <div
                         class="other-details grid grid-cols-2 sm:grid-cols-4 md:grid-cols-2 gap-4 sm:gap-6 w-full md:w-auto text-center md:text-left">
-                        <div class="flex flex-col">
+                        <div class="flex flex-col p-2 rounded-xl transition-all duration-200 hover:bg-white/40">
                             <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Humidity</span>
                             <span class="font-bold text-slate-700 text-base sm:text-lg">55%</span>
                         </div>
-                        <div class="flex flex-col">
+                        <div class="flex flex-col p-2 rounded-xl transition-all duration-200 hover:bg-white/40">
                             <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Wind
                                 Speed</span>
                             <span class="font-bold text-slate-700 text-base sm:text-lg">12 km/h</span>
                         </div>
-                        <div class="flex flex-col">
+                        <div class="flex flex-col p-2 rounded-xl transition-all duration-200 hover:bg-white/40">
                             <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Pressure</span>
                             <span class="font-bold text-slate-700 text-base sm:text-lg">1013 hPa</span>
                         </div>
-                        <div class="flex flex-col">
+                        <div class="flex flex-col p-2 rounded-xl transition-all duration-200 hover:bg-white/40">
                             <span
                                 class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Visibility</span>
                             <span class="font-bold text-slate-700 text-base sm:text-lg">10 km</span>
@@ -221,7 +261,7 @@
 
                 <!-- Min/Max Temp Card: Medium Height -->
                 <div
-                    class="temp flex flex-col justify-evenly gap-3 p-3.5 rounded-xl border border-slate-200/80 bg-white/80 backdrop-blur-sm shadow-sm w-full md:w-fit shrink-0">
+                    class="temp flex flex-col justify-evenly gap-3 p-3.5 rounded-xl border border-slate-200/80 bg-white/80 backdrop-blur-sm shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 w-full md:w-fit shrink-0">
 
                     <div class="font-bold text-lg text-slate-800">
                         Today's Overview
@@ -229,8 +269,9 @@
 
                     <div class="flex items-center justify-around gap-4 sm:gap-6 py-1">
                         <!-- Max Temperature -->
-                        <div class="max flex items-center gap-3.5">
-                            <div class="p-2 rounded-lg bg-rose-500/10 border border-rose-500/20 shrink-0">
+                        <div class="max flex items-center gap-3.5 group cursor-pointer">
+                            <div
+                                class="p-2 rounded-lg bg-rose-500/10 border border-rose-500/20 shrink-0 transition-transform duration-300 group-hover:scale-110">
                                 <img src="https://img.icons8.com/stickers/100/temperature-high.png"
                                     alt="Maximum Temperature" draggable="false" class="w-9 h-9 object-contain">
                             </div>
@@ -246,8 +287,9 @@
                         <div class="w-px h-8 bg-slate-200"></div>
 
                         <!-- Min Temperature -->
-                        <div class="min flex items-center gap-3.5">
-                            <div class="p-2 rounded-lg bg-sky-500/10 border border-sky-500/20 shrink-0">
+                        <div class="min flex items-center gap-3.5 group cursor-pointer">
+                            <div
+                                class="p-2 rounded-lg bg-sky-500/10 border border-sky-500/20 shrink-0 transition-transform duration-300 group-hover:scale-110">
                                 <img src="https://img.icons8.com/stickers/100/temperature-low.png"
                                     alt="Minimum Temperature" draggable="false" class="w-9 h-9 object-contain">
                             </div>
@@ -263,67 +305,68 @@
 
                 <!-- Hourly Forecast Card: Medium Height -->
                 <div
-                    class="hourly-forecast flex flex-col justify-between gap-3 p-3.5 rounded-xl border border-slate-200/80 bg-white/80 backdrop-blur-sm shadow-sm flex-1 min-w-0">
+                    class="hourly-forecast flex flex-col justify-between gap-3 p-3.5 rounded-xl border border-slate-200/80 bg-white/80 backdrop-blur-sm shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 flex-1 min-w-0">
                     <div class="header font-bold text-lg text-slate-800">
                         Hourly Forecast
                     </div>
 
                     <!-- Scrollable details wrapper -->
-                    <div class="details flex justify-evenly overflow-x-auto min-w-0 w-full items-center pb-1">
+                    <div
+                        class="details flex justify-evenly overflow-x-auto min-w-0 w-full items-center pb-1 gap-2 sm:gap-0">
                         <!-- Hour 1 -->
                         <div
-                            class="flex flex-col gap-1 justify-center items-center bg-white/90 p-2 rounded-lg border border-slate-100 shrink-0 min-w-16 md:w-24 shadow-sm">
+                            class="flex flex-col gap-1 justify-center items-center bg-white/90 p-2 rounded-lg border border-slate-100 shrink-0 min-w-16 md:w-24 shadow-xs transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:bg-sky-50/80 hover:border-sky-300 cursor-pointer group">
                             <span class="text-xs font-medium text-slate-500">Now</span>
                             <img src="Resources/weather symbols/Bright-Sunny.png" alt="Sunny" draggable="false"
-                                class="w-7 h-7 object-contain shrink-0">
+                                class="w-7 h-7 object-contain shrink-0 transition-transform duration-300 group-hover:scale-110">
                             <span class="text-sm font-bold text-slate-800 after:content-['°C']">28</span>
                         </div>
 
                         <!-- Divider -->
-                        <div class="h-full w-px bg-white hidden md:block"></div>
+                        <div class="h-full w-px bg-slate-200 hidden md:block"></div>
 
                         <!-- Hour 2 -->
                         <div
-                            class="flex flex-col gap-1 justify-center items-center bg-white/90 p-2 rounded-lg border border-slate-100 shrink-0 min-w-16 md:w-24 shadow-sm">
+                            class="flex flex-col gap-1 justify-center items-center bg-white/90 p-2 rounded-lg border border-slate-100 shrink-0 min-w-16 md:w-24 shadow-xs transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:bg-sky-50/80 hover:border-sky-300 cursor-pointer group">
                             <span class="text-xs font-medium text-slate-500">1 PM</span>
                             <img src="Resources/weather symbols/Bright-Sunny.png" alt="Sunny" draggable="false"
-                                class="w-7 h-7 object-contain shrink-0">
+                                class="w-7 h-7 object-contain shrink-0 transition-transform duration-300 group-hover:scale-110">
                             <span class="text-sm font-bold text-slate-800 after:content-['°C']">29</span>
                         </div>
 
                         <!-- Divider -->
-                        <div class="h-full w-px bg-white hidden md:block"></div>
+                        <div class="h-full w-px bg-slate-200 hidden md:block"></div>
 
                         <!-- Hour 3 -->
                         <div
-                            class="flex flex-col gap-1 justify-center items-center bg-white/90 p-2 rounded-lg border border-slate-100 shrink-0 min-w-16 md:w-24 shadow-sm">
+                            class="flex flex-col gap-1 justify-center items-center bg-white/90 p-2 rounded-lg border border-slate-100 shrink-0 min-w-16 md:w-24 shadow-xs transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:bg-sky-50/80 hover:border-sky-300 cursor-pointer group">
                             <span class="text-xs font-medium text-slate-500">2 PM</span>
                             <img src="Resources/weather symbols/Bright-Sunny.png" alt="Sunny" draggable="false"
-                                class="w-7 h-7 object-contain shrink-0">
+                                class="w-7 h-7 object-contain shrink-0 transition-transform duration-300 group-hover:scale-110">
                             <span class="text-sm font-bold text-slate-800 after:content-['°C']">30</span>
                         </div>
 
                         <!-- Divider -->
-                        <div class="h-full w-px bg-white hidden md:block"></div>
+                        <div class="h-full w-px bg-slate-200 hidden md:block"></div>
 
                         <!-- Hour 4 -->
                         <div
-                            class="flex flex-col gap-1 justify-center items-center bg-white/90 p-2 rounded-lg border border-slate-100 shrink-0 min-w-16 md:w-24 shadow-sm">
+                            class="flex flex-col gap-1 justify-center items-center bg-white/90 p-2 rounded-lg border border-slate-100 shrink-0 min-w-16 md:w-24 shadow-xs transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:bg-sky-50/80 hover:border-sky-300 cursor-pointer group">
                             <span class="text-xs font-medium text-slate-500">3 PM</span>
                             <img src="Resources/weather symbols/Bright-Sunny.png" alt="Sunny" draggable="false"
-                                class="w-7 h-7 object-contain shrink-0">
+                                class="w-7 h-7 object-contain shrink-0 transition-transform duration-300 group-hover:scale-110">
                             <span class="text-sm font-bold text-slate-800 after:content-['°C']">30</span>
                         </div>
 
                         <!-- Divider -->
-                        <div class="h-full w-px bg-white hidden md:block"></div>
+                        <div class="h-full w-px bg-slate-200 hidden md:block"></div>
 
                         <!-- Hour 5 -->
                         <div
-                            class="flex flex-col gap-1 justify-center items-center bg-white/90 p-2 rounded-lg border border-slate-100 shrink-0 min-w-16 md:w-24 shadow-sm">
+                            class="flex flex-col gap-1 justify-center items-center bg-white/90 p-2 rounded-lg border border-slate-100 shrink-0 min-w-16 md:w-24 shadow-xs transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:bg-sky-50/80 hover:border-sky-300 cursor-pointer group">
                             <span class="text-xs font-medium text-slate-500">4 PM</span>
                             <img src="Resources/weather symbols/Bright-Sunny.png" alt="Sunny" draggable="false"
-                                class="w-7 h-7 object-contain shrink-0">
+                                class="w-7 h-7 object-contain shrink-0 transition-transform duration-300 group-hover:scale-110">
                             <span class="text-sm font-bold text-slate-800 after:content-['°C']">29</span>
                         </div>
                     </div>
@@ -341,10 +384,11 @@
                 <div class="popular-cities flex flex-wrap justify-evenly gap-3">
                     <!-- Delhi -->
                     <div
-                        class="delhi city-card w-40 border border-slate-400/30 rounded-2xl p-3 flex flex-col justify-between">
+                        class="delhi city-card cursor-pointer group w-40 border border-slate-400/30 rounded-2xl p-3 flex flex-col justify-between">
                         <div class="city-header flex items-center justify-between gap-2">
                             <img src="Resources/weather symbols/Heavy-Rain.png" alt="Heavy Rain Weather"
-                                draggable="false" class="w-12 h-12 object-contain shrink-0">
+                                draggable="false"
+                                class="w-12 h-12 object-contain shrink-0 transition-transform duration-300 group-hover:scale-110">
                             <div class="flex flex-col text-right">
                                 <span class="text-sm font-bold uppercase tracking-wider text-slate-800">Delhi</span>
                                 <span class="text-xs font-semibold text-slate-600">India</span>
@@ -357,10 +401,10 @@
 
                     <!-- London -->
                     <div
-                        class="london city-card w-40 border border-slate-400/30 rounded-2xl p-3 flex flex-col justify-between">
+                        class="london city-card cursor-pointer group w-40 border border-slate-400/30 rounded-2xl p-3 flex flex-col justify-between">
                         <div class="city-header flex items-center justify-between gap-2">
                             <img src="Resources/weather symbols/Bright-Sunny.png" alt="Sunny Weather" draggable="false"
-                                class="w-12 h-12 object-contain shrink-0">
+                                class="w-12 h-12 object-contain shrink-0 transition-transform duration-300 group-hover:scale-110">
                             <div class="flex flex-col text-right">
                                 <span class="text-sm font-bold uppercase tracking-wider text-slate-800">London</span>
                                 <span class="text-xs font-semibold text-slate-600">UK</span>
@@ -373,10 +417,11 @@
 
                     <!-- Tokyo -->
                     <div
-                        class="tokyo city-card w-40 border border-slate-400/30 rounded-2xl p-3 flex flex-col justify-between">
+                        class="tokyo city-card cursor-pointer group w-40 border border-slate-400/30 rounded-2xl p-3 flex flex-col justify-between">
                         <div class="city-header flex items-center justify-between gap-2">
                             <img src="Resources/weather symbols/Light-Rain.png" alt="Light Rain Weather"
-                                draggable="false" class="w-12 h-12 object-contain shrink-0">
+                                draggable="false"
+                                class="w-12 h-12 object-contain shrink-0 transition-transform duration-300 group-hover:scale-110">
                             <div class="flex flex-col text-right">
                                 <span class="text-sm font-bold uppercase tracking-wider text-slate-800">Tokyo</span>
                                 <span class="text-xs font-semibold text-slate-600">Japan</span>
@@ -389,10 +434,11 @@
 
                     <!-- Dubai -->
                     <div
-                        class="dubai city-card w-40 border border-slate-400/30 rounded-2xl p-3 flex flex-col justify-between">
+                        class="dubai city-card cursor-pointer group w-40 border border-slate-400/30 rounded-2xl p-3 flex flex-col justify-between">
                         <div class="city-header flex items-center justify-between gap-2">
                             <img src="Resources/weather symbols/Clear-Night.png" alt="Clear Night Weather"
-                                draggable="false" class="w-12 h-12 object-contain shrink-0">
+                                draggable="false"
+                                class="w-12 h-12 object-contain shrink-0 transition-transform duration-300 group-hover:scale-110">
                             <div class="flex flex-col text-right">
                                 <span class="text-sm font-bold uppercase tracking-wider text-slate-800">Dubai</span>
                                 <span class="text-xs font-semibold text-slate-600">UAE</span>
@@ -405,10 +451,10 @@
 
                     <!-- Paris -->
                     <div
-                        class="paris city-card w-40 border border-slate-400/30 rounded-2xl p-3 flex flex-col justify-between">
+                        class="paris city-card cursor-pointer group w-40 border border-slate-400/30 rounded-2xl p-3 flex flex-col justify-between">
                         <div class="city-header flex items-center justify-between gap-2">
                             <img src="Resources/weather symbols/Windy.png" alt="Windy Weather" draggable="false"
-                                class="w-12 h-12 object-contain shrink-0">
+                                class="w-12 h-12 object-contain shrink-0 transition-transform duration-300 group-hover:scale-110">
                             <div class="flex flex-col text-right">
                                 <span class="text-sm font-bold uppercase tracking-wider text-slate-800">Paris</span>
                                 <span class="text-xs font-semibold text-slate-600">France</span>
@@ -421,10 +467,10 @@
 
                     <!-- Lisbon -->
                     <div
-                        class="lisbon city-card w-40 border border-slate-400/30 rounded-2xl p-3 flex flex-col justify-between">
+                        class="lisbon city-card cursor-pointer group w-40 border border-slate-400/30 rounded-2xl p-3 flex flex-col justify-between">
                         <div class="city-header flex items-center justify-between gap-2">
                             <img src="Resources/weather symbols/Overcast.png" alt="Overcast Weather" draggable="false"
-                                class="w-12 h-12 object-contain shrink-0">
+                                class="w-12 h-12 object-contain shrink-0 transition-transform duration-300 group-hover:scale-110">
                             <div class="flex flex-col text-right">
                                 <span class="text-sm font-bold uppercase tracking-wider text-slate-800">Lisbon</span>
                                 <span class="text-xs font-semibold text-slate-600">Portugal</span>
