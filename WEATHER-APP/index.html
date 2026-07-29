@@ -26,37 +26,37 @@
         .delhi {
             background-image:
                 linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-                url(https://i.pinimg.com/1200x/27/51/3e/27513ed720677d5d015a410f28dca803.jpg);
+                url('https://i.pinimg.com/1200x/27/51/3e/27513ed720677d5d015a410f28dca803.jpg');
         }
 
         .london {
             background-image:
                 linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-                url(https://i.pinimg.com/736x/d9/73/ae/d973aeb85c4573f72d1a14c1fd793321.jpg);
+                url('https://i.pinimg.com/736x/d9/73/ae/d973aeb85c4573f72d1a14c1fd793321.jpg');
         }
 
         .tokyo {
             background-image:
                 linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-                url(https://i.pinimg.com/736x/fd/5f/2f/fd5f2fceff07c72a66d0f30838c5c5ab.jpg);
+                url('https://i.pinimg.com/736x/fd/5f/2f/fd5f2fceff07c72a66d0f30838c5c5ab.jpg');
         }
 
         .dubai {
             background-image:
                 linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-                url(https://i.pinimg.com/1200x/19/fa/7e/19fa7e5e4c731cb8ba0ddfac2bbb9e2f.jpg);
+                url('https://i.pinimg.com/1200x/19/fa/7e/19fa7e5e4c731cb8ba0ddfac2bbb9e2f.jpg');
         }
 
         .paris {
             background-image:
                 linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-                url(https://i.pinimg.com/vwebp/1200x/cc/94/27/cc9427434fb5eebca69a5bcc53b3eada.webp);
+                url('https://i.pinimg.com/vwebp/1200x/cc/94/27/cc9427434fb5eebca69a5bcc53b3eada.webp');
         }
 
         .lisbon {
             background-image:
                 linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-                url(https://i.pinimg.com/1200x/af/79/c8/af79c8bc031010ccc0be95b621b4920f.jpg);
+                url('https://i.pinimg.com/1200x/af/79/c8/af79c8bc031010ccc0be95b621b4920f.jpg');
         }
 
         .city-card {
@@ -65,7 +65,7 @@
         }
 
         #currentLocation {
-            background: url(Resources/weather\ backgrounds/Bright-sunny.png);
+            background: url('Resources/weather backgrounds/Bright-sunny.png');
             background-size: cover;
             background-position: center;
         }
@@ -98,21 +98,21 @@
         <nav class="flex flex-col gap-1.5 p-4 px-3 mb-auto overflow-y-auto">
             <button
                 class="w-full flex items-center gap-3.5 text-slate-600 hover:text-sky-600 font-semibold rounded-2xl hover:bg-sky-50 py-3 px-4 transition-all group cursor-pointer">
-                <img src="https://img.icons8.com/material-outlined/24/64748b/home--v2.png" alt="Home" draggable="false"
-                    class="w-5 h-5 shrink-0 transition-transform group-hover:scale-110">
+                <img src="https://img.icons8.com/material-outlined/24/64748b/home--v2.png" alt="Home Icon"
+                    draggable="false" class="w-5 h-5 shrink-0 transition-transform group-hover:scale-110">
                 <span class="truncate">Home</span>
             </button>
 
             <button
                 class="w-full flex items-center gap-3.5 text-slate-600 hover:text-sky-600 font-semibold rounded-2xl hover:bg-sky-50 py-3 px-4 transition-all group cursor-pointer">
-                <img src="https://img.icons8.com/ios-glyphs/30/64748b/search--v1.png" alt="Search" draggable="false"
-                    class="w-5 h-5 shrink-0 transition-transform group-hover:scale-110">
+                <img src="https://img.icons8.com/ios-glyphs/30/64748b/search--v1.png" alt="Search Icon"
+                    draggable="false" class="w-5 h-5 shrink-0 transition-transform group-hover:scale-110">
                 <span class="truncate">Search</span>
             </button>
 
             <button
                 class="w-full flex items-center gap-3.5 text-slate-600 hover:text-sky-600 font-semibold rounded-2xl hover:bg-sky-50 py-3 px-4 transition-all group cursor-pointer">
-                <img src="https://img.icons8.com/ios/100/64748b/marker--v1.png" alt="Cities" draggable="false"
+                <img src="https://img.icons8.com/ios/100/64748b/marker--v1.png" alt="Cities Icon" draggable="false"
                     class="w-5 h-5 shrink-0 transition-transform group-hover:scale-110">
                 <span class="truncate">Cities</span>
             </button>
@@ -131,24 +131,25 @@
 
     <div id="mainContent" class="flex-1 transition-all duration-500 ease-in-out p-6">
         <header
-            class="flex items-center gap-3 py-2 px-4 bg-white/70 backdrop-blur-md w-full h-16 shadow-xs rounded-2xl border border-slate-200">
+            class="flex items-center gap-3 py-2 px-4 bg-white/70 backdrop-blur-md w-full h-16 shadow-sm rounded-2xl border border-slate-200">
             <button id="openSidebarBtn" aria-label="Open Sidebar"
                 class="text-2xl hover:text-sky-600 transition text-slate-600 select-none px-3 py-1 rounded-xl hover:bg-slate-100 cursor-pointer shrink-0">
-                <span class="truncate">☰</span>
+                <span>☰</span>
             </button>
 
-            <div id="search"
+            <form id="search" action="#" role="search"
                 class="w-full flex items-center justify-between gap-3 bg-slate-50/50 hover:bg-slate-100 text-slate-700 font-bold rounded-2xl transition-all duration-300 py-1.5 px-4 border border-slate-200/60 overflow-hidden">
                 <input type="text"
                     class="w-full bg-transparent focus:outline-none font-medium placeholder:text-slate-400 min-w-0"
-                    placeholder="Enter another city..." />
-                <div
-                    class="bg-blue-400/30 rounded-full p-2.5 active:scale-90 shrink-0 flex items-center justify-center">
+                    placeholder="Enter another city..." aria-label="Search City" />
+                <button type="submit" aria-label="Submit Search"
+                    class="bg-blue-400/30 hover:bg-blue-400/50 rounded-full p-2.5 active:scale-90 shrink-0 flex items-center justify-center cursor-pointer transition-all">
                     <img src="https://img.icons8.com/ios-glyphs/30/64748b/search--v1.png" alt="Search" draggable="false"
                         class="w-5 h-5 aspect-square shrink-0">
-                </div>
-            </div>
+                </button>
+            </form>
         </header>
+
         <main class="flex flex-col gap-5 mt-3">
             <div id="currentLocation"
                 class="w-full rounded-2xl p-5 sm:p-6 shadow-xl border border-slate-200/80 flex flex-col gap-6">
@@ -156,21 +157,21 @@
                 <!-- Top Row: Location & Date -->
                 <div id="dateLocation" class="flex flex-col gap-1">
                     <div class="flex gap-2 items-center font-bold text-slate-800 text-base sm:text-lg">
-                        <img src="https://img.icons8.com/ios/100/0284c7/marker--v1.png" alt="Location" draggable="false"
-                            class="w-4 h-4 shrink-0">
+                        <img src="https://img.icons8.com/ios/100/0284c7/marker--v1.png" alt="Location Icon"
+                            draggable="false" class="w-4 h-4 shrink-0">
                         <span id="currentCity" class="after:content-[',_']">New York</span>
                         <span id="currentCountry">USA</span>
                     </div>
 
                     <div class="flex items-center gap-1 text-slate-500 text-xs sm:text-sm font-medium">
-                        <p id="Month"></p>
-                        <p id="Date"></p>
-                        <p id="Year"></p>
-                        <p id="WeekDay"></p>
+                        <span id="Month"></span>
+                        <span id="Date"></span>
+                        <span id="Year"></span>
+                        <span id="WeekDay"></span>
                         <span class="px-0.5">•</span>
-                        <p id="Hour">10</p>
+                        <span id="Hour">10</span>
                         <span>:</span>
-                        <p id="Minutes">40</p>
+                        <span id="Minutes">40</span>
                     </div>
                 </div>
 
@@ -179,7 +180,7 @@
 
                     <!-- Primary Weather: Icon & Temperature -->
                     <div class="flex items-center gap-4 sm:gap-6 w-full md:w-auto justify-center md:justify-start">
-                        <img src="Resources/weather symbols/Bright-Sunny.png" alt="Weather Type" draggable="false"
+                        <img src="Resources/weather symbols/Bright-Sunny.png" alt="Sunny Weather" draggable="false"
                             class="w-24 h-24 sm:w-32 sm:h-32 object-contain shrink-0">
                         <div class="weather-details flex flex-col gap-0.5">
                             <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-800 tracking-tight">28°C</h1>
@@ -220,7 +221,7 @@
 
                 <!-- Min/Max Temp Card: Medium Height -->
                 <div
-                    class="temp flex flex-col justify-evenly gap-3 p-3.5 rounded-xl border border-slate-200/80 bg-white/80 backdrop-blur-sm shadow-xs w-full md:w-fit shrink-0">
+                    class="temp flex flex-col justify-evenly gap-3 p-3.5 rounded-xl border border-slate-200/80 bg-white/80 backdrop-blur-sm shadow-sm w-full md:w-fit shrink-0">
 
                     <div class="font-bold text-lg text-slate-800">
                         Today's Overview
@@ -228,13 +229,13 @@
 
                     <div class="flex items-center justify-around gap-4 sm:gap-6 py-1">
                         <!-- Max Temperature -->
-                        <div class="max flex items-center gap-5">
+                        <div class="max flex items-center gap-3.5">
                             <div class="p-2 rounded-lg bg-rose-500/10 border border-rose-500/20 shrink-0">
                                 <img src="https://img.icons8.com/stickers/100/temperature-high.png"
                                     alt="Maximum Temperature" draggable="false" class="w-9 h-9 object-contain">
                             </div>
                             <div class="flex flex-col gap-0.5">
-                                <span class="text-base font-semibold text-slate-400 uppercase tracking-wider">Max
+                                <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Max
                                     Temp</span>
                                 <span
                                     class="text-xl font-extrabold text-slate-800 leading-tight after:content-['°C']">30</span>
@@ -245,13 +246,13 @@
                         <div class="w-px h-8 bg-slate-200"></div>
 
                         <!-- Min Temperature -->
-                        <div class="min flex items-center gap-2.5">
+                        <div class="min flex items-center gap-3.5">
                             <div class="p-2 rounded-lg bg-sky-500/10 border border-sky-500/20 shrink-0">
                                 <img src="https://img.icons8.com/stickers/100/temperature-low.png"
                                     alt="Minimum Temperature" draggable="false" class="w-9 h-9 object-contain">
                             </div>
                             <div class="flex flex-col gap-0.5">
-                                <span class="text-base font-semibold text-slate-400 uppercase tracking-wider">Min
+                                <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Min
                                     Temp</span>
                                 <span
                                     class="text-xl font-extrabold text-slate-800 leading-tight after:content-['°C']">18</span>
@@ -262,7 +263,7 @@
 
                 <!-- Hourly Forecast Card: Medium Height -->
                 <div
-                    class="hourly-forecast flex flex-col justify-between gap-3 p-3.5 rounded-xl border border-slate-200/80 bg-white/80 backdrop-blur-sm shadow-xs flex-1 min-w-0">
+                    class="hourly-forecast flex flex-col justify-between gap-3 p-3.5 rounded-xl border border-slate-200/80 bg-white/80 backdrop-blur-sm shadow-sm flex-1 min-w-0">
                     <div class="header font-bold text-lg text-slate-800">
                         Hourly Forecast
                     </div>
@@ -271,7 +272,7 @@
                     <div class="details flex justify-evenly overflow-x-auto min-w-0 w-full items-center pb-1">
                         <!-- Hour 1 -->
                         <div
-                            class="flex flex-col gap-1 justify-center items-center bg-white/90 p-2 rounded-lg border border-slate-100 shrink-0 min-w-16 md:w-24 shadow-xs">
+                            class="flex flex-col gap-1 justify-center items-center bg-white/90 p-2 rounded-lg border border-slate-100 shrink-0 min-w-16 md:w-24 shadow-sm">
                             <span class="text-xs font-medium text-slate-500">Now</span>
                             <img src="Resources/weather symbols/Bright-Sunny.png" alt="Sunny" draggable="false"
                                 class="w-7 h-7 object-contain shrink-0">
@@ -283,7 +284,7 @@
 
                         <!-- Hour 2 -->
                         <div
-                            class="flex flex-col gap-1 justify-center items-center bg-white/90 p-2 rounded-lg border border-slate-100 shrink-0 min-w-16 md:w-24 shadow-xs">
+                            class="flex flex-col gap-1 justify-center items-center bg-white/90 p-2 rounded-lg border border-slate-100 shrink-0 min-w-16 md:w-24 shadow-sm">
                             <span class="text-xs font-medium text-slate-500">1 PM</span>
                             <img src="Resources/weather symbols/Bright-Sunny.png" alt="Sunny" draggable="false"
                                 class="w-7 h-7 object-contain shrink-0">
@@ -295,7 +296,7 @@
 
                         <!-- Hour 3 -->
                         <div
-                            class="flex flex-col gap-1 justify-center items-center bg-white/90 p-2 rounded-lg border border-slate-100 shrink-0 min-w-16 md:w-24 shadow-xs">
+                            class="flex flex-col gap-1 justify-center items-center bg-white/90 p-2 rounded-lg border border-slate-100 shrink-0 min-w-16 md:w-24 shadow-sm">
                             <span class="text-xs font-medium text-slate-500">2 PM</span>
                             <img src="Resources/weather symbols/Bright-Sunny.png" alt="Sunny" draggable="false"
                                 class="w-7 h-7 object-contain shrink-0">
@@ -307,7 +308,7 @@
 
                         <!-- Hour 4 -->
                         <div
-                            class="flex flex-col gap-1 justify-center items-center bg-white/90 p-2 rounded-lg border border-slate-100 shrink-0 min-w-16 md:w-24 shadow-xs">
+                            class="flex flex-col gap-1 justify-center items-center bg-white/90 p-2 rounded-lg border border-slate-100 shrink-0 min-w-16 md:w-24 shadow-sm">
                             <span class="text-xs font-medium text-slate-500">3 PM</span>
                             <img src="Resources/weather symbols/Bright-Sunny.png" alt="Sunny" draggable="false"
                                 class="w-7 h-7 object-contain shrink-0">
@@ -319,7 +320,7 @@
 
                         <!-- Hour 5 -->
                         <div
-                            class="flex flex-col gap-1 justify-center items-center bg-white/90 p-2 rounded-lg border border-slate-100 shrink-0 min-w-16 md:w-24 shadow-xs">
+                            class="flex flex-col gap-1 justify-center items-center bg-white/90 p-2 rounded-lg border border-slate-100 shrink-0 min-w-16 md:w-24 shadow-sm">
                             <span class="text-xs font-medium text-slate-500">4 PM</span>
                             <img src="Resources/weather symbols/Bright-Sunny.png" alt="Sunny" draggable="false"
                                 class="w-7 h-7 object-contain shrink-0">
@@ -337,7 +338,7 @@
                     Popular Cities
                 </div>
 
-                <div class="popular-cities flex flex-wrap justify-evenly gap-1">
+                <div class="popular-cities flex flex-wrap justify-evenly gap-3">
                     <!-- Delhi -->
                     <div
                         class="delhi city-card w-40 border border-slate-400/30 rounded-2xl p-3 flex flex-col justify-between">
@@ -358,7 +359,7 @@
                     <div
                         class="london city-card w-40 border border-slate-400/30 rounded-2xl p-3 flex flex-col justify-between">
                         <div class="city-header flex items-center justify-between gap-2">
-                            <img src="Resources/weather symbols/Bright-Sunny.png" alt="Rainy Weather" draggable="false"
+                            <img src="Resources/weather symbols/Bright-Sunny.png" alt="Sunny Weather" draggable="false"
                                 class="w-12 h-12 object-contain shrink-0">
                             <div class="flex flex-col text-right">
                                 <span class="text-sm font-bold uppercase tracking-wider text-slate-800">London</span>
@@ -374,8 +375,8 @@
                     <div
                         class="tokyo city-card w-40 border border-slate-400/30 rounded-2xl p-3 flex flex-col justify-between">
                         <div class="city-header flex items-center justify-between gap-2">
-                            <img src="Resources/weather symbols/Light-Rain.png" alt="Sunny Weather" draggable="false"
-                                class="w-12 h-12 object-contain shrink-0">
+                            <img src="Resources/weather symbols/Light-Rain.png" alt="Light Rain Weather"
+                                draggable="false" class="w-12 h-12 object-contain shrink-0">
                             <div class="flex flex-col text-right">
                                 <span class="text-sm font-bold uppercase tracking-wider text-slate-800">Tokyo</span>
                                 <span class="text-xs font-semibold text-slate-600">Japan</span>
@@ -390,8 +391,8 @@
                     <div
                         class="dubai city-card w-40 border border-slate-400/30 rounded-2xl p-3 flex flex-col justify-between">
                         <div class="city-header flex items-center justify-between gap-2">
-                            <img src="Resources/weather symbols/Clear-Night.png" alt="Sunny Weather" draggable="false"
-                                class="w-12 h-12 object-contain shrink-0">
+                            <img src="Resources/weather symbols/Clear-Night.png" alt="Clear Night Weather"
+                                draggable="false" class="w-12 h-12 object-contain shrink-0">
                             <div class="flex flex-col text-right">
                                 <span class="text-sm font-bold uppercase tracking-wider text-slate-800">Dubai</span>
                                 <span class="text-xs font-semibold text-slate-600">UAE</span>
@@ -406,7 +407,7 @@
                     <div
                         class="paris city-card w-40 border border-slate-400/30 rounded-2xl p-3 flex flex-col justify-between">
                         <div class="city-header flex items-center justify-between gap-2">
-                            <img src="Resources/weather symbols/Windy.png" alt="Sunny Weather" draggable="false"
+                            <img src="Resources/weather symbols/Windy.png" alt="Windy Weather" draggable="false"
                                 class="w-12 h-12 object-contain shrink-0">
                             <div class="flex flex-col text-right">
                                 <span class="text-sm font-bold uppercase tracking-wider text-slate-800">Paris</span>
@@ -422,7 +423,7 @@
                     <div
                         class="lisbon city-card w-40 border border-slate-400/30 rounded-2xl p-3 flex flex-col justify-between">
                         <div class="city-header flex items-center justify-between gap-2">
-                            <img src="Resources/weather symbols/Overcast.png" alt="Sunny Weather" draggable="false"
+                            <img src="Resources/weather symbols/Overcast.png" alt="Overcast Weather" draggable="false"
                                 class="w-12 h-12 object-contain shrink-0">
                             <div class="flex flex-col text-right">
                                 <span class="text-sm font-bold uppercase tracking-wider text-slate-800">Lisbon</span>
