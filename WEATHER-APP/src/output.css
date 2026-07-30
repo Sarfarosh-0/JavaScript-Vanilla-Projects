@@ -711,6 +711,9 @@
   .pb-1 {
     padding-bottom: var(--spacing);
   }
+  .pb-20 {
+    padding-bottom: calc(var(--spacing) * 20);
+  }
   .text-center {
     text-align: center;
   }
@@ -1158,6 +1161,9 @@
     }
     .md\:justify-start {
       justify-content: flex-start;
+    }
+    .md\:pb-6 {
+      padding-bottom: calc(var(--spacing) * 6);
     }
     .md\:text-left {
       text-align: left;
