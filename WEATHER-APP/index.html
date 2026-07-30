@@ -392,112 +392,120 @@
 
             <!-- Popular Cities -->
             <div
-                class="cities-outer-box flex flex-col gap-5 p-5 w-full rounded-2xl sm:p-6 shadow-xl bg-white/80 backdrop-blur-md border border-slate-200/80">
+                class="cities-outer-box flex w-full flex-col gap-5 rounded-2xl border border-slate-200/80 bg-white/80 p-5 backdrop-blur-md shadow-xl sm:p-6">
 
-                <div class="font-bold text-lg text-slate-800">
+                <h2 class="text-lg font-bold text-slate-800">
                     Popular Cities
-                </div>
+                </h2>
 
-                <div class="popular-cities flex flex-wrap justify-evenly gap-3">
+                <!-- Grid layout handles alignment far better than flex-wrap across different screen sizes -->
+                <div class="popular-cities grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-6">
+
                     <!-- Delhi -->
-                    <div
-                        class="delhi city-card cursor-pointer group w-40 border border-slate-400/30 rounded-2xl p-3 flex flex-col justify-between">
+                    <button type="button"
+                        class="delhi city-card group flex flex-col justify-between rounded-2xl border border-slate-200 bg-white/50 p-3 text-left transition-all duration-200 hover:-translate-y-1 hover:border-sky-300 hover:bg-sky-50/50 hover:shadow-md active:scale-95">
                         <div class="city-header flex items-center justify-between gap-2">
                             <img src="Resources/weather%20symbols/Heavy-Rain.png" alt="Heavy Rain Weather"
                                 draggable="false"
-                                class="w-12 h-12 object-contain shrink-0 transition-transform duration-300 group-hover:scale-110">
+                                class="h-10 w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110 sm:h-12 sm:w-12">
                             <div class="flex flex-col text-right">
-                                <span class="text-sm font-bold uppercase tracking-wider text-slate-800">Delhi</span>
-                                <span class="text-xs font-semibold text-slate-600">India</span>
+                                <span
+                                    class="text-xs font-bold uppercase tracking-wider text-slate-800 sm:text-sm">Delhi</span>
+                                <span class="text-[10px] font-semibold text-slate-500 sm:text-xs">India</span>
                             </div>
                         </div>
-                        <div class="text-center mt-2">
-                            <span class="font-bold text-xl text-slate-800 after:content-['°C']">30</span>
+                        <div class="mt-2 text-center">
+                            <span class="text-xl font-bold text-slate-800 after:content-['°C']">30</span>
                         </div>
-                    </div>
+                    </button>
 
                     <!-- London -->
-                    <div
-                        class="london city-card cursor-pointer group w-40 border border-slate-400/30 rounded-2xl p-3 flex flex-col justify-between">
+                    <button type="button"
+                        class="london city-card group flex flex-col justify-between rounded-2xl border border-slate-200 bg-white/50 p-3 text-left transition-all duration-200 hover:-translate-y-1 hover:border-sky-300 hover:bg-sky-50/50 hover:shadow-md active:scale-95">
                         <div class="city-header flex items-center justify-between gap-2">
                             <img src="Resources/weather%20symbols/Bright-Sunny.png" alt="Sunny Weather"
                                 draggable="false"
-                                class="w-12 h-12 object-contain shrink-0 transition-transform duration-300 group-hover:scale-110">
+                                class="h-10 w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110 sm:h-12 sm:w-12">
                             <div class="flex flex-col text-right">
-                                <span class="text-sm font-bold uppercase tracking-wider text-slate-800">London</span>
-                                <span class="text-xs font-semibold text-slate-600">UK</span>
+                                <span
+                                    class="text-xs font-bold uppercase tracking-wider text-slate-800 sm:text-sm">London</span>
+                                <span class="text-[10px] font-semibold text-slate-500 sm:text-xs">UK</span>
                             </div>
                         </div>
-                        <div class="text-center mt-2">
-                            <span class="font-bold text-xl text-slate-800 after:content-['°C']">19</span>
+                        <div class="mt-2 text-center">
+                            <span class="text-xl font-bold text-slate-800 after:content-['°C']">19</span>
                         </div>
-                    </div>
+                    </button>
 
                     <!-- Tokyo -->
-                    <div
-                        class="tokyo city-card cursor-pointer group w-40 border border-slate-400/30 rounded-2xl p-3 flex flex-col justify-between">
+                    <button type="button"
+                        class="tokyo city-card group flex flex-col justify-between rounded-2xl border border-slate-200 bg-white/50 p-3 text-left transition-all duration-200 hover:-translate-y-1 hover:border-sky-300 hover:bg-sky-50/50 hover:shadow-md active:scale-95">
                         <div class="city-header flex items-center justify-between gap-2">
                             <img src="Resources/weather%20symbols/Light-Rain.png" alt="Light Rain Weather"
                                 draggable="false"
-                                class="w-12 h-12 object-contain shrink-0 transition-transform duration-300 group-hover:scale-110">
+                                class="h-10 w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110 sm:h-12 sm:w-12">
                             <div class="flex flex-col text-right">
-                                <span class="text-sm font-bold uppercase tracking-wider text-slate-800">Tokyo</span>
-                                <span class="text-xs font-semibold text-slate-600">Japan</span>
+                                <span
+                                    class="text-xs font-bold uppercase tracking-wider text-slate-800 sm:text-sm">Tokyo</span>
+                                <span class="text-[10px] font-semibold text-slate-500 sm:text-xs">Japan</span>
                             </div>
                         </div>
-                        <div class="text-center mt-2">
-                            <span class="font-bold text-xl text-slate-800 after:content-['°C']">26</span>
+                        <div class="mt-2 text-center">
+                            <span class="text-xl font-bold text-slate-800 after:content-['°C']">26</span>
                         </div>
-                    </div>
+                    </button>
 
                     <!-- Dubai -->
-                    <div
-                        class="dubai city-card cursor-pointer group w-40 border border-slate-400/30 rounded-2xl p-3 flex flex-col justify-between">
+                    <button type="button"
+                        class="dubai city-card group flex flex-col justify-between rounded-2xl border border-slate-200 bg-white/50 p-3 text-left transition-all duration-200 hover:-translate-y-1 hover:border-sky-300 hover:bg-sky-50/50 hover:shadow-md active:scale-95">
                         <div class="city-header flex items-center justify-between gap-2">
                             <img src="Resources/weather%20symbols/Clear-Night.png" alt="Clear Night Weather"
                                 draggable="false"
-                                class="w-12 h-12 object-contain shrink-0 transition-transform duration-300 group-hover:scale-110">
+                                class="h-10 w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110 sm:h-12 sm:w-12">
                             <div class="flex flex-col text-right">
-                                <span class="text-sm font-bold uppercase tracking-wider text-slate-800">Dubai</span>
-                                <span class="text-xs font-semibold text-slate-600">UAE</span>
+                                <span
+                                    class="text-xs font-bold uppercase tracking-wider text-slate-800 sm:text-sm">Dubai</span>
+                                <span class="text-[10px] font-semibold text-slate-500 sm:text-xs">UAE</span>
                             </div>
                         </div>
-                        <div class="text-center mt-2">
-                            <span class="font-bold text-xl text-slate-800 after:content-['°C']">38</span>
+                        <div class="mt-2 text-center">
+                            <span class="text-xl font-bold text-slate-800 after:content-['°C']">38</span>
                         </div>
-                    </div>
+                    </button>
 
                     <!-- Paris -->
-                    <div
-                        class="paris city-card cursor-pointer group w-40 border border-slate-400/30 rounded-2xl p-3 flex flex-col justify-between">
+                    <button type="button"
+                        class="paris city-card group flex flex-col justify-between rounded-2xl border border-slate-200 bg-white/50 p-3 text-left transition-all duration-200 hover:-translate-y-1 hover:border-sky-300 hover:bg-sky-50/50 hover:shadow-md active:scale-95">
                         <div class="city-header flex items-center justify-between gap-2">
                             <img src="Resources/weather%20symbols/Windy.png" alt="Windy Weather" draggable="false"
-                                class="w-12 h-12 object-contain shrink-0 transition-transform duration-300 group-hover:scale-110">
+                                class="h-10 w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110 sm:h-12 sm:w-12">
                             <div class="flex flex-col text-right">
-                                <span class="text-sm font-bold uppercase tracking-wider text-slate-800">Paris</span>
-                                <span class="text-xs font-semibold text-slate-600">France</span>
+                                <span
+                                    class="text-xs font-bold uppercase tracking-wider text-slate-800 sm:text-sm">Paris</span>
+                                <span class="text-[10px] font-semibold text-slate-500 sm:text-xs">France</span>
                             </div>
                         </div>
-                        <div class="text-center mt-2">
-                            <span class="font-bold text-xl text-slate-800 after:content-['°C']">22</span>
+                        <div class="mt-2 text-center">
+                            <span class="text-xl font-bold text-slate-800 after:content-['°C']">22</span>
                         </div>
-                    </div>
+                    </button>
 
                     <!-- Lisbon -->
-                    <div
-                        class="lisbon city-card cursor-pointer group w-40 border border-slate-400/30 rounded-2xl p-3 flex flex-col justify-between">
+                    <button type="button"
+                        class="lisbon city-card group flex flex-col justify-between rounded-2xl border border-slate-200 bg-white/50 p-3 text-left transition-all duration-200 hover:-translate-y-1 hover:border-sky-300 hover:bg-sky-50/50 hover:shadow-md active:scale-95">
                         <div class="city-header flex items-center justify-between gap-2">
                             <img src="Resources/weather%20symbols/Overcast.png" alt="Overcast Weather" draggable="false"
-                                class="w-12 h-12 object-contain shrink-0 transition-transform duration-300 group-hover:scale-110">
+                                class="h-10 w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110 sm:h-12 sm:w-12">
                             <div class="flex flex-col text-right">
-                                <span class="text-sm font-bold uppercase tracking-wider text-slate-800">Lisbon</span>
-                                <span class="text-xs font-semibold text-slate-600">Portugal</span>
+                                <span
+                                    class="text-xs font-bold uppercase tracking-wider text-slate-800 sm:text-sm">Lisbon</span>
+                                <span class="text-[10px] font-semibold text-slate-500 sm:text-xs">Portugal</span>
                             </div>
                         </div>
-                        <div class="text-center mt-2">
-                            <span class="font-bold text-xl text-slate-800 after:content-['°C']">25</span>
+                        <div class="mt-2 text-center">
+                            <span class="text-xl font-bold text-slate-800 after:content-['°C']">25</span>
                         </div>
-                    </div>
+                    </button>
                 </div>
             </div>
 
@@ -538,6 +546,8 @@
         </button>
 
     </footer>
+
+    
     <script src="JS/app-UI.js"></script>
 </body>
 
