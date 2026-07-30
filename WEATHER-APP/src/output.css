@@ -9,6 +9,7 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-sky-50: oklch(97.7% 0.013 236.62);
+    --color-sky-100: oklch(95.1% 0.026 236.824);
     --color-sky-300: oklch(82.8% 0.111 230.318);
     --color-sky-400: oklch(74.6% 0.16 232.661);
     --color-sky-500: oklch(68.5% 0.169 237.323);
@@ -234,6 +235,24 @@
   }
   .z-50 {
     z-index: 50;
+  }
+  .container {
+    width: 100%;
+    @media (width >= 40rem) {
+      max-width: 40rem;
+    }
+    @media (width >= 48rem) {
+      max-width: 48rem;
+    }
+    @media (width >= 64rem) {
+      max-width: 64rem;
+    }
+    @media (width >= 80rem) {
+      max-width: 80rem;
+    }
+    @media (width >= 96rem) {
+      max-width: 96rem;
+    }
   }
   .m-4 {
     margin: calc(var(--spacing) * 4);
@@ -542,6 +561,9 @@
       background-color: color-mix(in oklab, var(--color-rose-500) 10%, transparent);
     }
   }
+  .bg-sky-100 {
+    background-color: var(--color-sky-100);
+  }
   .bg-sky-500 {
     background-color: var(--color-sky-500);
   }
@@ -738,6 +760,9 @@
     --tw-tracking: var(--tracking-wider);
     letter-spacing: var(--tracking-wider);
   }
+  .text-sky-600 {
+    color: var(--color-sky-600);
+  }
   .text-slate-400 {
     color: var(--color-slate-400);
   }
@@ -876,12 +901,21 @@
     --tw-content: '°C';
     content: var(--tw-content);
   }
+  .focus-within\:border-sky-400:focus-within {
+    border-color: var(--color-sky-400);
+  }
   .focus-within\:bg-white:focus-within {
     background-color: var(--color-white);
   }
   .focus-within\:ring-2:focus-within {
     --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .focus-within\:ring-sky-400\/20:focus-within {
+    --tw-ring-color: color-mix(in srgb, oklch(74.6% 0.16 232.661) 20%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      --tw-ring-color: color-mix(in oklab, var(--color-sky-400) 20%, transparent);
+    }
   }
   .focus-within\:ring-sky-400\/40:focus-within {
     --tw-ring-color: color-mix(in srgb, oklch(74.6% 0.16 232.661) 40%, transparent);
@@ -935,6 +969,9 @@
       .hover\:bg-sky-50\/80:hover {
         background-color: color-mix(in oklab, var(--color-sky-50) 80%, transparent);
       }
+    }
+    .hover\:bg-sky-600:hover {
+      background-color: var(--color-sky-600);
     }
     .hover\:bg-slate-100\/80:hover {
       background-color: color-mix(in srgb, oklch(96.8% 0.007 247.896) 80%, transparent);
