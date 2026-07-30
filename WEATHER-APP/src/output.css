@@ -328,6 +328,9 @@
   .w-40 {
     width: calc(var(--spacing) * 40);
   }
+  .w-56 {
+    width: calc(var(--spacing) * 56);
+  }
   .w-60 {
     width: calc(var(--spacing) * 60);
   }
@@ -1026,6 +1029,9 @@
     }
   }
   @media (width >= 48rem) {
+    .md\:ml-56 {
+      margin-left: calc(var(--spacing) * 56);
+    }
     .md\:ml-60 {
       margin-left: calc(var(--spacing) * 60);
     }
