@@ -681,6 +681,9 @@
   .py-3 {
     padding-block: calc(var(--spacing) * 3);
   }
+  .py-4 {
+    padding-block: calc(var(--spacing) * 4);
+  }
   .py-5 {
     padding-block: calc(var(--spacing) * 5);
   }
@@ -888,6 +891,9 @@
       --tw-scale-y: 110%;
       --tw-scale-z: 110%;
       scale: var(--tw-scale-x) var(--tw-scale-y);
+    }
+    .group-hover\:text-sky-600:is(:where(.group):hover *) {
+      color: var(--color-sky-600);
     }
   }
   .placeholder\:text-slate-400::placeholder {
