@@ -17,6 +17,9 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
             width: 100%;
             min-height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-image: url("https://i.pinimg.com/vwebp/1200x/7f/81/a1/7f81a1a261a5a34c54747cde07d415fb.webp");
             scroll-behavior: smooth;
         }
 
@@ -107,12 +110,22 @@
         .animate-fade-in {
             animation: fadeIn 0.5s ease-out forwards;
         }
+
+        /* Custom Scrollbar for Forecast Row */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
     </style>
 </head>
 
 <body class="bg-slate-100 flex overflow-x-hidden min-h-screen">
 
-    <!-- Sidebar -->
+    <!-- Sidebar (Desktop) -->
     <aside id="sidebar" aria-label="Primary Navigation"
         class="fixed hidden top-0 left-0 z-50 w-56 h-full bg-white/80 backdrop-blur-xl border-r border-slate-200/80 md:flex flex-col justify-between transition-transform duration-300 ease-in-out shadow-2xl">
 
@@ -178,21 +191,22 @@
     </aside>
 
     <div id="mainContent"
-        class="flex-1 max-w-full md:max-w-[calc(100%-14rem)] transition-all md:ml-56 duration-500 ease-in-out p-4 sm:p-6 pb-20 md:pb-6 animate-fade-in">
+        class="flex-1 w-full md:ml-56 transition-all duration-500 ease-in-out p-4 sm:p-6 pb-24 md:pb-6 animate-fade-in min-w-0">
         <header class="relative w-full z-40">
             <!-- Search Form Container -->
             <div
-                class="flex h-16 w-full items-center justify-center rounded-2xl border border-slate-200/80 bg-white/70 p-2 shadow-sm backdrop-blur-md transition-shadow duration-300 hover:shadow-md">
+                class="flex h-14 sm:h-16 w-full items-center justify-center rounded-2xl border border-slate-200/80 bg-white/70 p-2 shadow-sm backdrop-blur-md transition-shadow duration-300 hover:shadow-md">
                 <form id="searchForm" action="#" role="search"
-                    class="group flex h-full flex-1 items-center justify-between gap-3 rounded-xl border border-slate-200/60 bg-slate-50/50 px-4 transition-all duration-300 focus-within:border-sky-400 focus-within:bg-white focus-within:ring-2 focus-within:ring-sky-400/20">
+                    class="group flex h-full flex-1 items-center justify-between gap-3 rounded-xl border border-slate-200/60 bg-slate-50/50 px-3 sm:px-4 transition-all duration-300 focus-within:border-sky-400 focus-within:bg-white focus-within:ring-2 focus-within:ring-sky-400/20">
 
                     <input type="text" id="searchInput" autocomplete="off"
                         placeholder="Search city (e.g., London, Tokyo)..." aria-label="Search City"
-                        class="h-full w-full min-w-0 bg-transparent font-medium text-slate-700 placeholder:text-slate-400 focus:outline-none" />
+                        class="h-full w-full min-w-0 bg-transparent text-sm sm:text-base font-medium text-slate-700 placeholder:text-slate-400 focus:outline-none" />
 
                     <button type="submit" aria-label="Submit Search"
                         class="flex shrink-0 items-center justify-center rounded-full bg-sky-100 p-2 text-sky-600 transition-all duration-200 hover:scale-105 hover:bg-sky-600 hover:text-white active:scale-95">
-                        <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <svg class="h-4 w-4 sm:h-5 sm:w-5" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                         </svg>
@@ -205,9 +219,9 @@
             </div>
         </header>
 
-        <main class="flex flex-col gap-5 mt-3">
+        <main class="flex flex-col gap-5 mt-4">
             <div id="currentLocation"
-                class="w-full rounded-2xl p-5 sm:p-6 shadow-xl hover:shadow-2xl border border-slate-200/80 flex flex-col gap-6">
+                class="w-full rounded-2xl p-4 sm:p-6 shadow-xl hover:shadow-2xl border border-slate-200/80 flex flex-col gap-6">
 
                 <!-- Top Row: Location & Date -->
                 <div id="dateLocation" class="flex flex-col gap-1">
@@ -219,7 +233,7 @@
                         <span id="currentCountry">USA</span>
                     </div>
 
-                    <div class="flex items-center gap-1 text-slate-500 text-xs sm:text-sm font-medium">
+                    <div class="flex items-center gap-1 text-slate-500 text-xs sm:text-sm font-medium flex-wrap">
                         <span id="Month"></span>
                         <span id="Date"></span>
                         <span id="Year"></span>
@@ -232,74 +246,75 @@
                 </div>
 
                 <!-- Main Content -->
-                <div class="flex flex-col md:flex-row justify-evenly items-center gap-6 pt-2">
+                <div class="flex flex-col lg:flex-row justify-between lg:justify-evenly items-center gap-6 pt-2">
 
                     <!-- Primary Weather: Icon & Temperature -->
-                    <div class="flex items-center gap-4 sm:gap-6 w-full md:w-auto justify-center md:justify-start">
+                    <div class="flex items-center gap-4 sm:gap-6 w-full lg:w-auto justify-center lg:justify-start">
                         <img src="Resources/weather%20symbols/Bright-Sunny.png" alt="Sunny Weather" draggable="false"
-                            class="w-24 h-24 sm:w-32 sm:h-32 object-contain shrink-0 animate-float">
+                            class="w-20 h-20 sm:w-28 sm:h-28 lg:w-32 lg:h-32 object-contain shrink-0 animate-float">
                         <div class="weather-details flex flex-col gap-0.5">
-                            <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-800 tracking-tight">28°C</h1>
+                            <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-800 tracking-tight">28°C</h1>
                             <p class="text-slate-600 font-semibold text-sm sm:text-base">Sunny Day</p>
                             <p class="text-slate-400 text-xs sm:text-sm">Feels like 30°C</p>
                         </div>
                     </div>
 
-                    <!-- Divider line for mobile layouts -->
-                    <div class="w-full md:w-px h-px md:h-24 bg-slate-200/80"></div>
+                    <!-- Divider line -->
+                    <div class="w-full lg:w-px h-px lg:h-24 bg-slate-200/80"></div>
 
                     <!-- Secondary Metrics -->
                     <div
-                        class="other-details grid grid-cols-2 sm:grid-cols-4 md:grid-cols-2 gap-4 sm:gap-6 w-full md:w-auto text-center md:text-left">
+                        class="other-details grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 gap-3 sm:gap-6 w-full lg:w-auto text-center lg:text-left">
                         <div class="flex flex-col p-2 rounded-xl transition-all duration-200 hover:bg-white/40">
-                            <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Humidity</span>
-                            <span class="font-bold text-slate-700 text-base sm:text-lg  after:content-['_%']">55</span>
+                            <span
+                                class="text-[10px] sm:text-xs font-semibold text-slate-400 uppercase tracking-wider">Humidity</span>
+                            <span class="font-bold text-slate-700 text-sm sm:text-lg after:content-['_%']">55</span>
                         </div>
                         <div class="flex flex-col p-2 rounded-xl transition-all duration-200 hover:bg-white/40">
-                            <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Wind
+                            <span
+                                class="text-[10px] sm:text-xs font-semibold text-slate-400 uppercase tracking-wider">Wind
                                 Speed</span>
-                            <span
-                                class="font-bold text-slate-700 text-base sm:text-lg  after:content-['_km/h']">12</span>
-                        </div>
-                        <div class="flex flex-col p-2 rounded-xl transition-all duration-200 hover:bg-white/40">
-                            <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Pressure</span>
-                            <span class="font-bold text-slate-700 text-base sm:text-lg  after:content-['_hPa']">1013
-                            </span>
+                            <span class="font-bold text-slate-700 text-sm sm:text-lg after:content-['_km/h']">12</span>
                         </div>
                         <div class="flex flex-col p-2 rounded-xl transition-all duration-200 hover:bg-white/40">
                             <span
-                                class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Visibility</span>
-                            <span class="font-bold text-slate-700 text-base sm:text-lg  after:content-['_km']">10</span>
+                                class="text-[10px] sm:text-xs font-semibold text-slate-400 uppercase tracking-wider">Pressure</span>
+                            <span class="font-bold text-slate-700 text-sm sm:text-lg after:content-['_hPa']">1013</span>
+                        </div>
+                        <div class="flex flex-col p-2 rounded-xl transition-all duration-200 hover:bg-white/40">
+                            <span
+                                class="text-[10px] sm:text-xs font-semibold text-slate-400 uppercase tracking-wider">Visibility</span>
+                            <span class="font-bold text-slate-700 text-sm sm:text-lg after:content-['_km']">10</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="overview flex flex-col md:flex-row gap-4 w-full">
+            <div class="overview flex flex-col lg:flex-row gap-4 w-full">
 
-                <!-- Min/Max Temp Card: Medium Height -->
+                <!-- Min/Max Temp Card -->
                 <div
-                    class="temp flex flex-col justify-evenly gap-3 p-3.5 rounded-xl border border-slate-200/80 bg-white/80 backdrop-blur-sm shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 w-full md:w-fit md:shrink-0">
+                    class="temp flex flex-col justify-between gap-3 p-4 rounded-xl border border-slate-200/80 bg-white/80 backdrop-blur-sm shadow-sm hover:shadow-md transition-all duration-300 w-full lg:w-fit shrink-0">
 
-                    <div class="font-bold text-lg text-slate-800">
+                    <div class="font-bold text-base sm:text-lg text-slate-800">
                         Today's Overview
                     </div>
 
-                    <div class="flex items-center justify-around gap-2 sm:gap-6 py-1">
+                    <div class="flex items-center justify-around sm:justify-start gap-4 sm:gap-6 py-1">
                         <!-- Max Temperature -->
                         <div class="max flex items-center gap-2 sm:gap-3.5 group cursor-pointer">
                             <div
                                 class="p-2 rounded-lg bg-rose-500/10 border border-rose-500/20 shrink-0 transition-transform duration-300 group-hover:scale-110">
                                 <img src="https://img.icons8.com/stickers/100/temperature-high.png"
                                     alt="Maximum Temperature" draggable="false"
-                                    class="w-8 h-8 sm:w-9 sm:h-9 object-contain">
+                                    class="w-7 h-7 sm:w-9 sm:h-9 object-contain">
                             </div>
                             <div class="flex flex-col gap-0.5">
                                 <span
                                     class="text-[10px] sm:text-xs font-semibold text-slate-400 uppercase tracking-wider">Max
                                     Temp</span>
                                 <span
-                                    class="text-lg sm:text-xl font-extrabold text-slate-800 leading-tight after:content-['°C']">30</span>
+                                    class="text-base sm:text-xl font-extrabold text-slate-800 leading-tight after:content-['°C']">30</span>
                             </div>
                         </div>
 
@@ -312,79 +327,67 @@
                                 class="p-2 rounded-lg bg-sky-500/10 border border-sky-500/20 shrink-0 transition-transform duration-300 group-hover:scale-110">
                                 <img src="https://img.icons8.com/stickers/100/temperature-low.png"
                                     alt="Minimum Temperature" draggable="false"
-                                    class="w-8 h-8 sm:w-9 sm:h-9 object-contain">
+                                    class="w-7 h-7 sm:w-9 sm:h-9 object-contain">
                             </div>
                             <div class="flex flex-col gap-0.5">
                                 <span
                                     class="text-[10px] sm:text-xs font-semibold text-slate-400 uppercase tracking-wider">Min
                                     Temp</span>
                                 <span
-                                    class="text-lg sm:text-xl font-extrabold text-slate-800 leading-tight after:content-['°C']">18</span>
+                                    class="text-base sm:text-xl font-extrabold text-slate-800 leading-tight after:content-['°C']">18</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Hourly Forecast Card: Medium Height -->
+                <!-- Hourly Forecast Card -->
                 <div
-                    class="hourly-forecast flex flex-col justify-between gap-3 p-3.5 rounded-xl border border-slate-200/80 bg-white/80 backdrop-blur-sm shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 flex-1 min-w-0">
-                    <div class="header font-bold text-lg text-slate-800">
+                    class="hourly-forecast flex flex-col justify-between gap-3 p-4 rounded-xl border border-slate-200/80 bg-white/80 backdrop-blur-sm shadow-sm hover:shadow-md transition-all duration-300 flex-1 min-w-0">
+                    <div class="header font-bold text-base sm:text-lg text-slate-800">
                         Hourly Forecast
                     </div>
 
                     <div
-                        class="details flex justify-between sm:justify-evenly min-w-0 w-full items-center pb-1 gap-2 sm:gap-0">
+                        class="details flex items-center justify-between overflow-x-auto no-scrollbar w-full pb-1 gap-2 sm:gap-3">
                         <!-- Hour 1 -->
                         <div
-                            class="flex flex-col gap-1 justify-center items-center bg-white/90 p-2 rounded-lg border border-slate-100 shrink-0 min-w-16 md:w-24 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:bg-sky-50/80 hover:border-sky-300 cursor-pointer group">
+                            class="flex flex-col gap-1 justify-center items-center bg-white/90 p-2.5 rounded-lg border border-slate-100 shrink-0 flex-1 min-w-17.5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:bg-sky-50/80 hover:border-sky-300 cursor-pointer group">
                             <span class="text-xs font-medium text-slate-500">Now</span>
                             <img src="Resources/weather%20symbols/Bright-Sunny.png" alt="Sunny" draggable="false"
                                 class="w-7 h-7 object-contain shrink-0 transition-transform duration-300 group-hover:scale-110">
                             <span class="text-sm font-bold text-slate-800 after:content-['°C']">28</span>
                         </div>
 
-                        <!-- Divider -->
-                        <div class="h-full w-px bg-slate-200 hidden md:block"></div>
-
                         <!-- Hour 2 -->
                         <div
-                            class="flex flex-col gap-1 justify-center items-center bg-white/90 p-2 rounded-lg border border-slate-100 shrink-0 min-w-16 md:w-24 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:bg-sky-50/80 hover:border-sky-300 cursor-pointer group">
+                            class="flex flex-col gap-1 justify-center items-center bg-white/90 p-2.5 rounded-lg border border-slate-100 shrink-0 flex-1 min-w-17.5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:bg-sky-50/80 hover:border-sky-300 cursor-pointer group">
                             <span class="text-xs font-medium text-slate-500">1 PM</span>
                             <img src="Resources/weather%20symbols/Bright-Sunny.png" alt="Sunny" draggable="false"
                                 class="w-7 h-7 object-contain shrink-0 transition-transform duration-300 group-hover:scale-110">
                             <span class="text-sm font-bold text-slate-800 after:content-['°C']">29</span>
                         </div>
 
-                        <!-- Divider -->
-                        <div class="h-full w-px bg-slate-200 hidden md:block"></div>
-
                         <!-- Hour 3 -->
                         <div
-                            class="flex flex-col gap-1 justify-center items-center bg-white/90 p-2 rounded-lg border border-slate-100 shrink-0 min-w-16 md:w-24 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:bg-sky-50/80 hover:border-sky-300 cursor-pointer group">
+                            class="flex flex-col gap-1 justify-center items-center bg-white/90 p-2.5 rounded-lg border border-slate-100 shrink-0 flex-1 min-w-17.5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:bg-sky-50/80 hover:border-sky-300 cursor-pointer group">
                             <span class="text-xs font-medium text-slate-500">2 PM</span>
                             <img src="Resources/weather%20symbols/Bright-Sunny.png" alt="Sunny" draggable="false"
                                 class="w-7 h-7 object-contain shrink-0 transition-transform duration-300 group-hover:scale-110">
                             <span class="text-sm font-bold text-slate-800 after:content-['°C']">30</span>
                         </div>
 
-                        <!-- Divider -->
-                        <div class="h-full w-px bg-slate-200 hidden md:block"></div>
-
                         <!-- Hour 4 -->
                         <div
-                            class="flex flex-col gap-1 justify-center items-center bg-white/90 p-2 rounded-lg border border-slate-100 shrink-0 min-w-16 md:w-24 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:bg-sky-50/80 hover:border-sky-300 cursor-pointer group">
+                            class="flex flex-col gap-1 justify-center items-center bg-white/90 p-2.5 rounded-lg border border-slate-100 shrink-0 flex-1 min-w-17.5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:bg-sky-50/80 hover:border-sky-300 cursor-pointer group">
                             <span class="text-xs font-medium text-slate-500">3 PM</span>
                             <img src="Resources/weather%20symbols/Bright-Sunny.png" alt="Sunny" draggable="false"
                                 class="w-7 h-7 object-contain shrink-0 transition-transform duration-300 group-hover:scale-110">
                             <span class="text-sm font-bold text-slate-800 after:content-['°C']">30</span>
                         </div>
 
-                        <!-- Divider -->
-                        <div class="h-full w-px bg-slate-200 hidden md:block"></div>
-
                         <!-- Hour 5 -->
                         <div
-                            class="flex flex-col gap-1 justify-center items-center bg-white/90 p-2 rounded-lg border border-slate-100 shrink-0 min-w-16 md:w-24 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:bg-sky-50/80 hover:border-sky-300 cursor-pointer group">
+                            class="flex flex-col gap-1 justify-center items-center bg-white/90 p-2.5 rounded-lg border border-slate-100 shrink-0 flex-1 min-w-17.5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:bg-sky-50/80 hover:border-sky-300 cursor-pointer group">
                             <span class="text-xs font-medium text-slate-500">4 PM</span>
                             <img src="Resources/weather%20symbols/Bright-Sunny.png" alt="Sunny" draggable="false"
                                 class="w-7 h-7 object-contain shrink-0 transition-transform duration-300 group-hover:scale-110">
@@ -396,13 +399,13 @@
 
             <!-- Popular Cities -->
             <div
-                class="cities-outer-box flex w-full flex-col gap-5 rounded-2xl border border-slate-200/80 bg-white/80 p-5 backdrop-blur-md shadow-xl sm:p-6">
+                class="cities-outer-box flex w-full flex-col gap-4 rounded-2xl border border-slate-200/80 bg-white/80 p-4 sm:p-6 backdrop-blur-md shadow-xl">
 
-                <h2 class="text-lg font-bold text-slate-800">
+                <h2 class="text-base sm:text-lg font-bold text-slate-800">
                     Popular Cities
                 </h2>
 
-                <div class="popular-cities grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-6">
+                <div class="popular-cities grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
 
                     <!-- Delhi -->
                     <button type="button"
@@ -410,15 +413,14 @@
                         <div class="city-header flex items-center justify-between gap-2">
                             <img src="Resources/weather%20symbols/Heavy-Rain.png" alt="Heavy Rain Weather"
                                 draggable="false"
-                                class="h-10 w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110 sm:h-12 sm:w-12">
+                                class="h-8 w-8 sm:h-10 sm:w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110">
                             <div class="flex flex-col text-right">
-                                <span
-                                    class="text-xs font-bold uppercase tracking-wider text-slate-800 sm:text-sm">Delhi</span>
-                                <span class="text-[10px] font-semibold text-slate-500 sm:text-xs">India</span>
+                                <span class="text-xs font-bold uppercase tracking-wider text-slate-800">Delhi</span>
+                                <span class="text-[10px] font-semibold text-slate-500">India</span>
                             </div>
                         </div>
                         <div class="mt-2 text-center">
-                            <span class="text-xl font-bold text-slate-800 after:content-['°C']">30</span>
+                            <span class="text-lg sm:text-xl font-bold text-slate-800 after:content-['°C']">30</span>
                         </div>
                     </button>
 
@@ -428,15 +430,14 @@
                         <div class="city-header flex items-center justify-between gap-2">
                             <img src="Resources/weather%20symbols/Bright-Sunny.png" alt="Sunny Weather"
                                 draggable="false"
-                                class="h-10 w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110 sm:h-12 sm:w-12">
+                                class="h-8 w-8 sm:h-10 sm:w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110">
                             <div class="flex flex-col text-right">
-                                <span
-                                    class="text-xs font-bold uppercase tracking-wider text-slate-800 sm:text-sm">London</span>
-                                <span class="text-[10px] font-semibold text-slate-500 sm:text-xs">UK</span>
+                                <span class="text-xs font-bold uppercase tracking-wider text-slate-800">London</span>
+                                <span class="text-[10px] font-semibold text-slate-500">UK</span>
                             </div>
                         </div>
                         <div class="mt-2 text-center">
-                            <span class="text-xl font-bold text-slate-800 after:content-['°C']">19</span>
+                            <span class="text-lg sm:text-xl font-bold text-slate-800 after:content-['°C']">19</span>
                         </div>
                     </button>
 
@@ -446,15 +447,14 @@
                         <div class="city-header flex items-center justify-between gap-2">
                             <img src="Resources/weather%20symbols/Light-Rain.png" alt="Light Rain Weather"
                                 draggable="false"
-                                class="h-10 w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110 sm:h-12 sm:w-12">
+                                class="h-8 w-8 sm:h-10 sm:w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110">
                             <div class="flex flex-col text-right">
-                                <span
-                                    class="text-xs font-bold uppercase tracking-wider text-slate-800 sm:text-sm">Tokyo</span>
-                                <span class="text-[10px] font-semibold text-slate-500 sm:text-xs">Japan</span>
+                                <span class="text-xs font-bold uppercase tracking-wider text-slate-800">Tokyo</span>
+                                <span class="text-[10px] font-semibold text-slate-500">Japan</span>
                             </div>
                         </div>
                         <div class="mt-2 text-center">
-                            <span class="text-xl font-bold text-slate-800 after:content-['°C']">26</span>
+                            <span class="text-lg sm:text-xl font-bold text-slate-800 after:content-['°C']">26</span>
                         </div>
                     </button>
 
@@ -464,15 +464,14 @@
                         <div class="city-header flex items-center justify-between gap-2">
                             <img src="Resources/weather%20symbols/Clear-Night.png" alt="Clear Night Weather"
                                 draggable="false"
-                                class="h-10 w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110 sm:h-12 sm:w-12">
+                                class="h-8 w-8 sm:h-10 sm:w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110">
                             <div class="flex flex-col text-right">
-                                <span
-                                    class="text-xs font-bold uppercase tracking-wider text-slate-800 sm:text-sm">Dubai</span>
-                                <span class="text-[10px] font-semibold text-slate-500 sm:text-xs">UAE</span>
+                                <span class="text-xs font-bold uppercase tracking-wider text-slate-800">Dubai</span>
+                                <span class="text-[10px] font-semibold text-slate-500">UAE</span>
                             </div>
                         </div>
                         <div class="mt-2 text-center">
-                            <span class="text-xl font-bold text-slate-800 after:content-['°C']">38</span>
+                            <span class="text-lg sm:text-xl font-bold text-slate-800 after:content-['°C']">38</span>
                         </div>
                     </button>
 
@@ -481,15 +480,14 @@
                         class="paris city-card group flex flex-col justify-between rounded-2xl border border-slate-200 bg-white/50 p-3 text-left transition-all duration-200 hover:-translate-y-1 hover:border-sky-300 hover:bg-sky-50/50 hover:shadow-md active:scale-95">
                         <div class="city-header flex items-center justify-between gap-2">
                             <img src="Resources/weather%20symbols/Windy.png" alt="Windy Weather" draggable="false"
-                                class="h-10 w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110 sm:h-12 sm:w-12">
+                                class="h-8 w-8 sm:h-10 sm:w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110">
                             <div class="flex flex-col text-right">
-                                <span
-                                    class="text-xs font-bold uppercase tracking-wider text-slate-800 sm:text-sm">Paris</span>
-                                <span class="text-[10px] font-semibold text-slate-500 sm:text-xs">France</span>
+                                <span class="text-xs font-bold uppercase tracking-wider text-slate-800">Paris</span>
+                                <span class="text-[10px] font-semibold text-slate-500">France</span>
                             </div>
                         </div>
                         <div class="mt-2 text-center">
-                            <span class="text-xl font-bold text-slate-800 after:content-['°C']">22</span>
+                            <span class="text-lg sm:text-xl font-bold text-slate-800 after:content-['°C']">22</span>
                         </div>
                     </button>
 
@@ -498,15 +496,14 @@
                         class="lisbon city-card group flex flex-col justify-between rounded-2xl border border-slate-200 bg-white/50 p-3 text-left transition-all duration-200 hover:-translate-y-1 hover:border-sky-300 hover:bg-sky-50/50 hover:shadow-md active:scale-95">
                         <div class="city-header flex items-center justify-between gap-2">
                             <img src="Resources/weather%20symbols/Overcast.png" alt="Overcast Weather" draggable="false"
-                                class="h-10 w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110 sm:h-12 sm:w-12">
+                                class="h-8 w-8 sm:h-10 sm:w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110">
                             <div class="flex flex-col text-right">
-                                <span
-                                    class="text-xs font-bold uppercase tracking-wider text-slate-800 sm:text-sm">Lisbon</span>
-                                <span class="text-[10px] font-semibold text-slate-500 sm:text-xs">Portugal</span>
+                                <span class="text-xs font-bold uppercase tracking-wider text-slate-800">Lisbon</span>
+                                <span class="text-[10px] font-semibold text-slate-500">Portugal</span>
                             </div>
                         </div>
                         <div class="mt-2 text-center">
-                            <span class="text-xl font-bold text-slate-800 after:content-['°C']">25</span>
+                            <span class="text-lg sm:text-xl font-bold text-slate-800 after:content-['°C']">25</span>
                         </div>
                     </button>
                 </div>
@@ -515,6 +512,7 @@
         </main>
     </div>
 
+    <!-- Mobile Navigation Bar -->
     <footer
         class="fixed bottom-0 left-0 right-0 z-50 flex h-16 w-full items-center justify-around border-t border-slate-200 bg-white/90 backdrop-blur-md md:hidden">
 
@@ -549,7 +547,6 @@
         </button>
 
     </footer>
-
 
     <script src="JS/app-UI.js"></script>
 </body>
