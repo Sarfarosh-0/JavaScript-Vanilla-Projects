@@ -59,8 +59,13 @@ async function fetchWeather() {
     const res = await fetch(url);
     const data = await res.json();
 
+    const regionNames = new Intl.DisplayNames(["en"], {
+      type: "region",
+    });
+    const countryName = regionNames.of(data.sys.country);
+
     console.log("City:", data.name);
-    console.log("Country:", data.sys.country);
+    console.log("Country:", countryName);
     console.log("Weather Description:", data.weather[0].description);
     console.log("Weather Condition:", data.weather[0].main);
 
@@ -83,6 +88,8 @@ async function fetchWeather() {
     console.log("Done fetching weather data.");
   }
 }
+
+
 fetchWeather();
 
 // function initWeather() {
