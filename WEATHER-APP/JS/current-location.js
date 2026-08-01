@@ -74,30 +74,30 @@ async function fetchWeather() {
 
     if (weatherCondition === "Thunderstorm") {
       weatherCard.style.backgroundImage =
-        "url('Resources/backgrounds/Thuderstrom.jpg')";
-    } else if (weatherCondition === " Drizzle") {
+        "url('Resources/backgrounds/Thunderstorm.png')";
+    } else if (weatherCondition === "Drizzle") {
       weatherCard.style.backgroundImage =
-        "url('Resources/backgrounds/Light-Rain.jpg')";
+        "url('Resources/backgrounds/Light-Rain.png')";
     } else if (weatherCondition === "Rain") {
       weatherCard.style.backgroundImage =
-        "url('Resources/backgrounds/Heavy-Rain.jpg')";
+        "url('Resources/backgrounds/Heavy-Rain.png')";
     } else if (weatherCondition === "Snow") {
       weatherCard.style.backgroundImage =
-        "url('Resources/backgrounds/Snowfall.jpg')";
+        "url('Resources/backgrounds/Snowfall.png')";
     } else if (weatherCondition === "Atmosphere") {
       weatherCard.style.backgroundImage =
-        "url('Resources/backgrounds/fog.jpg')";
+        "url('Resources/backgrounds/fog.png')";
     } else if (weatherCondition === "Clear") {
       if (data.weather[0].icon.includes("n")) {
         weatherCard.style.backgroundImage =
-          "url('Resources/backgrounds/Clear-Night.jpg')";
+          "url('Resources/backgrounds/Clear-Night.png')";
       } else {
         weatherCard.style.backgroundImage =
-          "url('Resources/backgrounds/Bright-Sunny.jpg')";
+          "url('Resources/backgrounds/Bright-Sunny.png')";
       }
     } else if (weatherCondition === "Clouds") {
       weatherCard.style.backgroundImage =
-        "url('Resources/backgrounds/Cloudy.jpg')";
+        "url('Resources/backgrounds/Cloudy.png')";
     }
 
     cityTemp.textContent = Math.floor(data.main.temp);
