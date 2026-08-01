@@ -49,8 +49,7 @@ const maxTemp = document.getElementById("maxTemp");
 const minTemp = document.getElementById("minTemp");
 
 const apiKey = "";
-
-const cityName = "Delhi";
+const cityName = "Lucknow";
 
 // Step 3
 async function fetchWeather() {
@@ -67,8 +66,39 @@ async function fetchWeather() {
     city.textContent = data.name;
     country.textContent = countryName;
 
-    console.log("Weather Description:", data.weather[0].description);
-    console.log("Weather Condition:", data.weather[0].main);
+    weatherType.textContent = data.weather[0].description;
+
+    weatherIcon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+
+    const weatherCondition = data.weather[0].main;
+
+    if (weatherCondition === "Thunderstorm") {
+      weatherCard.style.backgroundImage =
+        "url('Resources/backgrounds/Thuderstrom.jpg')";
+    } else if (weatherCondition === " Drizzle") {
+      weatherCard.style.backgroundImage =
+        "url('Resources/backgrounds/Light-Rain.jpg')";
+    } else if (weatherCondition === "Rain") {
+      weatherCard.style.backgroundImage =
+        "url('Resources/backgrounds/Heavy-Rain.jpg')";
+    } else if (weatherCondition === "Snow") {
+      weatherCard.style.backgroundImage =
+        "url('Resources/backgrounds/Snowfall.jpg')";
+    } else if (weatherCondition === "Atmosphere") {
+      weatherCard.style.backgroundImage =
+        "url('Resources/backgrounds/fog.jpg')";
+    } else if (weatherCondition === "Clear") {
+      if (data.weather[0].icon.includes("n")) {
+        weatherCard.style.backgroundImage =
+          "url('Resources/backgrounds/Clear-Night.jpg')";
+      } else {
+        weatherCard.style.backgroundImage =
+          "url('Resources/backgrounds/Bright-Sunny.jpg')";
+      }
+    } else if (weatherCondition === "Clouds") {
+      weatherCard.style.backgroundImage =
+        "url('Resources/backgrounds/Cloudy.jpg')";
+    }
 
     cityTemp.textContent = Math.floor(data.main.temp);
     feelsLikes.textContent = Math.floor(data.main.feels_like);
@@ -79,7 +109,6 @@ async function fetchWeather() {
     windSpeed.textContent = data.wind.speed;
     pressure.textContent = data.main.pressure;
     visibility.textContent = (data.visibility / 1000).toFixed(1);
-
   } catch (error) {
     console.error("Error fetching weather data:", error);
   } finally {
