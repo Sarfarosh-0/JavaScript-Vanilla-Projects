@@ -193,14 +193,14 @@
             <!-- Search Form Container -->
             <div
                 class="flex h-14 sm:h-16 w-full items-center justify-center rounded-2xl border border-slate-200/80 bg-white/70 p-2 shadow-sm backdrop-blur-md transition-shadow duration-300 hover:shadow-md">
-                <form id="searchForm" action="#" role="search"
+                <div
                     class="group flex h-full flex-1 items-center justify-between gap-3 rounded-xl border border-slate-200/60 bg-slate-50/50 px-3 sm:px-4 transition-all duration-300 focus-within:border-sky-400 focus-within:bg-white focus-within:ring-2 focus-within:ring-sky-400/20">
 
                     <input type="text" id="searchInput" autocomplete="off"
                         placeholder="Search city (e.g., London, Tokyo)..." aria-label="Search City"
                         class="h-full w-full min-w-0 bg-transparent text-sm sm:text-base font-medium text-slate-700 placeholder:text-slate-400 focus:outline-none" />
 
-                    <button type="submit" aria-label="Submit Search"
+                    <button id="searchButton" type="button" aria-label="Submit Search"
                         class="flex shrink-0 items-center justify-center rounded-full bg-sky-100 p-2 text-sky-600 transition-all duration-200 hover:scale-105 hover:bg-sky-600 hover:text-white active:scale-95">
                         <svg class="h-4 w-4 sm:h-5 sm:w-5" fill="none" stroke="currentColor" stroke-width="2"
                             viewBox="0 0 24 24">
@@ -208,7 +208,7 @@
                                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                         </svg>
                     </button>
-                </form>
+                </div>
             </div>
 
             <div id="searchResults"
