@@ -248,7 +248,7 @@
                     <!-- Primary Weather: Icon & Temperature -->
                     <div
                         class="locationImage flex items-center gap-4 sm:gap-6 w-full lg:w-auto justify-center lg:justify-start">
-                        <img src="Resources/weather%20symbols/Bright-Sunny.png" alt="Sunny Weather" draggable="false"
+                        <img src="" alt="Sunny Weather" draggable="false"
                             class="w-20 h-20 sm:w-28 sm:h-28 lg:w-32 lg:h-32 object-contain shrink-0 animate-float">
                         <div class="weather-details flex flex-col gap-0.5">
                             <h1 id="cityTemp"
@@ -358,7 +358,7 @@
                         <div
                             class="flex flex-col gap-1 justify-center items-center bg-white/90 p-2.5 rounded-lg border border-slate-100 shrink-0 flex-1 min-w-17.5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:bg-sky-50/80 hover:border-sky-300 cursor-pointer group">
                             <span class="text-xs font-medium text-slate-500">Now</span>
-                            <img src="Resources/weather%20symbols/Bright-Sunny.png" alt="Sunny" draggable="false"
+                            <img src="" alt="Sunny" draggable="false"
                                 class="w-7 h-7 object-contain shrink-0 transition-transform duration-300 group-hover:scale-110">
                             <span class="text-sm font-bold text-slate-800 after:content-['°C']">28</span>
                         </div>
@@ -367,7 +367,7 @@
                         <div
                             class="flex flex-col gap-1 justify-center items-center bg-white/90 p-2.5 rounded-lg border border-slate-100 shrink-0 flex-1 min-w-17.5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:bg-sky-50/80 hover:border-sky-300 cursor-pointer group">
                             <span class="text-xs font-medium text-slate-500">1 PM</span>
-                            <img src="Resources/weather%20symbols/Bright-Sunny.png" alt="Sunny" draggable="false"
+                            <img src="" alt="Sunny" draggable="false"
                                 class="w-7 h-7 object-contain shrink-0 transition-transform duration-300 group-hover:scale-110">
                             <span class="text-sm font-bold text-slate-800 after:content-['°C']">29</span>
                         </div>
@@ -376,7 +376,7 @@
                         <div
                             class="flex flex-col gap-1 justify-center items-center bg-white/90 p-2.5 rounded-lg border border-slate-100 shrink-0 flex-1 min-w-17.5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:bg-sky-50/80 hover:border-sky-300 cursor-pointer group">
                             <span class="text-xs font-medium text-slate-500">2 PM</span>
-                            <img src="Resources/weather%20symbols/Bright-Sunny.png" alt="Sunny" draggable="false"
+                            <img src="" alt="Sunny" draggable="false"
                                 class="w-7 h-7 object-contain shrink-0 transition-transform duration-300 group-hover:scale-110">
                             <span class="text-sm font-bold text-slate-800 after:content-['°C']">30</span>
                         </div>
@@ -385,7 +385,7 @@
                         <div
                             class="flex flex-col gap-1 justify-center items-center bg-white/90 p-2.5 rounded-lg border border-slate-100 shrink-0 flex-1 min-w-17.5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:bg-sky-50/80 hover:border-sky-300 cursor-pointer group">
                             <span class="text-xs font-medium text-slate-500">3 PM</span>
-                            <img src="Resources/weather%20symbols/Bright-Sunny.png" alt="Sunny" draggable="false"
+                            <img src="" alt="Sunny" draggable="false"
                                 class="w-7 h-7 object-contain shrink-0 transition-transform duration-300 group-hover:scale-110">
                             <span class="text-sm font-bold text-slate-800 after:content-['°C']">30</span>
                         </div>
@@ -394,7 +394,7 @@
                         <div
                             class="flex flex-col gap-1 justify-center items-center bg-white/90 p-2.5 rounded-lg border border-slate-100 shrink-0 flex-1 min-w-17.5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:bg-sky-50/80 hover:border-sky-300 cursor-pointer group">
                             <span class="text-xs font-medium text-slate-500">4 PM</span>
-                            <img src="Resources/weather%20symbols/Bright-Sunny.png" alt="Sunny" draggable="false"
+                            <img src="" alt="Sunny" draggable="false"
                                 class="w-7 h-7 object-contain shrink-0 transition-transform duration-300 group-hover:scale-110">
                             <span class="text-sm font-bold text-slate-800 after:content-['°C']">29</span>
                         </div>
@@ -416,8 +416,7 @@
                     <button type="button"
                         class="delhi city-card group flex flex-col justify-between rounded-2xl border border-slate-200 bg-white/50 p-3 text-left transition-all duration-200 hover:-translate-y-1 hover:border-sky-300 hover:bg-sky-50/50 hover:shadow-md active:scale-95">
                         <div class="city-header flex items-center justify-between gap-2">
-                            <img src="Resources/weather%20symbols/Heavy-Rain.png" alt="Heavy Rain Weather"
-                                draggable="false"
+                            <img id="delhiIcon" src="" alt="Heavy Rain Weather" draggable="false"
                                 class="h-8 w-8 sm:h-10 sm:w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110">
                             <div class="flex flex-col text-right">
                                 <span class="text-xs font-bold uppercase tracking-wider text-slate-800">Delhi</span>
@@ -425,7 +424,8 @@
                             </div>
                         </div>
                         <div class="mt-2 text-center">
-                            <span class="text-lg sm:text-xl font-bold text-slate-800 after:content-['°C']">30</span>
+                            <span id="delhiTemp"
+                                class="text-lg sm:text-xl font-bold text-slate-800 after:content-['°C']">30</span>
                         </div>
                     </button>
 
@@ -433,8 +433,7 @@
                     <button type="button"
                         class="london city-card group flex flex-col justify-between rounded-2xl border border-slate-200 bg-white/50 p-3 text-left transition-all duration-200 hover:-translate-y-1 hover:border-sky-300 hover:bg-sky-50/50 hover:shadow-md active:scale-95">
                         <div class="city-header flex items-center justify-between gap-2">
-                            <img src="Resources/weather%20symbols/Bright-Sunny.png" alt="Sunny Weather"
-                                draggable="false"
+                            <img id="londonIcon" src="" alt="Sunny Weather" draggable="false"
                                 class="h-8 w-8 sm:h-10 sm:w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110">
                             <div class="flex flex-col text-right">
                                 <span class="text-xs font-bold uppercase tracking-wider text-slate-800">London</span>
@@ -442,7 +441,8 @@
                             </div>
                         </div>
                         <div class="mt-2 text-center">
-                            <span class="text-lg sm:text-xl font-bold text-slate-800 after:content-['°C']">19</span>
+                            <span id="londonTemp"
+                                class="text-lg sm:text-xl font-bold text-slate-800 after:content-['°C']">19</span>
                         </div>
                     </button>
 
@@ -450,8 +450,7 @@
                     <button type="button"
                         class="tokyo city-card group flex flex-col justify-between rounded-2xl border border-slate-200 bg-white/50 p-3 text-left transition-all duration-200 hover:-translate-y-1 hover:border-sky-300 hover:bg-sky-50/50 hover:shadow-md active:scale-95">
                         <div class="city-header flex items-center justify-between gap-2">
-                            <img src="Resources/weather%20symbols/Light-Rain.png" alt="Light Rain Weather"
-                                draggable="false"
+                            <img id="tokyoIcon" src="" alt="Light Rain Weather" draggable="false"
                                 class="h-8 w-8 sm:h-10 sm:w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110">
                             <div class="flex flex-col text-right">
                                 <span class="text-xs font-bold uppercase tracking-wider text-slate-800">Tokyo</span>
@@ -459,7 +458,8 @@
                             </div>
                         </div>
                         <div class="mt-2 text-center">
-                            <span class="text-lg sm:text-xl font-bold text-slate-800 after:content-['°C']">26</span>
+                            <span id="tokyoTemp"
+                                class="text-lg sm:text-xl font-bold text-slate-800 after:content-['°C']">26</span>
                         </div>
                     </button>
 
@@ -467,8 +467,7 @@
                     <button type="button"
                         class="dubai city-card group flex flex-col justify-between rounded-2xl border border-slate-200 bg-white/50 p-3 text-left transition-all duration-200 hover:-translate-y-1 hover:border-sky-300 hover:bg-sky-50/50 hover:shadow-md active:scale-95">
                         <div class="city-header flex items-center justify-between gap-2">
-                            <img src="Resources/weather%20symbols/Clear-Night.png" alt="Clear Night Weather"
-                                draggable="false"
+                            <img id="dubaiIcon" src="" alt="Clear Night Weather" draggable="false"
                                 class="h-8 w-8 sm:h-10 sm:w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110">
                             <div class="flex flex-col text-right">
                                 <span class="text-xs font-bold uppercase tracking-wider text-slate-800">Dubai</span>
@@ -476,7 +475,8 @@
                             </div>
                         </div>
                         <div class="mt-2 text-center">
-                            <span class="text-lg sm:text-xl font-bold text-slate-800 after:content-['°C']">38</span>
+                            <span id="dubaiTemp"
+                                class="text-lg sm:text-xl font-bold text-slate-800 after:content-['°C']">38</span>
                         </div>
                     </button>
 
@@ -484,7 +484,7 @@
                     <button type="button"
                         class="paris city-card group flex flex-col justify-between rounded-2xl border border-slate-200 bg-white/50 p-3 text-left transition-all duration-200 hover:-translate-y-1 hover:border-sky-300 hover:bg-sky-50/50 hover:shadow-md active:scale-95">
                         <div class="city-header flex items-center justify-between gap-2">
-                            <img src="Resources/weather%20symbols/Windy.png" alt="Windy Weather" draggable="false"
+                            <img id="parisIcon" src="" alt="Windy Weather" draggable="false"
                                 class="h-8 w-8 sm:h-10 sm:w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110">
                             <div class="flex flex-col text-right">
                                 <span class="text-xs font-bold uppercase tracking-wider text-slate-800">Paris</span>
@@ -492,7 +492,8 @@
                             </div>
                         </div>
                         <div class="mt-2 text-center">
-                            <span class="text-lg sm:text-xl font-bold text-slate-800 after:content-['°C']">22</span>
+                            <span id="parisTemp"
+                                class="text-lg sm:text-xl font-bold text-slate-800 after:content-['°C']">22</span>
                         </div>
                     </button>
 
@@ -500,7 +501,7 @@
                     <button type="button"
                         class="lisbon city-card group flex flex-col justify-between rounded-2xl border border-slate-200 bg-white/50 p-3 text-left transition-all duration-200 hover:-translate-y-1 hover:border-sky-300 hover:bg-sky-50/50 hover:shadow-md active:scale-95">
                         <div class="city-header flex items-center justify-between gap-2">
-                            <img src="Resources/weather%20symbols/Overcast.png" alt="Overcast Weather" draggable="false"
+                            <img id="lisbonIcon" src="" alt="Overcast Weather" draggable="false"
                                 class="h-8 w-8 sm:h-10 sm:w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110">
                             <div class="flex flex-col text-right">
                                 <span class="text-xs font-bold uppercase tracking-wider text-slate-800">Lisbon</span>
@@ -508,7 +509,8 @@
                             </div>
                         </div>
                         <div class="mt-2 text-center">
-                            <span class="text-lg sm:text-xl font-bold text-slate-800 after:content-['°C']">25</span>
+                            <span id="lisbonTemp"
+                                class="text-lg sm:text-xl font-bold text-slate-800 after:content-['°C']">25</span>
                         </div>
                     </button>
                 </div>
@@ -555,6 +557,7 @@
 
     <script src="JS/app-UI.js"></script>
     <script src="JS/current-location.js"></script>
+    <script src="JS/popular-cities.js"></script>
 </body>
 
 </html>
