@@ -1,8 +1,3 @@
-console.log("APP UI JAVASCRIPT");
-
-// Date and Time
-console.log("Date and Time");
-
 function UpdateDate() {
   const date = new Date();
   document.getElementById("Month").textContent = date.toLocaleDateString(
