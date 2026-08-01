@@ -62,23 +62,27 @@ async function fetchWeather() {
     console.log("City:", data.name);
     console.log("Country:", data.sys.country);
     console.log("Weather Description:", data.weather[0].description);
-    console.log("Current Temperature (°C):", data.main.temp);
-    console.log("Feels Like Temperature (°C):", data.main.feels_like);
     console.log("Weather Condition:", data.weather[0].main);
+
+    console.log("Current Temperature (°C):", Math.floor(data.main.temp));
+    console.log(
+      "Feels Like Temperature (°C):",
+      Math.floor(data.main.feels_like),
+    );
+    console.log("Minimum Temperature (°C):", Math.floor(data.main.temp_min));
+    console.log("Maximum Temperature (°C):", Math.floor(data.main.temp_max));
+
     console.log("Humidity (%):", data.main.humidity);
     console.log("Wind Speed (m/s):", data.wind.speed);
     console.log("Atmospheric Pressure (hPa):", data.main.pressure);
-    console.log("Visibility (meters):", data.visibility);
 
-    console.log("Min Temp (°C):", data.main.temp_min);
-    console.log("Max Temp (°C):", data.main.temp_max);
+    console.log("Visibility (km):", (data.visibility / 1000).toFixed(1));
   } catch (error) {
     console.error("Error fetching weather data:", error);
   } finally {
     console.log("Done fetching weather data.");
   }
 }
-
 fetchWeather();
 
 // function initWeather() {
