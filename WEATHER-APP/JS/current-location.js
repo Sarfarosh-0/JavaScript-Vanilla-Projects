@@ -64,45 +64,22 @@ async function fetchWeather() {
       type: "region",
     });
     const countryName = regionNames.of(data.sys.country);
-
-    console.log("City:", data.name);
     city.textContent = data.name;
-
-    console.log("Country:", countryName);
     country.textContent = countryName;
 
     console.log("Weather Description:", data.weather[0].description);
     console.log("Weather Condition:", data.weather[0].main);
 
-    console.log("Weather Condition:", data.weather[0].icon);
-
-    console.log("Current Temperature (°C):", Math.floor(data.main.temp));
     cityTemp.textContent = Math.floor(data.main.temp);
-
-    console.log(
-      "Feels Like Temperature (°C):",
-      Math.floor(data.main.feels_like),
-    );
     feelsLikes.textContent = Math.floor(data.main.feels_like);
-
-    console.log("Minimum Temperature (°C):", Math.floor(data.main.temp_min));
     minTemp.textContent = Math.floor(data.main.temp_min);
-
-    console.log("Maximum Temperature (°C):", Math.floor(data.main.temp_max));
     maxTemp.textContent = Math.floor(data.main.temp_max);
 
-    console.log("Humidity (%):", data.main.humidity);
     humidity.textContent = data.main.humidity;
-
-    console.log("Wind Speed (m/s):", data.wind.speed);
     windSpeed.textContent = data.wind.speed;
-
-    console.log("Atmospheric Pressure (hPa):", data.main.pressure);
     pressure.textContent = data.main.pressure;
-
-    console.log("Visibility (km):", (data.visibility / 1000).toFixed(1));
     visibility.textContent = (data.visibility / 1000).toFixed(1);
-    
+
   } catch (error) {
     console.error("Error fetching weather data:", error);
   } finally {
@@ -111,4 +88,3 @@ async function fetchWeather() {
 }
 
 fetchWeather();
-
