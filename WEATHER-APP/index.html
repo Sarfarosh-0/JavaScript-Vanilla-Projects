@@ -226,8 +226,8 @@
                         <img src="https://img.icons8.com/ios/100/0284c7/marker--v1.png" alt="Location Icon"
                             draggable="false"
                             class="w-4 h-4 shrink-0 transition-transform duration-300 hover:animate-bounce">
-                        <span id="currentCity" class="after:content-[',_']">New York</span>
-                        <span id="currentCountry">USA</span>
+                        <span id="city" class="after:content-[',_']">New York</span>
+                        <span id="country">USA</span>
                     </div>
 
                     <div class="flex items-center gap-1 text-slate-500 text-xs sm:text-sm font-medium flex-wrap">
@@ -246,13 +246,15 @@
                 <div class="flex flex-col lg:flex-row justify-between lg:justify-evenly items-center gap-6 pt-2">
 
                     <!-- Primary Weather: Icon & Temperature -->
-                    <div class="flex items-center gap-4 sm:gap-6 w-full lg:w-auto justify-center lg:justify-start">
+                    <div
+                        class="locationImage flex items-center gap-4 sm:gap-6 w-full lg:w-auto justify-center lg:justify-start">
                         <img src="Resources/weather%20symbols/Bright-Sunny.png" alt="Sunny Weather" draggable="false"
                             class="w-20 h-20 sm:w-28 sm:h-28 lg:w-32 lg:h-32 object-contain shrink-0 animate-float">
                         <div class="weather-details flex flex-col gap-0.5">
-                            <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-800 tracking-tight">28°C</h1>
-                            <p class="text-slate-600 font-semibold text-sm sm:text-base">Sunny Day</p>
-                            <p class="text-slate-400 text-xs sm:text-sm">Feels like 30°C</p>
+                            <h1 id="cityTemp"
+                                class=" text-3xl sm:text-5xl font-extrabold text-slate-800 tracking-tight after:content-['_°C']">
+                                28</h1>
+                            <p id="weatherType" class="text-slate-600 font-semibold text-sm sm:text-base">Sunny Day</p>
                         </div>
                     </div>
 
@@ -265,23 +267,27 @@
                         <div class="flex flex-col p-2 rounded-xl transition-all duration-200 hover:bg-white/40">
                             <span
                                 class="text-[10px] sm:text-xs font-semibold text-slate-400 uppercase tracking-wider">Humidity</span>
-                            <span class="font-bold text-slate-700 text-sm sm:text-lg after:content-['_%']">55</span>
+                            <span id="humidity"
+                                class="font-bold text-slate-700 text-sm sm:text-lg after:content-['_%']">55</span>
                         </div>
                         <div class="flex flex-col p-2 rounded-xl transition-all duration-200 hover:bg-white/40">
                             <span
                                 class="text-[10px] sm:text-xs font-semibold text-slate-400 uppercase tracking-wider">Wind
                                 Speed</span>
-                            <span class="font-bold text-slate-700 text-sm sm:text-lg after:content-['_km/h']">12</span>
+                            <span id="windSpeed"
+                                class="font-bold text-slate-700 text-sm sm:text-lg after:content-['_km/h']">12</span>
                         </div>
                         <div class="flex flex-col p-2 rounded-xl transition-all duration-200 hover:bg-white/40">
                             <span
                                 class="text-[10px] sm:text-xs font-semibold text-slate-400 uppercase tracking-wider">Pressure</span>
-                            <span class="font-bold text-slate-700 text-sm sm:text-lg after:content-['_hPa']">1013</span>
+                            <span id="pressure"
+                                class="font-bold text-slate-700 text-sm sm:text-lg after:content-['_hPa']">1013</span>
                         </div>
                         <div class="flex flex-col p-2 rounded-xl transition-all duration-200 hover:bg-white/40">
                             <span
                                 class="text-[10px] sm:text-xs font-semibold text-slate-400 uppercase tracking-wider">Visibility</span>
-                            <span class="font-bold text-slate-700 text-sm sm:text-lg after:content-['_km']">10</span>
+                            <span id="visibility"
+                                class="font-bold text-slate-700 text-sm sm:text-lg after:content-['_km']">10</span>
                         </div>
                     </div>
                 </div>
@@ -344,8 +350,7 @@
                         Hourly Forecast
                     </div>
 
-                    <div
-                        class="details flex items-center justify-between  w-full pb-1 gap-2 sm:gap-3">
+                    <div class="details flex items-center justify-between  w-full pb-1 gap-2 sm:gap-3">
                         <!-- Hour 1 -->
                         <div
                             class="flex flex-col gap-1 justify-center items-center bg-white/90 p-2.5 rounded-lg border border-slate-100 shrink-0 flex-1 min-w-17.5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:bg-sky-50/80 hover:border-sky-300 cursor-pointer group">
@@ -546,6 +551,7 @@
     </footer>
 
     <script src="JS/app-UI.js"></script>
+    <script src="JS/current-location.js"></script>
 </body>
 
 </html>
