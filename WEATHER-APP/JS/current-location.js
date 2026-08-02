@@ -113,29 +113,48 @@ fetchWeather("q=Lucknow");
 async function hourlyForecast(queryParam = "Lucknow") {
   const hourlyUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${queryParam}&cnt=5&appid=${apiKey}&units=metric`;
 
-  const req = await fetch(hourlyUrl);
+  try {
+    const req = await fetch(hourlyUrl);
 
-  if (!req.ok) {
-    alert("City not found. Please try again.");
-    throw new Error(`City not found (${req.status})`);
+    if (!req.ok) {
+      alert("City not found. Please try again.");
+      throw new Error(`City not found (${req.status})`);
+    }
+    const hourlyData = await req.json();
+
+    const hourlyTime = document.querySelectorAll(".forecast-time");
+    const hourlyIcon = document.querySelectorAll(".forecast-icon");
+    const hourlyTemp = document.querySelectorAll(".forecast-temp");
+
+    const hourlyForecastList = hourlyData.list.map((item, index) => ({
+      time:
+        index === 0
+          ? "Now"
+          : new Date(item.dt * 1000).toLocaleTimeString("en-IN", {
+              hour: "numeric",
+              hour12: true,
+            }),
+      temp: Math.round(item.main.temp),
+      icon: item.weather[0].icon,
+      description: item.weather[0].description,
+    }));
+
+    hourlyForecastList.forEach((data, index) => {
+      if (hourlyTime[index]) {
+        hourlyTime[index].textContent = data.time;
+      }
+      if (hourlyTemp[index]) {
+        hourlyTemp[index].textContent = data.temp;
+      }
+      if (hourlyIcon[index]) {
+        hourlyIcon[index].src =
+          `https://openweathermap.org/img/wn/${data.icon}@2x.png`;
+        hourlyIcon[index].alt = data.description;
+      }
+    });
+  } catch (error) {
+    console.error("Error fetching forecast:", error);
   }
-
-  const hourlyData = await req.json();
-
-  console.log(hourlyData);
-
-  const hourlyForecast = hourlyData.list.map((item) => ({
-    // date: item.dt_txt.split(" ")[0],
-    time: new Date(item.dt * 1000).toLocaleTimeString("en-IN", {
-      hour: "numeric",
-      minute: "2-digit",
-      hour12: true,
-    }),
-    temp: Math.round(item.main.temp),
-    icon: item.weather[0].icon,
-  }));
-
-  console.log(hourlyForecast);
 }
 
 hourlyForecast("Lucknow");
