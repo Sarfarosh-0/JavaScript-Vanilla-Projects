@@ -54,10 +54,6 @@ const searchButton = document.getElementById("searchButton");
 
 const apiKey = "";
 
-const ha = `https://api.openweathermap.org/data/2.5/forecast/hourly?&appid=${apiKey}&units=metric`;
-
-console.log(ha);
-
 const backgroundMap = {
   Thunderstorm: "Resources/backgrounds/Thunderstorm.png",
   Drizzle: "Resources/backgrounds/Light-Rain.png",
@@ -147,3 +143,33 @@ searchInput.addEventListener("keypress", (event) => {
 });
 
 fetchWeather("q=Lucknow");
+
+async function hourlyForecast(queryParam = "Lucknow") {
+  const hourlyUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${queryParam}&cnt=5&appid=${apiKey}&units=metric`;
+
+  const req = await fetch(hourlyUrl);
+
+  if (!req.ok) {
+    alert("City not found. Please try again.");
+    throw new Error(`City not found (${req.status})`);
+  }
+
+  const hourlyData = await req.json();
+
+  console.log(hourlyData);
+
+  const hourlyForecast = hourlyData.list.map((item) => ({
+    // date: item.dt_txt.split(" ")[0],
+    time: new Date(item.dt * 1000).toLocaleTimeString("en-IN", {
+      hour: "numeric",
+      minute: "2-digit",
+      hour12: true,
+    }),
+    temp: Math.round(item.main.temp),
+    icon: item.weather[0].icon,
+  }));
+
+  console.log(hourlyForecast);
+}
+
+hourlyForecast("Lucknow");
