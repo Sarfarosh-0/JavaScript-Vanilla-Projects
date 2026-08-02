@@ -40,8 +40,8 @@ const atmosphereConditions = [
   "Tornado",
 ];
 
-async function fetchWeather(queryParam = "q=Lucknow") {
-  const url = `https://api.openweathermap.org/data/2.5/weather?${queryParam}&appid=${apiKey}&units=metric`;
+async function fetchWeather(queryParam = "Lucknow") {
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${queryParam}&appid=${apiKey}&units=metric`;
 
   try {
     const res = await fetch(url);
@@ -92,24 +92,6 @@ async function fetchWeather(queryParam = "q=Lucknow") {
   }
 }
 
-function handleSearch() {
-  const query = searchInput.value.trim();
-  if (query !== "") {
-    fetchWeather(`q=${query}`);
-    searchInput.value = "";
-  }
-}
-
-searchButton.addEventListener("click", handleSearch);
-
-searchInput.addEventListener("keypress", (event) => {
-  if (event.key === "Enter") {
-    handleSearch();
-  }
-});
-
-fetchWeather("q=Lucknow");
-
 async function hourlyForecast(queryParam = "Lucknow") {
   const hourlyUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${queryParam}&cnt=5&appid=${apiKey}&units=metric`;
 
@@ -117,7 +99,6 @@ async function hourlyForecast(queryParam = "Lucknow") {
     const req = await fetch(hourlyUrl);
 
     if (!req.ok) {
-      alert("City not found. Please try again.");
       throw new Error(`City not found (${req.status})`);
     }
     const hourlyData = await req.json();
@@ -157,4 +138,23 @@ async function hourlyForecast(queryParam = "Lucknow") {
   }
 }
 
+function handleSearch() {
+  const query = searchInput.value.trim();
+  if (query !== "") {
+    fetchWeather(query);
+    hourlyForecast(query);
+    searchInput.value = "";
+  }
+}
+
+searchButton.addEventListener("click", handleSearch);
+
+searchInput.addEventListener("keypress", (event) => {
+  if (event.key === "Enter") {
+    handleSearch();
+  }
+});
+
+// Initial load for Lucknow
+fetchWeather("Lucknow");
 hourlyForecast("Lucknow");
