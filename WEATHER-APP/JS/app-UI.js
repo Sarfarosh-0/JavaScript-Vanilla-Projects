@@ -27,3 +27,30 @@ function UpdateClock() {
 
 UpdateClock();
 setInterval(UpdateClock, 1000);
+
+document.addEventListener("DOMContentLoaded", () => {
+  const navLinks = document.querySelectorAll("#mobile-footer .nav-link");
+  const activeBgClasses = ["bg-sky-100", "text-sky-600", "rounded-xl"];
+  const inactiveTextClass = "text-slate-500";
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", function () {
+      // 1. Reset all links
+      navLinks.forEach((item) => {
+        item.classList.remove(...activeBgClasses);
+        item.classList.add(inactiveTextClass);
+
+        const label = item.querySelector("span");
+        if (label) label.classList.add("hidden");
+      });
+
+      // 2. Set clicked link to active
+      this.classList.remove(inactiveTextClass);
+      this.classList.add(...activeBgClasses);
+
+      // 3. Show text label
+      const activeLabel = this.querySelector("span");
+      if (activeLabel) activeLabel.classList.remove("hidden");
+    });
+  });
+});

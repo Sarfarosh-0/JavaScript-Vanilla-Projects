@@ -1,37 +1,3 @@
-// function getUserLocation() {
-//   if (navigator.geolocation) {
-//     navigator.geolocation.getCurrentPosition(showPosition, showError);
-//   } else {
-//     console.log("Geolocation is not supported by this browser.");
-//   }
-// }
-
-// // Success callback function
-// function showPosition(position) {
-//   const lat = position.coords.latitude;
-//   const lon = position.coords.longitude;
-//   console.log(lat);
-//   console.log(lon);
-
-// }
-
-// // Error handling callback function
-// function showError(error) {
-//   switch (error.code) {
-//     case error.PERMISSION_DENIED:
-//       console.log("User denied the request for Geolocation.");
-//       break;
-//     case error.POSITION_UNAVAILABLE:
-//       console.log("Location information is unavailable.");
-//       break;
-//     case error.TIMEOUT:
-//       console.log("The request to get user location timed out.");
-//       break;
-//     default:
-//       console.log("An unknown error occurred.");
-//   }
-// }
-
 // DOM Elements
 const city = document.getElementById("city");
 const country = document.getElementById("country");
