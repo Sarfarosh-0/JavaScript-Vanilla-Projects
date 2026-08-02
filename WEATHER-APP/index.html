@@ -16,7 +16,6 @@
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             width: 100%;
-            min-height: 100vh;
             scroll-behavior: smooth;
         }
 
@@ -107,16 +106,6 @@
         .animate-fade-in {
             animation: fadeIn 0.5s ease-out forwards;
         }
-
-        /* Custom Scrollbar for Forecast Row */
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
     </style>
 </head>
 
@@ -142,7 +131,7 @@
         <nav class="mb-auto flex flex-col gap-1.5 overflow-y-auto px-3 py-4">
 
             <!-- Home Nav Link -->
-            <button type="button"
+            <a href="#"
                 class="group flex w-full cursor-pointer items-center gap-3.5 rounded-2xl px-4 py-3 font-semibold text-slate-600 transition-all duration-200 hover:bg-sky-50 hover:text-sky-600 active:scale-95">
                 <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform group-hover:scale-110 group-hover:text-sky-600"
                     fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -150,10 +139,10 @@
                         d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                 </svg>
                 <span class="truncate">Home</span>
-            </button>
+            </a>
 
             <!-- Search Nav Link -->
-            <button type="button"
+            <a href="#searchInput"
                 class="group flex w-full cursor-pointer items-center gap-3.5 rounded-2xl px-4 py-3 font-semibold text-slate-600 transition-all duration-200 hover:bg-sky-50 hover:text-sky-600 active:scale-95">
                 <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform group-hover:scale-110 group-hover:text-sky-600"
                     fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -161,7 +150,7 @@
                         d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
                 <span class="truncate">Search</span>
-            </button>
+            </a>
 
             <!-- Cities Nav Link -->
             <a href="#popularCities"

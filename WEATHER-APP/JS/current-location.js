@@ -54,6 +54,10 @@ const searchButton = document.getElementById("searchButton");
 
 const apiKey = "";
 
+const ha = `https://api.openweathermap.org/data/2.5/forecast/hourly?&appid=${apiKey}&units=metric`;
+
+console.log(ha);
+
 const backgroundMap = {
   Thunderstorm: "Resources/backgrounds/Thunderstorm.png",
   Drizzle: "Resources/backgrounds/Light-Rain.png",
@@ -130,7 +134,7 @@ function handleSearch() {
   const query = searchInput.value.trim();
   if (query !== "") {
     fetchWeather(`q=${query}`);
-    searchInput.value = ""; 
+    searchInput.value = "";
   }
 }
 
