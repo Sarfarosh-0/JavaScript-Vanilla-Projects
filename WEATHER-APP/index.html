@@ -21,37 +21,37 @@
 
         .delhi {
             background-image:
-                linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.6)),
                 url('Resources/popular%20cities/Delhi.jpg');
         }
 
         .london {
             background-image:
-                linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.6)),
                 url('Resources/popular%20cities/London.jpg');
         }
 
         .tokyo {
             background-image:
-                linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.6)),
                 url('Resources/popular%20cities/Japan.jpg');
         }
 
         .dubai {
             background-image:
-                linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.6)),
                 url('Resources/popular%20cities/Dubai.jpg');
         }
 
         .paris {
             background-image:
-                linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.6)),
                 url('Resources/popular%20cities/Paris.jpg');
         }
 
         .lisbon {
             background-image:
-                linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.6)),
                 url('Resources/popular%20cities/Lisbon.jpg');
         }
 
@@ -63,12 +63,12 @@
 
         .city-card:hover {
             transform: translateY(-6px) scale(1.03);
-            box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5);
         }
 
         #currentLocation {
             background-image:
-                linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
+                linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.65)),
                 url('');
             background-size: cover;
             background-position: center;
@@ -109,21 +109,21 @@
     </style>
 </head>
 
-<body class="bg-slate-100 flex overflow-x-hidden min-h-screen">
+<body class="bg-slate-950 text-slate-100 flex overflow-x-hidden min-h-screen">
 
     <!-- Sidebar  -->
     <aside id="sidebar" aria-label="Primary Navigation"
-        class="fixed hidden top-0 left-0 z-50 w-56 h-full bg-white/80 backdrop-blur-xl border-r border-slate-200/80 md:flex flex-col justify-between transition-transform duration-300 ease-in-out shadow-2xl">
+        class="fixed hidden top-0 left-0 z-50 w-56 h-full bg-slate-900/80 backdrop-blur-xl border-r border-slate-800 md:flex flex-col justify-between transition-transform duration-300 ease-in-out shadow-2xl">
 
         <!-- Header -->
-        <div class="flex items-center justify-between border-b border-slate-200/80 py-5 px-4 shrink-0">
+        <div class="flex items-center justify-between border-b border-slate-800 py-5 px-4 shrink-0">
             <div class="flex items-center gap-3 min-w-0">
                 <div
-                    class="p-2 rounded-xl bg-sky-500/10 border border-sky-500/20 shrink-0 transition-transform duration-300 hover:rotate-12">
+                    class="p-2 rounded-xl bg-indigo-500/10 border border-indigo-500/20 shrink-0 transition-transform duration-300 hover:rotate-12">
                     <img src="https://cdn-icons-png.flaticon.com/128/1146/1146869.png" alt="App Logo" draggable="false"
                         class="w-6 h-6 object-contain">
                 </div>
-                <h2 class="font-bold text-lg text-slate-800 tracking-wide truncate">WeatherApp</h2>
+                <h2 class="font-bold text-lg text-slate-100 tracking-wide truncate">WeatherApp</h2>
             </div>
         </div>
 
@@ -132,8 +132,8 @@
 
             <!-- Home Nav Link -->
             <a href="#"
-                class="group flex w-full cursor-pointer items-center gap-3.5 rounded-2xl px-4 py-3 font-semibold text-slate-600 transition-all duration-200 hover:bg-sky-50 hover:text-sky-600 active:scale-95">
-                <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform group-hover:scale-110 group-hover:text-sky-600"
+                class="group flex w-full cursor-pointer items-center gap-3.5 rounded-2xl px-4 py-3 font-semibold text-slate-400 transition-all duration-200 hover:bg-indigo-950/50 hover:text-indigo-400 active:scale-95">
+                <svg class="h-5 w-5 shrink-0 text-slate-400 transition-transform group-hover:scale-110 group-hover:text-indigo-400"
                     fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round"
                         d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
@@ -143,8 +143,8 @@
 
             <!-- Search Nav Link -->
             <a href="#searchInput"
-                class="group flex w-full cursor-pointer items-center gap-3.5 rounded-2xl px-4 py-3 font-semibold text-slate-600 transition-all duration-200 hover:bg-sky-50 hover:text-sky-600 active:scale-95">
-                <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform group-hover:scale-110 group-hover:text-sky-600"
+                class="group flex w-full cursor-pointer items-center gap-3.5 rounded-2xl px-4 py-3 font-semibold text-slate-400 transition-all duration-200 hover:bg-indigo-950/50 hover:text-indigo-400 active:scale-95">
+                <svg class="h-5 w-5 shrink-0 text-slate-400 transition-transform group-hover:scale-110 group-hover:text-indigo-400"
                     fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round"
                         d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -154,8 +154,8 @@
 
             <!-- Cities Nav Link -->
             <a href="#popularCities"
-                class="group flex w-full cursor-pointer items-center gap-3.5 rounded-2xl px-4 py-3 font-semibold text-slate-600 transition-all duration-200 hover:bg-sky-50 hover:text-sky-600 active:scale-95">
-                <svg class="h-5 w-5 shrink-0 text-slate-500 transition-transform group-hover:scale-110 group-hover:text-sky-600"
+                class="group flex w-full cursor-pointer items-center gap-3.5 rounded-2xl px-4 py-3 font-semibold text-slate-400 transition-all duration-200 hover:bg-indigo-950/50 hover:text-indigo-400 active:scale-95">
+                <svg class="h-5 w-5 shrink-0 text-slate-400 transition-transform group-hover:scale-110 group-hover:text-indigo-400"
                     fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round"
                         d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -167,7 +167,7 @@
 
         <!-- Bottom Promo Card -->
         <div
-            class="m-4 p-4 rounded-2xl flex flex-col justify-center gap-3 items-center bg-linear-to-br from-sky-500 to-blue-600 shadow-md shadow-sky-500/20 shrink-0 text-center transition-transform hover:scale-[1.02] duration-300 cursor-pointer">
+            class="m-4 p-4 rounded-2xl flex flex-col justify-center gap-3 items-center bg-linear-to-br from-indigo-600 to-violet-700 shadow-lg shadow-indigo-950/50 shrink-0 text-center transition-transform hover:scale-[1.02] duration-300 cursor-pointer">
             <img src="https://cdn-icons-png.flaticon.com/128/1146/1146869.png" alt="App Logo" draggable="false"
                 class="w-7 h-7 object-contain shrink-0 animate-float">
             <p class="font-bold text-white text-xs leading-relaxed">
@@ -181,16 +181,16 @@
         <header class="relative w-full z-40">
             <!-- Search Form Container -->
             <div
-                class="flex h-14 sm:h-16 w-full items-center justify-center rounded-2xl border border-slate-200/80 bg-white/70 p-2 shadow-sm backdrop-blur-md transition-shadow duration-300 hover:shadow-md">
+                class="flex h-14 sm:h-16 w-full items-center justify-center rounded-2xl border border-slate-800 bg-slate-900/70 p-2 shadow-sm backdrop-blur-md transition-shadow duration-300 hover:shadow-md">
                 <div
-                    class="group flex h-full flex-1 items-center justify-between gap-3 rounded-xl border border-slate-200/60 bg-slate-50/50 px-3 sm:px-4 transition-all duration-300 focus-within:border-sky-400 focus-within:bg-white focus-within:ring-2 focus-within:ring-sky-400/20">
+                    class="group flex h-full flex-1 items-center justify-between gap-3 rounded-xl border border-slate-800 bg-slate-950/60 px-3 sm:px-4 transition-all duration-300 focus-within:border-indigo-500 focus-within:bg-slate-950 focus-within:ring-2 focus-within:ring-indigo-500/20">
 
                     <input type="text" id="searchInput" autocomplete="off"
                         placeholder="Search city (e.g., London, Tokyo)..." aria-label="Search City"
-                        class="h-full w-full min-w-0 bg-transparent text-sm sm:text-base font-medium text-slate-700 placeholder:text-slate-400 focus:outline-none" />
+                        class="h-full w-full min-w-0 bg-transparent text-sm sm:text-base font-medium text-slate-100 placeholder:text-slate-500 focus:outline-none" />
 
                     <button id="searchButton" type="button" aria-label="Submit Search"
-                        class="flex shrink-0 items-center justify-center rounded-full bg-sky-100 p-2 text-sky-600 transition-all duration-200 hover:scale-105 hover:bg-sky-600 hover:text-white active:scale-95">
+                        class="flex shrink-0 items-center justify-center rounded-full bg-indigo-950 p-2 text-indigo-400 transition-all duration-200 hover:scale-105 hover:bg-indigo-600 hover:text-white active:scale-95">
                         <svg class="h-4 w-4 sm:h-5 sm:w-5" fill="none" stroke="currentColor" stroke-width="2"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -201,25 +201,25 @@
             </div>
 
             <div id="searchResults"
-                class="hidden absolute left-0 right-0 top-18 mt-1 max-h-60 overflow-y-auto rounded-2xl border border-slate-200 bg-white/95 p-2 shadow-xl backdrop-blur-md z-50">
+                class="hidden absolute left-0 right-0 top-18 mt-1 max-h-60 overflow-y-auto rounded-2xl border border-slate-800 bg-slate-900/95 p-2 shadow-xl backdrop-blur-md z-50">
             </div>
         </header>
 
         <main class="flex flex-col gap-5 mt-4">
             <section id="currentLocation"
-                class="w-full rounded-2xl p-4 sm:p-6 shadow-xl hover:shadow-2xl border border-slate-200/80 flex flex-col gap-6">
+                class="w-full rounded-2xl p-4 sm:p-6 shadow-xl hover:shadow-2xl border border-slate-800 flex flex-col gap-6">
 
                 <!-- Top Row: Location & Date -->
                 <div id="dateLocation" class="flex flex-col gap-1">
-                    <div class="flex gap-2 items-center font-bold text-slate-800 text-base sm:text-lg">
-                        <img src="https://img.icons8.com/ios/100/0284c7/marker--v1.png" alt="Location Icon"
+                    <div class="flex gap-2 items-center font-bold text-slate-100 text-base sm:text-lg">
+                        <img src="https://img.icons8.com/ios/100/818cf8/marker--v1.png" alt="Location Icon"
                             draggable="false"
                             class="w-4 h-4 shrink-0 transition-transform duration-300 hover:animate-bounce">
                         <span id="city" class="after:content-[',_']">New York</span>
                         <span id="country">USA</span>
                     </div>
 
-                    <div class="flex items-center gap-1 text-slate-500 text-xs sm:text-sm font-medium flex-wrap">
+                    <div class="flex items-center gap-1 text-slate-400 text-xs sm:text-sm font-medium flex-wrap">
                         <span id="Month"></span>
                         <span id="Date"></span>
                         <span id="Year"></span>
@@ -241,45 +241,45 @@
                             class="w-20 h-20 sm:w-28 sm:h-28 lg:w-32 lg:h-32 object-contain shrink-0 animate-float">
                         <div class="weather-details flex flex-col gap-0.5">
                             <h1 id="cityTemp"
-                                class=" text-3xl sm:text-5xl font-extrabold text-slate-800 tracking-tight after:content-['_°C']">
+                                class=" text-3xl sm:text-5xl font-extrabold text-slate-100 tracking-tight after:content-['_°C']">
                                 28</h1>
-                            <p id="weatherType" class="text-slate-600 font-semibold text-sm sm:text-base">Sunny Day</p>
-                            <p class="text-slate-500 text-[15px] ">
+                            <p id="weatherType" class="text-slate-300 font-semibold text-sm sm:text-base">Sunny Day</p>
+                            <p class="text-slate-400 text-[15px] ">
                                 Feels like <span id="feelsLikes" class="after:content-['_°C']">57</span>
                             </p>
                         </div>
                     </div>
 
                     <!-- Divider line -->
-                    <div class="w-full lg:w-px h-px lg:h-24 bg-slate-200/80"></div>
+                    <div class="w-full lg:w-px h-px lg:h-24 bg-slate-800"></div>
 
                     <!-- Secondary Metrics -->
                     <div
                         class="other-details grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 gap-3 sm:gap-6 w-full lg:w-auto text-center lg:text-left">
-                        <div class="flex flex-col p-2 rounded-xl transition-all duration-200 hover:bg-white/40">
+                        <div class="flex flex-col p-2 rounded-xl transition-all duration-200 hover:bg-slate-800/40">
                             <span
                                 class="text-[10px] sm:text-xs font-semibold text-slate-400 uppercase tracking-wider">Humidity</span>
                             <span id="humidity"
-                                class="font-bold text-slate-700 text-sm sm:text-lg after:content-['_%']">55</span>
+                                class="font-bold text-slate-200 text-sm sm:text-lg after:content-['_%']">55</span>
                         </div>
-                        <div class="flex flex-col p-2 rounded-xl transition-all duration-200 hover:bg-white/40">
+                        <div class="flex flex-col p-2 rounded-xl transition-all duration-200 hover:bg-slate-800/40">
                             <span
                                 class="text-[10px] sm:text-xs font-semibold text-slate-400 uppercase tracking-wider">Wind
                                 Speed</span>
                             <span id="windSpeed"
-                                class="font-bold text-slate-700 text-sm sm:text-lg after:content-['_km/h']">12</span>
+                                class="font-bold text-slate-200 text-sm sm:text-lg after:content-['_km/h']">12</span>
                         </div>
-                        <div class="flex flex-col p-2 rounded-xl transition-all duration-200 hover:bg-white/40">
+                        <div class="flex flex-col p-2 rounded-xl transition-all duration-200 hover:bg-slate-800/40">
                             <span
                                 class="text-[10px] sm:text-xs font-semibold text-slate-400 uppercase tracking-wider">Pressure</span>
                             <span id="pressure"
-                                class="font-bold text-slate-700 text-sm sm:text-lg after:content-['_hPa']">1013</span>
+                                class="font-bold text-slate-200 text-sm sm:text-lg after:content-['_hPa']">1013</span>
                         </div>
-                        <div class="flex flex-col p-2 rounded-xl transition-all duration-200 hover:bg-white/40">
+                        <div class="flex flex-col p-2 rounded-xl transition-all duration-200 hover:bg-slate-800/40">
                             <span
                                 class="text-[10px] sm:text-xs font-semibold text-slate-400 uppercase tracking-wider">Visibility</span>
                             <span id="visibility"
-                                class="font-bold text-slate-700 text-sm sm:text-lg after:content-['_km']">10</span>
+                                class="font-bold text-slate-200 text-sm sm:text-lg after:content-['_km']">10</span>
                         </div>
                     </div>
                 </div>
@@ -289,9 +289,9 @@
 
                 <!-- Min/Max Temp Card -->
                 <div
-                    class="temp flex flex-col justify-evenly p-4 rounded-xl border border-slate-200/80 bg-white/80 backdrop-blur-sm shadow-sm hover:shadow-md transition-all duration-300 w-full lg:w-fit shrink-0">
+                    class="temp flex flex-col justify-evenly p-4 rounded-xl border border-slate-800 bg-slate-900/80 backdrop-blur-sm shadow-sm hover:shadow-md transition-all duration-300 w-full lg:w-fit shrink-0">
 
-                    <div class="font-bold text-base sm:text-lg text-slate-800">
+                    <div class="font-bold text-base sm:text-lg text-slate-100">
                         Today's Overview
                     </div>
 
@@ -309,17 +309,17 @@
                                     class="text-[10px] sm:text-xs font-semibold text-slate-400 uppercase tracking-wider">Max
                                     Temp</span>
                                 <span id="maxTemp"
-                                    class="text-base sm:text-xl font-extrabold text-slate-800 leading-tight after:content-['°C']">30</span>
+                                    class="text-base sm:text-xl font-extrabold text-slate-100 leading-tight after:content-['°C']">30</span>
                             </div>
                         </div>
 
                         <!-- Vertical Divider -->
-                        <div class="w-px h-8 bg-slate-200"></div>
+                        <div class="w-px h-8 bg-slate-800"></div>
 
                         <!-- Min Temperature -->
                         <div class="min flex items-center gap-2 sm:gap-3.5 group cursor-pointer">
                             <div
-                                class="p-2 rounded-lg bg-sky-500/10 border border-sky-500/20 shrink-0 transition-transform duration-300 group-hover:scale-110">
+                                class="p-2 rounded-lg bg-indigo-500/10 border border-indigo-500/20 shrink-0 transition-transform duration-300 group-hover:scale-110">
                                 <img src="https://img.icons8.com/stickers/100/temperature-low.png"
                                     alt="Minimum Temperature" draggable="false"
                                     class="w-7 h-7 sm:w-9 sm:h-9 object-contain">
@@ -329,7 +329,7 @@
                                     class="text-[10px] sm:text-xs font-semibold text-slate-400 uppercase tracking-wider">Min
                                     Temp</span>
                                 <span id="minTemp"
-                                    class="text-base sm:text-xl font-extrabold text-slate-800 leading-tight after:content-['°C']">18</span>
+                                    class="text-base sm:text-xl font-extrabold text-slate-100 leading-tight after:content-['°C']">18</span>
                             </div>
                         </div>
                     </div>
@@ -337,56 +337,56 @@
 
                 <!-- Hourly Forecast Card -->
                 <div
-                    class="future-forecast flex flex-col justify-between gap-3 p-4 rounded-xl border border-slate-200/80 bg-white/80 backdrop-blur-sm shadow-sm hover:shadow-md transition-all duration-300 flex-1 min-w-0">
-                    <div class="font-bold text-base sm:text-lg text-slate-800">
+                    class="future-forecast flex flex-col justify-between gap-3 p-4 rounded-xl border border-slate-800 bg-slate-900/80 backdrop-blur-sm shadow-sm hover:shadow-md transition-all duration-300 flex-1 min-w-0">
+                    <div class="font-bold text-base sm:text-lg text-slate-100">
                         Future Forecast
                     </div>
                     <div
-                        class="details flex items-center justify-between w-full pb-2 gap-2 sm:gap-3 overflow-x-auto [&::-webkit-scrollbar]:h-1.5 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-slate-300 [&::-webkit-scrollbar-track]:bg-transparent">
+                        class="details flex items-center justify-between w-full pb-2 gap-2 sm:gap-3 overflow-x-auto [&::-webkit-scrollbar]:h-1.5 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-slate-700 [&::-webkit-scrollbar-track]:bg-transparent">
 
                         <!-- 1st -->
                         <div
-                            class="flex flex-col gap-1 justify-center items-center bg-white/90 p-2.5 rounded-lg border border-slate-100 shrink-0 flex-1 min-w-17.5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:bg-sky-50/80 hover:border-sky-300 cursor-pointer group">
-                            <span class="forecast-time uppercase text-xs font-medium text-slate-500"></span>
+                            class="flex flex-col gap-1 justify-center items-center bg-slate-950/80 p-2.5 rounded-lg border border-slate-800 shrink-0 flex-1 min-w-17.5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:bg-indigo-950/40 hover:border-indigo-500/50 cursor-pointer group">
+                            <span class="forecast-time uppercase text-xs font-medium text-slate-400"></span>
                             <img src="" alt="Icon" draggable="false"
                                 class="forecast-icon w-7 h-7 object-contain shrink-0 transition-transform duration-300 group-hover:scale-110">
-                            <span class="forecast-temp text-sm font-bold text-slate-800 after:content-['°C']">28</span>
+                            <span class="forecast-temp text-sm font-bold text-slate-100 after:content-['°C']">28</span>
                         </div>
 
                         <!-- 2nd -->
                         <div
-                            class="flex flex-col gap-1 justify-center items-center bg-white/90 p-2.5 rounded-lg border border-slate-100 shrink-0 flex-1 min-w-17.5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:bg-sky-50/80 hover:border-sky-300 cursor-pointer group">
-                            <span class="forecast-time uppercase text-xs font-medium text-slate-500"></span>
+                            class="flex flex-col gap-1 justify-center items-center bg-slate-950/80 p-2.5 rounded-lg border border-slate-800 shrink-0 flex-1 min-w-17.5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:bg-indigo-950/40 hover:border-indigo-500/50 cursor-pointer group">
+                            <span class="forecast-time uppercase text-xs font-medium text-slate-400"></span>
                             <img src="" alt="Icon" draggable="false"
                                 class="forecast-icon w-7 h-7 object-contain shrink-0 transition-transform duration-300 group-hover:scale-110">
-                            <span class="forecast-temp text-sm font-bold text-slate-800 after:content-['°C']">29</span>
+                            <span class="forecast-temp text-sm font-bold text-slate-100 after:content-['°C']">29</span>
                         </div>
 
                         <!-- 3rd -->
                         <div
-                            class="flex flex-col gap-1 justify-center items-center bg-white/90 p-2.5 rounded-lg border border-slate-100 shrink-0 flex-1 min-w-17.5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:bg-sky-50/80 hover:border-sky-300 cursor-pointer group">
-                            <span class="forecast-time uppercase text-xs font-medium text-slate-500"></span>
+                            class="flex flex-col gap-1 justify-center items-center bg-slate-950/80 p-2.5 rounded-lg border border-slate-800 shrink-0 flex-1 min-w-17.5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:bg-indigo-950/40 hover:border-indigo-500/50 cursor-pointer group">
+                            <span class="forecast-time uppercase text-xs font-medium text-slate-400"></span>
                             <img src="" alt="Icon" draggable="false"
                                 class="forecast-icon w-7 h-7 object-contain shrink-0 transition-transform duration-300 group-hover:scale-110">
-                            <span class="forecast-temp text-sm font-bold text-slate-800 after:content-['°C']">30</span>
+                            <span class="forecast-temp text-sm font-bold text-slate-100 after:content-['°C']">30</span>
                         </div>
 
                         <!-- 4th -->
                         <div
-                            class="flex flex-col gap-1 justify-center items-center bg-white/90 p-2.5 rounded-lg border border-slate-100 shrink-0 flex-1 min-w-17.5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:bg-sky-50/80 hover:border-sky-300 cursor-pointer group">
-                            <span class="forecast-time uppercase text-xs font-medium text-slate-500"></span>
+                            class="flex flex-col gap-1 justify-center items-center bg-slate-950/80 p-2.5 rounded-lg border border-slate-800 shrink-0 flex-1 min-w-17.5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:bg-indigo-950/40 hover:border-indigo-500/50 cursor-pointer group">
+                            <span class="forecast-time uppercase text-xs font-medium text-slate-400"></span>
                             <img src="" alt="Icon" draggable="false"
                                 class="forecast-icon w-7 h-7 object-contain shrink-0 transition-transform duration-300 group-hover:scale-110">
-                            <span class="forecast-temp text-sm font-bold text-slate-800 after:content-['°C']">30</span>
+                            <span class="forecast-temp text-sm font-bold text-slate-100 after:content-['°C']">30</span>
                         </div>
 
                         <!-- 5th -->
                         <div
-                            class="flex flex-col gap-1 justify-center items-center bg-white/90 p-2.5 rounded-lg border border-slate-100 shrink-0 flex-1 min-w-17.5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:bg-sky-50/80 hover:border-sky-300 cursor-pointer group">
-                            <span class="forecast-time uppercase text-xs font-medium text-slate-500"></span>
+                            class="flex flex-col gap-1 justify-center items-center bg-slate-950/80 p-2.5 rounded-lg border border-slate-800 shrink-0 flex-1 min-w-17.5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:bg-indigo-950/40 hover:border-indigo-500/50 cursor-pointer group">
+                            <span class="forecast-time uppercase text-xs font-medium text-slate-400"></span>
                             <img src="" alt="Icon" draggable="false"
                                 class="forecast-icon w-7 h-7 object-contain shrink-0 transition-transform duration-300 group-hover:scale-110">
-                            <span class="forecast-temp text-sm font-bold text-slate-800 after:content-['°C']">29</span>
+                            <span class="forecast-temp text-sm font-bold text-slate-100 after:content-['°C']">29</span>
                         </div>
                     </div>
                 </div>
@@ -395,9 +395,9 @@
 
             <!-- Popular Cities -->
             <section id="popularCities"
-                class="cities-outer-box flex w-full flex-col gap-4 rounded-2xl border border-slate-200/80 bg-white/80 p-4 sm:p-6 backdrop-blur-md shadow-xl">
+                class="cities-outer-box flex w-full flex-col gap-4 rounded-2xl border border-slate-800 bg-slate-900/80 p-4 sm:p-6 backdrop-blur-md shadow-xl">
 
-                <h2 class="text-base sm:text-lg font-bold text-slate-800">
+                <h2 class="text-base sm:text-lg font-bold text-slate-100">
                     Popular Cities
                 </h2>
 
@@ -405,103 +405,103 @@
 
                     <!-- Delhi -->
                     <button type="button"
-                        class="delhi city-card group flex flex-col justify-between rounded-2xl border border-slate-200 bg-white/50 p-3 text-left transition-all duration-200 hover:-translate-y-1 hover:border-sky-300 hover:bg-sky-50/50 hover:shadow-md active:scale-95">
+                        class="delhi city-card group flex flex-col justify-between rounded-2xl border border-slate-800 bg-slate-950/50 p-3 text-left transition-all duration-200 hover:-translate-y-1 hover:border-indigo-500/50 hover:bg-indigo-950/30 hover:shadow-md active:scale-95">
                         <div class="city-header flex items-center justify-between gap-2">
                             <img id="delhiIcon" src="" alt="Heavy Rain Weather" draggable="false"
                                 class="h-8 w-8 sm:h-10 sm:w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110">
                             <div class="flex flex-col text-right">
-                                <span class="text-xs font-bold uppercase tracking-wider text-slate-800">Delhi</span>
-                                <span class="text-[10px] font-semibold text-slate-500">India</span>
+                                <span class="text-xs font-bold uppercase tracking-wider text-slate-100">Delhi</span>
+                                <span class="text-[10px] font-semibold text-slate-400">India</span>
                             </div>
                         </div>
                         <div class="mt-2 text-center">
                             <span id="delhiTemp"
-                                class="text-lg sm:text-xl font-bold text-slate-800 after:content-['°C']">30</span>
+                                class="text-lg sm:text-xl font-bold text-slate-100 after:content-['°C']">30</span>
                         </div>
                     </button>
 
                     <!-- London -->
                     <button type="button"
-                        class="london city-card group flex flex-col justify-between rounded-2xl border border-slate-200 bg-white/50 p-3 text-left transition-all duration-200 hover:-translate-y-1 hover:border-sky-300 hover:bg-sky-50/50 hover:shadow-md active:scale-95">
+                        class="london city-card group flex flex-col justify-between rounded-2xl border border-slate-800 bg-slate-950/50 p-3 text-left transition-all duration-200 hover:-translate-y-1 hover:border-indigo-500/50 hover:bg-indigo-950/30 hover:shadow-md active:scale-95">
                         <div class="city-header flex items-center justify-between gap-2">
                             <img id="londonIcon" src="" alt="Sunny Weather" draggable="false"
                                 class="h-8 w-8 sm:h-10 sm:w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110">
                             <div class="flex flex-col text-right">
-                                <span class="text-xs font-bold uppercase tracking-wider text-slate-800">London</span>
-                                <span class="text-[10px] font-semibold text-slate-500">UK</span>
+                                <span class="text-xs font-bold uppercase tracking-wider text-slate-100">London</span>
+                                <span class="text-[10px] font-semibold text-slate-400">UK</span>
                             </div>
                         </div>
                         <div class="mt-2 text-center">
                             <span id="londonTemp"
-                                class="text-lg sm:text-xl font-bold text-slate-800 after:content-['°C']">19</span>
+                                class="text-lg sm:text-xl font-bold text-slate-100 after:content-['°C']">19</span>
                         </div>
                     </button>
 
                     <!-- Tokyo -->
                     <button type="button"
-                        class="tokyo city-card group flex flex-col justify-between rounded-2xl border border-slate-200 bg-white/50 p-3 text-left transition-all duration-200 hover:-translate-y-1 hover:border-sky-300 hover:bg-sky-50/50 hover:shadow-md active:scale-95">
+                        class="tokyo city-card group flex flex-col justify-between rounded-2xl border border-slate-800 bg-slate-950/50 p-3 text-left transition-all duration-200 hover:-translate-y-1 hover:border-indigo-500/50 hover:bg-indigo-950/30 hover:shadow-md active:scale-95">
                         <div class="city-header flex items-center justify-between gap-2">
                             <img id="tokyoIcon" src="" alt="Light Rain Weather" draggable="false"
                                 class="h-8 w-8 sm:h-10 sm:w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110">
                             <div class="flex flex-col text-right">
-                                <span class="text-xs font-bold uppercase tracking-wider text-slate-800">Tokyo</span>
-                                <span class="text-[10px] font-semibold text-slate-500">Japan</span>
+                                <span class="text-xs font-bold uppercase tracking-wider text-slate-100">Tokyo</span>
+                                <span class="text-[10px] font-semibold text-slate-400">Japan</span>
                             </div>
                         </div>
                         <div class="mt-2 text-center">
                             <span id="tokyoTemp"
-                                class="text-lg sm:text-xl font-bold text-slate-800 after:content-['°C']">26</span>
+                                class="text-lg sm:text-xl font-bold text-slate-100 after:content-['°C']">26</span>
                         </div>
                     </button>
 
                     <!-- Dubai -->
                     <button type="button"
-                        class="dubai city-card group flex flex-col justify-between rounded-2xl border border-slate-200 bg-white/50 p-3 text-left transition-all duration-200 hover:-translate-y-1 hover:border-sky-300 hover:bg-sky-50/50 hover:shadow-md active:scale-95">
+                        class="dubai city-card group flex flex-col justify-between rounded-2xl border border-slate-800 bg-slate-950/50 p-3 text-left transition-all duration-200 hover:-translate-y-1 hover:border-indigo-500/50 hover:bg-indigo-950/30 hover:shadow-md active:scale-95">
                         <div class="city-header flex items-center justify-between gap-2">
                             <img id="dubaiIcon" src="" alt="Clear Night Weather" draggable="false"
                                 class="h-8 w-8 sm:h-10 sm:w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110">
                             <div class="flex flex-col text-right">
-                                <span class="text-xs font-bold uppercase tracking-wider text-slate-800">Dubai</span>
-                                <span class="text-[10px] font-semibold text-slate-500">UAE</span>
+                                <span class="text-xs font-bold uppercase tracking-wider text-slate-100">Dubai</span>
+                                <span class="text-[10px] font-semibold text-slate-400">UAE</span>
                             </div>
                         </div>
                         <div class="mt-2 text-center">
                             <span id="dubaiTemp"
-                                class="text-lg sm:text-xl font-bold text-slate-800 after:content-['°C']">38</span>
+                                class="text-lg sm:text-xl font-bold text-slate-100 after:content-['°C']">38</span>
                         </div>
                     </button>
 
                     <!-- Paris -->
                     <button type="button"
-                        class="paris city-card group flex flex-col justify-between rounded-2xl border border-slate-200 bg-white/50 p-3 text-left transition-all duration-200 hover:-translate-y-1 hover:border-sky-300 hover:bg-sky-50/50 hover:shadow-md active:scale-95">
+                        class="paris city-card group flex flex-col justify-between rounded-2xl border border-slate-800 bg-slate-950/50 p-3 text-left transition-all duration-200 hover:-translate-y-1 hover:border-indigo-500/50 hover:bg-indigo-950/30 hover:shadow-md active:scale-95">
                         <div class="city-header flex items-center justify-between gap-2">
                             <img id="parisIcon" src="" alt="Windy Weather" draggable="false"
                                 class="h-8 w-8 sm:h-10 sm:w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110">
                             <div class="flex flex-col text-right">
-                                <span class="text-xs font-bold uppercase tracking-wider text-slate-800">Paris</span>
-                                <span class="text-[10px] font-semibold text-slate-500">France</span>
+                                <span class="text-xs font-bold uppercase tracking-wider text-slate-100">Paris</span>
+                                <span class="text-[10px] font-semibold text-slate-400">France</span>
                             </div>
                         </div>
                         <div class="mt-2 text-center">
                             <span id="parisTemp"
-                                class="text-lg sm:text-xl font-bold text-slate-800 after:content-['°C']">22</span>
+                                class="text-lg sm:text-xl font-bold text-slate-100 after:content-['°C']">22</span>
                         </div>
                     </button>
 
                     <!-- Lisbon -->
                     <button type="button"
-                        class="lisbon city-card group flex flex-col justify-between rounded-2xl border border-slate-200 bg-white/50 p-3 text-left transition-all duration-200 hover:-translate-y-1 hover:border-sky-300 hover:bg-sky-50/50 hover:shadow-md active:scale-95">
+                        class="lisbon city-card group flex flex-col justify-between rounded-2xl border border-slate-800 bg-slate-950/50 p-3 text-left transition-all duration-200 hover:-translate-y-1 hover:border-indigo-500/50 hover:bg-indigo-950/30 hover:shadow-md active:scale-95">
                         <div class="city-header flex items-center justify-between gap-2">
                             <img id="lisbonIcon" src="" alt="Overcast Weather" draggable="false"
                                 class="h-8 w-8 sm:h-10 sm:w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110">
                             <div class="flex flex-col text-right">
-                                <span class="text-xs font-bold uppercase tracking-wider text-slate-800">Lisbon</span>
-                                <span class="text-[10px] font-semibold text-slate-500">Portugal</span>
+                                <span class="text-xs font-bold uppercase tracking-wider text-slate-100">Lisbon</span>
+                                <span class="text-[10px] font-semibold text-slate-400">Portugal</span>
                             </div>
                         </div>
                         <div class="mt-2 text-center">
                             <span id="lisbonTemp"
-                                class="text-lg sm:text-xl font-bold text-slate-800 after:content-['°C']">25</span>
+                                class="text-lg sm:text-xl font-bold text-slate-100 after:content-['°C']">25</span>
                         </div>
                     </button>
                 </div>
@@ -512,22 +512,22 @@
 
     <!-- Mobile Navigation Bar -->
     <footer id="mobile-footer"
-        class="fixed bottom-0 left-0 right-0 z-50 flex h-16 w-full items-center justify-around border-t border-slate-200 bg-white/90 backdrop-blur-md md:hidden">
+        class="fixed bottom-0 left-0 right-0 z-50 flex h-16 w-full items-center justify-around border-t border-slate-800 bg-slate-900/90 backdrop-blur-md md:hidden">
 
         <!-- Home Button (Initially Active) -->
         <a href="#" aria-label="Home"
-            class="nav-link group flex flex-1 flex-col items-center justify-center py-2 transition-all duration-200 active:scale-95 bg-sky-100 text-sky-600 rounded-xl">
+            class="nav-link group flex flex-1 flex-col items-center justify-center py-2 transition-all duration-200 active:scale-95 bg-indigo-950 text-indigo-400 rounded-xl">
             <svg class="h-6 w-6 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
                 stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 001 1m-6 0h6" />
+                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
             </svg>
             <span class="text-xs font-medium mt-0.5">Home</span>
         </a>
 
         <!-- Search Button -->
         <a href="#searchInput" aria-label="Search"
-            class="nav-link group flex flex-1 flex-col items-center justify-center py-2 text-slate-500 transition-all duration-200 hover:text-sky-600 active:scale-95">
+            class="nav-link group flex flex-1 flex-col items-center justify-center py-2 text-slate-400 transition-all duration-200 hover:text-indigo-400 active:scale-95">
             <svg class="h-6 w-6 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
                 stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -537,7 +537,7 @@
 
         <!-- Cities Button -->
         <a href="#popularCities" aria-label="Cities"
-            class="nav-link group flex flex-1 flex-col items-center justify-center py-2 text-slate-500 transition-all duration-200 hover:text-sky-600 active:scale-95">
+            class="nav-link group flex flex-1 flex-col items-center justify-center py-2 text-slate-400 transition-all duration-200 hover:text-indigo-400 active:scale-95">
             <svg class="h-6 w-6 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
                 stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round"
