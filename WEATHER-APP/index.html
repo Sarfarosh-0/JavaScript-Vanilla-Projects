@@ -119,8 +119,8 @@
         <div class="flex items-center justify-between border-b border-slate-800 py-5 px-4 shrink-0">
             <div class="flex items-center gap-3 min-w-0">
                 <div
-                    class="p-2 rounded-xl bg-indigo-500/10 border border-indigo-500/20 shrink-0 transition-transform duration-300 hover:rotate-12">
-                    <img src="https://cdn-icons-png.flaticon.com/128/1146/1146869.png" alt="App Logo" draggable="false"
+                    class="p-2 rounded-xl bg-indigo-500/10 border border-indigo-500/20 shrink-0 transition-transform duration-300 hover:scale-105">
+                    <img src="https://cdn-icons-png.flaticon.com/128/1146/1146869.png" alt="Logo" draggable="false"
                         class="w-6 h-6 object-contain">
                 </div>
                 <h2 class="font-bold text-lg text-slate-100 tracking-wide truncate">WeatherApp</h2>
@@ -168,7 +168,7 @@
         <!-- Bottom Promo Card -->
         <div
             class="m-4 p-4 rounded-2xl flex flex-col justify-center gap-3 items-center bg-linear-to-br from-indigo-600 to-violet-700 shadow-lg shadow-indigo-950/50 shrink-0 text-center transition-transform hover:scale-[1.02] duration-300 cursor-pointer">
-            <img src="https://cdn-icons-png.flaticon.com/128/1146/1146869.png" alt="App Logo" draggable="false"
+            <img src="https://cdn-icons-png.flaticon.com/128/1146/1146869.png" alt="Logo" draggable="false"
                 class="w-7 h-7 object-contain shrink-0 animate-float">
             <p class="font-bold text-white text-xs leading-relaxed">
                 Stay ahead of the weather, every day.
@@ -212,9 +212,11 @@
                 <!-- Top Row: Location & Date -->
                 <div id="dateLocation" class="flex flex-col gap-1">
                     <div class="flex gap-2 items-center font-bold text-white drop-shadow-sm text-base sm:text-lg">
-                        <img src="https://img.icons8.com/ios/100/818cf8/marker--v1.png" alt="Location Icon"
-                            draggable="false"
-                            class="w-4 h-4 shrink-0 transition-transform duration-300 hover:animate-bounce">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"
+                            fill="white">
+                            <path
+                                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                        </svg>
                         <span id="city" class="after:content-[',_']">New York</span>
                         <span id="country">USA</span>
                     </div>
@@ -237,7 +239,7 @@
                     <!-- Primary Weather: Icon & Temperature -->
                     <div
                         class="locationImage flex items-center gap-4 sm:gap-6 w-full lg:w-auto justify-center lg:justify-start">
-                        <img src="" alt="Sunny Weather" draggable="false"
+                        <img src="" alt="Weather" draggable="false"
                             class="w-20 h-20 sm:w-28 sm:h-28 lg:w-32 lg:h-32 object-contain shrink-0 animate-float">
                         <div class="weather-details flex flex-col gap-0.5">
                             <h1 id="cityTemp"
@@ -410,10 +412,10 @@
                 <div class="popular-cities grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
 
                     <!-- Delhi -->
-                    <button type="button"
+                    <button type="button" id="delhiBtn"
                         class="delhi city-card group flex flex-col justify-between rounded-2xl border border-slate-800 bg-slate-950/50 p-3 text-left transition-all duration-200 hover:-translate-y-1 hover:border-indigo-500/50 hover:bg-indigo-950/30 hover:shadow-md active:scale-95">
                         <div class="city-header flex items-center justify-between gap-2">
-                            <img id="delhiIcon" src="" alt="Heavy Rain Weather" draggable="false"
+                            <img id="delhiIcon" src="" alt="Delhi Weather" draggable="false"
                                 class="h-8 w-8 sm:h-10 sm:w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110">
                             <div class="flex flex-col text-right">
                                 <span class="text-xs font-bold uppercase tracking-wider text-slate-100">Delhi</span>
@@ -427,10 +429,10 @@
                     </button>
 
                     <!-- London -->
-                    <button type="button"
+                    <button type="button" id="LondonBtn"
                         class="london city-card group flex flex-col justify-between rounded-2xl border border-slate-800 bg-slate-950/50 p-3 text-left transition-all duration-200 hover:-translate-y-1 hover:border-indigo-500/50 hover:bg-indigo-950/30 hover:shadow-md active:scale-95">
                         <div class="city-header flex items-center justify-between gap-2">
-                            <img id="londonIcon" src="" alt="Sunny Weather" draggable="false"
+                            <img id="londonIcon" src="" alt="London Weather" draggable="false"
                                 class="h-8 w-8 sm:h-10 sm:w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110">
                             <div class="flex flex-col text-right">
                                 <span class="text-xs font-bold uppercase tracking-wider text-slate-100">London</span>
@@ -444,10 +446,10 @@
                     </button>
 
                     <!-- Tokyo -->
-                    <button type="button"
+                    <button type="button" id="tokyoBtn"
                         class="tokyo city-card group flex flex-col justify-between rounded-2xl border border-slate-800 bg-slate-950/50 p-3 text-left transition-all duration-200 hover:-translate-y-1 hover:border-indigo-500/50 hover:bg-indigo-950/30 hover:shadow-md active:scale-95">
                         <div class="city-header flex items-center justify-between gap-2">
-                            <img id="tokyoIcon" src="" alt="Light Rain Weather" draggable="false"
+                            <img id="tokyoIcon" src="" alt="Tokyo Weather" draggable="false"
                                 class="h-8 w-8 sm:h-10 sm:w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110">
                             <div class="flex flex-col text-right">
                                 <span class="text-xs font-bold uppercase tracking-wider text-slate-100">Tokyo</span>
@@ -461,10 +463,10 @@
                     </button>
 
                     <!-- Dubai -->
-                    <button type="button"
+                    <button type="button" id="dubaiBtn"
                         class="dubai city-card group flex flex-col justify-between rounded-2xl border border-slate-800 bg-slate-950/50 p-3 text-left transition-all duration-200 hover:-translate-y-1 hover:border-indigo-500/50 hover:bg-indigo-950/30 hover:shadow-md active:scale-95">
                         <div class="city-header flex items-center justify-between gap-2">
-                            <img id="dubaiIcon" src="" alt="Clear Night Weather" draggable="false"
+                            <img id="dubaiIcon" src="" alt="Dubai Weather" draggable="false"
                                 class="h-8 w-8 sm:h-10 sm:w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110">
                             <div class="flex flex-col text-right">
                                 <span class="text-xs font-bold uppercase tracking-wider text-slate-100">Dubai</span>
@@ -478,10 +480,10 @@
                     </button>
 
                     <!-- Paris -->
-                    <button type="button"
+                    <button type="button" id="parisBtn"
                         class="paris city-card group flex flex-col justify-between rounded-2xl border border-slate-800 bg-slate-950/50 p-3 text-left transition-all duration-200 hover:-translate-y-1 hover:border-indigo-500/50 hover:bg-indigo-950/30 hover:shadow-md active:scale-95">
                         <div class="city-header flex items-center justify-between gap-2">
-                            <img id="parisIcon" src="" alt="Windy Weather" draggable="false"
+                            <img id="parisIcon" src="" alt="Paris Weather" draggable="false"
                                 class="h-8 w-8 sm:h-10 sm:w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110">
                             <div class="flex flex-col text-right">
                                 <span class="text-xs font-bold uppercase tracking-wider text-slate-100">Paris</span>
@@ -495,10 +497,10 @@
                     </button>
 
                     <!-- Lisbon -->
-                    <button type="button"
+                    <button type="button" id="lisbonBtn"
                         class="lisbon city-card group flex flex-col justify-between rounded-2xl border border-slate-800 bg-slate-950/50 p-3 text-left transition-all duration-200 hover:-translate-y-1 hover:border-indigo-500/50 hover:bg-indigo-950/30 hover:shadow-md active:scale-95">
                         <div class="city-header flex items-center justify-between gap-2">
-                            <img id="lisbonIcon" src="" alt="Overcast Weather" draggable="false"
+                            <img id="lisbonIcon" src="" alt="Lisbon Weather" draggable="false"
                                 class="h-8 w-8 sm:h-10 sm:w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110">
                             <div class="flex flex-col text-right">
                                 <span class="text-xs font-bold uppercase tracking-wider text-slate-100">Lisbon</span>
