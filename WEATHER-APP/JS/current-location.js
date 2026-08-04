@@ -18,27 +18,27 @@ const minTemp = document.getElementById("minTemp");
 const searchInput = document.getElementById("searchInput");
 const searchButton = document.getElementById("searchButton");
 
-const apiKey = "";
+const apiKey = "YOUR_API";
 
-// const backgroundMap = {
-//   Thunderstorm: "Resources/backgrounds/Thunderstorm.png",
-//   Drizzle: "Resources/backgrounds/Light-Rain.png",
-//   Rain: "Resources/backgrounds/Heavy-Rain.png",
-//   Snow: "Resources/backgrounds/Snowfall.png",
-//   Clouds: "Resources/backgrounds/Cloudy.png",
-// };
+const backgroundMap = {
+  Thunderstorm: "Resources/backgrounds/Thunderstorm.png",
+  Drizzle: "Resources/backgrounds/Light-Rain.png",
+  Rain: "Resources/backgrounds/Heavy-Rain.png",
+  Snow: "Resources/backgrounds/Snowfall.png",
+  Clouds: "Resources/backgrounds/Cloudy.png",
+};
 
-// const atmosphereConditions = [
-//   "Mist",
-//   "Smoke",
-//   "Haze",
-//   "Dust",
-//   "Fog",
-//   "Sand",
-//   "Ash",
-//   "Squall",
-//   "Tornado",
-// ];
+const atmosphereConditions = [
+  "Mist",
+  "Smoke",
+  "Haze",
+  "Dust",
+  "Fog",
+  "Sand",
+  "Ash",
+  "Squall",
+  "Tornado",
+];
 
 async function fetchWeather(queryParam = "Lucknow") {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${queryParam}&appid=${apiKey}&units=metric`;
@@ -63,19 +63,19 @@ async function fetchWeather(queryParam = "Lucknow") {
     weatherType.textContent = data.weather[0].description;
     weatherIcon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
 
-    // const weatherCondition = data.weather[0].main;
+    const weatherCondition = data.weather[0].main;
 
-    // if (backgroundMap[weatherCondition]) {
-    //   weatherCard.style.backgroundImage = `url('${backgroundMap[weatherCondition]}')`;
-    // } else if (atmosphereConditions.includes(weatherCondition)) {
-    //   weatherCard.style.backgroundImage =
-    //     "url('Resources/backgrounds/fog.png')";
-    // } else if (weatherCondition === "Clear") {
-    //   const isNight = data.weather[0].icon.includes("n");
-    //   weatherCard.style.backgroundImage = isNight
-    //     ? "url('Resources/backgrounds/Clear-Night.png')"
-    //     : "url('Resources/backgrounds/Bright-Sunny.png')";
-    // }
+    if (backgroundMap[weatherCondition]) {
+      weatherCard.style.backgroundImage = `url('${backgroundMap[weatherCondition]}')`;
+    } else if (atmosphereConditions.includes(weatherCondition)) {
+      weatherCard.style.backgroundImage =
+        "url('Resources/backgrounds/fog.png')";
+    } else if (weatherCondition === "Clear") {
+      const isNight = data.weather[0].icon.includes("n");
+      weatherCard.style.backgroundImage = isNight
+        ? "url('Resources/backgrounds/Clear-Night.png')"
+        : "url('Resources/backgrounds/Bright-Sunny.png')";
+    }
 
     // Weather Data Updates
     cityTemp.textContent = Math.floor(data.main.temp);
