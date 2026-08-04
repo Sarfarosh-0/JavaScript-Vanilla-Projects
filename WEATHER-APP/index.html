@@ -67,10 +67,6 @@
         }
 
         #currentLocation {
-            /* background-image:
-                linear-gradient(180deg, rgba(15, 23, 42, 0.7) 0%, rgba(15, 23, 42, 0.85) 100%),
-                url('');
-            background-size: cover; */
             background-position: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
@@ -111,7 +107,7 @@
 
 <body class="bg-slate-950 text-slate-100 flex overflow-x-hidden min-h-screen">
 
-    <!-- Sidebar  -->
+    <!-- Sidebar -->
     <aside id="sidebar" aria-label="Primary Navigation"
         class="fixed hidden top-0 left-0 z-50 w-56 h-full bg-slate-900/80 backdrop-blur-xl border-r border-slate-800 md:flex flex-col justify-between transition-transform duration-300 ease-in-out shadow-2xl">
 
@@ -129,8 +125,6 @@
 
         <!-- Navigation -->
         <nav class="mb-auto flex flex-col gap-1.5 overflow-y-auto px-3 py-4">
-
-            <!-- Home Nav Link -->
             <a href="#"
                 class="group flex w-full cursor-pointer items-center gap-3.5 rounded-2xl px-4 py-3 font-semibold text-slate-400 transition-all duration-200 hover:bg-indigo-950/50 hover:text-indigo-400 active:scale-95">
                 <svg class="h-5 w-5 shrink-0 text-slate-400 transition-transform group-hover:scale-110 group-hover:text-indigo-400"
@@ -141,7 +135,6 @@
                 <span class="truncate">Home</span>
             </a>
 
-            <!-- Search Nav Link -->
             <a href="#searchInput"
                 class="group flex w-full cursor-pointer items-center gap-3.5 rounded-2xl px-4 py-3 font-semibold text-slate-400 transition-all duration-200 hover:bg-indigo-950/50 hover:text-indigo-400 active:scale-95">
                 <svg class="h-5 w-5 shrink-0 text-slate-400 transition-transform group-hover:scale-110 group-hover:text-indigo-400"
@@ -152,7 +145,6 @@
                 <span class="truncate">Search</span>
             </a>
 
-            <!-- Cities Nav Link -->
             <a href="#popularCities"
                 class="group flex w-full cursor-pointer items-center gap-3.5 rounded-2xl px-4 py-3 font-semibold text-slate-400 transition-all duration-200 hover:bg-indigo-950/50 hover:text-indigo-400 active:scale-95">
                 <svg class="h-5 w-5 shrink-0 text-slate-400 transition-transform group-hover:scale-110 group-hover:text-indigo-400"
@@ -179,7 +171,6 @@
     <div id="mainContent"
         class="flex-1 w-full md:ml-56 transition-all duration-500 ease-in-out p-4 sm:p-6 pb-24 md:pb-6 animate-fade-in min-w-0">
         <header class="relative w-full z-40">
-            <!-- Search Form Container -->
             <div
                 class="flex h-14 sm:h-16 w-full items-center justify-center rounded-2xl border border-slate-800 bg-slate-900/70 p-2 shadow-sm backdrop-blur-md transition-shadow duration-300 hover:shadow-md">
                 <div
@@ -209,11 +200,9 @@
             <section id="currentLocation"
                 class="w-full rounded-2xl p-4 sm:p-6 shadow-xl hover:shadow-2xl border border-slate-800/80 flex flex-col gap-6">
 
-                <!-- Top Row: Location & Date -->
                 <div id="dateLocation" class="flex flex-col gap-1">
                     <div class="flex gap-2 items-center font-bold text-white drop-shadow-sm text-base sm:text-lg">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"
-                            fill="white">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="white">
                             <path
                                 d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                         </svg>
@@ -233,13 +222,12 @@
                     </div>
                 </div>
 
-                <!-- Main Content -->
                 <div class="flex flex-col lg:flex-row justify-between lg:justify-evenly items-center gap-6 pt-2">
 
-                    <!-- Primary Weather: Icon & Temperature -->
                     <div
                         class="locationImage flex items-center gap-4 sm:gap-6 w-full lg:w-auto justify-center lg:justify-start">
-                        <img src="" alt="Weather" draggable="false"
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                            alt="Weather" draggable="false"
                             class="w-20 h-20 sm:w-28 sm:h-28 lg:w-32 lg:h-32 object-contain shrink-0 animate-float">
                         <div class="weather-details flex flex-col gap-0.5">
                             <h1 id="cityTemp"
@@ -254,10 +242,8 @@
                         </div>
                     </div>
 
-                    <!-- Divider line -->
                     <div class="w-full lg:w-px h-px lg:h-24 bg-slate-700/60"></div>
 
-                    <!-- Secondary Metrics -->
                     <div
                         class="other-details grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 gap-3 sm:gap-6 w-full lg:w-auto text-center lg:text-left">
                         <div
@@ -295,7 +281,6 @@
 
             <section class="overview flex flex-col lg:flex-row gap-4 w-full">
 
-                <!-- Min/Max Temp Card -->
                 <div
                     class="temp flex flex-col justify-evenly p-4 rounded-xl border border-slate-800 bg-slate-900/80 backdrop-blur-sm shadow-sm hover:shadow-md transition-all duration-300 w-full lg:w-fit shrink-0">
 
@@ -304,7 +289,6 @@
                     </div>
 
                     <div class="flex items-center justify-around sm:justify-start gap-4 sm:gap-6 py-1">
-                        <!-- Max Temperature -->
                         <div class="max flex items-center gap-2 sm:gap-3.5 group cursor-pointer">
                             <div
                                 class="p-2 rounded-lg bg-rose-500/10 border border-rose-500/20 shrink-0 transition-transform duration-300 group-hover:scale-110">
@@ -321,10 +305,8 @@
                             </div>
                         </div>
 
-                        <!-- Vertical Divider -->
                         <div class="w-px h-8 bg-slate-800"></div>
 
-                        <!-- Min Temperature -->
                         <div class="min flex items-center gap-2 sm:gap-3.5 group cursor-pointer">
                             <div
                                 class="p-2 rounded-lg bg-indigo-500/10 border border-indigo-500/20 shrink-0 transition-transform duration-300 group-hover:scale-110">
@@ -343,7 +325,6 @@
                     </div>
                 </div>
 
-                <!-- Hourly Forecast Card -->
                 <div
                     class="future-forecast flex flex-col justify-between gap-3 p-4 rounded-xl border border-slate-800 bg-slate-900/80 backdrop-blur-sm shadow-sm hover:shadow-md transition-all duration-300 flex-1 min-w-0">
                     <div class="font-bold text-base sm:text-lg text-slate-100">
@@ -352,47 +333,47 @@
                     <div
                         class="details flex items-center justify-between w-full pb-2 gap-2 sm:gap-3 overflow-x-auto [&::-webkit-scrollbar]:h-1.5 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-slate-700 [&::-webkit-scrollbar-track]:bg-transparent">
 
-                        <!-- 1st -->
                         <div
                             class="flex flex-col gap-1 justify-center items-center bg-slate-950/80 p-2.5 rounded-lg border border-slate-800 shrink-0 flex-1 min-w-17.5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:bg-indigo-950/40 hover:border-indigo-500/50 cursor-pointer group">
                             <span class="forecast-time uppercase text-xs font-medium text-slate-400"></span>
-                            <img src="" alt="Icon" draggable="false"
+                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                alt="Icon" draggable="false"
                                 class="forecast-icon w-7 h-7 object-contain shrink-0 transition-transform duration-300 group-hover:scale-110">
                             <span class="forecast-temp text-sm font-bold text-slate-100 after:content-['°C']">28</span>
                         </div>
 
-                        <!-- 2nd -->
                         <div
                             class="flex flex-col gap-1 justify-center items-center bg-slate-950/80 p-2.5 rounded-lg border border-slate-800 shrink-0 flex-1 min-w-17.5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:bg-indigo-950/40 hover:border-indigo-500/50 cursor-pointer group">
                             <span class="forecast-time uppercase text-xs font-medium text-slate-400"></span>
-                            <img src="" alt="Icon" draggable="false"
+                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                alt="Icon" draggable="false"
                                 class="forecast-icon w-7 h-7 object-contain shrink-0 transition-transform duration-300 group-hover:scale-110">
                             <span class="forecast-temp text-sm font-bold text-slate-100 after:content-['°C']">29</span>
                         </div>
 
-                        <!-- 3rd -->
                         <div
                             class="flex flex-col gap-1 justify-center items-center bg-slate-950/80 p-2.5 rounded-lg border border-slate-800 shrink-0 flex-1 min-w-17.5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:bg-indigo-950/40 hover:border-indigo-500/50 cursor-pointer group">
                             <span class="forecast-time uppercase text-xs font-medium text-slate-400"></span>
-                            <img src="" alt="Icon" draggable="false"
+                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                alt="Icon" draggable="false"
                                 class="forecast-icon w-7 h-7 object-contain shrink-0 transition-transform duration-300 group-hover:scale-110">
                             <span class="forecast-temp text-sm font-bold text-slate-100 after:content-['°C']">30</span>
                         </div>
 
-                        <!-- 4th -->
                         <div
                             class="flex flex-col gap-1 justify-center items-center bg-slate-950/80 p-2.5 rounded-lg border border-slate-800 shrink-0 flex-1 min-w-17.5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:bg-indigo-950/40 hover:border-indigo-500/50 cursor-pointer group">
                             <span class="forecast-time uppercase text-xs font-medium text-slate-400"></span>
-                            <img src="" alt="Icon" draggable="false"
+                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                alt="Icon" draggable="false"
                                 class="forecast-icon w-7 h-7 object-contain shrink-0 transition-transform duration-300 group-hover:scale-110">
                             <span class="forecast-temp text-sm font-bold text-slate-100 after:content-['°C']">30</span>
                         </div>
 
-                        <!-- 5th -->
                         <div
                             class="flex flex-col gap-1 justify-center items-center bg-slate-950/80 p-2.5 rounded-lg border border-slate-800 shrink-0 flex-1 min-w-17.5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:bg-indigo-950/40 hover:border-indigo-500/50 cursor-pointer group">
                             <span class="forecast-time uppercase text-xs font-medium text-slate-400"></span>
-                            <img src="" alt="Icon" draggable="false"
+                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                alt="Icon" draggable="false"
                                 class="forecast-icon w-7 h-7 object-contain shrink-0 transition-transform duration-300 group-hover:scale-110">
                             <span class="forecast-temp text-sm font-bold text-slate-100 after:content-['°C']">29</span>
                         </div>
@@ -401,7 +382,6 @@
 
             </section>
 
-            <!-- Popular Cities -->
             <section id="popularCities"
                 class="cities-outer-box flex w-full flex-col gap-4 rounded-2xl border border-slate-800 bg-slate-900/80 p-4 sm:p-6 backdrop-blur-md shadow-xl">
 
@@ -411,11 +391,12 @@
 
                 <div class="popular-cities grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
 
-                    <!-- Delhi -->
                     <button type="button" id="delhiBtn"
                         class="delhi city-card group flex flex-col justify-between rounded-2xl border border-slate-800 bg-slate-950/50 p-3 text-left transition-all duration-200 hover:-translate-y-1 hover:border-indigo-500/50 hover:bg-indigo-950/30 hover:shadow-md active:scale-95">
                         <div class="city-header flex items-center justify-between gap-2">
-                            <img id="delhiIcon" src="" alt="Delhi Weather" draggable="false"
+                            <img id="delhiIcon"
+                                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                alt="Delhi Weather" draggable="false"
                                 class="h-8 w-8 sm:h-10 sm:w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110">
                             <div class="flex flex-col text-right">
                                 <span class="text-xs font-bold uppercase tracking-wider text-slate-100">Delhi</span>
@@ -428,11 +409,12 @@
                         </div>
                     </button>
 
-                    <!-- London -->
-                    <button type="button" id="LondonBtn"
+                    <button type="button" id="londonBtn"
                         class="london city-card group flex flex-col justify-between rounded-2xl border border-slate-800 bg-slate-950/50 p-3 text-left transition-all duration-200 hover:-translate-y-1 hover:border-indigo-500/50 hover:bg-indigo-950/30 hover:shadow-md active:scale-95">
                         <div class="city-header flex items-center justify-between gap-2">
-                            <img id="londonIcon" src="" alt="London Weather" draggable="false"
+                            <img id="londonIcon"
+                                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                alt="London Weather" draggable="false"
                                 class="h-8 w-8 sm:h-10 sm:w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110">
                             <div class="flex flex-col text-right">
                                 <span class="text-xs font-bold uppercase tracking-wider text-slate-100">London</span>
@@ -445,11 +427,12 @@
                         </div>
                     </button>
 
-                    <!-- Tokyo -->
                     <button type="button" id="tokyoBtn"
                         class="tokyo city-card group flex flex-col justify-between rounded-2xl border border-slate-800 bg-slate-950/50 p-3 text-left transition-all duration-200 hover:-translate-y-1 hover:border-indigo-500/50 hover:bg-indigo-950/30 hover:shadow-md active:scale-95">
                         <div class="city-header flex items-center justify-between gap-2">
-                            <img id="tokyoIcon" src="" alt="Tokyo Weather" draggable="false"
+                            <img id="tokyoIcon"
+                                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                alt="Tokyo Weather" draggable="false"
                                 class="h-8 w-8 sm:h-10 sm:w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110">
                             <div class="flex flex-col text-right">
                                 <span class="text-xs font-bold uppercase tracking-wider text-slate-100">Tokyo</span>
@@ -462,11 +445,12 @@
                         </div>
                     </button>
 
-                    <!-- Dubai -->
                     <button type="button" id="dubaiBtn"
                         class="dubai city-card group flex flex-col justify-between rounded-2xl border border-slate-800 bg-slate-950/50 p-3 text-left transition-all duration-200 hover:-translate-y-1 hover:border-indigo-500/50 hover:bg-indigo-950/30 hover:shadow-md active:scale-95">
                         <div class="city-header flex items-center justify-between gap-2">
-                            <img id="dubaiIcon" src="" alt="Dubai Weather" draggable="false"
+                            <img id="dubaiIcon"
+                                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                alt="Dubai Weather" draggable="false"
                                 class="h-8 w-8 sm:h-10 sm:w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110">
                             <div class="flex flex-col text-right">
                                 <span class="text-xs font-bold uppercase tracking-wider text-slate-100">Dubai</span>
@@ -479,11 +463,12 @@
                         </div>
                     </button>
 
-                    <!-- Paris -->
                     <button type="button" id="parisBtn"
                         class="paris city-card group flex flex-col justify-between rounded-2xl border border-slate-800 bg-slate-950/50 p-3 text-left transition-all duration-200 hover:-translate-y-1 hover:border-indigo-500/50 hover:bg-indigo-950/30 hover:shadow-md active:scale-95">
                         <div class="city-header flex items-center justify-between gap-2">
-                            <img id="parisIcon" src="" alt="Paris Weather" draggable="false"
+                            <img id="parisIcon"
+                                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                alt="Paris Weather" draggable="false"
                                 class="h-8 w-8 sm:h-10 sm:w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110">
                             <div class="flex flex-col text-right">
                                 <span class="text-xs font-bold uppercase tracking-wider text-slate-100">Paris</span>
@@ -496,11 +481,12 @@
                         </div>
                     </button>
 
-                    <!-- Lisbon -->
                     <button type="button" id="lisbonBtn"
                         class="lisbon city-card group flex flex-col justify-between rounded-2xl border border-slate-800 bg-slate-950/50 p-3 text-left transition-all duration-200 hover:-translate-y-1 hover:border-indigo-500/50 hover:bg-indigo-950/30 hover:shadow-md active:scale-95">
                         <div class="city-header flex items-center justify-between gap-2">
-                            <img id="lisbonIcon" src="" alt="Lisbon Weather" draggable="false"
+                            <img id="lisbonIcon"
+                                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                alt="Lisbon Weather" draggable="false"
                                 class="h-8 w-8 sm:h-10 sm:w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110">
                             <div class="flex flex-col text-right">
                                 <span class="text-xs font-bold uppercase tracking-wider text-slate-100">Lisbon</span>
@@ -522,7 +508,6 @@
     <footer id="mobile-footer"
         class="fixed bottom-0 left-0 right-0 z-50 flex h-16 w-full items-center justify-around border-t border-slate-800 bg-slate-900/90 backdrop-blur-md md:hidden">
 
-        <!-- Home Button (Initially Active) -->
         <a href="#" aria-label="Home"
             class="nav-link group flex flex-1 flex-col items-center justify-center py-0.5 transition-all duration-200 active:scale-95 bg-indigo-950 text-indigo-400 rounded-xl">
             <svg class="h-6 w-6 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
@@ -533,7 +518,6 @@
             <span class="text-xs font-medium mt-0.5">Home</span>
         </a>
 
-        <!-- Search Button -->
         <a href="#searchInput" aria-label="Search"
             class="nav-link group flex flex-1 flex-col items-center justify-center py-0.5 text-slate-400 transition-all duration-200 hover:text-indigo-400 active:scale-95">
             <svg class="h-6 w-6 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
@@ -543,7 +527,6 @@
             <span class="hidden text-xs font-medium mt-0.5">Search</span>
         </a>
 
-        <!-- Cities Button -->
         <a href="#popularCities" aria-label="Cities"
             class="nav-link group flex flex-1 flex-col items-center justify-center py-0.5 text-slate-400 transition-all duration-200 hover:text-indigo-400 active:scale-95">
             <svg class="h-6 w-6 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
