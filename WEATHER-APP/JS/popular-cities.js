@@ -15,4 +15,23 @@ async function citiesWeather() {
   }
 }
 
+document
+  .getElementById("delhiBtn")
+  .addEventListener("click", fetchWeather(delhi), hourlyForecast(delhi));
+document
+  .getElementById("londonBtn")
+  .addEventListener("click", fetchWeather(london), hourlyForecast(london));
+document
+  .getElementById("tokyoBtn")
+  .addEventListener("click", fetchWeather(tokyo), hourlyForecast(tokyo));
+document
+  .getElementById("dubaiBtn")
+  .addEventListener("click", fetchWeather(dubai), hourlyForecast(dubai));
+document
+  .getElementById("parisBtn")
+  .addEventListener("click", fetchWeather(paris), hourlyForecast(paris));
+document
+  .getElementById("lisbonBtn")
+  .addEventListener("click", fetchWeather(lisbon), hourlyForecast(lisbon));
+
 citiesWeather();

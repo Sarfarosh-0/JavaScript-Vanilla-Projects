@@ -18,7 +18,7 @@ const minTemp = document.getElementById("minTemp");
 const searchInput = document.getElementById("searchInput");
 const searchButton = document.getElementById("searchButton");
 
-const apiKey = "YOUR_API";
+const apiKey = "";
 
 const backgroundMap = {
   Thunderstorm: "Resources/backgrounds/Thunderstorm.png",
